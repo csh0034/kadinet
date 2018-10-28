@@ -18,7 +18,9 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig sc) throws ServletException {
 		charset = sc.getInitParameter("charset");
 		list = new HashMap<String, Controller>();
-		list.put("/index.do", new MainController());
+		list.put("/index.do", new MainIndexController());
+		
+		list.put("/admin/index.do", new AdminIndexController());
 	}
 
 	@Override
