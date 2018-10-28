@@ -13,7 +13,7 @@
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section> 
-		<span class="" style="font-size:30px;">폰트 테스트 중입니다  > 나눔스퀘어 </span><br>
+		<span class="" style="font-size:30px;">폰트 테스트 중입니다  >>>>>>> 나눔스퀘어 </span><br>
 	</section>
 	<%@ include file="/WEB-INF/include/main/footer.jsp"%>
 </body>
