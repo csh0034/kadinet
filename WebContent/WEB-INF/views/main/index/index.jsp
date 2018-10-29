@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%@ include file="/WEB-INF/include/global/meta.jsp" %>
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/global/css.jsp"%>
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
