@@ -7,6 +7,6 @@
 <title>디지털산업협회</title>
 </head>
 <body> 
-	<%=application.getRealPath("")%>  sd
+	<%=application.getRealPath("")%> 재범 숮ㅇ
 </body>
 </html>
