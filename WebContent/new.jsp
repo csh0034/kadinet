@@ -7,7 +7,6 @@
 <title>디지털산업협회</title>
 </head>
 <body>
-
-<%=application.getContextPath()%>
+	<%=application.getRealPath("")%>
 </body>
 </html>
