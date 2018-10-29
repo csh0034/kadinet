@@ -1,2 +1,2 @@
 # kadinet
-Kadinet Web Project MVC model2
+Kadinet Web MVC model2 Project
