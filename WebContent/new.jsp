@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>디지털산업협회</title>
 </head>
-<body>
+<body> 
 	<%=application.getRealPath("")%>
 </body>
 </html>
