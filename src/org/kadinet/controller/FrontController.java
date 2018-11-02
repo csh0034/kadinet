@@ -18,7 +18,10 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig sc) throws ServletException {
 		charset = sc.getInitParameter("charset");
 		list = new HashMap<String, Controller>();
+		
 		list.put("/index.do", new MainIndexController());
+		list.put("/join.do", new MainIndexController());
+		list.put("/login.do", new MainIndexController());
 		
 		list.put("/admin/index.do", new AdminIndexController());
 	}
@@ -32,17 +35,20 @@ public class FrontController extends HttpServlet {
 		String path = url.substring(contextPath.length());
 		
 		Controller subController = list.get(path);
-		if ( subController == null) {
-			subController = new ErrorController();
-		}
 		
-		String returnURL[]  = subController.execute(request, response);
-		
-		if("1".equals(returnURL[0])) {
-			HttpUtil.forward(request, response, returnURL[1]);
+		if ( subController != null) {
+			String returnURL[]  = subController.execute(request, response,path);
+			
+			if("1".equals(returnURL[0])) {
+				HttpUtil.forward(request, response, returnURL[1]);
+			} else {
+				response.sendRedirect(returnURL[1]);
+			}
+
 		} else {
-			response.sendRedirect(returnURL[1]);
+			HttpUtil.forward(request, response, "/errorPage/error404.jsp");
 		}
+
 	}
 
 }
