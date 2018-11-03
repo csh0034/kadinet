@@ -18,33 +18,25 @@ public class FrontController extends HttpServlet {
 	public void init(ServletConfig sc) throws ServletException {
 		charset = sc.getInitParameter("charset");
 		list = new HashMap<String, Controller>();
-		
+
 		list.put("/index.do", new MainIndexController());
 		list.put("/join.do", new MainIndexController());
 		list.put("/login.do", new MainIndexController());
-		
+
 		list.put("/admin/index.do", new AdminIndexController());
 	}
 
 	@Override
-	public void service(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
+	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding(charset);
 		String url = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String path = url.substring(contextPath.length());
-		
-		Controller subController = list.get(path);
-		
-		if ( subController != null) {
-			String returnURL[]  = subController.execute(request, response,path);
-			
-			if("1".equals(returnURL[0])) {
-				HttpUtil.forward(request, response, returnURL[1]);
-			} else {
-				response.sendRedirect(returnURL[1]);
-			}
 
+		Controller subController = list.get(path);
+
+		if (subController != null) {
+			subController.execute(request, response, path);
 		} else {
 			HttpUtil.forward(request, response, "/errorPage/error404.jsp");
 		}

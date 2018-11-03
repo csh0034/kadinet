@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/include/global/meta.jsp" %>
-<%@ include file="/WEB-INF/include/global/css.jsp"%>
-<%@ include file="/WEB-INF/include/main/css.jsp"%>
-<%@ include file="/WEB-INF/include/global/js.jsp"%>
-<%@ include file="/WEB-INF/include/main/js.jsp"%>
 <header>
 	<div id="mem_menu">
 		<a href=#>로그인</a>

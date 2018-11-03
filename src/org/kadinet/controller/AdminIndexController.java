@@ -6,12 +6,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.kadinet.util.HttpUtil;
+
 public class AdminIndexController implements Controller {
 	@Override
-	public String[] execute(HttpServletRequest request, HttpServletResponse response , String path)
+	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
-		
-		String tmp[] = {"1","/WEB-INF/views/admin/index/index.jsp"};
-		return tmp;
+
+		HttpUtil.forward(request, response, "/WEB-INF/views/admin/index/index.jsp");
 	}
 }
