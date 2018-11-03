@@ -161,7 +161,7 @@ section {
 	background: #fff;
 }
 
-#notice>a>img{
+.notice_img{
 	position: absolute;
 	width: 450px; height: 200px;
 	top: 180px; left: 25px;
@@ -223,13 +223,13 @@ section {
     height: 55px;
 }
 
-.contents_title2>p {
+.contents_title2>p>a {
 	color: #828282;
 }
 
-.contents_date2 {
+.contents_date2>a {
+	display: block;
 	text-align: right;
-	color: #fff;
 	color: #a9a9a9;
 	margin-top: 20px;
 	margin-right: 25px;
@@ -249,7 +249,7 @@ section {
 	overflow: hidden;
 }
 
-.contents_txt2>p {
+.contents_txt2>p>a {
 	color: #828282;
 }
 
