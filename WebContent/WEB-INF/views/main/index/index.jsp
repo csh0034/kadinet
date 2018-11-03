@@ -12,7 +12,6 @@
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
 </head>
-<<<<<<< HEAD
 	<body>
 		<div id="wrap">
 			<%@ include file="/WEB-INF/include/main/header.jsp"%>
