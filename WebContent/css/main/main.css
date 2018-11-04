@@ -1,0 +1,133 @@
+body {
+	position: relative;
+	background-color: #e2e2e2;
+}
+
+/* header */
+#kadinet_header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	min-width: 100%;
+}
+
+#kadinet_header .inner {
+	height: 75px;
+	margin: 0 auto;
+	width: 1100px;
+	color: white;
+	padding-top: 10px;
+}
+
+#kadinet_header .header_top {
+	text-align: right;
+}
+
+#kadinet_header .header_top a {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1.1;
+	margin-left: 20px;
+}
+
+#kadinet_header .header_top a:hover {
+	color: #4f98e3;
+}
+
+#kadinet_header .header_bottom .logo1 {
+	float: left;
+	margin-right: 40px;
+}
+
+#kadinet_header .header_bottom .logo2 {
+	float: left;
+	margin-right: 40px;
+	display: none;
+}
+
+#kadinet_header .header_bottom .gnb {
+	float: left;
+}
+
+.gnb .menu .mm {
+	display: inline-block;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.gnb .menu .mm a {
+	display: block;
+	margin: 15px 20px 0px 20px;
+	padding: 0px 10px 11px 10px;
+}
+
+.hover {
+	color: #4f98e3 !important;
+	border-bottom: 3px solid #4f98e3;
+}
+
+.gnb .menu .mm .drop_menu {
+	visibility: hidden;
+	position: absolute;
+	top: 75px;
+	right: 0;
+	left: 0;
+	padding: 10px 0;
+	border: 1px solid rgba(0, 0, 0, .15);
+	border-width: 1px 0;
+	opacity: 0;
+}
+
+.hover+.drop_menu {
+	visibility: visible !important;
+	height: 70px;
+	width: 100%;
+	background: white;
+	opacity: 1.0 !important;
+	transition: all .3s ease-out;
+}
+
+.is_hover .inner {
+	/* 	color: #4f98e3 !important; */
+	color: #313338 !important;
+}
+
+.is_hover .logo1 {
+	display: none;
+}
+
+.is_hover .logo2 {
+	display: block !important;
+}
+
+#kadinet_header:hover {
+	transition: all .3s ease-out;
+	background: #fff;
+}
+
+/* section */
+.wrap {
+	background-image: url("/img/main/index/main_back.jpg");
+}
+
+.wrap .main {
+	box-sizing: content-box;
+	margin: 0 auto;
+	padding: 155px 0 80px 0;
+	width: 1100px;
+	height: 600px;
+	margin: 0 auto;
+}
+
+.wrap .main .contents {
+	border: 1px solid blue;
+	widht: 100%;
+	height: 100%;
+}
+
+@media ( max-width :1100px) {
+	.wrap {
+		width: 1100px;
+	}
+}

@@ -1,46 +1,50 @@
 @font-face {
-  font-family: 'OneLatin';
-  font-style: normal;
-  font-weight: normal;
-  src: url(/font/OneLatin/OneLatinWeb-400.eot);
-  src: local('※'), url(/font/OneLatin/OneLatinWeb-400.eot?#iefix) format('embedded-opentype'),
-       url(/font/OneLatin/OneLatinWeb-400.woff) format('woff');
+	font-family: 'OneLatin';
+	font-style: normal;
+	font-weight: normal;
+	src: url(/font/OneLatin/OneLatinWeb-400.eot);
+	src: local('※'), url(/font/OneLatin/OneLatinWeb-400.eot?#iefix)
+		format('embedded-opentype'), url(/font/OneLatin/OneLatinWeb-400.woff)
+		format('woff');
 }
 
 @font-face {
-  font-family: 'OneLatin';
-  font-style: normal;
-  font-weight: bold;
-  src: url(/font/OneLatinB/OneLatinWeb-700.eot);
-  src: local('※'), url(/font/OneLatinB/OneLatinWeb-700.eot?#iefix) format('embedded-opentype'),
-       url(/font/OneLatinB/OneLatinWeb-700.woff) format('woff');
-}
-
-
-@font-face {
-    font-family: 'nanumsquare';
-    src: url('/font/nanumsquare/nanumsquarer.eot');
-    src: url('/font/nanumsquare/nanumsquarer.eot?#iefix') format('embedded-opentype'),
-         url('/font/nanumsquare/nanumsquarer.woff2') format('woff2'),
-         url('/font/nanumsquare/nanumsquarer.woff') format('woff'),
-         url('/font/nanumsquare/nanumsquarer.ttf') format('truetype'),
-         url('/font/nanumsquare/nanumsquarer.svg#nanumsquarerregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'OneLatin';
+	font-style: normal;
+	font-weight: bold;
+	src: url(/font/OneLatinB/OneLatinWeb-700.eot);
+	src: local('※'), url(/font/OneLatinB/OneLatinWeb-700.eot?#iefix)
+		format('embedded-opentype'), url(/font/OneLatinB/OneLatinWeb-700.woff)
+		format('woff');
 }
 
 @font-face {
-    font-family: 'nanumsquare';
-    src: url('/font/nanumsquareB/nanumsquareb.eot');
-    src: url('/font/nanumsquareB/nanumsquareb.eot?#iefix') format('embedded-opentype'),
-         url('/font/nanumsquareB/nanumsquareb.woff2') format('woff2'),
-         url('/font/nanumsquareB/nanumsquareb.woff') format('woff'),
-         url('/font/nanumsquareB/nanumsquareb.ttf') format('truetype'),
-         url('/font/nanumsquareB/nanumsquareb.svg#nanumsquarerregular') format('svg');
-    font-weight: bold;
-    font-style: bold;
+	font-family: 'nanumsquare';
+	src: url('/font/nanumsquare/nanumsquarer.eot');
+	src: url('/font/nanumsquare/nanumsquarer.eot?#iefix')
+		format('embedded-opentype'),
+		url('/font/nanumsquare/nanumsquarer.woff2') format('woff2'),
+		url('/font/nanumsquare/nanumsquarer.woff') format('woff'),
+		url('/font/nanumsquare/nanumsquarer.ttf') format('truetype'),
+		url('/font/nanumsquare/nanumsquarer.svg#nanumsquarerregular')
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
+@font-face {
+	font-family: 'nanumsquare';
+	src: url('/font/nanumsquareB/nanumsquareb.eot');
+	src: url('/font/nanumsquareB/nanumsquareb.eot?#iefix')
+		format('embedded-opentype'),
+		url('/font/nanumsquareB/nanumsquareb.woff2') format('woff2'),
+		url('/font/nanumsquareB/nanumsquareb.woff') format('woff'),
+		url('/font/nanumsquareB/nanumsquareb.ttf') format('truetype'),
+		url('/font/nanumsquareB/nanumsquareb.svg#nanumsquarerregular')
+		format('svg');
+	font-weight: bold;
+	font-style: bold;
+}
 
 * {
 	margin: 0;
@@ -55,7 +59,7 @@
 html {
 	height: 100%;
 	-webkit-text-size-adjust: none;
-	font-family: 'OneLatin', 'nanumsquare',sans-serif, Arial;
+	font-family: 'OneLatin', 'nanumsquare', sans-serif, Arial;
 	font-weight: normal;
 }
 
@@ -71,8 +75,24 @@ a {
 	text-decoration: none;
 }
 
+a:link {
+	text-decoration: none;
+	color: inherit;
+}
+
 a:visited {
 	text-decoration: none;
+	color: inherit;
+}
+
+a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
 }
 
 html {
@@ -85,4 +105,19 @@ ul, li {
 
 img {
 	border: 0;
+}
+
+table, th, td, tr {
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+
+input, button {
+	border-radius: 0px;
+	outline: none;
+	outline-style: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }

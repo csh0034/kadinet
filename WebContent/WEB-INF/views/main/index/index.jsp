@@ -13,8 +13,11 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
-	<section>
-		section
+	<section class="wrap">
+		<div class="main">
+			<article class="contents">섹션</article>
+		</div>
+
 	</section>
 	<%@ include file="/WEB-INF/include/main/footer.jsp"%>
 </body>
