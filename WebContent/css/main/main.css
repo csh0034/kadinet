@@ -77,33 +77,37 @@ body {
 	border: 1px solid rgba(0, 0, 0, .15);
 	border-width: 1px 0;
 	opacity: 0;
+	height: 70px;
+	width: 100%;
 }
 
 .hover+.drop_menu {
 	visibility: visible !important;
-	height: 70px;
-	width: 100%;
 	background: white;
 	opacity: 1.0 !important;
 	transition: all .3s ease-out;
 }
 
-.is_hover .inner {
+.is_hover .inner , .is_fixed .inner{
 	/* 	color: #4f98e3 !important; */
 	color: #313338 !important;
 }
 
-.is_hover .logo1 {
+.is_hover .logo1, .is_fixed .logo1{
 	display: none;
 }
 
-.is_hover .logo2 {
+.is_hover .logo2, .is_fixed .logo2 {
 	display: block !important;
 }
 
-#kadinet_header:hover {
-	transition: all .3s ease-out;
+#kadinet_header:hover , .is_fixed {
+	transition: all .5s ease-out;
 	background: #fff;
+}
+
+.is_fixed{
+	position: fixed !important;
 }
 
 /* section */
