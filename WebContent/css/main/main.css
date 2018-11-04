@@ -1,3 +1,23 @@
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #d2d2d2;
+}
+
 body {
 	position: relative;
 	background-color: #e2e2e2;
@@ -56,7 +76,7 @@ body {
 	font-weight: bold;
 }
 
-.gnb .menu .mm a {
+.gnb .menu .mm>a {
 	display: block;
 	margin: 15px 20px 0px 20px;
 	padding: 0px 10px 11px 10px;
@@ -73,12 +93,13 @@ body {
 	top: 75px;
 	right: 0;
 	left: 0;
-	padding: 10px 0;
+	padding: 23px 0;
 	border: 1px solid rgba(0, 0, 0, .15);
 	border-width: 1px 0;
 	opacity: 0;
 	height: 70px;
 	width: 100%;
+	color: #313338;
 }
 
 .hover+.drop_menu {
@@ -88,12 +109,23 @@ body {
 	transition: all .3s ease-out;
 }
 
-.is_hover .inner , .is_fixed .inner{
+.drop_menu li {
+	display: inline-block;
+	font-size: 15px;
+	font-weight: normal;
+	margin-right: 40px;
+}
+
+.drop_menu li a:hover{
+	color: #8a8a8a;
+}
+
+.is_hover .inner, .is_fixed .inner {
 	/* 	color: #4f98e3 !important; */
 	color: #313338 !important;
 }
 
-.is_hover .logo1, .is_fixed .logo1{
+.is_hover .logo1, .is_fixed .logo1 {
 	display: none;
 }
 
@@ -101,12 +133,13 @@ body {
 	display: block !important;
 }
 
-#kadinet_header:hover , .is_fixed {
+#kadinet_header:hover, .is_fixed {
 	transition: all .5s ease-out;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
 	background: #fff;
 }
 
-.is_fixed{
+.is_fixed {
 	position: fixed !important;
 }
 
@@ -125,13 +158,48 @@ body {
 }
 
 .wrap .main .contents {
-	border: 1px solid blue;
-	widht: 100%;
+	border: 1px solid white;
+	width: 100%;
 	height: 100%;
 }
 
-@media ( max-width :1100px) {
-	.wrap {
-		width: 1100px;
+/* footer */
+footer {
+	position: relative;
+	width: 100%;
+	height: 150px;
+	background-color: #e2e2e2;
+	text-align: left;
+}
+
+.ft_logo {
+	position: absolute;
+	display: block;
+	width: 102px;
+	height: 26px;
+	background: url("/img/main/index/logo_color.png");
+	left: 500px;
+	top: 65px;
+}
+
+footer>small {
+	display: block;
+	position: absolute;
+	color: #2b2b2b;
+	left: 700px;
+	top: 65px;
+}
+
+footer>small>a {
+	color: #2b2b2b;
+}
+
+footer>small>a:hover {
+	color: #a9a9a9;
+}
+
+@media ( max-width :1200px) {
+	.wrap, #kadinet_header {
+		width: 1200px;
 	}
 }
