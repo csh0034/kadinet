@@ -13,8 +13,8 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
-	<section class="wrap">
-		<div class="main">
+	<section class="wrap wrapBGI">
+		<div class="mainIndex">
 			<article class="contents">섹션</article>
 		</div>
 	</section>
