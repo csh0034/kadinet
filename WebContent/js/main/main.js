@@ -8,7 +8,7 @@ $(function() {
 	});
 
 	$('.mm>a').mouseenter(function() {
-		var marginLeft = parseInt($('.inner').css('margin-left'));
+		var marginLeft = parseInt($('.header_inner').css('margin-left'));
 		$('.mm a').removeClass('hover');
 		$(this).addClass('hover');
 		

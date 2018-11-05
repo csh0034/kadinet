@@ -13,9 +13,10 @@
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
-	<section> 
-		<span class="" style="font-size:30px;"> 회원가입 View </span><br> 
-		
+	<section class="wrap">
+		<div class="main">
+			<article class="contents">가입 view</article>
+		</div>
 	</section>
 	<%@ include file="/WEB-INF/include/main/footer.jsp"%>
 </body>
