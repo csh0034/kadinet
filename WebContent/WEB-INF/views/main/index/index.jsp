@@ -15,7 +15,12 @@
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap wrapBGI">
 		<div class="mainIndex">
-			<article class="contents">섹션</article>
+			<article class="contents">
+				<div class="notice"></div>
+				<div class="mbr_notice"></div>
+				<div class="quick"></div>
+				<div class="mbr_list"></div>
+			</article>
 		</div>
 	</section>
 	<%@ include file="/WEB-INF/include/main/footer.jsp"%>

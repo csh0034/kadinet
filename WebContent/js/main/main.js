@@ -17,9 +17,6 @@ $(function() {
 		$('.mm a').removeClass('hover');
 		$('.drop_menu').css('padding-left', '0');
 	});
+	
 
-
-	$(window).resize(function() {
-		setMainPadBtm();
-	});
 });

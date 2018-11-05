@@ -10,12 +10,30 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script type="text/javascript">
+$(function() {
+	$(".subNav_list> li").each(function () {
+	    $(this).click(function () {
+	        $(this).addClass("selected");
+	        $(this).siblings().removeClass("selected");
+	    });
+	});
+});
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
+		<div class="login_menu_img">
+			<b>로그인</b>
+		</div>
 		<div class="main">
-			<article class="contents">login view</article>
+			<article class="contents">
+				<%@ include file="/WEB-INF/include/main/subNav.jsp"%>
+				<div class="contents_box">
+					내용
+				</div>
+			</article>
 		</div>
 	</section>
 	<%@ include file="/WEB-INF/include/main/footer.jsp"%>
