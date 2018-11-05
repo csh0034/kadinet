@@ -1,4 +1,5 @@
 $(function() {
+	setMainPadBtm()
 
 	$("#kadinet_header").hover(function() {
 		$(this).addClass('is_hover');
@@ -11,21 +12,17 @@ $(function() {
 		var marginLeft = parseInt($('.header_inner').css('margin-left'));
 		$('.mm a').removeClass('hover');
 		$(this).addClass('hover');
-		
-		if ($(this).html() == '협회소개') {
-			$(this).next().css('padding-left', marginLeft+173);
-		} else if ($(this).html() == '주요사업') {
-			$(this).next().css('padding-left', marginLeft+298);
-		} else if ($(this).html() == '알림마당') {
-			$(this).next().css('padding-left', marginLeft+423);
-		} else if ($(this).html() == '회원사') {
-			$(this).next().css('padding-left', marginLeft+548);
-		}
+
+		var idx = $(this).parent().attr("id");
+		idx = idx.substring(2);
+
+		$(this).next().css('padding-left', marginLeft + 48 + (125 * idx));
+
 	});
 
 	$('.mm').mouseleave(function() {
 		$('.mm a').removeClass('hover');
-		$('.drop_menu').css('padding-left','0');
+		$('.drop_menu').css('padding-left', '0');
 	});
 
 	$(window).scroll(function() {
@@ -36,4 +33,15 @@ $(function() {
 			$('#kadinet_header').addClass('is_fixed');
 		}
 	});
+
+	$(window).resize(function() {
+		setMainPadBtm();
+	});
 });
+
+function setMainPadBtm() {
+	var mainPaddingBottom = parseInt($(window).height()) - 155 - 550 - 96 - 2;
+	if (mainPaddingBottom > 50) {
+		$('.wrap .main').css('padding-bottom', mainPaddingBottom);
+	}
+}

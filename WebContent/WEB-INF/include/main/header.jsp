@@ -12,7 +12,7 @@
 				href="/index.do"><img src="/img/main/index/logo_color.png"></a>
 			<nav class="gnb">
 				<ul class="menu">
-					<li class="mm"><a href="#">협회소개</a>
+					<li class="mm" id="mm1"><a href="#">협회소개</a>
 						<div class="drop_menu">
 							<ul>
 								<li><a href="#">협회장인사</a></li>
@@ -21,7 +21,7 @@
 								<li><a href="#">오시는길</a></li>
 							</ul>
 						</div></li>
-					<li class="mm"><a href="#">주요사업</a>
+					<li class="mm" id="mm2"><a href="#">주요사업</a>
 						<div class="drop_menu">
 							<ul>
 								<li><a href="#">주요사업 드랍메뉴1</a></li>
@@ -29,7 +29,7 @@
 								<li><a href="#">주요사업 드랍메뉴3</a></li>
 							</ul>
 						</div></li>
-					<li class="mm"><a href="#">알림마당</a>
+					<li class="mm" id="mm3"><a href="#">알림마당</a>
 						<div class="drop_menu">
 							<ul>
 								<li><a href="#">알림마당 드랍메뉴1</a></li>
@@ -37,7 +37,7 @@
 								<li><a href="#">알림마당 드랍메뉴3</a></li>
 							</ul>
 						</div></li>
-					<li class="mm"><a href="#">회원사</a>
+					<li class="mm" id="mm4"><a href="#">회원사</a>
 						<div class="drop_menu">
 							<ul>
 								<li><a href="#">회원사 드랍메뉴1</a></li>

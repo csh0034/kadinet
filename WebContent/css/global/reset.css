@@ -8,7 +8,7 @@
 		format('woff');
 }
 
-@font-face { 
+@font-face {
 	font-family: 'OneLatin';
 	font-style: normal;
 	font-weight: bold;
@@ -81,23 +81,7 @@ a {
 	text-decoration: none;
 }
 
-a:link {
-	text-decoration: none;
-	color: inherit;
-}
-
-a:visited {
-	text-decoration: none;
-	color: inherit;
-}
-
-a:active {
-	text-decoration: none;
-	color: inherit;
-}
-
-a:hover {
-	text-decoration: none;
+a:link, a:visited, a:hover, a:active {
 	color: inherit;
 }
 
