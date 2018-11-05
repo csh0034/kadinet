@@ -9,7 +9,7 @@
 <%@ include file="/WEB-INF/include/global/css.jsp"%>
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
-<%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script type="text/javascript" src="/js/main/index.js"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>

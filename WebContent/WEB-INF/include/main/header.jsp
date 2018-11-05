@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<header id="kadinet_header">
+<%
+	String hover = "";
+	if ((String) request.getAttribute("index") == null) {
+		hover = "is_hover";
+	}
+%>
+<header id="kadinet_header" class="<%=hover%>"> 
 	<div class="header_inner">
 		<div class="header_top">
 			<a href="/login.do">로그인</a> <a href="/join.do">회원가입</a>
