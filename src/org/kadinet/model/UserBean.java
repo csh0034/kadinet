@@ -1,13 +1,15 @@
 package org.kadinet.model;
 
+import java.sql.Date;
+
 public class UserBean {
 	private String user_id;
 	private String user_pw;
 	private String user_name;
 	private String user_email;
 	private String user_phone;
-	private String user_regdate;
-	private	String user_last_login;
+	private Date user_regdate;
+	private	Date user_last_login;
 	private String user_authority;
 	public String getUser_id() {
 		return user_id;
@@ -39,16 +41,16 @@ public class UserBean {
 	public void setUser_phone(String user_phone) {
 		this.user_phone = user_phone;
 	}
-	public String getUser_regdate() {
+	public Date getUser_regdate() {
 		return user_regdate;
 	}
-	public void setUser_regdate(String user_regdate) {
+	public void setUser_regdate(Date user_regdate) {
 		this.user_regdate = user_regdate;
 	}
-	public String getUser_last_login() {
+	public Date getUser_last_login() {
 		return user_last_login;
 	}
-	public void setUser_last_login(String user_last_login) {
+	public void setUser_last_login(Date user_last_login) {
 		this.user_last_login = user_last_login;
 	}
 	public String getUser_authority() {
