@@ -10,16 +10,6 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
-<script type="text/javascript">
-$(function() {
-	$(".subNav_list> li").each(function () {
-	    $(this).click(function () {
-	        $(this).addClass("selected");
-	        $(this).siblings().removeClass("selected");
-	    });
-	});
-});
-</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>

@@ -1,5 +1,4 @@
 $(function() {
-	
 
 	$('.mm>a').mouseenter(function() {
 		var marginLeft = parseInt($('.header_inner').css('margin-left'));
@@ -17,6 +16,10 @@ $(function() {
 		$('.mm a').removeClass('hover');
 		$('.drop_menu').css('padding-left', '0');
 	});
-	
+
+	$(".subNav_list> li").click(function() {
+		$(this).addClass("selected");
+		$(this).siblings().removeClass("selected");
+	});
 
 });
