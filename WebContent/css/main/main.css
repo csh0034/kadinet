@@ -228,6 +228,49 @@ body {
 	color: white;
 }
 
+.login_form{
+	width:100%;
+	height: 100%;
+	padding: 100px 100px;
+}
+
+.contents_box .login_form .login_bx{
+	width: 100%;
+	height: 80%;
+	border: 1px solid #d9d9d9;
+	padding: 20px;
+	border-radius: 4px;
+}
+
+.contents_box .login_form .login_bx h1{
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.contents_box .login_form .login_bx .inp {
+	border: 1px solid #d9d9d9;
+	padding: 10px;
+	border-radius: 4px;
+	width: 100%; height: 10%;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+.login_form .login_bx .ico_checkbox {
+    display: inline-block;
+    position: relative;
+    z-index: 5;
+    width: 16px;
+    height: 16px;
+    margin: 0 8px 0 0;
+    border-radius: 4px;
+    border: solid 1px #ced0da;
+    background-image: linear-gradient(to top, #f3f5f8, #feffff);
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
 /* subNav */
 .subNav {
 	position: absolute;

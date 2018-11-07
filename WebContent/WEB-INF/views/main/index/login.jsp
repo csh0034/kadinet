@@ -21,7 +21,20 @@
 			<article class="contents">
 				<%@ include file="/WEB-INF/include/main/subNav.jsp"%>
 				<div class="contents_box">
-					내용
+					<div class="login_form">
+						<div class="login_bx">
+							<h1>환영합니다</h1>
+							<input type="text" name="id" maxlength="45" title="아이디" placeholder="아이디" class="inp">
+							<input type="password" name="pw" maxlength="45" title="비밀번호" placeholder="비밀번호" class="inp">
+							<label class="idSave">
+								<span class="ico_checkbox"></span>
+								<span cloass="label_text">아이디 저장</span>
+							</label>
+							<div class="btn_area">
+								<button type="submit" class="login_btn">로그인</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</article>
 		</div>
