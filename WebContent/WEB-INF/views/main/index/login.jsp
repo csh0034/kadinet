@@ -28,7 +28,7 @@
 							<input type="password" name="pw" maxlength="45" title="비밀번호" placeholder="비밀번호" class="inp">
 							<label class="idSave">
 								<span class="ico_checkbox"></span>
-								<span cloass="label_text">아이디 저장</span>
+								<span class="label_text">아이디 저장</span>
 							</label>
 							<div class="btn_area">
 								<button type="submit" class="login_btn">로그인</button>
