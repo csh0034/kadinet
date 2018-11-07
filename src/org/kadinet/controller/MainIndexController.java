@@ -24,18 +24,18 @@ public class MainIndexController implements Controller {
 
 	}
 
-	private void index(HttpServletRequest request, HttpServletResponse response) {
+	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("index", "index");
-		// HttpSession session = request.getSession();
-		
-	}
-	
-	private void join(HttpServletRequest request, HttpServletResponse response) {
 		// HttpSession session = request.getSession();
 
 	}
-	
-	private void login(HttpServletRequest request, HttpServletResponse response) {
+
+	private void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// HttpSession session = request.getSession();
+
+	}
+
+	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// HttpSession session = request.getSession();
 
 	}
