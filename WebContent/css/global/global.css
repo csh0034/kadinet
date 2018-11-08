@@ -1,8 +1,25 @@
 .clearfix {
-    overflow: auto;
+	overflow: auto;
 }
+
 .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+	content: "";
+	clear: both;
+	display: table;
+}
+
+input:-ms-input-placeholder {
+	color: #8a8a8a;
+}
+
+input::placeholder {
+	color: #8a8a8a;
+}
+
+input::-webkit-input-placeholder {
+	color: #8a8a8a;
+}
+
+input::-moz-placeholder {
+	color: #8a8a8a;
 }

@@ -63,7 +63,6 @@
 }
 
 html {
-	height: 100%;
 	-webkit-text-size-adjust: none;
 	font-family: 'OneLatin', 'nanumsquare', sans-serif, Arial;
 	font-weight: normal;
@@ -71,8 +70,6 @@ html {
 
 body {
 	font-size: 13px;
-	width: 100%;
-	height: 100%;
 	word-break: keep-all;
 }
 
@@ -83,10 +80,6 @@ a {
 
 a:link, a:visited, a:hover, a:active {
 	color: inherit;
-}
-
-html {
-	height: 100%;
 }
 
 ul, li {

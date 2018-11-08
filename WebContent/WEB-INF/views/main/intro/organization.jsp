@@ -21,7 +21,12 @@
 			<article class="contents">
 				<%@ include file="/WEB-INF/include/main/subNav.jsp"%>
 				<div class="contents_box">
-					조직도
+					<div class="contents_box_top">
+						<h3 class="location">조직도</h3>
+					</div>
+					<div class="contents_box_bottom">
+						<div style="width:100%; height: 400px">임시 div</div>
+					</div>
 				</div>
 			</article>
 		</div>
