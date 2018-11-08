@@ -21,10 +21,10 @@
 					<li class="mm" id="mm1"><a href="#">협회소개</a>
 						<div class="drop_menu">
 							<ul>
-								<li><a href="#">협회장인사</a></li>
-								<li><a href="#">연혁</a></li>
-								<li><a href="#">조직도</a></li>
-								<li><a href="#">오시는길</a></li>
+								<li><a href="/intro/greeting.do">협회장인사</a></li>
+								<li><a href="/intro/history.do">연혁</a></li>
+								<li><a href="/intro/organization.do">조직도</a></li>
+								<li><a href="/intro/visit.do">오시는길</a></li>
 							</ul>
 						</div></li>
 					<li class="mm" id="mm2"><a href="#">주요사업</a>
