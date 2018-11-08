@@ -26,6 +26,7 @@
 							<h1>환영합니다</h1>
 							<input type="text" name="id" maxlength="45" title="아이디" placeholder="아이디" class="inp">
 							<input type="password" name="pw" maxlength="45" title="비밀번호" placeholder="비밀번호" class="inp">
+<<<<<<< HEAD
 							<div class="func_area">
 								<label class="idSave">
 									<span class="ico_checkbox"></span>
@@ -33,6 +34,12 @@
 								</label>
 								<a href="#" class="pw_find">비밀번호 찾기</a>
 							</div>
+=======
+							<label class="idSave">
+								<span class="ico_checkbox"></span>
+								<span class="label_text">아이디 저장</span>
+							</label>
+>>>>>>> branch 'test' of https://github.com/csh0034/kadinet
 							<div class="btn_area">
 								<button type="submit" class="login_btn">로그인</button>
 							</div>

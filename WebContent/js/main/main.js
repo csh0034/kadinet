@@ -9,7 +9,6 @@ $(function() {
 		idx = idx.substring(2);
 
 		$(this).next().css('padding-left', marginLeft + 48 + (125 * idx));
-ㅏ
 	});
 
 	$('.mm').mouseleave(function() {
