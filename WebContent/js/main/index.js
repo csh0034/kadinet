@@ -41,7 +41,7 @@ $(function() {
 
 function setMainPadBtm() {
 	var mainPaddingBottom = parseInt($(window).height()) - 155 - 550 - 96 - 2;
-	if (mainPaddingBottom > 50) {
+	if (mainPaddingBottom > 50 && mainPaddingBottom <180) {
 		$('.wrap .mainIndex').css('padding-bottom', mainPaddingBottom);
 	}
 }
