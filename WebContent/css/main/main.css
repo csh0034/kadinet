@@ -234,27 +234,40 @@ body {
 	padding: 100px 100px;
 }
 
-.contents_box .login_form .login_bx{
+.login_form .login_bx{
 	width: 100%;
-	height: 80%;
+	height: 70%;
 	border: 1px solid #d9d9d9;
-	padding: 20px;
+	padding: 50px;
 	border-radius: 4px;
 }
 
-.contents_box .login_form .login_bx h1{
+.login_form .login_bx h1{
 	font-size: 40px;
 	text-align: center;
 	margin-bottom: 30px;
+	margin-top: 50px;
 }
 
-.contents_box .login_form .login_bx .inp {
+.login_form .func_area {
+	text-align: left;
+}
+
+.login_form .login_bx .inp {
 	border: 1px solid #d9d9d9;
 	padding: 10px;
 	border-radius: 4px;
 	width: 100%; height: 10%;
 	margin-bottom: 10px;
-	font-size: 20px;
+	font-size: 16px;
+}
+
+.login_form .login_bx .pw_find {
+	float: right;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #4f98e3;
 }
 
 .login_form .login_bx .ico_checkbox {
@@ -269,6 +282,46 @@ body {
     background-image: linear-gradient(to top, #f3f5f8, #feffff);
     vertical-align: middle;
     box-sizing: border-box;
+}
+
+.login_form .btn_area {
+	margin-top: 20px;
+}
+
+.login_form .login_btn {
+	display: inline-block;
+    width: 100%;
+    height: 46px;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    background-color: #4f98e3;
+    font-size: 16px;
+    color: #fff;
+    line-height: 46px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.login_form .login_bx .signup_area {
+    display: block;
+    height: 24px;
+    margin-top: 17px;
+    line-height: 19px;
+    font-size: 0;
+    text-align: center;
+}
+
+.login_form .login_bx .signup_text {
+	font-size: 14px;
+    color: #8a8a8a;
+}
+
+.login_form .login_bx .signup_btn {
+	margin-left: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4f98e3;
 }
 
 /* subNav */
@@ -299,7 +352,7 @@ body {
 	width: 100%;
 	height: 50px;
 	text-align: center;
-	border: 1px solid #d9d9d9;
+	border-top: 1px solid #d9d9d9;
 }
 
 .subNav .subNav_list li:hover>a {

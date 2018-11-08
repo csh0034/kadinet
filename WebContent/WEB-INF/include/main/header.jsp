@@ -30,25 +30,28 @@
 					<li class="mm" id="mm2"><a href="#">주요사업</a>
 						<div class="drop_menu">
 							<ul>
-								<li><a href="#">주요사업 드랍메뉴1</a></li>
-								<li><a href="#">주요사업 드랍메뉴2</a></li>
-								<li><a href="#">주요사업 드랍메뉴3</a></li>
+								<li><a href="#">경력인증</a></li>
+								<li><a href="#">기업체인증</a></li>
+								<li><a href="#">구인구직</a></li>
+								<li><a href="#">디지털융합산업지원</a></li>
+								<li><a href="#">교육사업</a></li>
 							</ul>
 						</div></li>
 					<li class="mm" id="mm3"><a href="#">알림마당</a>
 						<div class="drop_menu">
 							<ul>
-								<li><a href="#">알림마당 드랍메뉴1</a></li>
-								<li><a href="#">알림마당 드랍메뉴2</a></li>
-								<li><a href="#">알림마당 드랍메뉴3</a></li>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">회원사 및 회원 알림</a></li>
+								<li><a href="#">협회활동</a></li>
 							</ul>
 						</div></li>
 					<li class="mm" id="mm4"><a href="#">회원사</a>
 						<div class="drop_menu">
 							<ul>
-								<li><a href="#">회원사 드랍메뉴1</a></li>
-								<li><a href="#">회원사 드랍메뉴2</a></li>
-								<li><a href="#">회원사 드랍메뉴3</a></li>
+								<li><a href="#">회원사 소개</a></li>
+								<li><a href="#">ID/PW 검색</a></li>
+								<li><a href="#">정보수정</a></li>
+								<li><a href="#">회원탈퇴</a></li>
 							</ul>
 						</div></li>
 				</ul>

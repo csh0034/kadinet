@@ -26,12 +26,19 @@
 							<h1>환영합니다</h1>
 							<input type="text" name="id" maxlength="45" title="아이디" placeholder="아이디" class="inp">
 							<input type="password" name="pw" maxlength="45" title="비밀번호" placeholder="비밀번호" class="inp">
-							<label class="idSave">
-								<span class="ico_checkbox"></span>
-								<span cloass="label_text">아이디 저장</span>
-							</label>
+							<div class="func_area">
+								<label class="idSave">
+									<span class="ico_checkbox"></span>
+									<span class="label_text">아이디 저장</span>
+								</label>
+								<a href="#" class="pw_find">비밀번호 찾기</a>
+							</div>
 							<div class="btn_area">
 								<button type="submit" class="login_btn">로그인</button>
+							</div>
+							<div class="signup_area">
+								<span class="signup_text">계정이 없으신가요?</span>
+								<a href="#" class="signup_btn">회원가입</a>
 							</div>
 						</div>
 					</div>
