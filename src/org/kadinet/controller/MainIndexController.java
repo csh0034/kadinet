@@ -11,6 +11,7 @@ public class MainIndexController implements Controller {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
+		request.setAttribute("subNav", "4");
 		if ("/index.do".equals(path)) {
 			index(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/index.jsp");
@@ -25,7 +26,7 @@ public class MainIndexController implements Controller {
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("index", "index");
+		request.setAttribute("index", "true");
 		// HttpSession session = request.getSession();
 
 	}

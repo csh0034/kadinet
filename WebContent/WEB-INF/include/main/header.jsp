@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-	String hover = "";
-	if ((String) request.getAttribute("index") == null) {
-		hover = "is_hover";
-	}
-%>
-<header id="kadinet_header" class="<%=hover%>"> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:if test="${empty index}"> 
+	<c:set var="hover" value="is_hover"/>
+</c:if>
+<header id="kadinet_header" class="${hover}"> 
 	<div class="header_inner">
 		<div class="header_top">
 			<a href="/login.do">로그인</a> <a href="/join.do">회원가입</a>

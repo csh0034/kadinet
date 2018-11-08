@@ -11,6 +11,7 @@ public class MainIntroController implements Controller {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
+		request.setAttribute("subNav", "1");
 		if ("/intro/greeting.do".equals(path)) {
 			greeting(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/intro/greeting.jsp");
