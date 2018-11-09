@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:choose>
 	<c:when test="${page =='greeting' || page =='login'}">
@@ -56,9 +57,8 @@
 			<h1>회원사</h1>
 			<ul class="subNav_list">
 				<li ${s1}><a href="#">회원사 소개</a></li>
-				<li ${s2}><a href="#">ID/PW 찾기</a></li>
-				<li ${s3}><a href="#">정보수정</a></li>
-				<li ${s4}><a href="#">회원탈퇴</a></li>
+				<li ${s2}><a href="#">정보수정</a></li>
+				<li ${s3}><a href="#">회원탈퇴</a></li>
 			</ul>
 		</div>
 	</c:when>
@@ -68,6 +68,7 @@
 			<ul class="subNav_list">
 				<li ${s1}><a href="/login.do">로그인</a></li>
 				<li ${s2}><a href="/join.do">회원가입</a></li>
+				<li ${s3}><a href="#">ID/PW 찾기</a></li>
 			</ul>
 		</div>
 	</c:when>

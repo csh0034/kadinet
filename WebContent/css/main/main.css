@@ -294,6 +294,57 @@ body {
 	color: #4f98e3;
 }
 
+/* join */
+.contents_box_bottom .joinform_wrap {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.contents_box_bottom .join_bx {
+	border: 1px solid #d2d2d2;
+	width: 100%;
+	padding: 50px 0 50px 0;
+}
+
+.join_bx table {
+	width: 100%;
+	text-align: left;
+}
+
+.join_bx table th {
+	padding: 10px;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.join_bx table td {
+	padding: 10px;
+	font-size: 14px;
+}
+
+.join_bx table td .inp_radio {
+	-webkit-appearance: normal !important;
+}
+
+.join_bx table td select {
+	border: 1px solid #d2d2d2;
+	font-size: 14px;
+}
+
+.join_bx .join_btn {
+	width: 100%;
+	height: 55px;
+	padding: 0;
+	border: 1px solid #4f98e3;
+	background-color: #4f98e3;
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+	line-height: 55px; 
+	cursor: pointer;
+	margin-top: 20px;
+}
+
 /* subNav */
 .subNav {
 	position: absolute;

@@ -34,6 +34,8 @@
 								<div class="signup_area">
 									<span class="signup_text">계정이 없으신가요?</span>
 									<a href="#" class="signup_btn">회원가입</a><br>
+									<span class="signup_text">계정을 잊으셨나요?</span>
+									<a href="#" class="signup_btn">ID/PW 찾기</a><br>
 								</div>
 							</div>
 						</div>

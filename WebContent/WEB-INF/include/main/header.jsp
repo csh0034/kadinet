@@ -47,7 +47,6 @@
 						<div class="drop_menu">
 							<ul>
 								<li><a href="#">회원사 소개</a></li>
-								<li><a href="#">ID/PW 찾기</a></li>
 								<li><a href="#">정보수정</a></li>
 								<li><a href="#">회원탈퇴</a></li>
 							</ul>
