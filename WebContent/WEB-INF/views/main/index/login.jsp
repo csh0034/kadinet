@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,17 +28,21 @@
 					<div class="contents_box_bottom">
 						<div class="login_bx">
 							<div class="form_wrap">
-								<input type="text" name="id" maxlength="45" title="아이디" placeholder="아이디" class="inp">
-								<input type="password" name="pw" maxlength="45" title="비밀번호" placeholder="비밀번호" class="inp">
-								<div class="btn_area">
-									<button type="submit" class="login_btn">로그인</button>
-								</div>
-								<div class="signup_area">
-									<span class="signup_text">계정이 없으신가요?</span>
-									<a href="#" class="signup_btn">회원가입</a><br>
-									<span class="signup_text">계정을 잊으셨나요?</span>
-									<a href="#" class="signup_btn">ID/PW 찾기</a><br>
-								</div>
+								<form id="loginForm">
+									<input type="text" id="id" maxlength="45" title="아이디"
+										placeholder="아이디" class="inp" required> <input
+										type="password" id="pw" maxlength="45" title="비밀번호"
+										placeholder="비밀번호" class="inp" required>
+									<div class="btn_area">
+										<button type="submit" class="login_btn">로그인</button>
+									</div>
+									<div class="signup_area">
+										<span class="signup_text">계정이 없으신가요?</span> <a href="#"
+											class="signup_btn">회원가입</a><br> <span
+											class="signup_text">계정을 잊으셨나요?</span> <a href="#"
+											class="signup_btn">ID/PW 찾기</a><br>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

@@ -1,13 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:if test="${empty index}"> 
-	<c:set var="hover" value="is_hover"/>
+<c:if test="${empty index}">
+	<c:set var="hover" value="is_hover" />
 </c:if>
-<header id="kadinet_header" class="${hover}"> 
+
+<c:choose>
+	<c:when test="${empty id}">
+		<c:set var="loginFlag" value="<a href='/login.do'>로그인</a>" />
+		<c:set var="joinFlag" value="<a href='/join.do'>회원가입</a>" />
+	</c:when>
+	<c:otherwise>
+		<c:set var="loginFlag" value="<a href='/logout.do'>로그아웃</a>" />
+		<c:set var="joinFlag" value="<a href='#'>정보수정</a>" />
+	</c:otherwise>
+</c:choose>
+<header id="kadinet_header" class="${hover}">
 	<div class="header_inner">
 		<div class="header_top">
-			<a href="/login.do">로그인</a> <a href="/join.do">회원가입</a>
+			${loginFlag} ${joinFlag}
 		</div>
 
 		<div class="header_bottom clearfix">
