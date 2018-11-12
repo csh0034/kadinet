@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `kadinet` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `kadinet`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: kadinet
@@ -41,7 +43,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('test','1234','1','1','1','2018-11-13 00:00:00','2018-11-13 00:00:00','1');
+INSERT INTO `user` VALUES ('test','1234','1','1','1','2018-11-13 00:00:00','2018-11-13 02:29:23','1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-13  2:12:34
+-- Dump completed on 2018-11-13  2:44:20
