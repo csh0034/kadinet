@@ -20,8 +20,10 @@ public class MainIndexController implements Controller {
 		} else if ("/login.do".equals(path)) {
 			login(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/login.jsp");
+		} else if ("/logout.do".equals(path)) {
+			request.getSession().invalidate();
+			response.sendRedirect("/index.do");
 		}
-
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,12 +33,12 @@ public class MainIndexController implements Controller {
 	private void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "5");
 		request.setAttribute("page", "join");
-
+		
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "5");
 		request.setAttribute("page", "login");
-
+		
 	}
 }
