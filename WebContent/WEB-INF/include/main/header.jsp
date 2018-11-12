@@ -27,7 +27,7 @@
 				href="/index.do"><img src="/img/main/index/logo_color.png"></a>
 			<nav class="gnb">
 				<ul class="menu">
-					<li class="mm" id="mm1"><a href="#">협회소개</a>
+					<li class="mm" id="mm1"><a href="/intro/greeting.do">협회소개</a>
 						<div class="drop_menu">
 							<ul>
 								<li><a href="/intro/greeting.do">협회장인사</a></li>
@@ -50,8 +50,8 @@
 						<div class="drop_menu">
 							<ul>
 								<li><a href="#">공지사항</a></li>
-								<li><a href="#">회원사 및 회원 알림</a></li>
-								<li><a href="#">협회활동</a></li>
+								<li><a href="#">보도자료</a></li>
+								<li><a href="#">정보자료실</a></li>
 							</ul>
 						</div></li>
 					<li class="mm" id="mm4"><a href="#">회원사</a>

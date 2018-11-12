@@ -47,8 +47,8 @@
 			<h1>알림마당</h1>
 			<ul class="subNav_list">
 				<li ${s1}><a href="#">공지사항</a></li>
-				<li ${s2}><a href="#">회원사 및 회원 알림</a></li>
-				<li ${s3}><a href="#">협회활동</a></li>
+				<li ${s2}><a href="#">보도자료</a></li>
+				<li ${s3}><a href="#">정보자료실</a></li>
 			</ul>
 		</div>
 	</c:when>
