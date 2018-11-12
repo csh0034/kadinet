@@ -31,6 +31,7 @@ public class Ajax extends HttpServlet {
 			boolean flag = service.loginCheck(id,pw);
 			if (flag) {
 				request.getSession().setAttribute("id", id);
+				service.loginUpdate(id); 
 			}
 
 			out.print(flag);

@@ -1,4 +1,5 @@
 package org.kadinet.dao;
+
 import org.kadinet.util.DBCon;
 
 public class UserDao extends DBCon {
@@ -10,7 +11,7 @@ public class UserDao extends DBCon {
 	public static UserDao getInstance() {
 		return dao;
 	}
-	
+
 	public boolean loginCheck(String id, String pw) {
 		boolean success = false;
 		try {
@@ -25,6 +26,7 @@ public class UserDao extends DBCon {
 			rs.next();
 			if (rs.getInt(1) > 0) {
 				success = true;
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -32,5 +34,21 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 		return success;
+	}
+
+	public void loginUpdate(String id) {
+		try {
+			conStart();
+			sql = "update user set user_last_login = sysdate() where user_id =? ";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
 	}
 }
