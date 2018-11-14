@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <footer id="kadinet_footer">
 	<div class="footer_inner clearfix">
-		<div class="info">
+		<div class="info"> 
 			<ul class="footer_menu">
 				<li><a href="#">개인정보처리방침 </a>
 					<p>|</p></li>

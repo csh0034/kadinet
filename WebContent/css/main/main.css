@@ -252,7 +252,7 @@ body {
 	font-size: 14px;
 }
 
-.login_bx .inp:focus , .login_bx .inp:hover {
+.login_bx .inp:focus, .login_bx .inp:hover {
 	border: 1px solid #4f98e3;
 	transition: all .3s ease-out;
 }
@@ -270,7 +270,7 @@ body {
 	font-size: 18px;
 	color: #fff;
 	font-weight: bold;
-	line-height: 55px; 
+	line-height: 55px;
 	cursor: pointer;
 }
 
@@ -296,49 +296,102 @@ body {
 
 /* join */
 .contents_box_bottom .joinform_wrap {
-	width: 100%;
+	width: 95%;
 	margin: 0 auto;
-	text-align: center;
 }
 
 .contents_box_bottom .join_bx {
-	border: 1px solid #d2d2d2;
 	width: 100%;
-	padding: 50px 0 50px 0;
 }
 
-.join_bx table {
+.join_bx input[type="text"], .join_bx input[type="password"] {
 	width: 100%;
-	text-align: left;
-	border-left: none;
-	border-right: none;
+	height: 34px;
 }
 
-.join_bx table th {
-	padding: 10px;
+.join_bx .join_tit {
+	margin-bottom: 20px;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+.join_bx .item {
+	width: 100%;
+	overflow: hidden;
+}
+
+.join_bx dt label {
+	padding-left: 3px;
+	height: 100%;
+	display: inline-block;
+	width: 100%;
+	color: #313338;
+}
+
+.join_bx .mb2 {
+	margin-bottom: 30px;
+}
+
+.join_bx dl:hover{
+	border-bottom: 1px solid #757575;
+	transition: 0.3s;
+}
+
+.join_bx .on{
+	border-bottom: 1px solid #757575;
+}
+
+.join_bx dl, .join_bx dt, .join_bx dd {
+	float: left;
+}
+
+.join_bx dl {
+	padding-left:3px;
+	line-height: 40px;
 	font-size: 14px;
-	font-weight: normal;
-	border-left: none;
+	border-bottom: 1px solid #d2d2d2;
+	height: 40px;
 }
 
-.join_bx table td {
-	padding: 10px;
-	font-size: 14px;
-	border-right: none;
+.join_bx .line-full {
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 25px;
 }
 
-.join_bx table tr {
-	border-left: none;
-	border-right: none;
+.join_bx .line-full dt {
+	width: 149.28px;
 }
 
-.join_bx table td .inp_radio {
+.join_bx .line-full dd {
+	width: 80%;
+}
+
+.join_bx .line-half1 {
+	width: 48%;
+	margin-right: 4%;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.join_bx .line-half2 {
+	width: 48%;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.join_bx .line-half1 dt, .join_bx .line-half2  dt {
+	width: 40%;
+}
+
+.join_bx .line-half1 dd, .join_bx .line-half2 dd {
+	width: 60%;
+}
+
+.join_bx .inp_radio {
 	-webkit-appearance: normal !important;
-}
-
-.join_bx table td select {
-	border: 1px solid #d2d2d2;
-	font-size: 14px;
+	vertical-align: -1.5px;
+	margin-right:2px;
 }
 
 .join_bx .join_btn {
@@ -352,9 +405,8 @@ body {
 	font-weight: bold;
 	line-height: 55px;
 	cursor: pointer;
-	margin: 20px auto 0 auto;
+	margin: 40px auto 0 auto;
 }
-
 
 /* subNav */
 .subNav {
