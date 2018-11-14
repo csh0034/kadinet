@@ -1,5 +1,6 @@
 package org.kadinet.service;
 import org.kadinet.dao.UserDao;
+import org.kadinet.model.UserBean;
 
 public class UserService {
 
@@ -18,5 +19,8 @@ public class UserService {
 	}
 	public void loginUpdate(String id) {
 		dao.loginUpdate(id);
+	}
+	public void userJoin(UserBean user) {
+		dao.userJoin(user);
 	}
 }

@@ -27,7 +27,7 @@
 					<div class="contents_box_bottom">
 						<div class="join_bx">
 							<div class="joinform_wrap">
-								<form action="" method="GET">
+								<form action="joinProc.do" method="post">
 									<div class="join_tit">
 										<p>&gt; 정보입력</p>
 									</div>
