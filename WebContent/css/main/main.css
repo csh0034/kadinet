@@ -296,8 +296,9 @@ body {
 
 /* join */
 .contents_box_bottom .joinform_wrap {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .contents_box_bottom .join_bx {
@@ -309,17 +310,26 @@ body {
 .join_bx table {
 	width: 100%;
 	text-align: left;
+	border-left: none;
+	border-right: none;
 }
 
 .join_bx table th {
 	padding: 10px;
 	font-size: 14px;
 	font-weight: normal;
+	border-left: none;
 }
 
 .join_bx table td {
 	padding: 10px;
 	font-size: 14px;
+	border-right: none;
+}
+
+.join_bx table tr {
+	border-left: none;
+	border-right: none;
 }
 
 .join_bx table td .inp_radio {
@@ -332,7 +342,7 @@ body {
 }
 
 .join_bx .join_btn {
-	width: 100%;
+	width: 40%;
 	height: 55px;
 	padding: 0;
 	border: 1px solid #4f98e3;
@@ -340,10 +350,11 @@ body {
 	font-size: 18px;
 	color: #fff;
 	font-weight: bold;
-	line-height: 55px; 
+	line-height: 55px;
 	cursor: pointer;
-	margin-top: 20px;
+	margin: 20px auto 0 auto;
 }
+
 
 /* subNav */
 .subNav {
