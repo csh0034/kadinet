@@ -28,10 +28,10 @@ public class Ajax extends HttpServlet {
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
 
-			boolean flag = service.loginCheck(id,pw);
+			boolean flag = service.checkLogin(id,pw);
 			if (flag) {
 				request.getSession().setAttribute("id", id);
-				service.loginUpdate(id); 
+				service.updateLastLogin(id); 
 			}
 
 			out.print(flag);

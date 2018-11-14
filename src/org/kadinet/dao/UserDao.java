@@ -14,7 +14,7 @@ public class UserDao extends DBCon {
 		return dao;
 	}
 
-	public boolean loginCheck(String id, String pw) {
+	public boolean checkLogin(String id, String pw) {
 		boolean success = false;
 		try {
 			conStart();
@@ -38,7 +38,7 @@ public class UserDao extends DBCon {
 		return success;
 	}
 
-	public void loginUpdate(String id) {
+	public void updateLastLogin(String id) {
 		try {
 			conStart();
 			sql = "update user set user_last_login = sysdate() where user_id =? ";
@@ -53,14 +53,13 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 	}
-	
-	public void userJoin(UserBean user) {
+
+	public void insertUser(UserBean user) {
 		try {
 			conStart();
 			DBConnectionMgr.getInstance();
-			sql = "insert into user values(?,?,?,?,?,?,?)";
+			sql = "insert into user values(?,?,?,?,?,sysdate(),sysdate(),?,?,'1')";
 
-			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getUser_id());
 			pstmt.setString(2, user.getUser_pw());
@@ -72,10 +71,26 @@ public class UserDao extends DBCon {
 
 			pstmt.executeUpdate();
 
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			conClose();
 		}
 	}
+
+/*	public void deleteUser(String id) {
+		try {
+			conStart();
+			sql = "delete from user where id=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}*/
 }

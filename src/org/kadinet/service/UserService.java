@@ -14,13 +14,16 @@ public class UserService {
 		return service;
 	}
 
-	public boolean loginCheck(String id, String pw) {
-		return dao.loginCheck(id,pw);
+	public boolean checkLogin(String id, String pw) {
+		return dao.checkLogin(id,pw);
 	}
-	public void loginUpdate(String id) {
-		dao.loginUpdate(id);
+	public void updateLastLogin(String id) {
+		dao.updateLastLogin(id);
 	}
-	public void userJoin(UserBean user) {
-		dao.userJoin(user);
+	public void insertUser(UserBean user) {
+		dao.insertUser(user);
 	}
+/*	public void deleteUser(String id) {
+		dao.deleteUser(id);
+	}*/
 }

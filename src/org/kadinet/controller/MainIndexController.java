@@ -29,7 +29,10 @@ public class MainIndexController implements Controller {
 		} else if ("/logout.do".equals(path)) {
 			request.getSession().invalidate();
 			response.sendRedirect("/index.do");
-		}
+		} /*else if ("/deleteUser.do".equals(path)) {
+			deleteUser(request, response);
+			response.sendRedirect("/index.do");
+		}*/
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,7 +49,7 @@ public class MainIndexController implements Controller {
 		
 		String id = request.getParameter("u_id");
 		String pw = request.getParameter("u_pw");
-		String name = request.getParameter("u_nane");
+		String name = request.getParameter("u_name");
 		String email = request.getParameter("u_email");
 		String phone = request.getParameter("u_phone");
 		String mail_receive = request.getParameter("u_email_receive");
@@ -63,7 +66,7 @@ public class MainIndexController implements Controller {
 		user.setUser_sms_receive(sms_receive);
 		
 		UserService service = UserService.getInstance();
-		service.userJoin(user); 
+		service.insertUser(user); 
 		
 	}
 
@@ -72,4 +75,11 @@ public class MainIndexController implements Controller {
 		request.setAttribute("page", "login");
 		
 	}
+	
+/*	private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		UserService service = UserService.getInstance();
+		service.deleteUser(id);
+		
+	}*/
 }
