@@ -477,6 +477,117 @@ body {
 	padding: 70px 0 70px 0;
 }
 
+/* greeting */
+.greeting_bx .greeting_img {
+	float: right;
+}
+
+.greeting_title p:nth-child(1) {
+	font-size: 33px;
+	color: #4f98e3;
+	font-weight: bold;
+	margin-bottom: 70px;
+}
+
+.greeting_title p:nth-child(2) {
+	font-size: 25px;
+	color: #8a8a8a;
+	font-weight: bold;
+	margin-bottom: 8px;
+	
+}
+
+.greeting_title p:last-child {
+	font-size: 18px;
+	color: #313338;
+	font-weight: bold;
+	margin-bottom: 60px;
+}
+
+.greeting_body {
+	font-size: 16px;
+	color: #8a8a8a;
+	line-height: 25px;
+}
+
+.greeting_img_bottom {
+	text-align: right;
+}
+
+/* history */
+.history_bx {
+	text-align: right;
+    margin: 0 auto;
+}
+
+.history_bx .dl_bx {
+	overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.history_bx .dl_bx>dt {
+	float: left;
+    padding-top: 19px;
+    width: 22%;
+    border-top: 4px solid #4f98e3;
+    font-size: 36px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #313338;
+}
+
+.history_bx .dl_bx>dd {
+	float: right;
+    width: 78%;
+    padding-left: 44px;
+    text-align: left;
+}
+
+.history_bx .dl_bx dd ul li {
+	padding-top: 19px;
+}
+
+.history_bx .dl_bx dd ul li strong.date {
+	width:12%;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
+    color: #313338;
+}
+
+.history_bx .dl_bx dd ul li p.txt {
+    width: 89%;
+    text-align: left;
+    float: right;
+    font-size: 25px;
+    line-height: 25px;
+    color: #313338;
+}
+
+/* visit */
+.visit_table {
+	width: 100%;
+}
+
+.visit_table table {
+	width: 100%;
+}
+
+.visit_table table th {
+	border-left: 1px solid #fff;
+}
+
+.visit_table table td {
+	border-right: 1px solid #fff;
+}
+
+.visit_table table th, td {
+	padding: 10px;
+	color: #313338;
+	font-size: 14px;
+}
+
 /* footer */
 #kadinet_footer {
 	border-top: 1px solid #d2d2d2;

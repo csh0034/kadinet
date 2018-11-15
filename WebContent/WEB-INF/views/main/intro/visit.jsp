@@ -25,7 +25,22 @@
 						<h3 class="location">오시는길</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div style="width:100%; height: 400px">임시 div</div>
+						<div class="visit_table">
+							<table>
+								<tr>
+									<th>주소</th>
+									<td>서울시 중랑구 면목동 502-1(면목역 2번출구, 사가정역 1번출구)</td>
+								</tr>
+								<tr>
+									<th>전화번호</th>
+									<td>02-491-9768</td>
+								</tr>
+								<tr>
+									<th>팩스</th>
+									<td>02-491-5864</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 				</div>
 			</article>
