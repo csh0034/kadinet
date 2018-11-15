@@ -27,7 +27,7 @@
 					<div class="contents_box_bottom">
 						<div class="greeting_bx">
 							<div class="greeting_img">
-								<img src="/img/main/index/intro.png" alt="협회장인사이미지">
+								<img src="/img/main/intro/main.png" alt="협회장인사이미지">
 							</div>
 							<div class="greeting_title">
 								<p>산업의 디지털화 및 정보화를 선도하는<br> 중추적 역할을 기대하며...</p>
@@ -54,7 +54,7 @@
 								그동안 협회 창립을 위한 준비작업에 애써 오신 회원 여러분의 노고에 다시 한 번 진심으로 감사드리며, 우리 협회가 디지털산업 및 정보화에 중추적인 활동을 할 수 있도록 앞으로도 지속적이고 적극적으로 참여하여 주실 것을 부탁드립니다.끝으로 여러분과 협회의 무궁한 발전을 기원합니다.
 							</p>
 							<div class="greeting_img_bottom">
-								<img src="/img/main/index/hello.gif" alt="협회장인사">
+								<img src="/img/main/intro/name.gif" alt="협회장인사">
 							</div>
 						</div>
 					</div>

@@ -73,7 +73,7 @@
 								<dd>
 									<ul>
 									   <li>
-									    <strong class="date">00</strong>
+									    <strong class="date">01</strong>
 									    <p class="txt"> 안정화 </p>
 									  </li>	
 									</ul>

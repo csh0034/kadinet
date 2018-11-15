@@ -31,6 +31,10 @@ public class FrontController extends HttpServlet {
 		list.put("/intro/organization.do", new MainIntroController());
 		list.put("/intro/visit.do", new MainIntroController());
 		
+		list.put("/notice/notice/list.do", new MainNoticeController());
+		list.put("/notice/press/list.do", new MainNoticeController());
+		list.put("/notice/data/list.do", new MainNoticeController());
+		
 		list.put("/admin/index.do", new AdminIndexController());
 	}
 

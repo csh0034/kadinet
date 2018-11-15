@@ -21,18 +21,17 @@ public class MainIndexController implements Controller {
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/join.jsp");
 		} else if ("/joinProc.do".equals(path)) {
 			joinProc(request, response);
-			response.sendRedirect("/index.do");
-			
+			response.sendRedirect("/login.do");
 		} else if ("/login.do".equals(path)) {
 			login(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/login.jsp");
 		} else if ("/logout.do".equals(path)) {
 			request.getSession().invalidate();
 			response.sendRedirect("/index.do");
-		} /*else if ("/deleteUser.do".equals(path)) {
-			deleteUser(request, response);
-			response.sendRedirect("/index.do");
-		}*/
+		} /*
+			 * else if ("/deleteUser.do".equals(path)) { deleteUser(request, response);
+			 * response.sendRedirect("/index.do"); }
+			 */
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,11 +41,12 @@ public class MainIndexController implements Controller {
 	private void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "5");
 		request.setAttribute("page", "join");
-		
+
 	}
-	
-	private void joinProc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+	private void joinProc(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String id = request.getParameter("u_id");
 		String pw = request.getParameter("u_pw");
 		String name = request.getParameter("u_name");
@@ -54,9 +54,9 @@ public class MainIndexController implements Controller {
 		String phone = request.getParameter("u_phone");
 		String mail_receive = request.getParameter("u_email_receive");
 		String sms_receive = request.getParameter("u_sms_receive");
-		
+
 		UserBean user = new UserBean();
-		
+
 		user.setUser_id(id);
 		user.setUser_pw(pw);
 		user.setUser_name(name);
@@ -64,22 +64,24 @@ public class MainIndexController implements Controller {
 		user.setUser_phone(phone);
 		user.setUser_email_receive(mail_receive);
 		user.setUser_sms_receive(sms_receive);
-		
+
 		UserService service = UserService.getInstance();
-		service.insertUser(user); 
-		
+		service.insertUser(user);
+
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "5");
 		request.setAttribute("page", "login");
-		
+
 	}
-	
-/*	private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		UserService service = UserService.getInstance();
-		service.deleteUser(id);
-		
-	}*/
+
+	/*
+	 * private void deleteUser(HttpServletRequest request, HttpServletResponse
+	 * response) throws ServletException, IOException { String id =
+	 * request.getParameter("id"); UserService service = UserService.getInstance();
+	 * service.deleteUser(id);
+	 * 
+	 * }
+	 */
 }
