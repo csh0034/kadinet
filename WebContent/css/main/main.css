@@ -483,31 +483,35 @@ body {
 }
 
 .greeting_title p:nth-child(1) {
-	font-size: 33px;
+	position: absolute;
+	font-size: 40px;
 	color: #4f98e3;
 	font-weight: bold;
 	margin-bottom: 70px;
+	line-height: 48px;
 }
 
 .greeting_title p:nth-child(2) {
 	font-size: 25px;
 	color: #8a8a8a;
 	font-weight: bold;
-	margin-bottom: 8px;
+	margin-bottom: 13px;
+	padding-top: 160px;
 	
 }
 
 .greeting_title p:last-child {
 	font-size: 18px;
-	color: #313338;
+	color: #8a8a8a;
 	font-weight: bold;
 	margin-bottom: 60px;
+	line-height: 25px;
 }
 
 .greeting_body {
-	font-size: 16px;
-	color: #8a8a8a;
-	line-height: 25px;
+	font-size: 20px;
+	color: #313338;
+	line-height: 30px;
 }
 
 .greeting_img_bottom {
@@ -585,7 +589,7 @@ body {
 .visit_table table th, td {
 	padding: 10px;
 	color: #313338;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 /* footer */
