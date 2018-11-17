@@ -388,6 +388,19 @@ body {
 	width: 60%;
 }
 
+.join_bx #searchAddr {
+	background-color: white;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	border-radius: 2px;
+}
+
+.join_bx #searchAddr:hover {
+	border: 1px solid #757575;
+	transition: 0.3s;
+}
+
 .join_bx .inp_radio {
 	-webkit-appearance: normal !important;
 	vertical-align: -1.5px;
@@ -628,6 +641,10 @@ body {
 	font-size: 15px;
 	padding: 0 10px;
 	height: 40px;
+	max-width: 444px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .notice_bx table td img {

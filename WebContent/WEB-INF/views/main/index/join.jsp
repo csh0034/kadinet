@@ -9,6 +9,7 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript" src="/js/main/join.js"></script>
 </head>
 <body>
@@ -47,7 +48,7 @@
 												<label for="u_pw">비밀번호</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pw" id="u_pw" value="" placeholder="영문, 숫자, 특수문자 조합"/>
+												<input type="password" name="u_pw" id="u_pw" value="" placeholder="영문, 숫자, 특수문자 조합" />
 											</dd>
 										</dl>
 										<dl class="line-half2">
@@ -55,7 +56,7 @@
 												<label for="u_pwre">비밀번호 확인</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pwre" id="u_pwre" value="" placeholder="비밀번호 재입력"/>
+												<input type="password" name="u_pwre" id="u_pwre" value="" placeholder="비밀번호 재입력" />
 											</dd>
 										</dl>
 									</div>
@@ -71,21 +72,39 @@
 									</div>
 									<div class="item mb2">
 										<dl class="line-full">
-											<dt> 
+											<dt>
 												<label for="u_phone">휴대폰</label>
 											</dt>
 											<dd>
 												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력" />
 											</dd>
 										</dl>
-									</div> 
+									</div>
+									<div class="item mb2">
+										<dl class="line-full">
+											<dt>
+												<input type="button" id="searchAddr" value="우편번호 검색 ">
+											</dt>
+											<dd>
+												<input type="text" name="u_addr1" id="u_addr1" placeholder="우편번호 검색" readonly />
+											</dd>
+										</dl>
+										<dl class="line-full">
+											<dt>
+												<label for="u_addr2">상세주소</label>
+											</dt>
+											<dd>
+												<input type="text" name="u_addr2" id="u_addr2" />
+											</dd>
+										</dl>
+									</div>
 									<div class="item">
 										<dl class="line-full">
 											<dt>
 												<label for="u_email">이메일</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_email" id="u_email" value="" />
+												<input type="text" name="u_email" id="u_email" placeholder="ex) abc123@naver.com" />
 											</dd>
 										</dl>
 									</div>
