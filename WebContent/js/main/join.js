@@ -10,8 +10,19 @@ $(document).ready(function() {
 	$('#searchAddr').click(function() {
 		sample6_execDaumPostcode()
 	});
-});
+	window.ParsleyValidator.addValidator('u_phone', function(value, requirement) {
+		var patt = /^\d{3}\d{3,4}\d{4}$/i;	// ex) 010-1234-1234 , 011-123-1234
+		return patt.test(value);
+	}, 32).addMessage('en', 'u_phone', 'This value is incorrect');
+	$("#u_phone").parsley();
+	
+	window.ParsleyValidator.addValidator('u_email', function(value, requirement) {
+		var patt = /^[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{1,5}$/g
+		return patt.test(value);
+	}, 32).addMessage('en', 'u_email', 'This value is incorrect');
 
+	$("#u_email").parsley();
+});
 
 function sample6_execDaumPostcode() {
 	new daum.Postcode({
