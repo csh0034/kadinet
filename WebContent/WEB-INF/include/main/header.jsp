@@ -36,14 +36,14 @@
 								<li><a href="/intro/visit.do">오시는길</a></li>
 							</ul>
 						</div></li>
-					<li class="mm" id="mm2"><a href="#">주요사업</a>
+					<li class="mm" id="mm2"><a href="/business/career.do">주요사업</a>
 						<div class="drop_menu">
 							<ul>
-								<li><a href="#">경력인증</a></li>
-								<li><a href="#">기업체인증</a></li>
-								<li><a href="#">구인구직</a></li>
-								<li><a href="#">디지털융합산업지원</a></li>
-								<li><a href="#">교육사업</a></li>
+								<li><a href="/business/career.do">경력인증</a></li>
+								<li><a href="/business/corporation.do">기업체인증</a></li>
+								<li><a href="/business/mentoring.do">멘토링</a></li>
+								<li><a href="/business/support.do">디지털융합산업지원</a></li>
+								<li><a href="/business/education.do">교육사업</a></li>
 							</ul>
 						</div></li>
 					<li class="mm" id="mm3"><a href="/notice/notice/list.do">알림마당</a>
@@ -54,12 +54,12 @@
 								<li><a href="/notice/data/list.do">정보자료실</a></li>
 							</ul>
 						</div></li>
-					<li class="mm" id="mm4"><a href="#">회원사</a>
+					<li class="mm" id="mm4"><a href="/mbr/memberinfo.do">회원사</a>
 						<div class="drop_menu">
 							<ul>
-								<li><a href="#">회원사 소개</a></li>
-								<li><a href="#">정보수정</a></li>
-								<li><a href="#">회원탈퇴</a></li>
+								<li><a href="/mbr/memberinfo.do">회원사 소개</a></li>
+								<li><a href="/mbr/update.do">정보수정</a></li>
+								<li><a href="/mbr/leave.do">회원탈퇴</a></li>
 							</ul>
 						</div></li>
 				</ul>

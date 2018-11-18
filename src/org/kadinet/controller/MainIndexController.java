@@ -28,6 +28,9 @@ public class MainIndexController implements Controller {
 		} else if ("/logout.do".equals(path)) {
 			request.getSession().invalidate();
 			response.sendRedirect("/index.do");
+		} else if ("/find.do".equals(path)) {
+			find(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/find.jsp");
 		} /*
 			 * else if ("/deleteUser.do".equals(path)) { deleteUser(request, response);
 			 * response.sendRedirect("/index.do"); }
@@ -73,6 +76,12 @@ public class MainIndexController implements Controller {
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "5");
 		request.setAttribute("page", "login");
+
+	}
+
+	private void find(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("subNav", "5");
+		request.setAttribute("page", "find");
 
 	}
 

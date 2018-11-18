@@ -1,20 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:choose>
-	<c:when test="${page =='greeting' || page =='login' || page =='notice'}">
+	<c:when
+		test="${page =='greeting' || page =='login' || page =='notice' || page =='career'|| page =='memberinfo'}">
 		<c:set var="s1" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='history' || page =='join'|| page =='press'}">
+	<c:when
+		test="${page =='history' || page =='join'|| page =='press' || page =='corporation'|| page =='update'}">
 		<c:set var="s2" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='organization'|| page =='data'}">
+	<c:when
+		test="${page =='organization'|| page =='find' ||page =='data' || page =='mentoring'|| page =='leave'}">
 		<c:set var="s3" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='visit'}">
+	<c:when test="${page =='visit' || page =='support'}">
 		<c:set var="s4" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='test'}">
+	<c:when test="${page =='education'}">
 		<c:set var="s5" value="class='selected'" />
 	</c:when>
 </c:choose>
@@ -34,11 +36,11 @@
 		<div class="subNav">
 			<h1>주요산업</h1>
 			<ul class="subNav_list">
-				<li ${s1}><a href="#">경력인증</a></li>
-				<li ${s2}><a href="#">기업체인증</a></li>
-				<li ${s3}><a href="#">구인구직</a></li>
-				<li ${s4}><a href="#">디지털융합산업지원</a></li>
-				<li ${s5}><a href="#">교육사업</a></li>
+				<li ${s1}><a href="/business/career.do">경력인증</a></li>
+				<li ${s2}><a href="/business/corporation.do">기업체인증</a></li>
+				<li ${s3}><a href="/business/mentoring.do">멘토링</a></li>
+				<li ${s4}><a href="/business/support.do">디지털융합산업지원</a></li>
+				<li ${s5}><a href="/business/education.do">교육사업</a></li>
 			</ul>
 		</div>
 	</c:when>
@@ -56,9 +58,9 @@
 		<div class="subNav">
 			<h1>회원사</h1>
 			<ul class="subNav_list">
-				<li ${s1}><a href="#">회원사 소개</a></li>
-				<li ${s2}><a href="#">정보수정</a></li>
-				<li ${s3}><a href="#">회원탈퇴</a></li>
+				<li ${s1}><a href="/mbr/memberinfo.do">회원사 소개</a></li>
+				<li ${s2}><a href="/mbr/update.do">정보수정</a></li>
+				<li ${s3}><a href="/mbr/leave.do">회원탈퇴</a></li>
 			</ul>
 		</div>
 	</c:when>
@@ -68,7 +70,7 @@
 			<ul class="subNav_list">
 				<li ${s1}><a href="/login.do">로그인</a></li>
 				<li ${s2}><a href="/join.do">회원가입</a></li>
-				<li ${s3}><a href="#">ID/PW 찾기</a></li>
+				<li ${s3}><a href="/find.do">ID/PW 찾기</a></li>
 			</ul>
 		</div>
 	</c:when>
