@@ -42,7 +42,7 @@
 												<label for="u_id">아이디</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능"
+												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자 조합"
 													pattern="(?=.*\d)(?=.*[a-z]).{5,20}" autofocus data-parsley-required="true"
 													data-parsley-trigger="change" required
 													data-parsley-errors-container="span[id='idError']" />
@@ -56,7 +56,7 @@
 												<label for="u_pw">비밀번호</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pw" id="u_pw" value="" placeholder="영문, 숫자, 특수문자 조합"
+												<input type="password" name="u_pw" id="u_pw" value="" placeholder="5자리 이상 영문, 숫자, 특수문자 조합"
 													pattern="(?=.*\d)(?=.*[a-z])(?=.*[~`!@#$%\\^&*()\-]).{5,20}" required
 													data-parsley-required="true" data-parsley-trigger="change" required
 													data-parsley-errors-container="span[id='pwError']" />
