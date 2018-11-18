@@ -46,12 +46,12 @@
 								<li><a href="#">교육사업</a></li>
 							</ul>
 						</div></li>
-					<li class="mm" id="mm3"><a href="#">알림마당</a>
+					<li class="mm" id="mm3"><a href="/notice/notice/list.do">알림마당</a>
 						<div class="drop_menu">
 							<ul>
-								<li><a href="#">공지사항</a></li>
-								<li><a href="#">보도자료</a></li>
-								<li><a href="#">정보자료실</a></li>
+								<li><a href="/notice/notice/list.do">공지사항</a></li>
+								<li><a href="/notice/press/list.do">보도자료</a></li>
+								<li><a href="/notice/data/list.do">정보자료실</a></li>
 							</ul>
 						</div></li>
 					<li class="mm" id="mm4"><a href="#">회원사</a>

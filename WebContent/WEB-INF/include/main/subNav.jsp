@@ -2,13 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:choose>
-	<c:when test="${page =='greeting' || page =='login'}">
+	<c:when test="${page =='greeting' || page =='login' || page =='notice'}">
 		<c:set var="s1" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='history' || page =='join'}">
+	<c:when test="${page =='history' || page =='join'|| page =='press'}">
 		<c:set var="s2" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='organization'}">
+	<c:when test="${page =='organization'|| page =='data'}">
 		<c:set var="s3" value="class='selected'" />
 	</c:when>
 	<c:when test="${page =='visit'}">
@@ -46,9 +46,9 @@
 		<div class="subNav">
 			<h1>알림마당</h1>
 			<ul class="subNav_list">
-				<li ${s1}><a href="#">공지사항</a></li>
-				<li ${s2}><a href="#">보도자료</a></li>
-				<li ${s3}><a href="#">정보자료실</a></li>
+				<li ${s1}><a href="/notice/notice/list.do">공지사항</a></li>
+				<li ${s2}><a href="/notice/press/list.do">보도자료</a></li>
+				<li ${s3}><a href="/notice/data/list.do">정보자료실</a></li>
 			</ul>
 		</div>
 	</c:when>

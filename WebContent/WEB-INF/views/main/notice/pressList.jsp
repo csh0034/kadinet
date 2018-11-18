@@ -15,32 +15,17 @@
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
 		<div class="login_menu_img">
-			<b>협회소개</b>
+			<b>알림마당</b>
 		</div>
 		<div class="main">
 			<article class="contents">
 				<%@ include file="/WEB-INF/include/main/subNav.jsp"%>
 				<div class="contents_box">
 					<div class="contents_box_top">
-						<h3 class="location">오시는길</h3>
+						<h3 class="location">보도자료</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div class="visit_table">
-							<table>
-								<tr>
-									<th>주소</th>
-									<td>서울시 중랑구 면목동 502-1(면목역 2번출구, 사가정역 1번출구)</td>
-								</tr>
-								<tr>
-									<th>전화번호</th>
-									<td>02-491-9768</td>
-								</tr>
-								<tr>
-									<th>팩스</th>
-									<td>02-491-5864</td>
-								</tr>
-							</table>
-						</div>
+						a
 					</div>
 				</div>
 			</article>

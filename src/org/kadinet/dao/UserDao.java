@@ -1,6 +1,8 @@
 package org.kadinet.dao;
 
 import org.kadinet.util.DBCon;
+import org.kadinet.util.DBConnectionMgr;
+import org.kadinet.model.UserBean;
 
 public class UserDao extends DBCon {
 	private static UserDao dao = new UserDao();
@@ -12,7 +14,7 @@ public class UserDao extends DBCon {
 		return dao;
 	}
 
-	public boolean loginCheck(String id, String pw) {
+	public boolean checkLogin(String id, String pw) {
 		boolean success = false;
 		try {
 			conStart();
@@ -36,7 +38,29 @@ public class UserDao extends DBCon {
 		return success;
 	}
 
-	public void loginUpdate(String id) {
+	public boolean checkId(String id) {
+		boolean success = false;
+		try {
+			conStart();
+			sql = "select * from user where user_id=?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next() || id.equals("")) {
+				success = false;
+			} else {
+				success = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			conClose();
+		}
+		return success;
+
+	}
+	public void updateLastLogin(String id) {
 		try {
 			conStart();
 			sql = "update user set user_last_login = sysdate() where user_id =? ";
@@ -51,4 +75,44 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 	}
+
+	public void insertUser(UserBean user) {
+		try {
+			conStart();
+			DBConnectionMgr.getInstance();
+			sql = "insert into user values(?,?,?,?,?,sysdate(),sysdate(),?,?,'1')";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getUser_id());
+			pstmt.setString(2, user.getUser_pw());
+			pstmt.setString(3, user.getUser_name());
+			pstmt.setString(4, user.getUser_email());
+			pstmt.setString(5, user.getUser_phone());
+			pstmt.setString(6, user.getUser_email_receive());
+			pstmt.setString(7, user.getUser_sms_receive());
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+
+/*	public void deleteUser(String id) {
+		try {
+			conStart();
+			sql = "delete from user where id=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}*/
 }

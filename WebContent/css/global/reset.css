@@ -8,7 +8,7 @@
 		format('woff');
 }
 
-@font-face {
+@font-face { 
 	font-family: 'OneLatin';
 	font-style: normal;
 	font-weight: bold;
@@ -91,7 +91,6 @@ img {
 }
 
 table, th, td, tr {
-	border: 1px solid #d2d2d2;
 	border-collapse: collapse;
 }
 

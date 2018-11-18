@@ -15,30 +15,52 @@
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
 		<div class="login_menu_img">
-			<b>협회소개</b>
+			<b>알림마당</b>
 		</div>
 		<div class="main">
 			<article class="contents">
 				<%@ include file="/WEB-INF/include/main/subNav.jsp"%>
 				<div class="contents_box">
 					<div class="contents_box_top">
-						<h3 class="location">오시는길</h3>
+						<h3 class="location">공지사항</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div class="visit_table">
+						<div class="notice_bx">
 							<table>
-								<tr>
-									<th>주소</th>
-									<td>서울시 중랑구 면목동 502-1(면목역 2번출구, 사가정역 1번출구)</td>
-								</tr>
-								<tr>
-									<th>전화번호</th>
-									<td>02-491-9768</td>
-								</tr>
-								<tr>
-									<th>팩스</th>
-									<td>02-491-5864</td>
-								</tr>
+								<colgroup>
+									<col width="9%">
+									<col width="*">
+									<col width="10%">
+									<col width="12%">
+									<col width="9%">
+									<col width="6%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>번호</th>
+										<th>제목</th>
+										<th>작성자</th>
+										<th>작성일</th>
+										<th>조회</th>
+										<th>첨부</th>
+									</tr>
+								</thead>
+								<tbody>
+									<%
+										for (int i = 0; i < 10; i++) {
+									%>
+									<tr>
+										<td><%=10-i %></td>
+										<td class="tit">[KADI] 2017 "4차 산업혁명과 융합산업의 미래"</td>
+										<td>관리자</td>
+										<td>2018-11-16</td>
+										<td>10</td>
+										<td><img src="/img/main/notice/icon_file.gif"></td>
+									</tr>
+									<%
+										}
+									%>
+								</tbody>
 							</table>
 						</div>
 					</div>

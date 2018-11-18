@@ -23,19 +23,27 @@ public class Ajax extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		if (method == null) {
 			response.sendRedirect("/index.do");
-		} else if ("loginCheck".equals(method)) {
+		} else if ("checkLogin".equals(method)) {
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
 
-			boolean flag = service.loginCheck(id,pw);
+			boolean flag = service.checkLogin(id,pw);
 			if (flag) {
 				request.getSession().setAttribute("id", id);
-				service.loginUpdate(id); 
+				service.updateLastLogin(id); 
 			}
 
 			out.print(flag);
-		}
+		} /*else if ("checkId".equals(method)) {
+			UserService service = UserService.getInstance();
+			String id = request.getParameter("id");
+			
+			boolean flag = service.checkId(id);
+			if (flag) {
+				
+			}
+		}*/
 
 	}
 }

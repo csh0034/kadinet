@@ -1,5 +1,6 @@
 package org.kadinet.service;
 import org.kadinet.dao.UserDao;
+import org.kadinet.model.UserBean;
 
 public class UserService {
 
@@ -13,10 +14,19 @@ public class UserService {
 		return service;
 	}
 
-	public boolean loginCheck(String id, String pw) {
-		return dao.loginCheck(id,pw);
+	public boolean checkLogin(String id, String pw) {
+		return dao.checkLogin(id,pw);
 	}
-	public void loginUpdate(String id) {
-		dao.loginUpdate(id);
+	public boolean checkId(String id) {
+		return dao.checkId(id);
 	}
+	public void updateLastLogin(String id) {
+		dao.updateLastLogin(id);
+	}
+	public void insertUser(UserBean user) {
+		dao.insertUser(user);
+	}
+/*	public void deleteUser(String id) {
+		dao.deleteUser(id);
+	}*/
 }

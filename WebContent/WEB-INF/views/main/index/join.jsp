@@ -9,6 +9,10 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript" src="/js/main/join.js"></script>
+<script type="text/javascript" src="/js/global/parsley.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main/parsley.css">
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -26,106 +30,114 @@
 					<div class="contents_box_bottom">
 						<div class="join_bx">
 							<div class="joinform_wrap">
-								<form action="" method="GET">
-							        <table>
-							            <tr>
-							                <th>아이디</th>
-							                <td><input type="text" name="userId" value=""/></td>
-							            </tr>
-							            <tr>
-							                <th>비밀번호</th>
-							                <td><input type="password" name="userPw" value=""/></td>
-							            </tr>
-							            <tr>
-							                <th>비밀번호 확인</th>
-							                <td><input type="password" name="userPwCheck" value=""/></td>
-							            </tr>
-							            <tr>
-							                <th>이름</th>
-							                <td><input type="text" name="userName" value=""/></td>
-							            </tr>
-							            <tr>
-							                <th>이메일</th>
-							                <td><input type="email" name="email" value=""/></td>
-							            </tr>
-							            <tr>
-							                <th>생년월일</th>
-							                <td>
-							                    <select name="year">
-							                        <option value="1989">1989</option>
-							                        <option value="1990">1990</option>
-							                        <option value="1991">1991</option>
-							                        <option value="1992">1992</option>
-							                        <option value="1993">1993</option>
-							                        <option value="1994">1994</option>
-							                        <option value="1995">1995</option>
-							                        <option value="1996">1996</option>
-							                        <option value="1997">1997</option>
-							                        <option value="1998">1998</option>
-							                        <option value="1999" selected>1999</option>
-							                    </select>
-							                    
-							                    <select name="month">
-							                        <option value="01">01</option>
-							                        <option value="02">02</option>
-							                        <option value="03">03</option>
-							                        <option value="04">04</option>
-							                        <option value="05">05</option>
-							                        <option value="06">06</option>
-							                        <option value="07">07</option>
-							                        <option value="08">08</option>
-							                        <option value="09">09</option>
-							                        <option value="10">10</option>
-							                        <option value="11">11</option>
-							                        <option value="12">12</option>
-							                    </select>
-							                    
-							                    <select name="day">
-							                            <option value="01">01</option>
-							                            <option value="02">02</option>
-							                            <option value="03">03</option>
-							                            <option value="04">04</option>
-							                            <option value="05">05</option>
-							                            <option value="06">06</option>
-							                            <option value="07">07</option>
-							                            <option value="08">08</option>
-							                            <option value="09">09</option>
-							                            <option value="10">10</option>
-							                            <option value="11">11</option>
-							                            <option value="12">12</option>
-							                            <option value="13">13</option>
-							                            <option value="14">14</option>
-							                            <option value="15">15</option>
-							                            <option value="16">16</option>
-							                            <option value="17">17</option>
-							                            <option value="18">18</option>
-							                            <option value="19">19</option>
-							                            <option value="20">20</option>
-							                            <option value="21">21</option>
-							                            <option value="22">22</option>
-							                            <option value="23">23</option>
-							                            <option value="24">24</option>
-							                            <option value="25">25</option>
-							                            <option value="26">26</option>
-							                            <option value="27">27</option>
-							                            <option value="28">28</option>
-							                            <option value="29">29</option>
-							                            <option value="30">30</option>
-							                            <option value="31">31</option>
-							                    </select>
-							                </td>
-							            </tr>
-							            <tr>
-							                <th>성별</th>
-							                <td>
-							                    <input type="radio" name="gender" value="남자" class="inp_radio"/> 남자 
-							                    <input type="radio" name="gender" value="여자" class="inp_radio"/> 여자
-							                </td>
-							            </tr>
-							        </table>
-							        <input type="submit" value="회원가입" class="join_btn"/>
-							    </form>
-					    	</div>
+								<form action="joinProc.do" onsubmit="return CheckPassWord(u_id,u_pw,u_pwre);" method="post" data-parsley-validate>
+									<div class="join_tit">
+										<p>&gt; 정보입력</p>
+									</div>
+									<div class="item">
+										<dl class="line-full">
+											<dt>
+												<label for="u_id">아이디</label>
+											</dt>
+											<dd>
+												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능합니다" pattern="^[a-zA-Z0-9]{5,20}$" required />
+											</dd>
+										</dl>
+									</div>
+									<div class="item mb2">
+										<dl class="line-half1">
+											<dt>
+												<label for="u_pw">비밀번호</label>
+											</dt>
+											<dd>
+												<input type="password" name="u_pw" id="u_pw" value="" placeholder="8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$"  required />
+											</dd>
+										</dl>
+										<dl class="line-half2">
+											<dt>
+												<label for="u_pwre">비밀번호 확인</label>
+											</dt>
+											<dd>
+												<input type="password" name="u_pwre" id="u_pwre" value="" placeholder="비밀번호 재입력" data-parsley-equalto="#u_pw" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$" required />
+											</dd>
+										</dl>
+									</div>
+									<div class="item">
+										<dl class="line-full">
+											<dt>
+												<label for="u_name">이름</label>
+											</dt>
+											<dd>
+												<input type="text" name="u_name" id="u_name" value="" placeholder="영문 , 한글만 사용 가능" pattern="^[가-힣a-zA-Z].{1,30}$" required />
+											</dd>
+										</dl>
+									</div>
+									<div class="item mb2">
+										<dl class="line-full">
+											<dt>
+												<label for="u_phone">휴대폰</label>
+											</dt>
+											<dd>
+												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력" pattern="^\d{4} \d{4} \d{4}$" required />
+											</dd>
+										</dl>
+									</div>
+									<div class="item mb2">
+										<dl class="line-full">
+											<dt>
+												<input type="button" id="searchAddr" value="우편번호 검색 ">
+											</dt>
+											<dd>
+												<input type="text" name="u_addr1" id="u_addr1" placeholder="우편번호 검색" readonly required />
+											</dd>
+										</dl>
+										<dl class="line-full">
+											<dt>
+												<label for="u_addr2">상세주소</label>
+											</dt>
+											<dd>
+												<input type="text" name="u_addr2" id="u_addr2" required />
+											</dd>
+										</dl>
+									</div>
+									<div class="item">
+										<dl class="line-full">
+											<dt>
+												<label for="u_email">이메일</label>
+											</dt>
+											<dd>
+												<input type="text" name="u_email" id="u_email" placeholder="ex) abc123@naver.com" required data-parsley-type="email" data-parsley-trigger="change"/>
+											</dd>
+										</dl>
+									</div>
+									<div class="item">
+										<dl class="line-half1">
+											<dt>
+												<label for="u_email_receive">이메일 수신여부</label>
+											</dt>
+											<dd>
+												<input type="radio" name="u_email_receive" value="O" class="inp_radio" checked
+													id="emailO" /><label for="emailO" style="margin-right: 15px">수신</label> <input
+													type="radio" name="u_email_receive" value="X" class="inp_radio" id="emailX" /><label
+													for="emailX">수신안함</label>
+											</dd>
+										</dl>
+										<dl class="line-half2">
+											<dt>
+												<label for="u_sms_receive">SMS 수신여부</label>
+											</dt>
+											<dd>
+												<input type="radio" name="u_sms_receive" value="O" class="inp_radio" checked id="smsO" /><label
+													for="smsO" style="margin-right: 15px">수신</label> <input type="radio"
+													name="u_sms_receive" value="X" class="inp_radio" id="smsX" /><label for="smsX">수신안함</label>
+											</dd>
+										</dl>
+									</div>
+									<div class="item" style="text-align: center;">
+										<input type="submit" value="회원가입" class="join_btn" />
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>

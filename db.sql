@@ -32,6 +32,8 @@ CREATE TABLE `user` (
   `user_phone` varchar(40) NOT NULL,
   `user_regdate` datetime NOT NULL,
   `user_last_login` datetime NOT NULL,
+  `user_email_receive` varchar(40) NOT NULL,
+  `user_sms_receive` varchar(40) NOT NULL,
   `user_authority` varchar(10) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -43,7 +45,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('test','1234','1','1','1','2018-11-13 00:00:00','2018-11-13 02:29:23','1');
+INSERT INTO `user` VALUES ('test','1234','1','1','1','2018-11-13 00:00:00','2018-11-13 02:29:23','O','O','1');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

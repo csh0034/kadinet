@@ -18,7 +18,7 @@
 			<article class="contents">
 				<div class="notice"></div>
 				<div class="mbr_notice"></div>
-				<div class="quick"></div>
+				<div class="quick"></div> 
 				<div class="mbr_list"></div>
 			</article>
 		</div>
