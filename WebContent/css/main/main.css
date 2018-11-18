@@ -613,29 +613,28 @@ body {
 	font-size: 16px;
 }
 
-/* notice */
+/* notice , press , data */
 .notice_bx {
 	
 }
 
-.notice_bx table {
+.notice_bx .listTable, .notice_bx .detailTable {
 	width: 100%;
 }
 
-.notice_bx table th {
+.notice_bx .listTable th {
 	border-top: 2px solid #4f98e3;
 	background-color: #f7f7f7;
 	font-size: 15px;
 	font-weight: 400;
 	padding: 10px 0;
-	height: 40px;
 }
 
-.notice_bx table tr {
-	border: 1px solid #d2d2d2;
+.notice_bx .listTable tr {
+	border-bottom: 1px solid #d2d2d2;
 }
 
-.notice_bx table td {
+.notice_bx .listTable td {
 	vertical-align: middle;
 	text-align: center;
 	font-size: 15px;
@@ -647,13 +646,155 @@ body {
 	white-space: nowrap;
 }
 
-.notice_bx table td img {
+.notice_bx .listTable td img, .notice_bx .detailTable img {
 	width: 18px;
-	height: 21px;
 }
 
-.notice_bx table .tit {
+.notice_bx .listTable .tit {
 	text-align: left;
+}
+
+.notice_bx .paginDiv {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.notice_bx .searchDiv {
+	float: right;
+	margin-bottom: 40px;
+	height: 45px;
+}
+
+.notice_bx .searchDiv .wrap {
+	border: 1px solid #d2d2d2;
+	height: 40px;
+	display: inline-block;
+	width: 200px;
+	position: relative;
+	float: left;
+}
+
+.notice_bx .searchDiv select {
+	border: 1px solid #d2d2d2;
+	padding-left: 10px;
+	height: 40px;
+	width: 140px;
+	margin-right: 5px;
+	float: left;
+}
+
+.notice_bx .searchDiv .searchIn {
+	width: 100%;
+	height: 38px;
+	border: 0;
+	font-size: 14px;
+	text-indent: 10px;
+}
+
+.notice_bx .searchDiv .searchSubmit {
+	background-image: url("/img/main/notice/btn-search.gif");
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	height: 38px;
+	width: 42px;
+	cursor: pointer;
+}
+
+.notice_bx .detailTable th {
+	background-color: #f7f7f7;
+	font-size: 15px;
+	font-weight: 400;
+	padding: 10px 0;
+}
+
+.notice_bx .detailTable tr {
+	border-bottom: 1px solid #d2d2d2;
+}
+
+.notice_bx .detailTable .lineTop {
+	border-top: 2px solid #4f98e3;
+}
+
+.notice_bx .detailTable .lineBottom {
+	border-bottom: 2px solid #4f98e3;
+}
+
+.notice_bx .detailTable td {
+	vertical-align: middle;
+	font-size: 15px;
+	padding: 0 20px;
+	height: 40px;
+	max-width: 650px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.notice_bx .detailTable p {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: 8px 0;
+}
+
+.notice_bx .detailTable td img {
+	vertical-align: -4px;
+	margin-right: 10px;
+}
+
+.notice_bx .detailTable .contentTr {
+	border: 1px solid #d2d2d2;
+}
+.notice_bx .detailTable .contentTr div{
+	overflow:auto;
+	max-width: 778px; 
+	min-height: 100px;
+}
+
+.notice_bx .detailTable .contentTr td {
+	vertical-align: baseline;
+	font-size: 15px;
+	padding: 20px;
+	height: auto;
+	max-width: none;
+	text-overflow: clip;
+	overflow: auto;
+	white-space: normal;
+}
+
+.notice_bx .detailTable .btnTr {
+	border-bottom: 0;
+}
+
+.notice_bx .detailTable .btnTr td {
+	text-align: center;
+}
+
+.notice_bx .detailTable .btnTr td input {
+	width: 120px;
+	height: 35px;
+	border: 0;
+	background-color: #4f98e3;
+	font-size: 15px;
+	color: white;
+	line-height: 35px; 
+	cursor: pointer;
+	border-radius: 3px;
+	margin:30px 0; 
+}
+
+.notice_bx .detailTable .move p{
+	position: relative;
+	margin: 0;
+}
+
+.notice_bx .detailTable .move img{
+	position: absolute;
+	width: 30px;
+	height: 5px; 
+	top: 8px;
+	right:25px;
 }
 
 /* footer */

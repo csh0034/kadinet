@@ -5,7 +5,7 @@ $(document).ready(function() {
 			type : 'post',
 			dataType : 'text',
 			data : {
-				method : 'loginCheck',
+				method : 'checkLogin',
 				id : $('#id').val(),
 				pw : $('#pw').val()
 

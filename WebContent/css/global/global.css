@@ -23,3 +23,24 @@ input::-webkit-input-placeholder {
 input::-moz-placeholder {
 	color: #8a8a8a;
 }
+
+.paging {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
+	margin: 0 2px;
+	height: 28px;
+	border: 1px solid #d8d9db;
+	line-height: 28px;
+	font-size: 15px;
+	background: #f7f7f7;
+	color: #666;
+}
+
+.paging:hover {
+	border: 1px solid #4f98e3;
+	color: white;
+	background: #4f98e3;
+	cursor: pointer;
+	transition: all .1s ease-out;
+}
