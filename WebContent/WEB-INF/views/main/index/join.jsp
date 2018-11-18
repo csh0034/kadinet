@@ -11,6 +11,8 @@
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript" src="/js/main/join.js"></script>
+<script type="text/javascript" src="/js/global/parsley.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main/parsley.css">
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -28,7 +30,7 @@
 					<div class="contents_box_bottom">
 						<div class="join_bx">
 							<div class="joinform_wrap">
-								<form action="joinProc.do" method="post">
+								<form action="joinProc.do" onsubmit="return CheckPassWord(u_id,u_pw,u_pwre);" method="post" data-parsley-validate>
 									<div class="join_tit">
 										<p>&gt; 정보입력</p>
 									</div>
@@ -38,7 +40,7 @@
 												<label for="u_id">아이디</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능" />
+												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능합니다" pattern="^[a-zA-Z0-9]{5,20}$" required />
 											</dd>
 										</dl>
 									</div>
@@ -48,7 +50,7 @@
 												<label for="u_pw">비밀번호</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pw" id="u_pw" value="" placeholder="영문, 숫자, 특수문자 조합" />
+												<input type="password" name="u_pw" id="u_pw" value="" placeholder="8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$"  required />
 											</dd>
 										</dl>
 										<dl class="line-half2">
@@ -56,7 +58,7 @@
 												<label for="u_pwre">비밀번호 확인</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pwre" id="u_pwre" value="" placeholder="비밀번호 재입력" />
+												<input type="password" name="u_pwre" id="u_pwre" value="" placeholder="비밀번호 재입력" data-parsley-equalto="#u_pw" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$" required />
 											</dd>
 										</dl>
 									</div>
@@ -66,7 +68,7 @@
 												<label for="u_name">이름</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_name" id="u_name" value="" placeholder="영문 , 한글만 사용 가능" />
+												<input type="text" name="u_name" id="u_name" value="" placeholder="영문 , 한글만 사용 가능" pattern="^[가-힣a-zA-Z].{1,30}$" required />
 											</dd>
 										</dl>
 									</div>
@@ -76,7 +78,7 @@
 												<label for="u_phone">휴대폰</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력" />
+												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력" pattern="^\d{4} \d{4} \d{4}$" required />
 											</dd>
 										</dl>
 									</div>
@@ -86,7 +88,7 @@
 												<input type="button" id="searchAddr" value="우편번호 검색 ">
 											</dt>
 											<dd>
-												<input type="text" name="u_addr1" id="u_addr1" placeholder="우편번호 검색" readonly />
+												<input type="text" name="u_addr1" id="u_addr1" placeholder="우편번호 검색" readonly required />
 											</dd>
 										</dl>
 										<dl class="line-full">
@@ -94,7 +96,7 @@
 												<label for="u_addr2">상세주소</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_addr2" id="u_addr2" />
+												<input type="text" name="u_addr2" id="u_addr2" required />
 											</dd>
 										</dl>
 									</div>
@@ -104,7 +106,7 @@
 												<label for="u_email">이메일</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_email" id="u_email" placeholder="ex) abc123@naver.com" />
+												<input type="text" name="u_email" id="u_email" placeholder="ex) abc123@naver.com" required data-parsley-type="email" data-parsley-trigger="change"/>
 											</dd>
 										</dl>
 									</div>

@@ -17,6 +17,9 @@ public class UserService {
 	public boolean checkLogin(String id, String pw) {
 		return dao.checkLogin(id,pw);
 	}
+	public boolean checkId(String id) {
+		return dao.checkId(id);
+	}
 	public void updateLastLogin(String id) {
 		dao.updateLastLogin(id);
 	}

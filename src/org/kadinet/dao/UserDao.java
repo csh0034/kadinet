@@ -38,6 +38,28 @@ public class UserDao extends DBCon {
 		return success;
 	}
 
+	public boolean checkId(String id) {
+		boolean success = false;
+		try {
+			conStart();
+			sql = "select * from user where user_id=?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next() || id.equals("")) {
+				success = false;
+			} else {
+				success = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			conClose();
+		}
+		return success;
+
+	}
 	public void updateLastLogin(String id) {
 		try {
 			conStart();
