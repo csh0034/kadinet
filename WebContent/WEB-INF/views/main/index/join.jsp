@@ -11,8 +11,8 @@
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script type="text/javascript" src="/js/main/join.js"></script>
-<script type="text/javascript" src="/js/global/parsley.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/main/parsley.css"> 
+<script type="text/javascript" src="/js/main/parsley.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main/parsley.css">
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
