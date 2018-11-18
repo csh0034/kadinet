@@ -30,7 +30,7 @@
 					<div class="contents_box_bottom">
 						<div class="join_bx">
 							<div class="joinform_wrap">
-								<form action="joinProc.do" onsubmit="return CheckPassWord(u_id,u_pw,u_pwre);" method="post" data-parsley-validate>
+								<form action="joinProc.do" method="post" data-parsley-validate>
 									<div class="join_tit">
 										<p>&gt; 정보입력</p>
 									</div>
@@ -40,7 +40,7 @@
 												<label for="u_id">아이디</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능합니다" pattern="^[a-zA-Z0-9]{5,20}$" required />
+												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능" pattern="^[a-zA-Z0-9]{5,20}$" required />
 											</dd>
 										</dl>
 									</div>
@@ -50,7 +50,7 @@
 												<label for="u_pw">비밀번호</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pw" id="u_pw" value="" placeholder="8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$"  required />
+												<input type="password" name="u_pw" id="u_pw" value="" placeholder="영문, 숫자, 특수문자 조합" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$"  required />
 											</dd>
 										</dl>
 										<dl class="line-half2">
@@ -78,7 +78,7 @@
 												<label for="u_phone">휴대폰</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력" pattern="^\d{4} \d{4} \d{4}$" required />
+												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력" data-parsley-u_phone required />
 											</dd>
 										</dl>
 									</div>
@@ -106,7 +106,7 @@
 												<label for="u_email">이메일</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_email" id="u_email" placeholder="ex) abc123@naver.com" required data-parsley-type="email" data-parsley-trigger="change"/>
+												<input type="text" name="u_email" id="u_email" placeholder="ex) abc123@naver.com" required data-parsley-u_email data-parsley-trigger="change"/>
 											</dd>
 										</dl>
 									</div>
