@@ -13,6 +13,8 @@
 <script type="text/javascript" src="/js/main/join.js"></script>
 <script type="text/javascript" src="/js/main/parsley.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/main/parsley.css">
+<script type="text/javascript" src="/js/main/ko.js"></script>
+
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -35,14 +37,18 @@
 										<p>&gt; 정보입력</p>
 									</div>
 									<div class="item">
-										<dl class="line-full">
+										<dl class="line-full on">
 											<dt>
 												<label for="u_id">아이디</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능" pattern="^[a-zA-Z0-9]{5,20}$" required />
+												<input type="text" name="u_id" id="u_id" value="" placeholder="5~20자리 영문, 숫자만 사용 가능"
+													pattern="(?=.*\d)(?=.*[a-z]).{5,20}" autofocus data-parsley-required="true"
+													data-parsley-trigger="change" required
+													data-parsley-errors-container="span[id='idError']" />
 											</dd>
 										</dl>
+										<span id="idError" class="errorArea"></span>
 									</div>
 									<div class="item mb2">
 										<dl class="line-half1">
@@ -50,17 +56,25 @@
 												<label for="u_pw">비밀번호</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pw" id="u_pw" value="" placeholder="영문, 숫자, 특수문자 조합" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$"  required />
+												<input type="password" name="u_pw" id="u_pw" value="" placeholder="영문, 숫자, 특수문자 조합"
+													pattern="(?=.*\d)(?=.*[a-z])(?=.*[~`!@#$%\\^&*()\-]).{5,20}" required
+													data-parsley-required="true" data-parsley-trigger="change" required
+													data-parsley-errors-container="span[id='pwError']" />
 											</dd>
 										</dl>
+										<span id="pwError" class="errorArea"></span>
 										<dl class="line-half2">
 											<dt>
 												<label for="u_pwre">비밀번호 확인</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pwre" id="u_pwre" value="" placeholder="비밀번호 재입력" data-parsley-equalto="#u_pw" pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$" required />
+												<input type="password" name="u_pwre" id="u_pwre" value="" placeholder="비밀번호 재입력"
+													data-parsley-equalto="#u_pw" required data-parsley-required="true"
+													data-parsley-trigger="change" required
+													data-parsley-errors-container="span[id='pwreError']" />
 											</dd>
 										</dl>
+										<span id="pwreError" class="errorArea"></span>
 									</div>
 									<div class="item">
 										<dl class="line-full">
@@ -68,9 +82,12 @@
 												<label for="u_name">이름</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_name" id="u_name" value="" placeholder="영문 , 한글만 사용 가능" pattern="^[가-힣a-zA-Z].{1,30}$" required />
+												<input type="text" name="u_name" id="u_name" value="" placeholder="영문 , 한글만 사용 가능"
+													pattern="^[가-힣a-zA-Z]{1,20}$" data-parsley-errors-container="span[id='nameError']"
+													data-parsley-required="true" data-parsley-trigger="change" required />
 											</dd>
 										</dl>
+										<span id="nameError" class="errorArea"></span>
 									</div>
 									<div class="item mb2">
 										<dl class="line-full">
@@ -78,27 +95,38 @@
 												<label for="u_phone">휴대폰</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력" data-parsley-u_phone required />
+												<input type="text" name="u_phone" id="u_phone" value="" placeholder="숫자만 입력"
+													data-parsley-type="digits" data-parsley-required="true" data-parsley-trigger="change"
+													required data-parsley-errors-container="span[id='phoneError']" />
 											</dd>
 										</dl>
+										<span id="phoneError" class="errorArea"></span>
 									</div>
-									<div class="item mb2">
+									<div class="item">
 										<dl class="line-full">
 											<dt>
 												<input type="button" id="searchAddr" value="우편번호 검색 ">
 											</dt>
 											<dd>
-												<input type="text" name="u_addr1" id="u_addr1" placeholder="우편번호 검색" readonly required />
+												<input type="text" name="u_addr1" id="u_addr1" placeholder="우편번호 검색" readonly required
+													required data-parsley-required="true" data-parsley-trigger="change"
+													data-parsley-errors-container="span[id='addr1Error']" />
 											</dd>
-										</dl>
+										</dl> 
+										<span id="addr1Error" class="errorArea"></span>
+									</div>
+									<div class="item mb2">
 										<dl class="line-full">
 											<dt>
 												<label for="u_addr2">상세주소</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_addr2" id="u_addr2" required />
+												<input type="text" name="u_addr2" id="u_addr2" required data-parsley-required="true"
+													required data-parsley-trigger="change"
+													data-parsley-errors-container="span[id='addr2Error']" />
 											</dd>
 										</dl>
+										<span id="addr2Error" class="errorArea"></span>
 									</div>
 									<div class="item">
 										<dl class="line-full">
@@ -106,9 +134,12 @@
 												<label for="u_email">이메일</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_email" id="u_email" placeholder="ex) abc123@naver.com" required data-parsley-u_email data-parsley-trigger="change"/>
+												<input type="email" name="u_email" id="u_email" placeholder="ex) abc123@naver.com"
+													required data-parsley-required="true" data-parsley-trigger="change"
+													data-parsley-errors-container="span[id='emailError']" />
 											</dd>
 										</dl>
+										<span id="emailError" class="errorArea"></span>
 									</div>
 									<div class="item">
 										<dl class="line-half1">

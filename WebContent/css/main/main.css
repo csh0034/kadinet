@@ -304,7 +304,7 @@ body {
 	width: 100%;
 }
 
-.join_bx input[type="text"], .join_bx input[type="password"] {
+.join_bx input[type="text"], .join_bx input[type="password"] ,.join_bx input[type="email"]  {
 	width: 100%;
 	height: 34px;
 }
@@ -318,6 +318,7 @@ body {
 .join_bx .item {
 	width: 100%;
 	overflow: hidden;
+	position: relative;
 }
 
 .join_bx dt label {
@@ -421,11 +422,24 @@ body {
 	margin: 40px auto 0 auto;
 }
 
+.join_bx .errorArea{
+	display: inline-block;
+	position:absolute; 
+	top:40px;
+	left:4px;
+	font-size: 14px;
+	color: red;
+}
+
+#pwreError{
+	left: 410px;
+}
+
 /* subNav */
 .subNav {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 0px;
+	left: 0px;
 	width: 225px;
 }
 
