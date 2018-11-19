@@ -62,12 +62,12 @@
 								<tbody>
 									<c:forEach var="i" begin="0" end="9">
 										<tr>
-											<td>${10-i}</td>
+											<td class="max74">${10-i}</td>
 											<td class="tit"><a href="/notice/${page}/detail.do?no=${i}"> [KADI] 2017
 													"4차산업혁명과 융합산업의 미래"</a></td>
-											<td>관리자</td>
+											<td class="max82">관리자</td>
 											<td>2018-11-16</td>
-											<td>10</td>
+											<td class="max74">10</td>
 											<td><img src="/img/main/notice/icon_file.gif"></td>
 										</tr>
 									</c:forEach>

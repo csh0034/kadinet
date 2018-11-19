@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -48,16 +49,16 @@
 								<tr class="lineBottom">
 									<th>첨부</th>
 									<td><p>
-											<img src="/img/main/notice/icon_file.gif">3._기업_기술보호의_Open__Close_전략.pdf
+											<img src="/img/main/notice/icon_file.gif"><a href="#">3._기업_기술보호의_Open__Close_전략.pdf</a>
 										</p>
 										<p>
-											<img src="/img/main/notice/icon_file.gif">1._제4차_산업혁명과_산업보안전망.pdf
+											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf</a>
 										</p>
 										<p>
-											<img src="/img/main/notice/icon_file.gif">1._제4차_산업혁명과_산업보안전망.pdf
+											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf</a>
 										</p>
 										<p>
-											<img src="/img/main/notice/icon_file.gif">1._제4차_산업혁명과_산업보안전망.pdf
+											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf</a>
 										</p></td>
 								</tr>
 								<tr>
@@ -74,13 +75,13 @@
 									<th class="move"><p>
 											이전글 <img src="/img/main/notice/pre.gif">
 										</p></th>
-									<td>어찌고저찌고</td>
+									<td><a href="#">어찌고저찌고</a></td>
 								</tr>
 								<tr class="lineBottom">
 									<th class="move"><p>
 											다음글<img src="/img/main/notice/next.gif">
 										</p></th>
-									<td>어찌고저찌고</td>
+									<td><a href="#">어찌고저찌고</a></td>
 								</tr>
 							</table>
 						</div>

@@ -304,7 +304,8 @@ body {
 	width: 100%;
 }
 
-.join_bx input[type="text"], .join_bx input[type="password"] ,.join_bx input[type="email"]  {
+.join_bx input[type="text"], .join_bx input[type="password"], .join_bx input[type="email"]
+	{
 	width: 100%;
 	height: 34px;
 }
@@ -422,16 +423,16 @@ body {
 	margin: 40px auto 0 auto;
 }
 
-.join_bx .errorArea{
+.join_bx .errorArea {
 	display: inline-block;
-	position:absolute; 
-	top:40px;
-	left:4px;
+	position: absolute;
+	top: 40px;
+	left: 4px;
 	font-size: 14px;
 	color: red;
 }
 
-#pwreError{
+#pwreError {
 	left: 410px;
 }
 
@@ -660,12 +661,25 @@ body {
 	white-space: nowrap;
 }
 
+.notice_bx .listTable .max74 {
+	max-width: 74px;
+}
+
+.notice_bx .listTable .max82 {
+	max-width: 82px;
+	padding: 0;
+}
+
 .notice_bx .listTable td img, .notice_bx .detailTable img {
 	width: 18px;
 }
 
 .notice_bx .listTable .tit {
 	text-align: left;
+}
+
+.notice_bx .listTable .tit a:hover {
+	color: #8a8a8a;
 }
 
 .notice_bx .paginDiv {
@@ -752,6 +766,10 @@ body {
 	margin: 8px 0;
 }
 
+.detailTable a:hover {
+	color: #8a8a8a;
+}
+
 .notice_bx .detailTable td img {
 	vertical-align: -4px;
 	margin-right: 10px;
@@ -760,9 +778,10 @@ body {
 .notice_bx .detailTable .contentTr {
 	border: 1px solid #d2d2d2;
 }
-.notice_bx .detailTable .contentTr div{
-	overflow:auto;
-	max-width: 778px; 
+
+.notice_bx .detailTable .contentTr div {
+	overflow: auto;
+	max-width: 778px;
 	min-height: 100px;
 }
 
@@ -792,23 +811,28 @@ body {
 	background-color: #4f98e3;
 	font-size: 15px;
 	color: white;
-	line-height: 35px; 
+	line-height: 35px;
 	cursor: pointer;
 	border-radius: 3px;
-	margin:30px 0; 
+	margin: 30px 0;
 }
 
-.notice_bx .detailTable .move p{
+.notice_bx .detailTable .btnTr td input:hover {
+	transition: all .3s ease-out;
+	opacity: 0.8;
+}
+
+.notice_bx .detailTable .move p {
 	position: relative;
 	margin: 0;
 }
 
-.notice_bx .detailTable .move img{
+.notice_bx .detailTable .move img {
 	position: absolute;
 	width: 30px;
-	height: 5px; 
+	height: 5px;
 	top: 8px;
-	right:25px;
+	right: 25px;
 }
 
 /* footer */
