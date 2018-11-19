@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +10,17 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script>
+	function pageing(page) {
+		document.readFrm.nowPage.value = page;
+		document.readFrm.submit();
+	}
+
+	function block(value) {
+		document.readFrm.nowPage.value = 10 * (value - 1) + 1;
+		document.readFrm.submit();
+	}
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -37,8 +46,8 @@
 										<option value="content">내용</option>
 									</select>
 									<div class="wrap">
-										<input class="searchIn" type="text" name="keyWord" required>
-										<input class="searchSubmit" type="submit" value="">
+										<input class="searchIn" type="text" name="keyWord" required> <input
+											class="searchSubmit" type="submit" value="">
 									</div>
 								</form>
 							</div>
@@ -62,42 +71,64 @@
 									</tr>
 								</thead>
 								<tbody>
-<%-- 									<c:forEach var="i" begin="0" end="9">
-										<tr>
-											<td class="max74">${10-i}</td>
-											<td class="tit"><a
-												href="/notice/${page}/detail.do?no=${i}"> [KADI] 2017
-													"4차산업혁명과 융합산업의 미래"</a></td>
-											<td class="max82">관리자</td>
-											<td>2018-11-16</td>
-											<td class="max74">10</td>
-											<td><img src="/img/main/notice/icon_file.gif"></td>
-										</tr>
-									</c:forEach> --%>
-									<c:forEach var="item" items="${list}" varStatus="i">
-										<tr>
-											<td class="max74">${totalRecord - ((nowPage - 1) * 10) - i.index}</td>
-											<td class="tit"><a
-												href="/notice/${page}/detail.do?no=${i}">
-													${item.getNotice_title()}</a></td>
-											<td class="max82">${item.getUser_name()}</td>
-											<td>${item.getNotice_regdate()}</td>
-											<td class="max74">10</td>
-											<td><img src="/img/main/notice/icon_file.gif"></td>
-										</tr>
-									</c:forEach>
-									<tr>
-										<td colspan=6>검색된 글이 없습니다</td>
-									</tr>
+									<c:choose>
+										<c:when test="${!empty list}">
+
+											<c:forEach var="item" items="${list}" varStatus="i">
+												<tr>
+													<td class="max74"><c:choose>
+															<c:when test="${item.getNotice_bool() == 't'}">
+																<span id="notice">공지</span>
+															</c:when>
+															<c:otherwise>
+													${totalRecord - ((nowPage - 1) * 10) - i.index}
+												</c:otherwise>
+														</c:choose></td>
+													<td class="tit"><a href="/notice/${page}/detail.do?no=${item.getNotice_no()}">
+															${item.getNotice_title()}</a></td>
+													<td class="max82">${item.getUser_name()}</td>
+													<td>${item.getNotice_regdate()}</td>
+													<td class="max74">${item.getNotice_hit()}</td>
+													<td><c:if test="${item.getFile_no() != 0}">
+															<img src="/img/main/notice/icon_file.gif">
+														</c:if></td>
+												</tr>
+											</c:forEach>
+										</c:when>
+										<c:otherwise>
+											<tr>
+												<td colspan=6>검색된 글이 없습니다</td>
+											</tr>
+										</c:otherwise>
+									</c:choose>
 								</tbody>
 							</table>
 
 							<div class="paginDiv">
-								<span class="paging">&lt;</span>
-								<c:forEach var="i" begin="1" end="10">
-									<span class="paging">${i}</span>
-								</c:forEach>
-								<span class="paging">&gt;</span>
+								<c:if test="${totalPage !=0 }">
+									<c:if test="${nowblock > 1 }">
+										<a href="javascript:block('${nowblock - 1 }')">
+											<span class="paging">&lt;</span>
+										</a>
+									</c:if>
+									<c:forEach var="i" begin="${pageStart}" end="${pageEnd}">
+										<a href="javascript:pageing('${i}')">
+											<span class="paging">${i}</span>
+										</a>
+									</c:forEach>
+									<c:if test="${totalBlock > nowBlock }">
+										<a href="javascript:block('${nowblock + 1 }')">
+											<span class="paging">&gt;</span>
+										</a>
+									</c:if>
+								</c:if>
+							</div>
+							<div>
+								<form name="readFrm" method="get">
+									<input type="hidden" name="nowPage" value="${nowPage}"> <input type="hidden"
+										name="keyField" value="${keyField}"> <input type="hidden" name="keyWord"
+										value="${keyWord}">
+								</form>
 							</div>
 						</div>
 					</div>

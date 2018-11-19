@@ -666,6 +666,16 @@ body {
 	white-space: nowrap;
 }
 
+.notice_bx #notice{
+	border: 1px solid #4f98e3;
+	background: #4f98e3;
+	color: white;
+	display:inline-block;
+	padding: 4px 11px; 
+	border-radius: 5px;
+	font-size: 14px;
+}
+
 .notice_bx .listTable .max74 {
 	max-width: 74px;
 }

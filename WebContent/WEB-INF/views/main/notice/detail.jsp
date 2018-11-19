@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -36,36 +35,41 @@
 								</colgroup>
 								<tr class="lineTop">
 									<th>제목</th>
-									<td>블라블라</td>
+									<td>${bean.getNotice_title()}</td>
 								</tr>
 								<tr>
 									<th>작성자</th>
-									<td>관리자</td>
+									<td>${bean.getUser_name()}</td>
 								</tr>
-								<tr>
-									<th>등록일</th>
-									<td>2018-11-18</td>
-								</tr>
-								<tr class="lineBottom">
-									<th>첨부</th>
-									<td><p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">3._기업_기술보호의_Open__Close_전략.pdf ( 12MB )</a>
-										</p>
-										<p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf ( 5.2MB )</a>
-										</p>
-										<p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf ( 6.6MB )</a>
-										</p>
-										<p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf ( 7.1MB )</a>
-										</p></td>
-								</tr>
+
+								<c:choose>
+									<c:when test="${!empty files}">
+										<tr>
+											<th>등록일</th>
+											<td>${bean.getNotice_regdate()}</td>
+										</tr>
+										<tr class="lineBottom">
+											<th>첨부</th>
+											<td><c:forEach var="item" items="${files}" varStatus="i">
+													<p>
+														<img src="/img/main/notice/icon_file.gif">
+														<a href="#">${i.index+1}. ${item.getFile_oriname()}</a>
+													</p>
+												</c:forEach></td>
+										</tr>
+									</c:when>
+									<c:otherwise>
+										<tr class="lineBottom">
+											<th>등록일</th>
+											<td>${bean.getNotice_regdate()}</td>
+										</tr>
+									</c:otherwise>
+								</c:choose>
 								<tr>
 									<td colspan="2"></td>
 								</tr>
 								<tr class="contentTr">
-									<td colspan="2"><div>여기에 내용이 들어갑니다.</div></td>
+									<td colspan="2"><div>${bean.getNotice_content()}</div></td>
 								</tr>
 								<tr class="btnTr">
 									<td colspan="2"><input type="button" value="목록"
@@ -75,13 +79,27 @@
 									<th class="move"><p>
 											이전글 <img src="/img/main/notice/pre.gif">
 										</p></th>
-									<td><a href="#">어찌고저찌고</a></td>
+									<td><c:choose>
+											<c:when test="${empty prePost[0]}">
+												이전글이 없습니다.
+											</c:when>
+											<c:otherwise>
+												<a href="/notice/${page}/detail.do?no=${prePost[0]}">${prePost[1]}</a>
+											</c:otherwise>
+										</c:choose></td>
 								</tr>
 								<tr class="lineBottom">
 									<th class="move"><p>
 											다음글<img src="/img/main/notice/next.gif">
 										</p></th>
-									<td><a href="#">어찌고저찌고</a></td>
+									<td><c:choose>
+											<c:when test="${empty prePost[2]}">
+												이전글이 없습니다.
+											</c:when>
+											<c:otherwise>
+												<a href="/notice/${page}/detail.do?no=${prePost[2]}">${prePost[3]}</a>
+											</c:otherwise>
+										</c:choose></td>
 								</tr>
 							</table>
 						</div>

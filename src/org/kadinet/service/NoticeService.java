@@ -40,6 +40,8 @@ public class NoticeService {
 			nowPage = Integer.parseInt(request.getParameter("nowPage"));
 		}
 
+		start = (nowPage * numPerPage) - numPerPage;
+
 		totalRecord = dao.getCount(category, keyField, keyWord);
 		totalPage = (int) Math.ceil((double) totalRecord / numPerPage);
 		nowBlock = (int) Math.ceil((double) nowPage / pagePerBlock);
@@ -59,6 +61,23 @@ public class NoticeService {
 		request.setAttribute("totalBlock", totalBlock);
 		request.setAttribute("nowPage", nowPage);
 		request.setAttribute("totalRecord", totalRecord);
+		request.setAttribute("keyWord", keyWord);
+		request.setAttribute("keyField", keyField);
 
 	}
+
+	public void getNotice(HttpServletRequest request) {
+		String no = request.getParameter("no");
+		if( no == null || no.isEmpty()) {
+			no = "1";
+		}
+		NoticeBean bean = dao.getNotice(no);
+		Vector<NoticeBean> files = dao.getFileList(no);
+		String prePost[] = dao.getPrePost(no, bean.getNotice_category());
+
+		request.setAttribute("bean", bean);
+		request.setAttribute("prePost", prePost);
+		request.setAttribute("files", files);
+	}
+	
 }

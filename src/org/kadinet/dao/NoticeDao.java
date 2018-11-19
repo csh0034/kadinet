@@ -21,21 +21,22 @@ public class NoticeDao extends DBCon {
 		try {
 			conStart();
 			if (keyWord == null || "".equals(keyWord) || keyWord.isEmpty()) {
-				sql = "select * from notice left outer join notice_file\r\n"
+				sql = "select *,DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice left outer join notice_file\r\n"
 						+ "on notice.notice_no = notice_file.notice_no join user on notice.user_id = user.user_id where notice_category = ? and \r\n"
 						+ "(notice_file.file_order = (select min(file_order) from notice_file) \r\n"
-						+ "or notice_file.file_order is null)\r\n" + "order by notice.notice_no desc limit ?,?";
+						+ "or notice_file.file_order is null)\r\n"
+						+ "order by notice.notice_bool desc,notice.notice_no desc limit ?,?";
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, category);
 				pstmt.setInt(2, startRow);
 				pstmt.setInt(3, endRow);
 			} else {
 
-				sql = "select * from notice left outer join notice_file\r\n"
+				sql = "select *,DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice left outer join notice_file\r\n"
 						+ "on notice.notice_no = notice_file.notice_no join user on notice.user_id = user.user_id where notice_category = ? and \r\n"
 						+ "(notice_file.file_order = (select min(file_order) from notice_file) \r\n"
 						+ "or notice_file.file_order is null) and notice_" + keyField + " like ? \r\n"
-						+ "order by notice.notice_no desc limit ?,?";
+						+ "order by notice.notice_bool desc,notice.notice_no desc limit ?,?";
 
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, category);
@@ -54,7 +55,7 @@ public class NoticeDao extends DBCon {
 				bean.setNotice_content(rs.getString("notice_content"));
 				bean.setUser_id(rs.getString("user_id"));
 				bean.setUser_name(rs.getString("user_name"));
-				bean.setNotice_regdate(rs.getDate("notice_regdate"));
+				bean.setNotice_regdate(rs.getDate("reg"));
 				bean.setNotice_hit(rs.getInt("notice_hit"));
 				bean.setFile_no(rs.getInt("file_no"));
 				list.add(bean);
@@ -67,7 +68,7 @@ public class NoticeDao extends DBCon {
 		return list;
 	}
 
-	public int getCount(String category , String keyField, String keyWord) {
+	public int getCount(String category, String keyField, String keyWord) {
 		int count = 0;
 		try {
 			conStart();
@@ -92,6 +93,94 @@ public class NoticeDao extends DBCon {
 			conClose();
 		}
 		return count;
+	}
+
+	public NoticeBean getNotice(String no) {
+		NoticeBean bean = new NoticeBean();
+		try {
+			conStart();
+		
+				sql = "select * , DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice\r\n" + 
+						"join user on notice.user_id = user.user_id where notice_no = ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, no);
+		
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				bean.setNotice_title(rs.getString("notice_title"));
+				bean.setNotice_category(rs.getString("notice_category"));
+				bean.setNotice_content(rs.getString("notice_content"));
+				bean.setUser_name(rs.getString("user_name"));
+				bean.setNotice_regdate(rs.getDate("reg"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return bean;
+	}
+	
+	public String[] getPrePost(String no , String category) {
+		String tmp[] = {"","","",""};
+
+		try {
+			conStart();
+			sql = "select * from notice where notice_no > ?  and notice_category = ? order by notice_no asc limit 1";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			pstmt.setString(2, category);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				tmp[0] = rs.getString("notice_no");
+				tmp[1] = rs.getString("notice_title");
+			}
+			
+			sql = "select * from notice where notice_no < ? and notice_category = ? order by notice_no desc limit 1";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			pstmt.setString(2, category);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				tmp[2] = rs.getString("notice_no");
+				tmp[3] = rs.getString("notice_title");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return tmp;
+	}
+	
+	public Vector<NoticeBean> getFileList(String no) {
+		Vector<NoticeBean> list = new Vector<NoticeBean>();
+		try {
+			conStart();
+				sql = "select * from notice_file where notice_no= ? order by file_order";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, no);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				NoticeBean bean = new NoticeBean();
+				bean.setFile_no(rs.getInt("file_no"));
+				bean.setFile_oriname(rs.getString("file_oriname"));
+				bean.setFile_rename(rs.getString("file_rename"));
+				bean.setFile_size(rs.getString("file_size"));
+				list.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return list;
 	}
 
 }
