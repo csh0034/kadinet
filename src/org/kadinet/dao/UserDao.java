@@ -1,7 +1,6 @@
 package org.kadinet.dao;
 
 import org.kadinet.util.DBCon;
-import org.kadinet.util.DBConnectionMgr;
 import org.kadinet.model.UserBean;
 
 public class UserDao extends DBCon {
@@ -39,27 +38,30 @@ public class UserDao extends DBCon {
 	}
 
 	public boolean checkId(String id) {
-		boolean success = false;
+		boolean flag = true;
 		try {
 			conStart();
-			sql = "select * from user where user_id=?";
-			
+			sql = "select count(*) from user where user_id=?";
+
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			if (rs.next() || id.equals("")) {
-				success = false;
-			} else {
-				success = true;
+
+			if (rs.next()) {
+				if (rs.getInt(1) > 0) {
+					flag = false;
+				}
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			conClose();
 		}
-		return success;
+		return flag;
 
 	}
+
 	public void updateLastLogin(String id) {
 		try {
 			conStart();
@@ -79,7 +81,6 @@ public class UserDao extends DBCon {
 	public void insertUser(UserBean user) {
 		try {
 			conStart();
-			DBConnectionMgr.getInstance();
 			sql = "insert into user values(?,?,?,?,?,sysdate(),sysdate(),?,?,'1')";
 
 			pstmt = con.prepareStatement(sql);
@@ -100,19 +101,13 @@ public class UserDao extends DBCon {
 		}
 	}
 
-/*	public void deleteUser(String id) {
-		try {
-			conStart();
-			sql = "delete from user where id=?";
-
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, id);
-			pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			conClose();
-		}
-	}*/
+	/*
+	 * public void deleteUser(String id) { try { conStart(); sql =
+	 * "delete from user where id=?";
+	 * 
+	 * pstmt = con.prepareStatement(sql); pstmt.setString(1, id);
+	 * pstmt.executeUpdate();
+	 * 
+	 * } catch (Exception e) { e.printStackTrace(); } finally { conClose(); } }
+	 */
 }

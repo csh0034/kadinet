@@ -428,8 +428,13 @@ body {
 	position: absolute;
 	top: 40px;
 	left: 4px;
-	font-size: 14px;
 	color: red;
+}
+
+#idError{
+	font-size: 11.7px;
+	line-height: 10.53px;
+	margin: 2px 0 3px;
 }
 
 #pwreError {
