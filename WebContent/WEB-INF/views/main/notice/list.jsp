@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -35,8 +36,8 @@
 										<option value="content">내용</option>
 									</select>
 									<div class="wrap">
-										<input class="searchIn" type="text" name="keyWord" required> <input
-											class="searchSubmit" type="submit" value="">
+										<input class="searchIn" type="text" name="keyWord" required>
+										<input class="searchSubmit" type="submit" value="">
 									</div>
 								</form>
 							</div>
@@ -63,7 +64,8 @@
 									<c:forEach var="i" begin="0" end="9">
 										<tr>
 											<td class="max74">${10-i}</td>
-											<td class="tit"><a href="/notice/${page}/detail.do?no=${i}"> [KADI] 2017
+											<td class="tit"><a
+												href="/notice/${page}/detail.do?no=${i}"> [KADI] 2017
 													"4차산업혁명과 융합산업의 미래"</a></td>
 											<td class="max82">관리자</td>
 											<td>2018-11-16</td>
@@ -71,6 +73,9 @@
 											<td><img src="/img/main/notice/icon_file.gif"></td>
 										</tr>
 									</c:forEach>
+									<tr>
+										<td colspan=6>검색된 글이 없습니다</td>
+									</tr>
 								</tbody>
 							</table>
 

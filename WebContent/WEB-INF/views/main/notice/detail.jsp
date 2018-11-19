@@ -49,16 +49,16 @@
 								<tr class="lineBottom">
 									<th>첨부</th>
 									<td><p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">3._기업_기술보호의_Open__Close_전략.pdf</a>
+											<img src="/img/main/notice/icon_file.gif"><a href="#">3._기업_기술보호의_Open__Close_전략.pdf ( 12MB )</a>
 										</p>
 										<p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf</a>
+											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf ( 5.2MB )</a>
 										</p>
 										<p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf</a>
+											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf ( 6.6MB )</a>
 										</p>
 										<p>
-											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf</a>
+											<img src="/img/main/notice/icon_file.gif"><a href="#">1._제4차_산업혁명과_산업보안전망.pdf ( 7.1MB )</a>
 										</p></td>
 								</tr>
 								<tr>
