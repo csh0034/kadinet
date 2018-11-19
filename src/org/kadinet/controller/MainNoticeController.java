@@ -5,9 +5,12 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.kadinet.service.NoticeService;
 import org.kadinet.util.HttpUtil;
 
 public class MainNoticeController implements Controller {
+	NoticeService service = NoticeService.getInstance();
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
@@ -38,12 +41,14 @@ public class MainNoticeController implements Controller {
 			throws ServletException, IOException {
 		request.setAttribute("page", "notice");
 		request.setAttribute("tit", "공지사항");
+		service.getNoticeList("notice", request);
 	}
 
 	private void pressList(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "press");
 		request.setAttribute("tit", "보도자료");
+		service.getNoticeList("press", request);
 
 	}
 
@@ -51,6 +56,7 @@ public class MainNoticeController implements Controller {
 			throws ServletException, IOException {
 		request.setAttribute("page", "data");
 		request.setAttribute("tit", "정보자료실");
+		service.getNoticeList("data", request);
 
 	}
 

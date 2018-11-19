@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,7 @@
 						<div class="notice_bx">
 							<div class="searchDiv">
 								<form method="get">
-									<select name="type">
+									<select name="keyField">
 										<option value="title" selected>제목</option>
 										<option value="content">내용</option>
 									</select>
@@ -61,7 +62,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="i" begin="0" end="9">
+<%-- 									<c:forEach var="i" begin="0" end="9">
 										<tr>
 											<td class="max74">${10-i}</td>
 											<td class="tit"><a
@@ -69,6 +70,18 @@
 													"4차산업혁명과 융합산업의 미래"</a></td>
 											<td class="max82">관리자</td>
 											<td>2018-11-16</td>
+											<td class="max74">10</td>
+											<td><img src="/img/main/notice/icon_file.gif"></td>
+										</tr>
+									</c:forEach> --%>
+									<c:forEach var="item" items="${list}" varStatus="i">
+										<tr>
+											<td class="max74">${totalRecord - ((nowPage - 1) * 10) - i.index}</td>
+											<td class="tit"><a
+												href="/notice/${page}/detail.do?no=${i}">
+													${item.getNotice_title()}</a></td>
+											<td class="max82">${item.getUser_name()}</td>
+											<td>${item.getNotice_regdate()}</td>
 											<td class="max74">10</td>
 											<td><img src="/img/main/notice/icon_file.gif"></td>
 										</tr>
