@@ -14,8 +14,8 @@ public class UserBean {
 	private String user_email_receive;
 	private String user_sms_receive;
 	private String user_zipCode;
-	private String user_address;
-	private String user_detailAddress;
+	private String user_addr1;
+	private String user_addr2;
 	
 	public String getUser_id() {
 		return user_id;
@@ -83,17 +83,17 @@ public class UserBean {
 	public void setUser_zipCode(String user_zipCode) {
 		this.user_zipCode = user_zipCode;
 	}
-	public String getUser_address() {
-		return user_address;
+	public String getUser_addr1() {
+		return user_addr1;
 	}
-	public void setUser_address(String user_address) {
-		this.user_address = user_address;
+	public void setUser_addr1(String user_addr1) {
+		this.user_addr1 = user_addr1;
 	}
-	public String getUser_detailAddress() {
-		return user_detailAddress;
+	public String getUser_addr2() {
+		return user_addr2;
 	}
-	public void setUser_detailAddress(String user_detailAddress) {
-		this.user_detailAddress = user_detailAddress;
+	public void setUser_addr2(String user_addr2) {
+		this.user_addr2 = user_addr2;
 	}
 	
 }

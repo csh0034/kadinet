@@ -57,6 +57,8 @@ public class MainIndexController implements Controller {
 		String phone = request.getParameter("u_phone");
 		String mail_receive = request.getParameter("u_email_receive");
 		String sms_receive = request.getParameter("u_sms_receive");
+		String addr1 = request.getParameter("u_addr1");
+		String addr2 = request.getParameter("u_addr2");
 
 		UserBean user = new UserBean();
 
@@ -67,10 +69,12 @@ public class MainIndexController implements Controller {
 		user.setUser_phone(phone);
 		user.setUser_email_receive(mail_receive);
 		user.setUser_sms_receive(sms_receive);
-
+		user.setUser_addr1(addr1);
+		user.setUser_addr2(addr2);
+		
 		UserService service = UserService.getInstance();
 		service.insertUser(user);
-
+		
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

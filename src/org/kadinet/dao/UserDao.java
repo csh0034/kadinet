@@ -81,7 +81,7 @@ public class UserDao extends DBCon {
 	public void insertUser(UserBean user) {
 		try {
 			conStart();
-			sql = "insert into user values(?,?,?,?,?,sysdate(),sysdate(),?,?,'1')";
+			sql = "insert into user values(?,?,?,?,?,sysdate(),sysdate(),?,?,?,?,?,'1')";
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getUser_id());
@@ -91,6 +91,9 @@ public class UserDao extends DBCon {
 			pstmt.setString(5, user.getUser_phone());
 			pstmt.setString(6, user.getUser_email_receive());
 			pstmt.setString(7, user.getUser_sms_receive());
+			pstmt.setString(8, user.getUser_zipCode());
+			pstmt.setString(9, user.getUser_addr1());
+			pstmt.setString(10, user.getUser_addr2());
 
 			pstmt.executeUpdate();
 

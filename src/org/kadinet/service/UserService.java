@@ -24,6 +24,12 @@ public class UserService {
 		dao.updateLastLogin(id);
 	}
 	public void insertUser(UserBean user) {
+		String zipCode = user.getUser_addr1().substring(1, 6);
+		String addr1 = user.getUser_addr1().substring(8, user.getUser_addr1().length());
+		
+		user.setUser_zipCode(zipCode);
+		user.setUser_addr1(addr1);
+		
 		dao.insertUser(user);
 	}
 /*	public void deleteUser(String id) {
