@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,25 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d64ae3dc1ef35b24364c94f0fb547d1b"></script>
+<script>
+	window.onload = function() {
+		var lat = 37.58525000;
+		var lng = 127.08855007;
+		var container = document.getElementById('map');
+		var options = {
+			center : new daum.maps.LatLng(lat, lng),
+			level : 3
+		};
+		var marker = new daum.maps.Marker({
+			position : new daum.maps.LatLng(lat, lng)
+		});
+
+		var map = new daum.maps.Map(container, options);
+		marker.setMap(map);
+	}
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -25,6 +45,7 @@
 						<h3 class="location">오시는길</h3>
 					</div>
 					<div class="contents_box_bottom">
+						<div id="map" style="width: 500px; height: 400px;"></div>
 						<div class="visit_table">
 							<table>
 								<tr>
