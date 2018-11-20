@@ -14,7 +14,7 @@ public class NoticeDao extends DBCon {
 	public static NoticeDao getInstance() {
 		return dao;
 	}
-
+	
 	public Vector<NoticeBean> getNoticeList(String category, int startRow, int endRow, String keyField,
 			String keyWord) {
 		Vector<NoticeBean> list = new Vector<NoticeBean>();
@@ -121,7 +121,34 @@ public class NoticeDao extends DBCon {
 		}
 		return bean;
 	}
-	
+	public  Vector<NoticeBean> getPressList7 () {
+		Vector<NoticeBean> list = new Vector<NoticeBean>();
+		try {
+			conStart();
+				sql = "select *, DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice where notice_category = 'press' order by notice_no desc limit 0,7";
+				pstmt = con.prepareStatement(sql);
+				
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				NoticeBean bean = new NoticeBean();
+				bean.setNotice_no(rs.getInt("notice_no"));
+				bean.setNotice_title(rs.getString("notice_title"));
+				bean.setNotice_regdate(rs.getDate("reg"));
+				bean.setNotice_hit(rs.getInt("notice_hit"));
+				
+				list.add(bean);
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		
+		return list;
+	}
 	public String[] getPrePost(String no , String category) {
 		String tmp[] = {"","","",""};
 

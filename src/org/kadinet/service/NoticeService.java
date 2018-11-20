@@ -79,5 +79,10 @@ public class NoticeService {
 		request.setAttribute("prePost", prePost);
 		request.setAttribute("files", files);
 	}
+	public void getPressList7(HttpServletRequest request) {
+		Vector<NoticeBean>list = dao.getPressList7();
+		request.setAttribute("pressList", list);
+	}
+	
 	
 }
