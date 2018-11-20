@@ -37,6 +37,22 @@ $(function() {
 	$(window).resize(function() {
 		setMainPadBtm();
 	});
+	
+	$('#sc1').addClass("abc1");
+
+	setTimeout(function(){
+		$('#sc2').addClass("abc1");
+	},300); 
+	setTimeout(function(){
+		$('#sc3').addClass("abc1");
+	},600); 
+	setTimeout(function(){
+		$('#sc4').addClass("abc1");
+	},900); 
+	setTimeout(function(){
+		$('#sc5').addClass("abc1");
+	},1200); 
+
 });
 
 function setMainPadBtm() {
