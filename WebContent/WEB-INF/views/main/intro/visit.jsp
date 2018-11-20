@@ -45,7 +45,7 @@
 						<h3 class="location">오시는길</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div id="map" style="width: 500px; height: 400px;"></div>
+						<div id="map"></div>
 						<div class="visit_table">
 							<table>
 								<tr>
