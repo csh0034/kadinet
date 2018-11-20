@@ -14,7 +14,7 @@
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
-		<div class="login_menu_img">
+		<div class="menu_img intro_menu_img">
 			<b>협회소개</b>
 		</div>
 		<div class="main">

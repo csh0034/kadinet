@@ -212,17 +212,40 @@ body {
 }
 
 /* login */
-.wrap .login_menu_img {
+.wrap .menu_img {
 	box-sizing: content-box;
 	text-align: center;
 	width: 100%;
 	height: 200px;
-	background: url("/img/main/index/login_menu_img.jpg") 0 75px no-repeat;
-	background-size: 100% 100%;
 	padding-top: 75px;
 }
 
-.wrap .login_menu_img>b {
+.wrap .index_menu_img {
+	background: url("/img/main/index/login_menu_img.jpg") 0 75px no-repeat;
+	background-size: 100% 100%;
+}
+
+.wrap .business_menu_img {
+	background: url("/img/main/business/business_menu_img.jpg") 0 75px no-repeat;
+	background-size: 100% 100%;
+}
+
+.wrap .mbr_menu_img {
+	background: url("/img/main/mbr/mbr_menu_img.jpg") 0 75px no-repeat;
+	background-size: 100% 100%;
+}
+
+.wrap .notice_menu_img {
+	background: url("/img/main/notice/notice_menu_img.jpg") 0 75px no-repeat;
+	background-size: 100% 100%;
+}
+
+.wrap .intro_menu_img {
+	background: url("/img/main/intro/intro_menu_img.jpg") 0 75px no-repeat;
+	background-size: 100% 100%; 
+}
+
+.wrap .menu_img>b {
 	display: inline-block;
 	font-size: 40px;
 	line-height: 200px;
