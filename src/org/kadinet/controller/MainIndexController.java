@@ -42,7 +42,7 @@ public class MainIndexController implements Controller {
 		request.setAttribute("index", "true");
 		
 		NoticeService service = NoticeService.getInstance();
-		service.getPressList7(request);
+		service.getNoticeList7(request);
 	}
 
 	private void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

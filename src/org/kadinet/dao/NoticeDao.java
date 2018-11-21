@@ -14,7 +14,7 @@ public class NoticeDao extends DBCon {
 	public static NoticeDao getInstance() {
 		return dao;
 	}
-	
+
 	public Vector<NoticeBean> getNoticeList(String category, int startRow, int endRow, String keyField,
 			String keyWord) {
 		Vector<NoticeBean> list = new Vector<NoticeBean>();
@@ -99,12 +99,12 @@ public class NoticeDao extends DBCon {
 		NoticeBean bean = new NoticeBean();
 		try {
 			conStart();
-		
-				sql = "select * , DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice\r\n" + 
-						"join user on notice.user_id = user.user_id where notice_no = ?";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, no);
-		
+
+			sql = "select * , DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice\r\n"
+					+ "join user on notice.user_id = user.user_id where notice_no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -121,36 +121,66 @@ public class NoticeDao extends DBCon {
 		}
 		return bean;
 	}
-	public  Vector<NoticeBean> getPressList7 () {
+
+	public Vector<NoticeBean> getNoticeList5(String category) {
 		Vector<NoticeBean> list = new Vector<NoticeBean>();
 		try {
 			conStart();
-				sql = "select *, DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice where notice_category = 'press' order by notice_no desc limit 0,7";
-				pstmt = con.prepareStatement(sql);
-				
+			sql = "select *, DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice where notice_category = 'notice' order by notice_no desc limit 0,5";
+			pstmt = con.prepareStatement(sql);
+
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				NoticeBean bean = new NoticeBean();
 				bean.setNotice_no(rs.getInt("notice_no"));
 				bean.setNotice_title(rs.getString("notice_title"));
 				bean.setNotice_regdate(rs.getDate("reg"));
 				bean.setNotice_hit(rs.getInt("notice_hit"));
-				
+
 				list.add(bean);
 			}
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			conClose();
 		}
-		
+
 		return list;
 	}
-	public String[] getPrePost(String no , String category) {
-		String tmp[] = {"","","",""};
+
+	public Vector<NoticeBean> getNoticeList7(String category) {
+		Vector<NoticeBean> list = new Vector<NoticeBean>();
+		try {
+			conStart();
+			sql = "select *, DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice where notice_category = ? order by notice_no desc limit 0,7";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, category);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				NoticeBean bean = new NoticeBean();
+				bean.setNotice_no(rs.getInt("notice_no"));
+				bean.setNotice_title(rs.getString("notice_title"));
+				bean.setNotice_regdate(rs.getDate("reg"));
+				bean.setNotice_hit(rs.getInt("notice_hit"));
+
+				list.add(bean);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+
+		return list;
+	}
+
+	public String[] getPrePost(String no, String category) {
+		String tmp[] = { "", "", "", "" };
 
 		try {
 			conStart();
@@ -164,13 +194,13 @@ public class NoticeDao extends DBCon {
 				tmp[0] = rs.getString("notice_no");
 				tmp[1] = rs.getString("notice_title");
 			}
-			
+
 			sql = "select * from notice where notice_no < ? and notice_category = ? order by notice_no desc limit 1";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, no);
 			pstmt.setString(2, category);
 			rs = pstmt.executeQuery();
-			
+
 			if (rs.next()) {
 				tmp[2] = rs.getString("notice_no");
 				tmp[3] = rs.getString("notice_title");
@@ -183,14 +213,14 @@ public class NoticeDao extends DBCon {
 		}
 		return tmp;
 	}
-	
+
 	public Vector<NoticeBean> getFileList(String no) {
 		Vector<NoticeBean> list = new Vector<NoticeBean>();
 		try {
 			conStart();
-				sql = "select * from notice_file where notice_no= ? order by file_order";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, no);
+			sql = "select * from notice_file where notice_no= ? order by file_order";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
 
 			rs = pstmt.executeQuery();
 
