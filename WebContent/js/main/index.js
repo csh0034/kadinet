@@ -59,7 +59,7 @@ $(function() {
 		orientation : "horizontal",
 		circular : "yes",
 		autoscroll : "yes",
-		interval : 5000,
+		interval : 3000,
 		direction : "left"
 	});
 });

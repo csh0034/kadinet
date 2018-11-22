@@ -36,7 +36,7 @@
 	cursor: pointer;
 	float: left;
 	height: 80px;
-	padding: 17px 20px 17px 0;
+	padding: 17px 20px 17px 20px;
 }
 .als-item a{ 
 	display: block;
@@ -46,7 +46,7 @@
 }
 
 .als-item img{
-	width: 120px;
+	width: 125px;
 	height: 45px;
 }
 
