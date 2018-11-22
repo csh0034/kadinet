@@ -670,6 +670,14 @@ body {
 	left: 410px;
 }
 
+/* find */
+.find_tit {
+	font-size: 17px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
 /* subNav */
 .subNav {
 	position: absolute;
@@ -874,6 +882,37 @@ body {
 .visit_table table th, .visit_table table td {
 	color: #313338;
 	font-size: 15px;
+}
+
+/* business */
+.business_box {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #d2d2d2;
+	padding: 30px;
+}
+
+.business_box h5 {
+	margin-bottom: 14px;
+    margin-top: 60px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #4f98e3;
+    font-size: 24px;
+    color: #4a95e6;
+    text-align: left;
+    font-weight: normal;
+}
+
+.business_box .bu_text_tit {
+    color: #8a8a8a;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.business_box .bu_text {
+	color: #313338;
+    font-size: 17px;
+    line-height: 25px;
 }
 
 /* notice , press , data */
@@ -1098,6 +1137,72 @@ body {
 	height: 5px;
 	top: 8px;
 	right: 25px;
+}
+
+/* member */
+.member_box {
+	width: 100%;
+	height: 1100px;
+}
+
+.member_box ol > li {
+    float: left;
+    width: 261px;
+    height: 345px;
+    margin: 7px;
+    border: 1px solid #d2d2d2;
+}
+
+.member_box ol > li .img {
+    display: inline-block;
+    width: 100%;
+    height: 130px;
+    line-height: 211px;
+    text-align: center;
+    overflow: hidden;
+}
+/*
+.member_box ol > li b em {
+    display: block;
+    position: absolute;
+    top: 19.6px;
+    left: 9px;
+    width: 2px;
+    height: 17px;
+    background-color: #4f98e3;
+}
+*/
+.member_box ol > li b {
+    position: relative;
+    display: block;
+    padding: 17px 18px;
+    height: 58px;
+    font-size: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #8a8a8a;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.member_box .mem_data {
+	margin-top: 13px;
+}
+
+.member_box ol > li li {
+    height: 31px;
+    line-height: 31px;
+    list-style: disc;
+    color: #4f98e3;
+    margin-left: 45px;
+}
+
+.member_box ol > li li span {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    color: #313338;
+    font-size: 15px;
 }
 
 /* footer */

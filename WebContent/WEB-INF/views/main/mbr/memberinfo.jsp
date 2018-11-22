@@ -25,7 +25,190 @@
 						<h3 class="location">회원사소개</h3>
 					</div>
 					<div class="contents_box_bottom">
-						회원사소개
+						<div class="member_box">
+							<ol>							
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_cnc.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>	
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_dae.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_han.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_hye.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_job.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_may.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_mo.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_sds.jpg" alt="빛가람시스템" >
+									</span>
+										<b><em></em>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+								<li>
+									<span class="img">
+										<img src="/img/main/mbr/m_seo.jpg" alt="빛가람시스템" >
+									</span>
+										<b>빛가람시스템</b>
+									<ul class="mem_data">
+										<li>
+											<span>대표이사 : 안승은</span>
+										</li>
+										<li>
+											<span>설립일 : 2016-08-01</span>
+										</li>
+										<li>
+											<span>전화번호 : 051-556-1645</span>
+										</li>
+										<li>
+											<span>회원가입일 : 2018-11-22</span>
+										</li>	
+									</ul>		
+								</li>
+							</ol>
+						</div>
 					</div>
 				</div>
 			</article>
