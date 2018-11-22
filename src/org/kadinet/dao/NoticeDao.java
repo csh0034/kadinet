@@ -122,63 +122,6 @@ public class NoticeDao extends DBCon {
 		return bean;
 	}
 
-	public Vector<NoticeBean> getNoticeList5(String category) {
-		Vector<NoticeBean> list = new Vector<NoticeBean>();
-		try {
-			conStart();
-			sql = "select *, DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice where notice_category = 'notice' order by notice_no desc limit 0,5";
-			pstmt = con.prepareStatement(sql);
-
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-				NoticeBean bean = new NoticeBean();
-				bean.setNotice_no(rs.getInt("notice_no"));
-				bean.setNotice_title(rs.getString("notice_title"));
-				bean.setNotice_regdate(rs.getDate("reg"));
-				bean.setNotice_hit(rs.getInt("notice_hit"));
-
-				list.add(bean);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			conClose();
-		}
-
-		return list;
-	}
-
-	public Vector<NoticeBean> getNoticeList7(String category) {
-		Vector<NoticeBean> list = new Vector<NoticeBean>();
-		try {
-			conStart();
-			sql = "select *, DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice where notice_category = ? order by notice_no desc limit 0,7";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, category);
-
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-				NoticeBean bean = new NoticeBean();
-				bean.setNotice_no(rs.getInt("notice_no"));
-				bean.setNotice_title(rs.getString("notice_title"));
-				bean.setNotice_regdate(rs.getDate("reg"));
-				bean.setNotice_hit(rs.getInt("notice_hit"));
-
-				list.add(bean);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			conClose();
-		}
-
-		return list;
-	}
-
 	public String[] getPrePost(String no, String category) {
 		String tmp[] = { "", "", "", "" };
 
@@ -237,6 +180,35 @@ public class NoticeDao extends DBCon {
 		} finally {
 			conClose();
 		}
+		return list;
+	}
+	
+	public Vector<NoticeBean> getIndexNoiceList(String category,int limit) {
+		Vector<NoticeBean> list = new Vector<NoticeBean>();
+		try {
+			conStart();
+			sql = "select *, DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice where notice_category = ? "
+					+ "order by notice.notice_bool desc,notice_no desc limit 0,?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, category);
+			pstmt.setInt(2, limit);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				NoticeBean bean = new NoticeBean();
+				bean.setNotice_no(rs.getInt("notice_no"));
+				bean.setNotice_title(rs.getString("notice_title"));
+				bean.setNotice_regdate(rs.getDate("reg"));
+				bean.setNotice_hit(rs.getInt("notice_hit"));
+				bean.setNotice_bool(rs.getString("notice_bool"));
+				list.add(bean);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+
 		return list;
 	}
 

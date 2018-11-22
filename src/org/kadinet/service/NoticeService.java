@@ -79,11 +79,13 @@ public class NoticeService {
 		request.setAttribute("prePost", prePost);
 		request.setAttribute("files", files);
 	}
-	public void getNoticeList7(HttpServletRequest request) {
+	public void getIndexNoiceList(HttpServletRequest request) {
 		
-		Vector<NoticeBean>pressList = dao.getNoticeList7("press");
-		Vector<NoticeBean>dataList = dao.getNoticeList7("data");
+		Vector<NoticeBean>noticeList = dao.getIndexNoiceList("notice",5);
+		Vector<NoticeBean>pressList = dao.getIndexNoiceList("press",7);
+		Vector<NoticeBean>dataList = dao.getIndexNoiceList("data",7);
 		
+		request.setAttribute("noticeList", noticeList);
 		request.setAttribute("pressList", pressList);
 		request.setAttribute("dataList", dataList);
 	}

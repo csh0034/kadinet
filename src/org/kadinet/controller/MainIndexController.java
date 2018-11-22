@@ -7,7 +7,6 @@ import javax.servlet.http.*;
 
 import org.kadinet.util.HttpUtil;
 import org.kadinet.model.UserBean;
-import org.kadinet.service.NoticeService;
 import org.kadinet.service.UserService;
 
 public class MainIndexController implements Controller {
@@ -39,10 +38,7 @@ public class MainIndexController implements Controller {
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setAttribute("index", "true");
 		
-		NoticeService service = NoticeService.getInstance();
-		service.getNoticeList7(request);
 	}
 
 	private void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -310,7 +310,9 @@ body {
 }
 
 .press_list>dt>a {
-	
+	display: inline-block;
+	width: 100%;
+	height: 100%;
 }
 
 .press_list>dt>a:hover {

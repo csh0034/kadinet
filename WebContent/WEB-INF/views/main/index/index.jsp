@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="org.kadinet.service.*,org.kadinet.model.*,java.util.*"%>
+<%@page import="org.kadinet.dao.*"%>
+<%
+	NoticeService service = NoticeService.getInstance();
+	request.setAttribute("index", "true");
+	service.getIndexNoiceList(request);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,91 +26,44 @@
 				<div class="index_box notice">
 					<h2 class="index_tit">공지사항</h2>
 					<ul class="notice_list">
-						<li id="sc1"><a href="#"> <em>공지</em> <b>공지합니다.투썸플레이스 카디넷 화이팅</b>
-								<span>2018-11-20</span>
-						</a></li>
-						<li id="sc2"><a href="#"> <em>공지</em> <b>공지합니다.투썸플레이스 카디넷 화이팅</b>
-								<span>2018-11-20</span>
-						</a></li>
-						<li id="sc3"><a href="#"> <em>공지</em> <b>공지합니다.투썸플레이스 카디넷 화이팅</b>
-								<span>2018-11-20</span>
-						</a></li>
-						<li id="sc4"><a href="#"> <em>일반</em> <b>공지합니다.투썸플레이스 카디넷
-									화이팅공지합니다.투썸플레이스 카디넷 화이팅</b> <span>2018-11-20</span>
-						</a></li>
-						<li id="sc5"><a href="#"> <em>일반</em> <b>공지합니다.투썸플레이스 카디넷
-									화이팅공지합니다.투썸플레이스 카디넷 화이팅</b> <span>2018-11-20</span>
-						</a></li>
+						<c:forEach var="item" items="${noticeList}" varStatus="i">
+							<li id="sc${i.index+1}"><a
+								href="/notice/notice/detail.do?no=${item.getNotice_no()}"> <c:choose>
+										<c:when test="${item.getNotice_bool()=='t'}">
+											<em>공지</em>
+										</c:when>
+										<c:when test="${item.getNotice_bool()=='f'}">
+											<em>일반</em>
+										</c:when>
+									</c:choose> <b>${item.getNotice_title()}</b> <span>>${item.getNotice_regdate()}</span>
+							</a></li>
+						</c:forEach>
 					</ul>
-					<a class="plus_box" href="#">+</a>
+					<a class="plus_box" href="/notice/notice/list.do">+</a>
 				</div>
 				<div class="index_box press">
 					<h2 class="index_tit">보도자료</h2>
 					<dl class="press_list">
-						<dt>
-							<a href="#">제목제목제목제</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
+						<c:forEach var="item" items="${pressList}" varStatus="i">
+							<dt>
+								<a href="/notice/press/detail.do?no=${item.getNotice_no()}">${item.getNotice_title()}</a>
+							</dt>
+							<dd>${item.getNotice_regdate()}</dd>
+						</c:forEach>
 					</dl>
-					<a class="plus_box2" href="#">+</a>
+					<a class="plus_box2" href="/notice/press/list.do">+</a>
 				</div>
 				<div class="index_box notice_data">
 					<h2 class="index_tit">정보자료실</h2>
 					<dl class="press_list">
-						<dt>
-							<a href="#">제목제목제목제</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목제목목제목목제목목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
-						<dt>
-							<a href="#">제목제목제목제목제목제목</a>
-						</dt>
-						<dd>2018-11-20</dd>
+						<c:forEach var="item" items="${dataList}" varStatus="i">
+							<dt>
+								<a href="/notice/data/detail.do?no=${item.getNotice_no()}">${item.getNotice_title()}</a>
+							</dt>
+							<dd>${item.getNotice_regdate()}</dd>
+						</c:forEach>
 					</dl>
-					<a class="plus_box2" href="#">+</a>
+					<a class="plus_box2" href="/notice/data/list.do">+</a>
 				</div>
 				<div class="index_box quick">
 					<ul class="quick_btn">
