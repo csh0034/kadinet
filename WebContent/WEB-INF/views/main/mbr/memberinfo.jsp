@@ -29,9 +29,9 @@
 							<ol>							
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_cnc.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_cnc.jpg" alt="SK C&amp;C" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>SK C&amp;C</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -49,9 +49,9 @@
 								</li>	
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_dae.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_dae.jpg" alt="대우직업능력개발원" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>대우직업능력개발원</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -69,9 +69,9 @@
 								</li>
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_han.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_han.jpg" alt="한성대학교" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>한성대학교</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -89,9 +89,9 @@
 								</li>
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_hye.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_hye.jpg" alt="혜령씨엔티" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>혜령씨엔티</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -109,9 +109,9 @@
 								</li>
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_job.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_job.jpg" alt="잡멘토스" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>잡멘토스</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -129,9 +129,9 @@
 								</li>
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_may.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_may.jpg" alt="메이젠" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>메이젠</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -149,9 +149,9 @@
 								</li>
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_mo.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_mo.jpg" alt="모든인터넷" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>(주)모든인터넷</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -169,9 +169,9 @@
 								</li>
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_sds.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_sds.jpg" alt="삼성 SDS" >
 									</span>
-										<b><em></em>빛가람시스템</b>
+										<b>삼성 SDS</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -189,9 +189,9 @@
 								</li>
 								<li>
 									<span class="img">
-										<img src="/img/main/mbr/m_seo.jpg" alt="빛가람시스템" >
+										<img src="/img/main/mbr/m_seo.jpg" alt="서일대학교" >
 									</span>
-										<b>빛가람시스템</b>
+										<b>서일대학교</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
