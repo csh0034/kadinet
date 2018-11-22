@@ -85,17 +85,17 @@
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
 									target="_blank"><img src="/img/s0.png"></a></li>
 								<li class="als-item"><a
-									href="http://www.at.or.kr/home/apko000000/index.action"
+									href="https://cc.sk.co.kr/"
 									target="_blank"><img src="/img/s2.png" /></a></li>
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
 									target="_blank"><img src="/img/s0.png"></a></li>
 								<li class="als-item"><a
-									href="http://www.at.or.kr/home/apko000000/index.action"
+									href="https://cc.sk.co.kr/"
 									target="_blank"><img src="/img/s2.png" /></a></li>
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
 									target="_blank"><img src="/img/s0.png"></a></li>
 								<li class="als-item"><a
-									href="http://www.at.or.kr/home/apko000000/index.action"
+									href="https://cc.sk.co.kr/"
 									target="_blank"><img src="/img/s2.png" /></a></li>
 							</ul>
 						</div>
