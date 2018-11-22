@@ -37,27 +37,36 @@ $(function() {
 	$(window).resize(function() {
 		setMainPadBtm();
 	});
-	
+
 	$('#sc1').addClass("abc1");
 
-	setTimeout(function(){
+	setTimeout(function() {
 		$('#sc2').addClass("abc1");
-	},300); 
-	setTimeout(function(){
+	}, 300);
+	setTimeout(function() {
 		$('#sc3').addClass("abc1");
-	},600); 
-	setTimeout(function(){
+	}, 600);
+	setTimeout(function() {
 		$('#sc4').addClass("abc1");
-	},900); 
-	setTimeout(function(){
+	}, 900);
+	setTimeout(function() {
 		$('#sc5').addClass("abc1");
-	},1200); 
+	}, 1200);
 
+	$("#lista1").als({
+		visible_items : 4,
+		scrolling_items : 1,
+		orientation : "horizontal",
+		circular : "yes",
+		autoscroll : "yes",
+		interval : 5000,
+		direction : "left"
+	});
 });
 
 function setMainPadBtm() {
 	var mainPaddingBottom = parseInt($(window).height()) - 155 - 550 - 96 - 2;
-	if (mainPaddingBottom > 50 && mainPaddingBottom <180) {
+	if (mainPaddingBottom > 50 && mainPaddingBottom < 180) {
 		$('.wrap .mainIndex').css('padding-bottom', mainPaddingBottom);
 	}
 }

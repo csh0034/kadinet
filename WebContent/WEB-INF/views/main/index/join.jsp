@@ -118,7 +118,7 @@
 											<dd>
 												<input type="text" name="u_addr1" id="u_addr1"
 													placeholder="우편번호 검색" readonly required
-													data-parsley-required="true" data-parsley-trigger="change"
+													data-parsley-required="true" 
 													data-parsley-errors-container="span[id='addr1Error']" />
 											</dd>
 										</dl>

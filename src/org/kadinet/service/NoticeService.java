@@ -71,9 +71,14 @@ public class NoticeService {
 		if( no == null || no.isEmpty()) {
 			no = "1";
 		}
+		
+		dao.upHit(no);
 		NoticeBean bean = dao.getNotice(no);
 		Vector<NoticeBean> files = dao.getFileList(no);
-		String prePost[] = dao.getPrePost(no, bean.getNotice_category());
+		String pre[] = dao.getPre(no, bean.getNotice_category());
+		String post[] = dao.getPost(no, bean.getNotice_category());
+		
+		String[] prePost ={pre[0],pre[1],post[0],post[1]};
 
 		request.setAttribute("bean", bean);
 		request.setAttribute("prePost", prePost);

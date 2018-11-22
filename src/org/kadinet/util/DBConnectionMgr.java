@@ -12,7 +12,7 @@ public class DBConnectionMgr {
     
     private boolean _traceOn = false;
     private boolean initialized = false;
-    private int _openConnections = 50;
+    private int _openConnections = 100;
     private static DBConnectionMgr instance = null;
 
     public DBConnectionMgr() {

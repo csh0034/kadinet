@@ -95,6 +95,22 @@ public class NoticeDao extends DBCon {
 		return count;
 	}
 
+	public void upHit(String no) {
+		try {
+			conStart();
+			sql = "update notice set notice_hit= notice_hit+1 where notice_no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+
+			pstmt.executeUpdate();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+
 	public NoticeBean getNotice(String no) {
 		NoticeBean bean = new NoticeBean();
 		try {
@@ -122,8 +138,8 @@ public class NoticeDao extends DBCon {
 		return bean;
 	}
 
-	public String[] getPrePost(String no, String category) {
-		String tmp[] = { "", "", "", "" };
+	public String[] getPre(String no, String category) {
+		String tmp[] = { "", ""};
 
 		try {
 			conStart();
@@ -138,6 +154,20 @@ public class NoticeDao extends DBCon {
 				tmp[1] = rs.getString("notice_title");
 			}
 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return tmp;
+	}
+	
+	public String[] getPost(String no, String category) {
+		String tmp[] = { "", ""};
+
+		try {
+			conStart();
+
 			sql = "select * from notice where notice_no < ? and notice_category = ? order by notice_no desc limit 1";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, no);
@@ -145,8 +175,8 @@ public class NoticeDao extends DBCon {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				tmp[2] = rs.getString("notice_no");
-				tmp[3] = rs.getString("notice_title");
+				tmp[0] = rs.getString("notice_no");
+				tmp[1] = rs.getString("notice_title");
 			}
 
 		} catch (Exception e) {
@@ -182,8 +212,8 @@ public class NoticeDao extends DBCon {
 		}
 		return list;
 	}
-	
-	public Vector<NoticeBean> getIndexNoiceList(String category,int limit) {
+
+	public Vector<NoticeBean> getIndexNoiceList(String category, int limit) {
 		Vector<NoticeBean> list = new Vector<NoticeBean>();
 		try {
 			conStart();

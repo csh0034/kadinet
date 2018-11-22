@@ -387,7 +387,7 @@ body {
 
 .quick_btn li>a {
 	display: block;
-	font-size: 16px;
+	font-size: 14px;
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -413,6 +413,7 @@ body {
 	height: 15%;
 	border-top: 1px solid #d2d2d2;
 	background-color: #fff;
+	padding: 0;
 }
 
 /* login */
@@ -906,6 +907,13 @@ body {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
+}
+
+.notice_bx .listTable td a{
+	display: inline-block;
+	width:100%;
+	height:100%;
+	line-height:39px;
 }
 
 .notice_bx #notice {

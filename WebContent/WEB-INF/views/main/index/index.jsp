@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="org.kadinet.service.*,org.kadinet.model.*,java.util.*"%>
-<%@page import="org.kadinet.dao.*"%>
-<%
-	NoticeService service = NoticeService.getInstance();
-	request.setAttribute("index", "true");
-	service.getIndexNoiceList(request);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +9,10 @@
 <%@ include file="/WEB-INF/include/global/css.jsp"%>
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
+<link rel="stylesheet" href="/css/main/jquery.als-1.7.css">
 <script type="text/javascript" src="/js/main/index.js"></script>
+<script type="text/javascript" src="js/main/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/js/main/jquery.als-1.7.min.js"></script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -81,7 +77,31 @@
 						</a></li>
 					</ul>
 				</div>
-				<div class="index_box mbr_list"></div>
+				<div class="index_box mbr_list">
+					<div class="als-container clearfix" id="lista1">
+						<span class="als-prev">&lt;</span>
+						<div class="als-viewport">
+							<ul class="als-wrapper">
+								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/s0.png"></a></li>
+								<li class="als-item"><a
+									href="http://www.at.or.kr/home/apko000000/index.action"
+									target="_blank"><img src="/img/s2.png" /></a></li>
+								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/s0.png"></a></li>
+								<li class="als-item"><a
+									href="http://www.at.or.kr/home/apko000000/index.action"
+									target="_blank"><img src="/img/s2.png" /></a></li>
+								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/s0.png"></a></li>
+								<li class="als-item"><a
+									href="http://www.at.or.kr/home/apko000000/index.action"
+									target="_blank"><img src="/img/s2.png" /></a></li>
+							</ul>
+						</div>
+						<span class="als-next">&gt;</span>
+					</div>
+				</div>
 			</article>
 		</div>
 	</section>

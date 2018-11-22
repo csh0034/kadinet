@@ -94,6 +94,10 @@ function sample6_execDaumPostcode() {
 			document.getElementById('u_addr1').value = '(' + data.zonecode
 					+ ') ' + fullAddr;
 			document.getElementById('u_addr2').focus();
+			$('#addr1Error').css("display","none");
+			$('#u_addr1').css("background-color","#dff0d8");
+			$('#u_addr1').css("color","#468847");
+			$('#u_addr1').css("border","1px solid #D6E9C6");
 		}
 	}).open();
 }
