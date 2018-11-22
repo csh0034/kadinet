@@ -200,7 +200,7 @@ body {
 .notice {
 	width: 40%;
 	height: 100%;
-	background-color: #4f98e3; 
+	background-color: #4f98e3;
 }
 
 .notice>h2 {
@@ -262,9 +262,9 @@ body {
 	height: 25px;
 	line-height: 25px;
 	overflow: hidden;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 	color: #fff;
 }
 
@@ -306,13 +306,17 @@ body {
 .press_list>dt, .press_list>dd {
 	height: 36px;
 	padding-top: 15px;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 .press_list>dt>a {
 	display: inline-block;
 	width: 100%;
 	height: 100%;
+	max-width: 200px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 .press_list>dt>a:hover {
@@ -320,19 +324,15 @@ body {
 }
 
 .press_list>dt {
-	width: 70%;
+	width: 75%;
 	float: left;
 	text-align: left;
-	max-width: 200px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
 }
 
 .press_list>dd {
-	width: 30%;
+	width: 25%;
 	float: right;
-	text-align: right;
+	text-align: left;
 }
 
 .plus_box2 {
@@ -345,7 +345,7 @@ body {
 	margin-top: 20px;
 }
 
-.plus_box2:hover { 
+.plus_box2:hover {
 	background-color: #4f98e3;
 	border: 1px solid #4f98e3;
 	color: #fff !important;
@@ -909,11 +909,11 @@ body {
 	white-space: nowrap;
 }
 
-.notice_bx .listTable td a{
+.notice_bx .listTable td a {
 	display: inline-block;
-	width:100%;
-	height:100%;
-	line-height:39px;
+	width: 100%;
+	height: 100%;
+	line-height: 39px;
 }
 
 .notice_bx #notice {

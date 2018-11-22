@@ -31,7 +31,7 @@
 										<c:when test="${item.getNotice_bool()=='f'}">
 											<em>일반</em>
 										</c:when>
-									</c:choose> <b>${item.getNotice_title()}</b> <span>>${item.getNotice_regdate()}</span>
+									</c:choose> <b>${item.getNotice_title()}</b> <span>${item.getNotice_regdate()}</span>
 							</a></li>
 						</c:forEach>
 					</ul>

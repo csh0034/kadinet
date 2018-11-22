@@ -49,7 +49,6 @@ public class NoticeDao extends DBCon {
 			while (rs.next()) {
 				NoticeBean bean = new NoticeBean();
 				bean.setNotice_no(rs.getInt("notice_no"));
-				bean.setNotice_category(rs.getString("notice_category"));
 				bean.setNotice_bool(rs.getString("notice_bool"));
 				bean.setNotice_title(rs.getString("notice_title"));
 				bean.setNotice_content(rs.getString("notice_content"));
