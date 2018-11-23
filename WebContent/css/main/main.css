@@ -903,6 +903,10 @@ body {
     font-weight: normal;
 }
 
+.business_box h5:first-child {
+    margin-top: 0px;
+}
+
 .business_box .bu_text_tit {
     color: #8a8a8a;
     font-size: 18px;
@@ -1142,7 +1146,11 @@ body {
 /* member */
 .member_box {
 	width: 100%;
-	height: 1100px;
+	height: 100%;
+}
+
+.member_box ol {
+    overflow: hidden;
 }
 
 .member_box ol > li {
@@ -1151,15 +1159,16 @@ body {
     height: 345px;
     margin: 7px;
     border: 1px solid #d2d2d2;
+    border-top: 2px solid #4f98e3;
 }
 
 .member_box ol > li .img {
     display: inline-block;
-    width: 100%;
-    height: 130px;
-    line-height: 211px;
+    width: 170px;
+    height: 60px;
     text-align: center;
     overflow: hidden;
+    margin: 47px 0px 26px 45px;
 }
 /*
 .member_box ol > li b em {
@@ -1186,6 +1195,7 @@ body {
 
 .member_box .mem_data {
 	margin-top: 13px;
+	overflow: hidden;
 }
 
 .member_box ol > li li {

@@ -51,7 +51,7 @@
 									<span class="img">
 										<img src="/img/main/mbr/m_dae.jpg" alt="대우직업능력개발원" >
 									</span>
-										<b>대우직업능력개발원</b>
+										<b><em></em>대우직업능력개발원</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -71,7 +71,7 @@
 									<span class="img">
 										<img src="/img/main/mbr/m_han.jpg" alt="한성대학교" >
 									</span>
-										<b>한성대학교</b>
+										<b><em></em>한성대학교</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -91,7 +91,7 @@
 									<span class="img">
 										<img src="/img/main/mbr/m_hye.jpg" alt="혜령씨엔티" >
 									</span>
-										<b>혜령씨엔티</b>
+										<b><em></em>혜령씨엔티</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -111,7 +111,7 @@
 									<span class="img">
 										<img src="/img/main/mbr/m_job.jpg" alt="잡멘토스" >
 									</span>
-										<b>잡멘토스</b>
+										<b><em></em>잡멘토스</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -131,7 +131,7 @@
 									<span class="img">
 										<img src="/img/main/mbr/m_may.jpg" alt="메이젠" >
 									</span>
-										<b>메이젠</b>
+										<b><em></em>메이젠</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -151,7 +151,7 @@
 									<span class="img">
 										<img src="/img/main/mbr/m_mo.jpg" alt="모든인터넷" >
 									</span>
-										<b>(주)모든인터넷</b>
+										<b><em></em>(주)모든인터넷</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
@@ -171,7 +171,7 @@
 									<span class="img">
 										<img src="/img/main/mbr/m_sds.jpg" alt="삼성 SDS" >
 									</span>
-										<b>삼성 SDS</b>
+										<b><em></em>삼성 SDS</b>
 									<ul class="mem_data">
 										<li>
 											<span>대표이사 : 안승은</span>
