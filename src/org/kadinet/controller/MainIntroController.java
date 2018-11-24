@@ -18,6 +18,9 @@ public class MainIntroController implements Controller {
 		} else if ("/intro/history.do".equals(path)) {
 			history(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/intro/history.jsp");
+		} else if ("/intro/member.do".equals(path)) {
+			member(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/main/intro/member.jsp");
 		} else if ("/intro/organization.do".equals(path)) {
 			organization(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/intro/organization.jsp");
@@ -38,6 +41,12 @@ public class MainIntroController implements Controller {
 	private void history(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "history");
+
+	}
+
+	private void member(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setAttribute("page", "member");
 
 	}
 

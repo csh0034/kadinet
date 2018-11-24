@@ -32,6 +32,7 @@
 							<ul>
 								<li><a href="/intro/greeting.do">협회장인사</a></li>
 								<li><a href="/intro/history.do">연혁</a></li>
+								<li><a href="/intro/member.do">임원소개</a></li>
 								<li><a href="/intro/organization.do">조직도</a></li>
 								<li><a href="/intro/visit.do">오시는길</a></li>
 							</ul>

@@ -10,13 +10,13 @@
 		<c:set var="s2" value="class='selected'" />
 	</c:when>
 	<c:when
-		test="${page =='organization'|| page =='find' ||page =='data' || page =='mentoring'|| page =='leave'}">
+		test="${page =='member'|| page =='find' ||page =='data' || page =='mentoring'|| page =='leave'}">
 		<c:set var="s3" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='visit' || page =='support'}">
+	<c:when test="${page =='organization'||page =='support'}">
 		<c:set var="s4" value="class='selected'" />
 	</c:when>
-	<c:when test="${page =='education'}">
+	<c:when test="${page =='visit' || page =='education'}">
 		<c:set var="s5" value="class='selected'" />
 	</c:when>
 </c:choose>
@@ -27,8 +27,9 @@
 			<ul class="subNav_list">
 				<li ${s1}><a href="/intro/greeting.do">협회장인사</a></li>
 				<li ${s2}><a href="/intro/history.do">연혁</a></li>
-				<li ${s3}><a href="/intro/organization.do">조직도</a></li>
-				<li ${s4}><a href="/intro/visit.do">오시는길</a></li>
+				<li ${s3}><a href="/intro/member.do">임원소개</a></li>
+				<li ${s4}><a href="/intro/organization.do">조직도</a></li>
+				<li ${s5}><a href="/intro/visit.do">오시는길</a></li>
 			</ul>
 		</div>
 	</c:when>
