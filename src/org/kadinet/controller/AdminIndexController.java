@@ -13,6 +13,6 @@ public class AdminIndexController implements Controller {
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
 
-		HttpUtil.forward(request, response, "/WEB-INF/views/admin/index/index.jsp");
+		HttpUtil.forward(request, response, "/WEB-INF/views/admin/index/index.jsp"); 
 	}
 }
