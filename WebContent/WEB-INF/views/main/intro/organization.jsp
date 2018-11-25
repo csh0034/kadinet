@@ -25,7 +25,9 @@
 						<h3 class="location">조직도</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div style="width:100%; height: 400px">임시 div</div>
+						<div class="organization_box">
+							<img src="/img/main/intro/group.png" alt="조직도">
+						</div>
 					</div>
 				</div>
 			</article>

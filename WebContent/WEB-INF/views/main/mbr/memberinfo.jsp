@@ -25,7 +25,7 @@
 						<h3 class="location">회원사소개</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div class="member_box">
+						<div class="mbrinfo_box">
 							<ol>							
 								<li>
 									<span class="img">

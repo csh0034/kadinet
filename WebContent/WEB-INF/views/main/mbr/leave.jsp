@@ -25,7 +25,33 @@
 						<h3 class="location">회원탈퇴</h3>
 					</div>
 					<div class="contents_box_bottom">
-						회원탈퇴
+						<div class="leave_bx">
+							<div class="condition_box">
+								<span>
+									KADINET 회원(이하 "회원")을 탈퇴하기 전에 반드시 읽어 주십시오.<br /><br />
+
+									본 약관은 KADINET 주식회사(이하 “당사”)가<br />
+									KADINET 회원(이하 “회원”)의 탈퇴에 관한 모든 조건을 규정한 것입니다.<br />
+									회원탈퇴를 하실 경우에는 아래의 내용에 동의하신 것으로 간주됩니다.<br /><br />
+									
+									탈퇴 후에는 당사가 운영하는 모든 웹사이트(이하 “KADINET 사이트”)에서 제공하는<br />
+									회원 대상 서비스를 이용하실 수 없습니다.<br /><br />
+									회원 탈퇴 수속이 수리된 후에 회원정보에 대해서는 모두 삭제처리하게 됩니다.<br />
+								</span>
+							</div>
+							<div class="con_check">
+								<input type="checkbox" name="chk_info" value="leave_ok"> 위 약관에 동의합니다.
+							</div>
+							<div class="form_wrap">
+								<form id="leaveForm">
+									<input type="password" id="pw" maxlength="45" title="비밀번호"
+										placeholder="비밀번호" class="inp" required>
+									<div class="btn_area">
+										<button type="submit" class="leave_btn">탈퇴하기</button>
+									</div>
+								</form>
+							</div>
+						</div>
 					</div>
 				</div>
 			</article>
