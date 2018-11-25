@@ -124,3 +124,42 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-11-20  1:58:55
+
+
+--
+-- Table structure for table `history`
+--
+
+DROP TABLE IF EXISTS `history`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `history` (
+  `history_no` int(15) NOT NULL AUTO_INCREMENT,
+  `history_year` int(15) NOT NULL,
+  `history_month` int(15) NOT NULL,
+  `history_day` int(15) NOT NULL,
+  `history_data` varchar(80) NOT NULL,
+  PRIMARY KEY (`history_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=279 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `history`
+--
+
+LOCK TABLES `history` WRITE;
+/*!40000 ALTER TABLE `history` DISABLE KEYS */;
+INSERT INTO `history` VALUES (264,2012,11,5,'컨퍼런스 예정(코엑스)'),(265,2012,10,4,'www.jobmentors.co.kr 개통, 사업준비'),(266,2012,5,3,'사무실 이전 및 임원 변경'),(267,2012,4,2,'사업목적, 명칭 등 정관 개정'),(268,2012,0,1,'도약'),(269,2011,10,1,'workshop 개최'),(270,2010,1,1,'안정화'),(271,2009,12,7,'IT융합직흥원 설립'),(272,2009,11,6,'디지털정보학회 합동 학술발표회'),(273,2009,8,5,'협회 web site open (www.kadi.re.kr)'),(274,2009,7,4,'디지털정보학회 합동 세미나 (교육회관)'),(275,2009,5,3,'사업자등록 (서울동대문세무서)'),(276,2009,3,2,'법인설립'),(277,2009,1,1,'발기인 총회, 사무소 개소'),(278,2008,11,1,'단체구성 준비모임');
+/*!40000 ALTER TABLE `history` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-11-25 15:50:33

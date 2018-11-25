@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.kadinet.service.HistoryService;
 import org.kadinet.util.HttpUtil;
 
 public class MainIntroController implements Controller {
@@ -40,7 +41,9 @@ public class MainIntroController implements Controller {
 
 	private void history(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HistoryService service = HistoryService.getInstance();
 		request.setAttribute("page", "history");
+		service.getHistoryList(request);
 
 	}
 

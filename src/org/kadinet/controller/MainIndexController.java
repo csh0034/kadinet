@@ -41,7 +41,7 @@ public class MainIndexController implements Controller {
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NoticeService service = NoticeService.getInstance();
 		request.setAttribute("index", "true");
-		service.getIndexNoiceList(request);
+		service.getIndexNoticeList(request);
 		
 	}
 

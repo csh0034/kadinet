@@ -19,9 +19,8 @@ public class HistoryService {
 	}
 	
 	public void getHistoryList(HttpServletRequest request) {
-		
 		Vector<HistoryBean>historyList = dao.getHistoryList();
-
+	
 		request.setAttribute("historyList", historyList);
 	}
 }

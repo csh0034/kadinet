@@ -212,7 +212,7 @@ public class NoticeDao extends DBCon {
 		return list;
 	}
 
-	public Vector<NoticeBean> getIndexNoiceList(String category, int limit) {
+	public Vector<NoticeBean> getIndexNoticeList(String category, int limit) {
 		Vector<NoticeBean> list = new Vector<NoticeBean>();
 		try {
 			conStart();

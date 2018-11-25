@@ -19,9 +19,9 @@ public class HistoryDao extends DBCon {
 		Vector<HistoryBean> historyList = new Vector<HistoryBean>();
 		try {
 			conStart();
-			sql = "select * from history order by history_year desc, history_month desc, history_day desc";
+			sql = "select * from history group by history_year, history_month, history_data order by history_year desc, history_month desc, history_day desc";
 			pstmt = con.prepareStatement(sql);
-
+ 
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -31,7 +31,7 @@ public class HistoryDao extends DBCon {
 				bean.setHistory_month(rs.getInt("history_month"));
 				bean.setHistory_day(rs.getInt("history_day"));
 				bean.setHistory_data(rs.getString("history_data"));
-
+ 
 				historyList.add(bean);
 			}
 
