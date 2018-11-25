@@ -70,7 +70,7 @@ $(function() {
 		num = no;
 	};
 	
-	$(".pre_box").click(function(){
+	$(".next_box").click(function(){
 		clearInterval(slide);
 
 		var no = num + 1;
@@ -85,12 +85,12 @@ $(function() {
 
 	});
 	
-	$(".next_box").click(function(){
+	$(".pre_box").click(function(){
 		clearInterval(slide);
 
 		var no = num - 1;
 		
-		if(no<=0){
+		if(no<0){
 			no = $("#notice_slide img").length-1;
 		};
 		
