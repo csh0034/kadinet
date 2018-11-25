@@ -48,18 +48,20 @@
 						<div id="map"></div>
 						<div class="visit_table">
 							<table>
-								<tr>
-									<th>주소</th>
-									<td>서울시 중랑구 면목동 502-1(면목역 2번출구, 사가정역 1번출구)</td>
-								</tr>
+								<c:forEach var="item" items="${direcList }" varStatus="i">
+									<tr>
+										<th>주소</th>
+										<td>${item.getAssociation_address() }</td>
+									</tr>
 								<tr>
 									<th>전화번호</th>
-									<td>02-491-9768</td>
+									<td>${item.getAssociation_phone() }</td>
 								</tr>
 								<tr>
 									<th>팩스</th>
-									<td>02-491-5864</td>
+									<td>${item.getAssociation_fax() }</td>
 								</tr>
+								</c:forEach>
 							</table>
 						</div>
 					</div>

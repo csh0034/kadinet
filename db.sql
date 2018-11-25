@@ -163,3 +163,42 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-11-25 15:50:33
+
+--
+-- Table structure for table `visit`
+--
+
+DROP TABLE IF EXISTS `visit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `visit` (
+  `visit_no` int(15) NOT NULL AUTO_INCREMENT,
+  `lat` varchar(30) NOT NULL,
+  `lng` varchar(30) NOT NULL,
+  `association_address` varchar(80) NOT NULL,
+  `association_phone` varchar(40) NOT NULL,
+  `association_fax` varchar(40) NOT NULL,
+  PRIMARY KEY (`visit_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `visit`
+--
+
+LOCK TABLES `visit` WRITE;
+/*!40000 ALTER TABLE `visit` DISABLE KEYS */;
+INSERT INTO `visit` VALUES (1,'37.58525000','127.08855007','서울시 중랑구 면목동 502-1(면목역 2번출구, 사가정역 1번출구)','02-491-9768','02-491-5864');
+/*!40000 ALTER TABLE `visit` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-11-25 21:35:39

@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import org.kadinet.service.HistoryService;
+import org.kadinet.service.VisitService;
 import org.kadinet.util.HttpUtil;
 
 public class MainIntroController implements Controller {
@@ -60,6 +61,8 @@ public class MainIntroController implements Controller {
 	}
 
 	private void visit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		VisitService service = VisitService.getInstance();
 		request.setAttribute("page", "visit");
+		service.getDirectionInfo(request);
 	}
 }
