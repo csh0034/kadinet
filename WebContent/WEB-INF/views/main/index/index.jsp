@@ -19,22 +19,16 @@
 	<section class="wrap wrapBGI">
 		<div class="mainIndex">
 			<article class="contents">
-				<div class="index_box notice">
-					<h2 class="index_tit">공지사항</h2>
-					<ul class="notice_list">
-						<c:forEach var="item" items="${noticeList}" varStatus="i">
-							<li id="sc${i.index+1}"><a
-								href="/notice/notice/detail.do?no=${item.getNotice_no()}"> <c:choose>
-										<c:when test="${item.getNotice_bool()=='t'}">
-											<em>공지</em>
-										</c:when>
-										<c:when test="${item.getNotice_bool()=='f'}">
-											<em>일반</em>
-										</c:when>
-									</c:choose> <b>${item.getNotice_title()}</b> <span>${item.getNotice_regdate()}</span>
-							</a></li>
-						</c:forEach>
-					</ul>
+				<div id="notice">
+					<a href="#">
+						<img src="/img/main/index/notice_img1.png" alt="공지이미지1">
+					</a>
+					<a href="#">
+						<img src="/img/main/index/notice_img2.png" alt="공지이미지2">
+					</a>
+					<a href="#">
+						<img src="/img/main/index/notice_img3.png" alt="공지이미지3">
+					</a>
 					<a class="plus_box" href="/notice/notice/list.do">+</a>
 				</div>
 				<div class="index_box press">
@@ -63,17 +57,17 @@
 				</div>
 				<div class="index_box quick">
 					<ul class="quick_btn">
-						<li><a href="#"> <img src="/img/main/index/icon_map.png"
-								alt="오시는길"> <span>오시는길</span>
+						<li><a href="#"> <img class="quick_img1"
+								src="/img/main/index/icon_map.png" alt="오시는길"> <span class="quick_txt1">오시는길</span>
 						</a></li>
-						<li><a href="#"> <img
-								src="/img/main/index/icon_pencil.png" alt="경력인증"> <span>경력인증</span>
+						<li><a href="#"> <img class="quick_img1"
+								src="/img/main/index/icon_pencil.png" alt="경력인증"> <span class="quick_txt1">경력인증</span>
 						</a></li>
-						<li><a href="#"> <img
-								src="/img/main/index/icon_people.png" alt="회원사소개"> <span>회원사소개</span>
+						<li><a href="#"> <img class="quick_img1 quick_img2"
+								src="/img/main/index/icon_people.png" alt="회원사소개"> <span class="quick_txt1 quick_txt2">회원사 소개</span>
 						</a></li>
-						<li><a href="#"> <img src="/img/main/index/icon_map.png"
-								alt="사이트맵"> <span>사이트맵</span>
+						<li><a href="#"> <img class="quick_img1"
+								src="/img/main/index/icon_map.png" alt="사이트맵"> <span class="quick_txt1">사이트맵</span>
 						</a></li>
 					</ul>
 				</div>
@@ -93,6 +87,9 @@
 									target="_blank"><img src="/img/s2.png" /></a></li>
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
 									target="_blank"><img src="/img/s0.png"></a></li>
+								<li class="als-item"><a
+									href="https://cc.sk.co.kr/"
+									target="_blank"><img src="/img/s2.png" /></a></li>
 								<li class="als-item"><a
 									href="https://cc.sk.co.kr/"
 									target="_blank"><img src="/img/s2.png" /></a></li>

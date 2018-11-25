@@ -25,7 +25,364 @@
 						<h3 class="location">임원소개</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div style="width:100%; height: 400px">임시 div</div>
+						<div class="member_box">
+							<div class="mem_area_01">
+								<div class="mem_top_box">
+									<div class="mem_title">회장</div>
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="mem_area_02">
+								<div class="mem_title">수석부회장</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="mem_area_03">
+								<div class="mem_top_box">
+								<div class="mem_title">상근부회장</div>
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="mem_area_04">
+								<div class="mem_title">부회장</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+														<div class="mem_area_04">
+								<div class="mem_title">이사</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</article>

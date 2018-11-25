@@ -54,13 +54,44 @@ $(function() {
 	}, 1200);
 
 	$("#lista1").als({
-		visible_items : 4,
+		visible_items : 6,
 		scrolling_items : 1,
 		orientation : "horizontal",
 		circular : "yes",
 		autoscroll : "yes",
 		interval : 3000,
 		direction : "left"
+	});
+	
+	var slide;
+	var time = 4000;//슬라이드시간
+	var num = 0;
+	
+	$("#notice img").eq(num).css({"left":"0%"});
+	
+	slide = setInterval(function(){
+		start();
+	}, time);
+	
+	function start(){
+		var no = num + 1;
+		
+		if(no>=$("#notice img").length){
+			no = 0;
+		};
+		
+		$("#notice img").eq(no).css({"left":"-100%"}).stop().animate({"left":"0%"});
+		$("#notice img").eq(num).stop().animate({"left":"100%"});
+		num = no;
+	};
+	
+	
+	$("#popupImg").click(function(){
+		$("#popup, #bgBlack").fadeIn();//서서히 나타남. show();도 가능
+	});
+	
+	$("#btnClose").click(function(){
+		$("#popup, #bgBlack").fadeOut();//서서히 사라짐. hide();도 가능
 	});
 });
 
