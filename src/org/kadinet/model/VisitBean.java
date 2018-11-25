@@ -3,11 +3,11 @@ package org.kadinet.model;
 public class VisitBean {
 	
 	private int visit_no;
-	private int lat;
-	private int lng;
-	private String association_address;
-	private String association_phone;
-	private String association_fax;
+	private int visit_lat;
+	private int visit_lng;
+	private String visit_address;
+	private String visit_phone;
+	private String visit_fax;
 	
 	public int getVisit_no() {
 		return visit_no;
@@ -15,34 +15,34 @@ public class VisitBean {
 	public void setVisit_no(int visit_no) {
 		this.visit_no = visit_no;
 	}
-	public int getLat() {
-		return lat;
+	public int getVisit_lat() {
+		return visit_lat;
 	}
-	public void setLat(int lat) {
-		this.lat = lat;
+	public void setVisit_lat(int visit_lat) {
+		this.visit_lat = visit_lat;
 	}
-	public int getLng() {
-		return lng;
+	public int getVisit_lng() {
+		return visit_lng;
 	}
-	public void setLng(int lng) {
-		this.lng = lng;
+	public void setVisit_lng(int visit_lng) {
+		this.visit_lng = visit_lng;
 	}
-	public String getAssociation_address() {
-		return association_address;
+	public String getVisit_address() {
+		return visit_address;
 	}
-	public void setAssociation_address(String association_address) {
-		this.association_address = association_address;
+	public void setVisit_address(String visit_address) {
+		this.visit_address = visit_address;
 	}
-	public String getAssociation_phone() {
-		return association_phone;
+	public String getVisit_phone() {
+		return visit_phone;
 	}
-	public void setAssociation_phone(String association_phone) {
-		this.association_phone = association_phone;
+	public void setVisit_phone(String visit_phone) {
+		this.visit_phone = visit_phone;
 	}
-	public String getAssociation_fax() {
-		return association_fax;
+	public String getVisit_fax() {
+		return visit_fax;
 	}
-	public void setAssociation_fax(String association_fax) {
-		this.association_fax = association_fax;
+	public void setVisit_fax(String visit_fax) {
+		this.visit_fax = visit_fax;
 	}
 }

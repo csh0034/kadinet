@@ -51,15 +51,15 @@
 								<c:forEach var="item" items="${direcList }" varStatus="i">
 									<tr>
 										<th>주소</th>
-										<td>${item.getAssociation_address() }</td>
+										<td>${item.getVisit_address() }</td>
 									</tr>
 								<tr>
 									<th>전화번호</th>
-									<td>${item.getAssociation_phone() }</td>
+									<td>${item.getVisit_phone() }</td>
 								</tr>
 								<tr>
 									<th>팩스</th>
-									<td>${item.getAssociation_fax() }</td>
+									<td>${item.getVisit_fax() }</td>
 								</tr>
 								</c:forEach>
 							</table>

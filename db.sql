@@ -163,7 +163,6 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-11-25 15:50:33
-
 --
 -- Table structure for table `visit`
 --
@@ -173,11 +172,11 @@ DROP TABLE IF EXISTS `visit`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `visit` (
   `visit_no` int(15) NOT NULL AUTO_INCREMENT,
-  `lat` varchar(30) NOT NULL,
-  `lng` varchar(30) NOT NULL,
-  `association_address` varchar(80) NOT NULL,
-  `association_phone` varchar(40) NOT NULL,
-  `association_fax` varchar(40) NOT NULL,
+  `visit_lat` varchar(30) NOT NULL,
+  `visit_lng` varchar(30) NOT NULL,
+  `visit_address` varchar(80) NOT NULL,
+  `visit_phone` varchar(40) NOT NULL,
+  `visit_fax` varchar(40) NOT NULL,
   PRIMARY KEY (`visit_no`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -201,4 +200,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-25 21:35:39
+-- Dump completed on 2018-11-25 21:59:29

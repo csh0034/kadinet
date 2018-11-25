@@ -27,11 +27,11 @@ public class VisitDao extends DBCon {
 			while (rs.next()) {
 				VisitBean bean = new VisitBean();
 				bean.setVisit_no(rs.getInt("visit_no"));
-				bean.setLat(rs.getInt("lat"));
-				bean.setLng(rs.getInt("lng"));
-				bean.setAssociation_address(rs.getString("association_address"));
-				bean.setAssociation_phone(rs.getString("association_phone"));
-				bean.setAssociation_fax(rs.getString("association_fax"));
+				bean.setVisit_lat(rs.getInt("visit_lat"));
+				bean.setVisit_lng(rs.getInt("visit_lng")); 
+				bean.setVisit_address(rs.getString("visit_address"));
+				bean.setVisit_phone(rs.getString("visit_phone"));
+				bean.setVisit_fax(rs.getString("visit_fax"));
 
 				visitList.add(bean);
 			}
