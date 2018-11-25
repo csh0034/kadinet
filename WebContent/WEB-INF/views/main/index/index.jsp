@@ -19,17 +19,18 @@
 	<section class="wrap wrapBGI">
 		<div class="mainIndex">
 			<article class="contents">
-				<div id="notice">
+				<div id="notice_slide">
 					<a href="#">
-						<img src="/img/main/index/notice_img1.png" alt="공지이미지1">
+						<img class="s_img" src="/img/main/index/slide/notice_img1.png" alt="공지이미지1">
 					</a>
 					<a href="#">
-						<img src="/img/main/index/notice_img2.png" alt="공지이미지2">
+						<img class="s_img" src="/img/main/index/slide/notice_img2.png" alt="공지이미지2">
 					</a>
 					<a href="#">
-						<img src="/img/main/index/notice_img3.png" alt="공지이미지3">
+						<img class="s_img" src="/img/main/index/slide/notice_img3.png" alt="공지이미지3">
 					</a>
-					<a class="plus_box" href="/notice/notice/list.do">+</a>
+					<span class="pre_box">&lt;</span>
+					<span class="next_box">&gt;</span>
 				</div>
 				<div class="index_box press">
 					<h2 class="index_tit">보도자료</h2>
@@ -76,23 +77,23 @@
 						<div class="als-viewport">
 							<ul class="als-wrapper">
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
-									target="_blank"><img src="/img/s0.png"></a></li>
+									target="_blank"><img src="/img/main/index/slide/s0.png"></a></li>
 								<li class="als-item"><a
 									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/s2.png" /></a></li>
+									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
-									target="_blank"><img src="/img/s0.png"></a></li>
+									target="_blank"><img src="/img/main/index/slide/s0.png"></a></li>
 								<li class="als-item"><a
 									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/s2.png" /></a></li>
+									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
-									target="_blank"><img src="/img/s0.png"></a></li>
+									target="_blank"><img src="/img/main/index/slide/s0.png"></a></li>
 								<li class="als-item"><a
 									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/s2.png" /></a></li>
+									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
 								<li class="als-item"><a
 									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/s2.png" /></a></li>
+									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
 							</ul>
 						</div>
 					</div>

@@ -38,21 +38,6 @@ $(function() {
 		setMainPadBtm();
 	});
 
-	$('#sc1').addClass("abc1");
-
-	setTimeout(function() {
-		$('#sc2').addClass("abc1");
-	}, 300);
-	setTimeout(function() {
-		$('#sc3').addClass("abc1");
-	}, 600);
-	setTimeout(function() {
-		$('#sc4').addClass("abc1");
-	}, 900);
-	setTimeout(function() {
-		$('#sc5').addClass("abc1");
-	}, 1200);
-
 	$("#lista1").als({
 		visible_items : 6,
 		scrolling_items : 1,
@@ -64,10 +49,10 @@ $(function() {
 	});
 	
 	var slide;
-	var time = 4000;//슬라이드시간
+	var time = 3000;//슬라이드시간
 	var num = 0;
 	
-	$("#notice img").eq(num).css({"left":"0%"});
+	$("#notice_slide img").eq(num).css({"left":"0%"});
 	
 	slide = setInterval(function(){
 		start();
@@ -76,22 +61,50 @@ $(function() {
 	function start(){
 		var no = num + 1;
 		
-		if(no>=$("#notice img").length){
+		if(no>=$("#notice_slide img").length){
 			no = 0;
 		};
 		
-		$("#notice img").eq(no).css({"left":"-100%"}).stop().animate({"left":"0%"});
-		$("#notice img").eq(num).stop().animate({"left":"100%"});
+		$("#notice_slide img").eq(no).css({"left":"100%"}).stop().animate({"left":"0%"});
+		$("#notice_slide img").eq(num).stop().animate({"left":"-100%"});
 		num = no;
 	};
 	
-	
-	$("#popupImg").click(function(){
-		$("#popup, #bgBlack").fadeIn();//서서히 나타남. show();도 가능
+	$(".pre_box").click(function(){
+		clearInterval(slide);
+
+		var no = num + 1;
+		
+		if(no>=$("#notice_slide img").length){
+			no = 0;
+		};
+		
+		$("#notice_slide img").eq(no).css({"left":"100%"}).stop().animate({"left":"0%"});
+		$("#notice_slide img").eq(num).stop().animate({"left":"-100%"});
+		num = no;
+
 	});
 	
-	$("#btnClose").click(function(){
-		$("#popup, #bgBlack").fadeOut();//서서히 사라짐. hide();도 가능
+	$(".next_box").click(function(){
+		clearInterval(slide);
+
+		var no = num - 1;
+		
+		if(no<=0){
+			no = $("#notice_slide img").length-1;
+		};
+		
+		$("#notice_slide img").eq(no).css({"left":"-100%"}).stop().animate({"left":"0%"});
+		$("#notice_slide img").eq(num).stop().animate({"left":"100%"});
+		num = no;
+	});
+	
+	$("#notice_slide img").hover(function(){
+		clearInterval(slide);
+	}, function(){
+		slide = setInterval(function(){
+			start();
+		}, time);
 	});
 });
 
