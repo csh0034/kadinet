@@ -27,17 +27,28 @@
 					</div>
 					<div class="contents_box_bottom">
 						<div class="history_bx">
-							<dl class="dl_bx">
-								<c:forEach var="item" items="${historyList}" varStatus="i">
+							<c:set var="year" value="" />
+							<c:forEach var="item" items="${historyList}" varStatus="i">
+								<c:if test="${item.getHistory_year() != year && year != ''}">
+									${'</ul></dd></dl>'}
+								</c:if>
+								<c:if test="${item.getHistory_year() != year}">
+									<c:set var="year" value="${item.getHistory_year() }" />
+									${"<dl class='dl_bx'>"} 
 									<dt>${item.getHistory_year() }</dt>
-									<dd>
-										<ul>
-											<li><strong class="date">${item.getHistory_month() }</strong>
-												<p class="txt">${item.getHistory_data() }</p></li>
-										</ul>
-									</dd>
-								</c:forEach>
-							</dl>
+									<dd>${'<ul>'}
+								</c:if>
+								<li><c:choose>
+										<c:when test='${ item.getHistory_month() < 10}'>
+											<strong class="date">0${item.getHistory_month() }</strong>
+										</c:when>
+										<c:otherwise>
+											<strong class="date">${item.getHistory_month() }</strong>
+										</c:otherwise>
+									</c:choose>
+									<p class="txt">${item.getHistory_data() }</p></li>
+							</c:forEach>
+
 						</div>
 					</div>
 				</div>
