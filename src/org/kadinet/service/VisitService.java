@@ -1,6 +1,5 @@
 package org.kadinet.service;
 
-import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,8 +19,8 @@ public class VisitService {
 	}
 
 	public void getDirectionInfo(HttpServletRequest request) {
-		Vector<VisitBean> direcList = dao.getDirectionInfo();
-
-		request.setAttribute("direcList", direcList);
+		VisitBean bean = dao.getDirectionInfo();
+		request.setAttribute("direcList", bean);
 	}
+	
 }

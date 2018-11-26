@@ -3,8 +3,8 @@ package org.kadinet.model;
 public class VisitBean {
 	
 	private int visit_no;
-	private int visit_lat;
-	private int visit_lng;
+	private double visit_lat;
+	private double visit_lng;
 	private String visit_address;
 	private String visit_phone;
 	private String visit_fax;
@@ -15,14 +15,17 @@ public class VisitBean {
 	public void setVisit_no(int visit_no) {
 		this.visit_no = visit_no;
 	}
-	public int getVisit_lat() {
+	public double getVisit_lat() {
 		return visit_lat;
 	}
-	public void setVisit_lat(int visit_lat) {
+	public void setVisit_lat(double visit_lat) {
 		this.visit_lat = visit_lat;
 	}
-	public int getVisit_lng() {
+	public double getVisit_lng() {
 		return visit_lng;
+	}
+	public void setVisit_lng(double visit_lng) {
+		this.visit_lng = visit_lng;
 	}
 	public void setVisit_lng(int visit_lng) {
 		this.visit_lng = visit_lng;

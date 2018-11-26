@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,12 +17,12 @@
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d64ae3dc1ef35b24364c94f0fb547d1b"></script>
 <script>
 	window.onload = function() {
-		var lat = 37.58525000;
-		var lng = 127.08855007;
+ 		var lat = ${direcList.getVisit_lat() };
+		var lng = ${direcList.getVisit_lng()};
 		var container = document.getElementById('map');
 		var options = {
 			center : new daum.maps.LatLng(lat, lng),
-			level : 3
+			level : 3 
 		};
 		var marker = new daum.maps.Marker({
 			position : new daum.maps.LatLng(lat, lng)
@@ -28,7 +30,7 @@
 
 		var map = new daum.maps.Map(container, options);
 		marker.setMap(map);
-	}
+	} 
 </script>
 </head>
 <body>
@@ -48,20 +50,18 @@
 						<div id="map"></div>
 						<div class="visit_table">
 							<table>
-								<c:forEach var="item" items="${direcList }" varStatus="i">
-									<tr>
-										<th>주소</th>
-										<td>${item.getVisit_address() }</td>
-									</tr>
+								<tr> 
+									<th>주소</th>
+									<td>${direcList.getVisit_address() }</td>
+								</tr>
 								<tr>
 									<th>전화번호</th>
-									<td>${item.getVisit_phone() }</td>
+									<td>${direcList.getVisit_phone() }</td>
 								</tr>
 								<tr>
 									<th>팩스</th>
-									<td>${item.getVisit_fax() }</td>
+									<td>${direcList.getVisit_fax() }</td>
 								</tr>
-								</c:forEach>
 							</table>
 						</div>
 					</div>
