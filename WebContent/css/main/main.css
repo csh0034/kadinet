@@ -822,7 +822,7 @@ body {
 
 .member_box .mem_area_01 {
     width: 403px;
-    height: 258px;
+    height: 295px;
     margin: 0 auto 30px;
     text-align: center;
     /*background: url(/img/main/intro/member/member1.jpg) no-repeat 0 bottom;*/
@@ -840,17 +840,17 @@ body {
 }
 
 .member_box .mem_img {
-	width: 115px;
+    width: 154px;
     padding: 6px 5px;
     border: 1px solid #efefef;
     margin: 20px auto 0;
-    overflow: hidden;	
+    overflow: hidden;
 }
 
 .member_box .mem_img img {
     display: block;
-    width: 113px;
-    height: 120px;
+	width: 141px;
+    height: 148px;
 }
 
 .member_box dl {
@@ -863,62 +863,17 @@ body {
     font-size: 17px;    
 }
 
+.member_box dl dd {
+    font-size: 17px;
+}
+
 .member_box dl dd a {
     color: #4f98e3;
     font-size: 17px;
 }
 
-.mem_area_02 {
-    float: left;
-    width: 420px;
-    margin-bottom: 30px;
-    margin-right: 20px;
-    text-align: center;
-    border: 1px solid #d2d2d2;
-}
-
-.mem_area_02 .mem_title {
-    height: 42px;
-    line-height: 42px;
-    font-weight: bold;
-    font-size: 17px;
-    text-align: center;
-    color: #fff;
-    background-color: #47b8cc;
-}
-
-.mem_area_02 .mem_top_box {
-    display: inline-block;
-    margin-bottom: 20px;
-    width: 180px;
-    text-align: center;
-}
-
-.mem_area_03 {
-    float: right;
-    width: 260px;
-    margin-bottom: 30px;
-    text-align: center;
-    border: 1px solid #d7d7d7;
-}
-
-.mem_area_03 .mem_title {
-    height: 42px;
-    line-height: 42px;
-    font-weight: bold;
-    font-size: 17px;
-    text-align: center;
-    color: #fff;
-    background-color: #47b8cc;
-}
-
-.mem_area_03 .mem_top_box {
-    margin-bottom: 20px;
-}
-
 .mem_area_04 {
 	overflow: hidden;
-    margin-bottom: 30px;
     width: 100%;
     border: 1px solid #d7d7d7;
 }
@@ -929,19 +884,17 @@ body {
     font-weight: bold;
     font-size: 17px;
     color: #fff;
-    background-color: #4ed7b8;
+    background-color: #47b8cc;
     text-align: center;
 }
 
 .mem_area_04 .mem_top_box {
     display: inline-block;
     margin-bottom: 20px;
-    width: 19.9%;
+    width: 24.9%;
     text-align: center;
     float: left;
 }
-
-
 
 /* organization */
 .organization_box {
