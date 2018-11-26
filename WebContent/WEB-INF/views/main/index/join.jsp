@@ -33,7 +33,8 @@
 					<div class="contents_box_bottom">
 						<div class="join_bx">
 							<div class="joinform_wrap">
-								<form action="joinProc.do" method="post" id="frm" data-parsley-validate>
+								<form action="joinProc.do" method="post" id="frm"
+									data-parsley-validate>
 									<div class="join_tit">
 										<p>&gt; 정보입력</p>
 									</div>
@@ -95,6 +96,33 @@
 										</dl>
 										<span id="nameError" class="errorArea"></span>
 									</div>
+									<div class="item">
+										<dl class="line-half1">
+											<dt>
+												<label for="u_email_receive">나이</label>
+											</dt>
+											<dd>
+												<input type="text" name="u_phone" id="u_phone" value=""
+													placeholder="숫자만 입력" data-parsley-type="digits"
+													data-parsley-required="true" data-parsley-trigger="change"
+													required
+													data-parsley-errors-container="span[id='ageError']" />
+											</dd>
+										</dl>
+										<span id="ageError" class="errorArea"></span>
+										<dl class="line-half2">
+											<dt>
+												<label for="u_sms_receive">성별</label>
+											</dt>
+											<dd>
+												<input type="radio" name="u_sms_receive" value="O"
+													class="inp_radio" checked id="smsO" /><label for="smsO"
+													style="margin-right: 15px">남</label> <input type="radio"
+													name="u_sms_receive" value="X" class="inp_radio" id="smsX" /><label
+													for="smsX">여</label>
+											</dd>
+										</dl>
+									</div>
 									<div class="item mb2">
 										<dl class="line-full">
 											<dt>
@@ -118,7 +146,7 @@
 											<dd>
 												<input type="text" name="u_addr1" id="u_addr1"
 													placeholder="우편번호 검색" readonly required
-													data-parsley-required="true" 
+													data-parsley-required="true"
 													data-parsley-errors-container="span[id='addr1Error']" />
 											</dd>
 										</dl>
