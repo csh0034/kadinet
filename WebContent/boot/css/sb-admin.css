@@ -190,7 +190,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 	.sidebar .nav-item .nav-link span {
 		font-size: 1rem;
 		display: inline;
-		margin-left: 10px;
+		margin-left: 5px;
 	}
 	.sidebar .nav-item .dropdown-menu {
 		position: static !important;

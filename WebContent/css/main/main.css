@@ -822,7 +822,7 @@ body {
 
 .member_box .mem_area_01 {
     width: 403px;
-    height: 295px;
+    height: 320px;
     margin: 0 auto 30px;
     text-align: center;
     /*background: url(/img/main/intro/member/member1.jpg) no-repeat 0 bottom;*/
@@ -859,17 +859,31 @@ body {
 }
 
 .member_box dl dt {
-    font-weight: bold;
-    font-size: 17px;    
+	font-weight: bold;
+    font-size: 18px;
+    display: inline;
+    float: left;
+    margin-left: 46px;
+}
+
+.member_box dl .best {
+    display: block;
+    float: none;
+    margin-left: 0;
+}
+
+.member_box .position {
+	display: inline-block;
+    margin-left: -42px;
 }
 
 .member_box dl dd {
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .member_box dl dd a {
     color: #4f98e3;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 .mem_area_04 {
