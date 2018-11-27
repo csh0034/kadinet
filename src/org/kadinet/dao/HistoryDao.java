@@ -47,13 +47,13 @@ public class HistoryDao extends DBCon {
 	public void addHistory(HistoryBean bean) {
 		try {
 			conStart();
-			sql = "insert into history values('0',?,?,?,'sdfds')";
+			sql = "insert into history values('0',?,?,?,?)";
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, bean.getHistory_year());
 			pstmt.setString(2, bean.getHistory_month());
 			pstmt.setString(3, bean.getHistory_day());
-
+			pstmt.setString(4, bean.getHistory_data());
 			
  
 			pstmt.executeUpdate();
