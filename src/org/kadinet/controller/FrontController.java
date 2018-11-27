@@ -57,7 +57,22 @@ public class FrontController extends HttpServlet {
 		list.put("/admin/intro/member.do", new AdminController());
 		list.put("/admin/intro/organization.do", new AdminController());
 		list.put("/admin/intro/visit.do", new AdminController());
-
+		
+		list.put("/admin/notice/notice/list.do", new AdminController());
+		list.put("/admin/notice/press/list.do", new AdminController());
+		list.put("/admin/notice/data/list.do", new AdminController());
+		list.put("/admin/notice/notice/detail.do", new AdminController());
+		list.put("/admin/notice/press/detail.do", new AdminController());
+		list.put("/admin/notice/data/detail.do", new AdminController());
+		
+		list.put("/admin/business/career.do", new AdminController());
+		list.put("/admin/business/corporation.do", new AdminController());
+		list.put("/admin/business/mentoring.do", new AdminController());
+		list.put("/admin/business/support.do", new AdminController());
+		list.put("/admin/business/education.do", new AdminController());
+		
+		list.put("/admin/mbr/memberinfo.do", new AdminController());
+		list.put("/admin/mbr/memberlogo.do", new AdminController());
 	}
 
 	@Override
