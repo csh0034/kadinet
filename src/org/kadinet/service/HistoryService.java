@@ -23,4 +23,9 @@ public class HistoryService {
 	
 		request.setAttribute("historyList", historyList);
 	}
+	
+	public void addHistory(HistoryBean bean) {
+		
+		dao.addHistory(bean);
+	}
 }

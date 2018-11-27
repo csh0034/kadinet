@@ -46,28 +46,28 @@
 		<div class="dropdown-menu ${show2 }" aria-labelledby="pagesDropdown">
 			<h6 class="dropdown-header">주요사업</h6>
 			<a class="dropdown-item" href="/admin/business/career.do">경력인증</a> <a
-				class="dropdown-item" href="/admin/business/corporation.do">기업체인증</a> <a
-				class="dropdown-item" href="/admin/business/mentoring.do">구인구직</a> <a
-				class="dropdown-item" href="/admin/business/support.do">디지털융합산업지원</a> <a
-				class="dropdown-item" href="/admin/business/education.do">교육사업</a>
+				class="dropdown-item" href="/admin/business/corporation.do">기업체인증</a>
+			<a class="dropdown-item" href="/admin/business/mentoring.do">구인구직</a>
+			<a class="dropdown-item" href="/admin/business/support.do">디지털융합산업지원</a>
+			<a class="dropdown-item" href="/admin/business/education.do">교육사업</a>
 		</div></li>
-	<li class="nav-item dropdown${show3}"><a
+	<li class="nav-item dropdown ${show3}"><a
 		class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
 		role="button" data-toggle="dropdown" aria-haspopup="${bool3}"
 		aria-expanded="false"> <i class="fas fa-fw fa-folder"></i> <span>알림마당</span>
 	</a>
-		<div class="dropdown-menu${show3}" aria-labelledby="pagesDropdown">
+		<div class="dropdown-menu ${show3}" aria-labelledby="pagesDropdown">
 			<h6 class="dropdown-header">알림마당</h6>
-			<a class="dropdown-item" href="/admin/notice/notice/list.do">공지사항</a> <a
-				class="dropdown-item" href="/admin/notice/press/list.do">보도자료</a> <a
-				class="dropdown-item" href="/admin/notice/data/list.do">정보자료실</a>
+			<a class="dropdown-item" href="/admin/notice/notice/list.do">공지사항</a>
+			<a class="dropdown-item" href="/admin/notice/press/list.do">보도자료</a>
+			<a class="dropdown-item" href="/admin/notice/data/list.do">정보자료실</a>
 		</div></li>
-	<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-		href="#" id="pagesDropdown" role="button" data-toggle="dropdown"
-		aria-haspopup="${bool4}" aria-expanded="false"> <i
-			class="fas fa-fw fa-folder"></i> <span>회원사</span>
+	<li class="nav-item dropdown ${show4}"><a
+		class="nav-link dropdown-toggle" href="#" id="pagesDropdown"
+		role="button" data-toggle="dropdown" aria-haspopup="${bool4}"
+		aria-expanded="false"> <i class="fas fa-fw fa-folder"></i> <span>회원사</span>
 	</a>
-		<div class="dropdown-menu" aria-labelledby="pagesDropdown">
+		<div class="dropdown-menu ${show4}" aria-labelledby="pagesDropdown">
 			<h6 class="dropdown-header">회원사</h6>
 			<a class="dropdown-item" href="/admin/mbr/memberinfo.do">회원사소개</a> <a
 				class="dropdown-item" href="/admin/mbr/memberlogo.do">회원 메인로고</a>
