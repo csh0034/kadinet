@@ -76,24 +76,26 @@ public class UserDao extends DBCon {
 		} finally {
 			conClose();
 		}
-	}
+	} 
 
 	public void insertUser(UserBean user) {
 		try {
 			conStart();
-			sql = "insert into user values(?,?,?,?,?,sysdate(),sysdate(),?,?,?,?,?,'1')";
+			sql = "insert into user values(?,?,?,?,?,?,?,sysdate(),sysdate(),?,?,?,?,?,'1')";
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, user.getUser_id());
 			pstmt.setString(2, user.getUser_pw());
 			pstmt.setString(3, user.getUser_name());
 			pstmt.setString(4, user.getUser_email());
-			pstmt.setString(5, user.getUser_phone());
-			pstmt.setString(6, user.getUser_email_receive());
-			pstmt.setString(7, user.getUser_sms_receive());
-			pstmt.setString(8, user.getUser_zipCode());
-			pstmt.setString(9, user.getUser_addr1());
-			pstmt.setString(10, user.getUser_addr2());
+			pstmt.setString(5, user.getUser_age());
+			pstmt.setString(6, user.getUser_gender());
+			pstmt.setString(7, user.getUser_phone());
+			pstmt.setString(8, user.getUser_email_receive());
+			pstmt.setString(9, user.getUser_sms_receive());
+			pstmt.setString(10, user.getUser_zipCode());
+			pstmt.setString(11, user.getUser_addr1());
+			pstmt.setString(12, user.getUser_addr2());
 
 			pstmt.executeUpdate();
 
@@ -103,6 +105,30 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 	}
+	public String findId(String name, String phone) {
+		String user_id = null;
+		try {
+			conStart();
+			sql = "select * from user where user_name = ? and user_phone = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, phone);
+
+			pstmt.executeQuery();
+			
+			while(rs.next()){
+			    user_id = rs.getString("user_id");
+			   }
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return user_id;
+	}
+	
+}		
 
 	/*
 	 * public void deleteUser(String id) { try { conStart(); sql =
@@ -113,4 +139,3 @@ public class UserDao extends DBCon {
 	 * 
 	 * } catch (Exception e) { e.printStackTrace(); } finally { conClose(); } }
 	 */
-}

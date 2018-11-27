@@ -32,17 +32,18 @@ public class MainIndexController implements Controller {
 		} else if ("/find.do".equals(path)) {
 			find(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/find.jsp");
-		} /*
-			 * else if ("/deleteUser.do".equals(path)) { deleteUser(request, response);
-			 * response.sendRedirect("/index.do"); }
-			 */
+		} 
+		/*
+		 * else if ("/deleteUser.do".equals(path)) { deleteUser(request, response);
+		 * response.sendRedirect("/index.do"); }
+		 */
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NoticeService service = NoticeService.getInstance();
 		request.setAttribute("index", "true");
 		service.getIndexNoticeList(request);
-		
+
 	}
 
 	private void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -58,6 +59,8 @@ public class MainIndexController implements Controller {
 		String pw = request.getParameter("u_pw");
 		String name = request.getParameter("u_name");
 		String email = request.getParameter("u_email");
+		String age = request.getParameter("u_age");
+		String gender = request.getParameter("u_gender");
 		String phone = request.getParameter("u_phone");
 		String mail_receive = request.getParameter("u_email_receive");
 		String sms_receive = request.getParameter("u_sms_receive");
@@ -70,15 +73,17 @@ public class MainIndexController implements Controller {
 		user.setUser_pw(pw);
 		user.setUser_name(name);
 		user.setUser_email(email);
+		user.setUser_age(age);
+		user.setUser_gender(gender);
 		user.setUser_phone(phone);
 		user.setUser_email_receive(mail_receive);
 		user.setUser_sms_receive(sms_receive);
 		user.setUser_addr1(addr1);
 		user.setUser_addr2(addr2);
-		
+
 		UserService service = UserService.getInstance();
 		service.insertUser(user);
-		
+
 	}
 
 	private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -92,7 +97,8 @@ public class MainIndexController implements Controller {
 		request.setAttribute("page", "find");
 
 	}
-
+	
+}
 	/*
 	 * private void deleteUser(HttpServletRequest request, HttpServletResponse
 	 * response) throws ServletException, IOException { String id =
@@ -101,4 +107,3 @@ public class MainIndexController implements Controller {
 	 * 
 	 * }
 	 */
-}

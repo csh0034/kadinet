@@ -99,27 +99,27 @@
 									<div class="item">
 										<dl class="line-half1">
 											<dt>
-												<label for="u_email_receive">나이</label>
+												<label for="u_age">생년월일</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_phone" id="u_phone" value=""
-													placeholder="숫자만 입력" data-parsley-type="digits"
+												<input type="text" name="u_age" id="u_age" value=""
+													placeholder="ex)940801" data-parsley-type="digits"
 													data-parsley-required="true" data-parsley-trigger="change"
-													required
+													required pattern="^[0-9]{6,6}$"
 													data-parsley-errors-container="span[id='ageError']" />
 											</dd>
 										</dl>
 										<span id="ageError" class="errorArea"></span>
 										<dl class="line-half2">
 											<dt>
-												<label for="u_sms_receive">성별</label>
+												<label for="u_gender">성별</label>
 											</dt>
 											<dd>
-												<input type="radio" name="u_sms_receive" value="O"
-													class="inp_radio" checked id="smsO" /><label for="smsO"
-													style="margin-right: 15px">남</label> <input type="radio"
-													name="u_sms_receive" value="X" class="inp_radio" id="smsX" /><label
-													for="smsX">여</label>
+												<input type="radio" name="u_gender" value="M"
+													class="inp_radio" checked id="genderM" /><label
+													for="genderM" style="margin-right: 15px">남</label> <input
+													type="radio" name="u_gender" value="F"
+													class="inp_radio" id="genderF" /><label for="genderF">여</label>
 											</dd>
 										</dl>
 									</div>
