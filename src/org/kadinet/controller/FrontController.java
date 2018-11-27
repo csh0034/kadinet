@@ -50,7 +50,14 @@ public class FrontController extends HttpServlet {
 		list.put("/mbr/update.do", new MainMbrController());
 		list.put("/mbr/leave.do", new MainMbrController());
 
-		list.put("/admin/index.do", new AdminIndexController());
+		list.put("/admin/index.do", new AdminController());
+		
+		list.put("/admin/intro/greeting.do", new AdminController());
+		list.put("/admin/intro/history.do", new AdminController());
+		list.put("/admin/intro/member.do", new AdminController());
+		list.put("/admin/intro/organization.do", new AdminController());
+		list.put("/admin/intro/visit.do", new AdminController());
+
 	}
 
 	@Override
