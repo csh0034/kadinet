@@ -17,19 +17,19 @@ public class AdminController implements Controller {
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/index/index.jsp");
 		} else if ("/admin/intro/greeting.do".equals(path)) {
 			greeting(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editor.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/greeting.jsp");
 		} else if ("/admin/intro/history.do".equals(path)) {
 			history(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editor.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/history.jsp");
 		} else if ("/admin/intro/member.do".equals(path)) {
 			member(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editor.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/member.jsp");
 		} else if ("/admin/intro/organization.do".equals(path)) {
 			organization(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editor.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/organization.jsp");
 		} else if ("/admin/intro/visit.do".equals(path)) {
 			visit(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editor.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/visit.jsp");
 		}
 	}
 
