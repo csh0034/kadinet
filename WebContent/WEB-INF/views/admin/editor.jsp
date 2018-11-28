@@ -43,11 +43,9 @@
 
 				<div class="card mb-3">
 					<div class="card-body">
-						<div style="width: 882px; margin: 0 auto;">
-							<form method="get" id="insertBoardFrm"
-								enctype="multipart/form-data">
-								<textarea name="editor" id="editor"
-									style="width:880px; height: 1000px;"></textarea>
+						<div style="width: 860px; margin: 0 auto;" id="editorWrap">
+							<form method="get" id="insertBoardFrm" enctype="multipart/form-data">
+								<textarea name="editor" id="editor" style="width: 855px; height: 400px;"></textarea>
 							</form>
 						</div>
 					</div>

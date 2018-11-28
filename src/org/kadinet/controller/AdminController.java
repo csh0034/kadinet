@@ -89,7 +89,9 @@ public class AdminController implements Controller {
 	private void greeting(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "1");
-		request.setAttribute("page", "협회소개 > 협회장인사");
+		request.setAttribute("location", "협회소개 > 협회장인사");
+		request.setAttribute("url", "intro/greeting");
+		request.setAttribute("menu", "greeting");
 		
 		MenuService service = MenuService.getInstance();
 		service.getMenuData("greeting", request);

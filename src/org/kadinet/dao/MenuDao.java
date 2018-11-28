@@ -3,7 +3,7 @@ package org.kadinet.dao;
 import org.kadinet.model.MenuBean;
 import org.kadinet.util.DBCon;
 
-public class MenuDao extends DBCon{
+public class MenuDao extends DBCon {
 	private static MenuDao dao = new MenuDao();
 
 	private MenuDao() {
@@ -12,7 +12,7 @@ public class MenuDao extends DBCon{
 	public static MenuDao getInstance() {
 		return dao;
 	}
-	
+
 	public MenuBean getMenuData(String menu) {
 		MenuBean bean = new MenuBean();
 		try {
@@ -34,5 +34,21 @@ public class MenuDao extends DBCon{
 		}
 
 		return bean;
+	}
+	
+	public void updateMenuData(String menu , String content) {
+		try {
+			conStart();
+			sql = "update menu set menu_content=? , menu_update_date = sysdate() where menu_tit = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, content);
+			pstmt.setString(2, menu);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
 	}
 }
