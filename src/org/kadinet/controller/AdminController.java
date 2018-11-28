@@ -43,19 +43,19 @@ public class AdminController implements Controller {
 			// business
 		} else if ("/admin/business/career.do".equals(path)) {
 			career(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/business/career.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
 		} else if ("/admin/business/corporation.do".equals(path)) {
 			corporation(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/business/corporation.jsp");
-		} else if ("/admin/business/education.do".equals(path)) {
-			education(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/business/education.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
 		} else if ("/admin/business/mentoring.do".equals(path)) {
 			mentoring(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/business/mentoring.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
 		} else if ("/admin/business/support.do".equals(path)) {
 			support(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/business/support.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
+		} else if ("/admin/business/education.do".equals(path)) {
+			education(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
 			// notice
 		} else if ("/admin/notice/notice/list.do".equals(path)) {
 			noticeList(request, response);
@@ -92,7 +92,7 @@ public class AdminController implements Controller {
 		request.setAttribute("location", "협회소개 > 협회장인사");
 		request.setAttribute("url", "intro/greeting");
 		request.setAttribute("menu", "greeting");
-		
+
 		MenuService service = MenuService.getInstance();
 		service.getMenuData("greeting", request);
 	}
@@ -108,19 +108,19 @@ public class AdminController implements Controller {
 
 	private void addHistory(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String year = request.getParameter("history_year");
 		String month = request.getParameter("history_month");
 		String day = request.getParameter("history_day");
 		String data = request.getParameter("history_data");
-		
+
 		HistoryBean bean = new HistoryBean();
-		
+
 		bean.setHistory_year(year);
 		bean.setHistory_month(month);
 		bean.setHistory_day(day);
 		bean.setHistory_data(data);
-		
+
 		HistoryService service = HistoryService.getInstance();
 		service.addHistory(bean);
 	}
@@ -137,7 +137,7 @@ public class AdminController implements Controller {
 		request.setAttribute("location", "협회소개 > 조직도");
 		request.setAttribute("url", "intro/organization");
 		request.setAttribute("menu", "organization");
-		
+
 		MenuService service = MenuService.getInstance();
 		service.getMenuData("organization", request);
 
@@ -153,31 +153,56 @@ public class AdminController implements Controller {
 	// business
 	private void career(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "2");
-		request.setAttribute("page", "협회소개 > 경력인증");
+		request.setAttribute("location", "주요사업 > 경력인증");
+		request.setAttribute("url", "business/career");
+		request.setAttribute("menu", "career");
+
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("career", request);
 	}
 
 	private void corporation(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "2");
-		request.setAttribute("page", "협회소개 > 기업체인증");
-	}
+		request.setAttribute("location", "주요사업 > 기업체인증");
+		request.setAttribute("url", "business/corporation");
+		request.setAttribute("menu", "corporation");
 
-	private void education(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.setAttribute("subNav", "2");
-		request.setAttribute("page", "협회소개 > 교육산업");
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("corporation", request);
 	}
 
 	private void mentoring(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "2");
-		request.setAttribute("page", "협회소개 > 멘토링");
+		request.setAttribute("location", "주요사업 > 멘토링");
+		request.setAttribute("url", "business/mentoring");
+		request.setAttribute("menu", "mentoring");
+
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("mentoring", request);
 	}
 
 	private void support(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "2");
-		request.setAttribute("page", "협회소개 > 디지털융합산업지원");
+		request.setAttribute("location", "주요사업 > 디지털융합산업지원");
+		request.setAttribute("url", "business/support");
+		request.setAttribute("menu", "support");
+
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("support", request);
+	}
+
+	private void education(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setAttribute("subNav", "2");
+		request.setAttribute("location", "주요사업 > 교육사업");
+		request.setAttribute("url", "business/education");
+		request.setAttribute("menu", "education");
+
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("education", request);
 	}
 
 	// notice

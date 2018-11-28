@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.kadinet.service.MenuService;
 import org.kadinet.util.HttpUtil;
 
 public class MainBusinessController implements Controller {
@@ -33,31 +34,36 @@ public class MainBusinessController implements Controller {
 	private void career(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setAttribute("page", "career");
-
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("career", request);
 	}
 
 	private void corporation(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "corporation");
-
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("corporation", request);
 	}
 
 	private void mentoring(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "mentoring");
-
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("mentoring", request);
 	}
 
 	private void support(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "support");
-
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("support", request);
 	}
 
 	private void education(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "education");
-
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("education", request);
 	}
 
 }

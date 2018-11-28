@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
 import org.kadinet.service.HistoryService;
+import org.kadinet.service.MenuService;
 import org.kadinet.service.VisitService;
 import org.kadinet.util.HttpUtil;
 
@@ -35,9 +36,10 @@ public class MainIntroController implements Controller {
 
 	private void greeting(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("greeting", request);
 
 		request.setAttribute("page", "greeting");
-
 	}
 
 	private void history(HttpServletRequest request, HttpServletResponse response)
@@ -48,8 +50,7 @@ public class MainIntroController implements Controller {
 
 	}
 
-	private void member(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	private void member(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("page", "member");
 
 	}
@@ -57,6 +58,9 @@ public class MainIntroController implements Controller {
 	private void organization(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "organization");
+
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("organization", request);
 
 	}
 

@@ -41,7 +41,7 @@
 			<h6 class="dropdown-header">주요사업</h6>
 			<a class="dropdown-item" href="/admin/business/career.do">경력인증</a>
 			<a class="dropdown-item" href="/admin/business/corporation.do">기업체인증</a>
-			<a class="dropdown-item" href="/admin/business/mentoring.do">구인구직</a>
+			<a class="dropdown-item" href="/admin/business/mentoring.do">멘토링</a>
 			<a class="dropdown-item" href="/admin/business/support.do">디지털융합산업지원</a>
 			<a class="dropdown-item" href="/admin/business/education.do">교육사업</a>
 		</div></li>

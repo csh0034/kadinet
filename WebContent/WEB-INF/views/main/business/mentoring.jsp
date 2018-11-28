@@ -26,7 +26,8 @@
 					</div>
 					<div class="contents_box_bottom">
 						<div class="business_box">
-							<img src="/img/main/business/business_img4.jpg" alt="멘토링">
+						${bean.getMenu_content() }
+							<!-- <img src="/img/main/business/business_img4.jpg" alt="멘토링">
 							<p class="bu_text">
 								<b>멘토링은</b> 개별 회원에게 맨토로서의 조언과 격려를 통하여 주도적인 경력 개발을 하도록 지원하는 서비스이다. 협회의 잡멘토스(jobmentors)를 통해 이루어지는 멘토링은 취업준비생의 취업 성공을 위해 현명하고 성실한 멘토들의 실질적인 조언과 유대관계를 통하여 주도적인 경력관리 및 취업을 지원해주는 서비스이다.
 							</p><br />
@@ -44,7 +45,7 @@
 							</p><br />
 							<p class="bu_text">
 								잡멘토스(jobmentors)에서는 재학생, 졸업생, 경력자 등의 능력 개발과 경력 관리에 대한 조언, 신규 취업과 경력자의 재취업 등에 대하여 전주기적인 멘토링 시스템을 통해 멘티의 고품격 취업을 지원하고자 한다.
-							</p>
+							</p> -->
 						</div>
 					</div>
 				</div>

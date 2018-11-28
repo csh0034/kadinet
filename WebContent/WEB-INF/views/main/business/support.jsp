@@ -26,7 +26,8 @@
 					</div>
 					<div class="contents_box_bottom">
 						<div class="business_box">
-							<img src="/img/main/business/business_img2.jpg" alt="디지털융합산업지원">
+						${bean.getMenu_content() }
+						<!-- 	<img src="/img/main/business/business_img2.jpg" alt="디지털융합산업지원">
 							<h5>1) 디지털융합 관련 포럼 &amp; 컨퍼런스</h5>
 							<p class="bu_text">
 								관련 주제 : 디지털융합산업의 발전과 미래에 대하여<br />
@@ -54,7 +55,7 @@
 								- 경력 인증 연구회<br /><br />
 								구인과 구직 사이에서 발생하는 격차를 줄일 수 있는 경력 및 이력의 인증에 대한 연구를 수행한다. 실제로 가능한 과업해결 수준을 지식과 경험을 확인하여 인증함으로써 mismatch를 감소시키려는 연구를 수행한다. 필요한 지식과 경험을 제시하여,
 								주도적이고 자발적인 경력을 구축할 수 있는 방안을 연구한다.<br />
-							</p>
+							</p> -->
 						</div>
 					</div>
 				</div>
