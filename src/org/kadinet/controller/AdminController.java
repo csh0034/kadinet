@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.kadinet.model.HistoryBean;
 import org.kadinet.service.HistoryService;
+import org.kadinet.service.MenuService;
 import org.kadinet.service.NoticeService;
 import org.kadinet.service.VisitService;
 import org.kadinet.util.HttpUtil;
@@ -23,7 +24,7 @@ public class AdminController implements Controller {
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/index/index.jsp");
 		} else if ("/admin/intro/greeting.do".equals(path)) {
 			greeting(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/greeting.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
 		} else if ("/admin/intro/history.do".equals(path)) {
 			history(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/history.jsp");
@@ -89,7 +90,9 @@ public class AdminController implements Controller {
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "1");
 		request.setAttribute("page", "협회소개 > 협회장인사");
-
+		
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("greeting", request);
 	}
 
 	private void history(HttpServletRequest request, HttpServletResponse response)

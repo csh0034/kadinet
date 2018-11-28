@@ -1,4 +1,4 @@
-th{
+th {
 	font-weight: normal !important;
 }
 
@@ -31,4 +31,13 @@ th{
 	height: 100%;
 	background-color: #333;
 	color: #fff;
+}
+
+.page-link:focus, .form-control:focus {
+	box-shadow: none !important;
+}
+
+.editorWrap {
+	width: 825px;
+	margin: 0 auto;
 }

@@ -282,3 +282,11 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-11-27 21:10:52
+
+CREATE TABLE `menu` (
+  `menu_tit` varchar(30) NOT NULL,
+  `menu_content` text NOT NULL,
+  `menu_update_date` datetime NOT NULL,
+  `menu_etc` varchar(500) default NULL,
+  PRIMARY KEY (`menu_tit`)
+) 
