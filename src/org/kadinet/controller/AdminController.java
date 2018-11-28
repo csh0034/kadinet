@@ -36,7 +36,7 @@ public class AdminController implements Controller {
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/member.jsp");
 		} else if ("/admin/intro/organization.do".equals(path)) {
 			organization(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/organization.jsp");
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
 		} else if ("/admin/intro/visit.do".equals(path)) {
 			visit(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/visit.jsp");
@@ -134,7 +134,12 @@ public class AdminController implements Controller {
 	private void organization(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "1");
-		request.setAttribute("page", "협회소개 > 조직도");
+		request.setAttribute("location", "협회소개 > 조직도");
+		request.setAttribute("url", "intro/organization");
+		request.setAttribute("menu", "organization");
+		
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("organization", request);
 
 	}
 
