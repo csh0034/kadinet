@@ -66,13 +66,16 @@ public class NoticeService {
 
 	}
 
-	public void getNotice(HttpServletRequest request) {
+	public void getNotice(HttpServletRequest request , boolean hit) {
 		String no = request.getParameter("no");
 		if( no == null || no.isEmpty()) {
 			no = "1";
 		}
 		
-		dao.upHit(no);
+		if(hit) {
+			dao.upHit(no);
+		}
+		
 		NoticeBean bean = dao.getNotice(no);
 		Vector<NoticeBean> files = dao.getFileList(no);
 		String pre[] = dao.getPre(no, bean.getNotice_category());
@@ -93,6 +96,12 @@ public class NoticeService {
 		request.setAttribute("noticeList", noticeList);
 		request.setAttribute("pressList", pressList);
 		request.setAttribute("dataList", dataList);
+	}
+	
+	public void getAdminNoticeList(String category, HttpServletRequest request) {
+		Vector<NoticeBean> list = dao.getNoticeList(category);
+		request.setAttribute("list", list);
+
 	}
 	
 	

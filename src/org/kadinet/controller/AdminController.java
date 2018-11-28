@@ -208,52 +208,52 @@ public class AdminController implements Controller {
 	// notice
 	private void noticeList(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("page", "notice");
-		request.setAttribute("tit", "공지사항");
+		request.setAttribute("menu", "notice");
+		request.setAttribute("location", "알림마당 > 공지사항");
 		request.setAttribute("subNav", "3");
-		service.getNoticeList("notice", request);
+		service.getAdminNoticeList("notice", request);
 	}
 
 	private void pressList(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("page", "press");
-		request.setAttribute("tit", "보도자료");
+		request.setAttribute("menu", "notice");
+		request.setAttribute("location", "알림마당 > 보도자료");
 		request.setAttribute("subNav", "3");
-		service.getNoticeList("press", request);
+		service.getAdminNoticeList("press", request);
 
 	}
 
 	private void dataList(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("page", "data");
-		request.setAttribute("tit", "정보자료실");
+		request.setAttribute("menu", "notice");
+		request.setAttribute("location", "알림마당 > 정보자료실");
 		request.setAttribute("subNav", "3");
-		service.getNoticeList("data", request);
+		service.getAdminNoticeList("data", request);
 
 	}
 
 	private void noticeView(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("page", "notice");
-		request.setAttribute("tit", "공지사항");
+		request.setAttribute("menu", "notice");
+		request.setAttribute("location", "알림마당 > 공지사항");
 		request.setAttribute("subNav", "3");
-		service.getNotice(request);
+		service.getNotice(request,false);
 	}
 
 	private void pressView(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("page", "press");
-		request.setAttribute("tit", "보도자료");
+		request.setAttribute("menu", "notice");
+		request.setAttribute("location", "알림마당 > 보도자료");
 		request.setAttribute("subNav", "3");
-		service.getNotice(request);
+		service.getNotice(request,false);
 	}
 
 	private void dataView(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("page", "data");
-		request.setAttribute("tit", "정보자료실");
+		request.setAttribute("menu", "notice");
+		request.setAttribute("location", "알림마당 > 정보자료실");
 		request.setAttribute("subNav", "3");
-		service.getNotice(request);
+		service.getNotice(request,false);
 	}
 
 	// mbr

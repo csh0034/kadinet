@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
+<link rel="stylesheet" type="text/css" href="/css/main/main.css">
 </head>
 <body id="page-top">
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
@@ -13,17 +14,94 @@
 		<div id="content-wrapper">
 			<div class="container-fluid">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item">ADMIN &gt; ${page}</li>
+					<li class="breadcrumb-item">ADMIN &gt; ${location}</li>
 				</ol>
 
-				<div class="card mb-3">
-					<div class="card-header">
-						<i class="fas fa-chart-area"></i> ${page}
-					</div>
+				<div class="card mb-3" style="width: 900px; margin: 0 auto;">
+					<div class="card-header"></div>
 					<div class="card-body">
-						내용
+						<div class="notice_bx" style="width: 825px; margin: 0 auto;">
+							<table class="detailTable">
+								<colgroup>
+									<col width="20%">
+									<col width="*">
+								</colgroup>
+								<tr class="lineTop">
+									<th>제목</th>
+									<td>${bean.getNotice_title()}</td>
+								</tr>
+								<tr>
+									<th>작성자</th>
+									<td>${bean.getUser_name()}</td>
+								</tr>
+
+								<c:choose>
+									<c:when test="${!empty files}">
+										<tr>
+											<th>등록일</th>
+											<td>${bean.getNotice_regdate()}</td>
+										</tr>
+										<tr class="lineBottom">
+											<th>첨부</th>
+											<td><c:forEach var="item" items="${files}" varStatus="i">
+													<p>
+														<img src="/img/main/notice/icon_file.gif">
+														<a href="#">${i.index+1}. ${item.getFile_oriname()}</a>
+													</p>
+												</c:forEach></td>
+										</tr>
+									</c:when>
+									<c:otherwise>
+										<tr class="lineBottom">
+											<th>등록일</th>
+											<td>${bean.getNotice_regdate()}</td>
+										</tr>
+									</c:otherwise>
+								</c:choose>
+								<tr>
+									<td colspan="2"></td>
+								</tr>
+								<tr class="contentTr">
+									<td colspan="2"><div style="min-height: 300px;">${bean.getNotice_content()}</div></td>
+								</tr>
+								<tr>
+									<td colspan="2"></td>
+								</tr>
+								<tr class="lineTop">
+									<th class="move"><p>
+											이전글 <img src="/img/main/notice/pre.gif">
+										</p></th>
+									<td><c:choose>
+											<c:when test="${empty prePost[0]}">
+												이전글이 없습니다.
+											</c:when>
+											<c:otherwise>
+												<a href="/admin/notice/${menu}/detail.do?no=${prePost[0]}">${prePost[1]}</a>
+											</c:otherwise>
+										</c:choose></td>
+								</tr>
+								<tr class="lineBottom">
+									<th class="move"><p>
+											다음글<img src="/img/main/notice/next.gif">
+										</p></th>
+									<td><c:choose>
+											<c:when test="${empty prePost[2]}">
+												이전글이 없습니다.
+											</c:when>
+											<c:otherwise>
+												<a href="/admin/notice/${menu}/detail.do?no=${prePost[2]}">${prePost[3]}</a>
+											</c:otherwise>
+										</c:choose></td>
+								</tr>
+							</table>
+						</div>
 					</div>
-					<div class="card-footer small text-muted"></div>
+					<div class="card-footer small text-muted" style="text-align: center;">
+						<input type="button" id="update" class="btn btn-primary" value="수정" /> <input type="button"
+							id="update" class="btn btn-primary" value="삭제" /> <input type="button" id="update"
+							class="btn btn-primary" value="목록" /> <input type="button" id="update"
+							class="btn btn-primary" value="이동" />
+					</div>
 				</div>
 			</div>
 			<%@ include file="/WEB-INF/include/admin/footer.jsp"%>
