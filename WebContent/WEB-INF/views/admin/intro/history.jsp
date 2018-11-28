@@ -24,12 +24,12 @@
 							<div class="history_wrap">
 								<form action="addHistory.do" method="post" id="historyForm">
 									<input type="number" name="history_year" id="history_year" maxlength="4" title="년"
-										placeholder="년" class="hisinp dateinp" required> <input type="number"
+										placeholder="년" class="inp dateinp" required> <input type="number"
 										name="history_month" id="history_month" maxlength="4" title="월" placeholder="월"
-										class="hisinp dateinp" required> <input type="number" name="history_day"
-										id="history_day" maxlength="4" title="일" placeholder="일" class="hisinp dateinp" required>
+										class="inp dateinp" required> <input type="number" name="history_day"
+										id="history_day" maxlength="4" title="일" placeholder="일" class="inp dateinp" required>
 									<input type="text" name="history_data" id="history_data" maxlength="50" title="내용"
-										placeholder="내용" class="hisinp" required>
+										placeholder="내용" class="inp" required>
 
 									<button type="submit" class="btn btn-primary">등록</button>
 								</form>
