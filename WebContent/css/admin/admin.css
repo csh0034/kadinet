@@ -39,6 +39,14 @@ th {
 }
 
 /* visit */
+.contents_box_bottom {
+	width: 870px;
+    min-height: 400px;
+    padding: 20px;
+    border: 1px solid #d2d2d2;
+    margin: 0 auto;
+}
+
 #map {
    width: 100%;
    height: 400px;
