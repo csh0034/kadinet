@@ -1,16 +1,16 @@
 package org.kadinet.model;
 
 public class HistoryBean {
-	private String history_no;
+	private int history_no;
 	private String history_year;
 	private String history_month;
 	private String history_day;
 	private String history_data;
 	
-	public String getHistory_no() {
+	public int getHistory_no() {
 		return history_no;
 	}
-	public void setHistory_no(String history_no) {
+	public void setHistory_no(int history_no) {
 		this.history_no = history_no;
 	}
 	public String getHistory_year() {

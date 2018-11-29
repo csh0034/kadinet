@@ -11,11 +11,11 @@
 <%@ include file="/WEB-INF/include/admin/js.jsp"%>
 <script type="text/javascript" src="/js/admin/history.js"></script>
 <script>
-$(document).ready(function() {
-	$('#dataTable2').DataTable({
-		"order" : [ [ 0, "desc" ] ]
+	$(document).ready(function() {
+		$('#dataTable2').DataTable({
+			"order" : [ [ 0, "desc" ] ]
+		});
 	});
-});
 </script>
 </head>
 <body id="page-top">
@@ -33,20 +33,21 @@ $(document).ready(function() {
 					<div class="card-body">
 						<div class="admin_history_bx">
 							<div class="history_wrap">
-								<form action="addHistory.do" method="post" id="historyForm">
 									<input type="number" name="history_year" id="history_year"
 										maxlength="4" title="년" placeholder="년" class="inp dateinp"
-										required> <input type="number" name="history_month"
+										required>
+									<input type="number" name="history_month"
 										id="history_month" maxlength="4" title="월" placeholder="월"
-										class="inp dateinp" required> <input type="number"
+										class="inp dateinp" required>
+									<input type="number"
 										name="history_day" id="history_day" maxlength="4" title="일"
-										placeholder="일" class="inp dateinp" required> <input
+										placeholder="일" class="inp dateinp" required>
+									<input
 										type="text" name="history_data" id="history_data"
 										maxlength="50" title="내용" placeholder="내용" class="inp"
 										required>
 
-									<button type="submit" class="btn btn-primary">등록</button>
-								</form>
+									<button type="submit" class="btn btn-primary" id="addHSubmit">등록</button>
 							</div>
 							<div class="ht_table_area">
 								<div class="table-responsive">

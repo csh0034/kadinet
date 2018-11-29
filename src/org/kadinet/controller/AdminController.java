@@ -28,9 +28,6 @@ public class AdminController implements Controller {
 		} else if ("/admin/intro/history.do".equals(path)) {
 			history(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/history.jsp");
-		} else if ("/admin/intro/addHistory.do".equals(path)) {
-			addHistory(request, response);
-			response.sendRedirect("/admin/intro/history.do");
 		} else if ("/admin/intro/member.do".equals(path)) {
 			member(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/member.jsp");
@@ -113,25 +110,6 @@ public class AdminController implements Controller {
 		HistoryService service = HistoryService.getInstance();
 		service.getHistoryList(request);
 
-	}
-
-	private void addHistory(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-		String year = request.getParameter("history_year");
-		String month = request.getParameter("history_month");
-		String day = request.getParameter("history_day");
-		String data = request.getParameter("history_data");
-
-		HistoryBean bean = new HistoryBean();
-
-		bean.setHistory_year(year);
-		bean.setHistory_month(month);
-		bean.setHistory_day(day);
-		bean.setHistory_data(data);
-
-		HistoryService service = HistoryService.getInstance();
-		service.addHistory(bean);
 	}
 
 	private void member(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

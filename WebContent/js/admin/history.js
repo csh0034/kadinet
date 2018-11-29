@@ -21,4 +21,30 @@ $(document).ready(function() {
 			}
 		})
 	});
+	$('#addHSubmit').click(function() {
+		var history_year = $('#history_year').val();
+		var history_month = $('#history_month').val();
+		var history_day = $('#history_day').val();
+		var history_data = $('#history_data').val();
+		
+		$.ajax({
+			url : '/ajax',
+			type : 'post',
+			dataType : 'text',
+			data : {
+				method : 'addHistory',
+				year : history_year,
+				month : history_month,
+				day : history_day,
+				data : history_data,
+			},
+			success : function(data) {
+				alert('추가되었습니다.');
+				location.reload();
+			},
+			error : function(xhr, status) {
+				alert('잠시 후 다시 시도해주세요');
+			}
+		})
+	});
 });

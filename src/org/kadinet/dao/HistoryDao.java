@@ -26,7 +26,7 @@ public class HistoryDao extends DBCon {
 
 			while (rs.next()) {
 				HistoryBean bean = new HistoryBean();
-				bean.setHistory_no(rs.getString("history_no"));
+				bean.setHistory_no(rs.getInt("history_no"));
 				bean.setHistory_year(rs.getString("history_year"));
 				bean.setHistory_month(rs.getString("history_month"));
 				bean.setHistory_day(rs.getString("history_day"));
@@ -44,18 +44,17 @@ public class HistoryDao extends DBCon {
 		return historyList;
 	}
 	
-	public void addHistory(HistoryBean bean) {
+	public void addHistory(String year, String month, String day, String data) {
 		try {
 			conStart();
 			sql = "insert into history values('0',?,?,?,?)";
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, bean.getHistory_year());
-			pstmt.setString(2, bean.getHistory_month());
-			pstmt.setString(3, bean.getHistory_day());
-			pstmt.setString(4, bean.getHistory_data());
+			pstmt.setString(1, year);
+			pstmt.setString(2, month);
+			pstmt.setString(3, day);
+			pstmt.setString(4, data);
 			
- 
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {

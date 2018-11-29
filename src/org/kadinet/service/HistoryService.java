@@ -24,9 +24,9 @@ public class HistoryService {
 		request.setAttribute("historyList", historyList);
 	}
 	
-	public void addHistory(HistoryBean bean) {
+	public void addHistory(String year, String month, String day, String data) {
 		
-		dao.addHistory(bean);
+		dao.addHistory(year, month, day, data);
 	}
 	
 	public void deleteHistory(String no) {
