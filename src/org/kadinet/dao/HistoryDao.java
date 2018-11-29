@@ -64,4 +64,23 @@ public class HistoryDao extends DBCon {
 			conClose();
 		}
 	}
+	
+	public void deleteHistory(String no) {
+		try {
+			conStart();
+			sql = "delete from history where history_no=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			
+			pstmt.executeUpdate();
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+
+	}
 }

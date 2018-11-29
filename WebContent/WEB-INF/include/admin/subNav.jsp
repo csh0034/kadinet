@@ -66,7 +66,7 @@
 			<a class="dropdown-item" href="/admin/mbr/memberinfo.do">회원사소개</a>
 			<a class="dropdown-item" href="/admin/mbr/memberlogo.do">회원 메인로고</a>
 		</div></li>
-	<li class="nav-item"><a class="nav-link" href="tables.html">
+	<li class="nav-item"><a class="nav-link" href="/admin/mbrManagement/mbrTable.do">
 			<i class="fas fa-user-circle fa-fw"></i> <span>회원관리</span>
 		</a></li>
 </ul>

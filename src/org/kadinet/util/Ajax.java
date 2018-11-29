@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.kadinet.service.HistoryService;
 import org.kadinet.service.UserService;
 
 @WebServlet("/ajax")
@@ -33,7 +34,6 @@ public class Ajax extends HttpServlet {
 				request.getSession().setAttribute("id", id);
 				service.updateLastLogin(id);
 			}
-
 			out.print(flag);
 		} else if ("checkId".equals(method)) {
 			UserService service = UserService.getInstance();
@@ -41,6 +41,11 @@ public class Ajax extends HttpServlet {
 
 			boolean flag = service.checkId(id);
 			out.print(flag);
+		} else if ("deleteHistory".equals(method)) {
+			HistoryService service = HistoryService.getInstance();
+			String no = request.getParameter("id");
+			
+			service.deleteHistory(no);
 		}
 
 	}
