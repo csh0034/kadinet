@@ -11,11 +11,11 @@
 <%@ include file="/WEB-INF/include/admin/js.jsp"%>
 <script type="text/javascript" src="/js/admin/history.js"></script>
 <script>
-	$(document).ready(function() {
-		$('#dataTable2').DataTable({
-			"order" : [ [ 0, "desc" ] ]
-		});
+$(document).ready(function() {
+	$('#dataTable2').DataTable({
+		"order" : [ [ 0, "desc" ] ]
 	});
+});
 </script>
 </head>
 <body id="page-top">
