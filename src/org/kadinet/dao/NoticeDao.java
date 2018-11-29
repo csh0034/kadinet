@@ -66,6 +66,41 @@ public class NoticeDao extends DBCon {
 		}
 		return list;
 	}
+	
+	public Vector<NoticeBean> getNoticeList(String category) {
+		Vector<NoticeBean> list = new Vector<NoticeBean>();
+		try {
+			conStart();
+
+				sql = "select *,DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice left outer join notice_file\r\n"
+						+ "on notice.notice_no = notice_file.notice_no join user on notice.user_id = user.user_id where notice_category = ? and \r\n"
+						+ "(notice_file.file_order = (select min(file_order) from notice_file) \r\n"
+						+ "or notice_file.file_order is null) "
+						+ "order by notice.notice_bool desc,notice.notice_no desc";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, category);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				NoticeBean bean = new NoticeBean();
+				bean.setNotice_no(rs.getInt("notice_no"));
+				bean.setNotice_bool(rs.getString("notice_bool"));
+				bean.setNotice_title(rs.getString("notice_title"));
+				bean.setNotice_content(rs.getString("notice_content"));
+				bean.setUser_id(rs.getString("user_id"));
+				bean.setUser_name(rs.getString("user_name"));
+				bean.setNotice_regdate(rs.getDate("reg"));
+				bean.setNotice_hit(rs.getInt("notice_hit"));
+				bean.setFile_no(rs.getInt("file_no"));
+				list.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return list;
+	}
 
 	public int getCount(String category, String keyField, String keyWord) {
 		int count = 0;

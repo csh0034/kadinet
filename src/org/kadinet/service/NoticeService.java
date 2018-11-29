@@ -66,13 +66,16 @@ public class NoticeService {
 
 	}
 
-	public void getNotice(HttpServletRequest request) {
+	public void getNotice(HttpServletRequest request , boolean hit) {
 		String no = request.getParameter("no");
 		if( no == null || no.isEmpty()) {
 			no = "1";
 		}
 		
-		dao.upHit(no);
+		if(hit) {
+			dao.upHit(no);
+		}
+		
 		NoticeBean bean = dao.getNotice(no);
 		Vector<NoticeBean> files = dao.getFileList(no);
 		String pre[] = dao.getPre(no, bean.getNotice_category());
@@ -81,6 +84,7 @@ public class NoticeService {
 		String[] prePost ={pre[0],pre[1],post[0],post[1]};
 
 		request.setAttribute("bean", bean);
+		request.setAttribute("no", no);
 		request.setAttribute("prePost", prePost);
 		request.setAttribute("files", files);
 	}
@@ -95,5 +99,19 @@ public class NoticeService {
 		request.setAttribute("dataList", dataList);
 	}
 	
+	public void getAdminNoticeList(String category, HttpServletRequest request) {
+		Vector<NoticeBean> list = dao.getNoticeList(category);
+		request.setAttribute("list", list);
+
+	}
+	
+	public String insertNotice(HttpServletRequest request) {
+		String ENCTYPE = "utf-8";
+		int MAXSIZE = 10 * 1024 * 1024;
+		
+		
+
+		return "";
+	}
 	
 }

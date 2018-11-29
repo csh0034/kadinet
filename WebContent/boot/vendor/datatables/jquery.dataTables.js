@@ -11388,7 +11388,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "다음",
+				"sNext": "Next",
 	
 	
 				/**
@@ -11411,7 +11411,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "이전"
+				"sPrevious": "Previous"
 			},
 	
 			/**
@@ -11434,7 +11434,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "데이터가 없습니다",
+			"sEmptyTable": "No data available in table",
 	
 	
 			/**
@@ -11466,9 +11466,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "",
-	
-	
+			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
 			/**
 			 * Display information string for when the table is empty. Typically the
 			 * format of this string should match `info`.
@@ -11757,7 +11755,7 @@
 			 *  @name DataTable.defaults.language.zeroRecords
 			 *
 			 *  @example
-			 *    $(document).ready( function() {
+			 *    $(document).ready( function() { 
 			 *      $('#example').dataTable( {
 			 *        "language": {
 			 *          "zeroRecords": "No records to display"

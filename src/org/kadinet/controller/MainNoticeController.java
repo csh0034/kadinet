@@ -64,21 +64,21 @@ public class MainNoticeController implements Controller {
 			throws ServletException, IOException {
 		request.setAttribute("page", "notice");
 		request.setAttribute("tit", "공지사항");
-		service.getNotice(request);
+		service.getNotice(request,true);
 	}
 
 	private void pressView(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "press");
 		request.setAttribute("tit", "보도자료");
-		service.getNotice(request);
+		service.getNotice(request,true);
 	}
 
 	private void dataView(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "data");
 		request.setAttribute("tit", "정보자료실");
-		service.getNotice(request);
+		service.getNotice(request,true);
 	}
 
 }

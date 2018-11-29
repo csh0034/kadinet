@@ -66,6 +66,8 @@ public class FrontController extends HttpServlet {
 		list.put("/admin/notice/press/detail.do", new AdminController());
 		list.put("/admin/notice/data/detail.do", new AdminController());
 		
+		list.put("/admin/notice/edit.do", new AdminController());
+		
 		list.put("/admin/business/career.do", new AdminController());
 		list.put("/admin/business/corporation.do", new AdminController());
 		list.put("/admin/business/mentoring.do", new AdminController());
@@ -74,6 +76,8 @@ public class FrontController extends HttpServlet {
 		
 		list.put("/admin/mbr/memberinfo.do", new AdminController());
 		list.put("/admin/mbr/memberlogo.do", new AdminController());
+		
+		list.put("/admin/editor.do", new AdminController());
 	}
 
 	@Override

@@ -69,7 +69,7 @@
 							</c:when>
 							<c:when test="${mode=='update'}">
 								<div style="width: 860px; margin: 0 auto;">
-									<form method=post action="/fileUp" id="form1">
+									<form method=post action="/admin/editor.do" id="form1">
 										<textarea name="ir1" id="ir1" rows="10" cols="100"
 											style="width: 100%; height: 500px; display: none;"></textarea>
 										<input type="hidden" name="menu" value="${menu}" /> <input type="hidden" name="url"
