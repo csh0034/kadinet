@@ -32,6 +32,11 @@ public class UserService {
 		
 		dao.insertUser(user);
 	}
+	public String findId(String name, String phone) {
+		return dao.findId(name, phone);
+	}
+	
+
 /*	public void deleteUser(String id) {
 		dao.deleteUser(id);
 	}*/

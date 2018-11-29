@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +7,16 @@
 <meta charset="UTF-8">
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
+<%@ include file="/WEB-INF/include/admin/logout.jsp"%>
+<%@ include file="/WEB-INF/include/admin/js.jsp"%>
+<script type="text/javascript" src="/js/admin/history.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#dataTable2').DataTable({
+			"order" : [ [ 0, "desc" ] ]
+		});
+	});
+</script>
 </head>
 <body id="page-top">
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
@@ -23,21 +34,23 @@
 						<div class="admin_history_bx">
 							<div class="history_wrap">
 								<form action="addHistory.do" method="post" id="historyForm">
-									<input type="number" name="history_year" id="history_year" maxlength="4" title="년"
-										placeholder="년" class="inp dateinp" required> <input type="number"
-										name="history_month" id="history_month" maxlength="4" title="월" placeholder="월"
-										class="inp dateinp" required> <input type="number" name="history_day"
-										id="history_day" maxlength="4" title="일" placeholder="일" class="inp dateinp" required>
-									<input type="text" name="history_data" id="history_data" maxlength="50" title="내용"
-										placeholder="내용" class="inp" required>
+									<input type="number" name="history_year" id="history_year"
+										maxlength="4" title="년" placeholder="년" class="inp dateinp"
+										required> <input type="number" name="history_month"
+										id="history_month" maxlength="4" title="월" placeholder="월"
+										class="inp dateinp" required> <input type="number"
+										name="history_day" id="history_day" maxlength="4" title="일"
+										placeholder="일" class="inp dateinp" required> <input
+										type="text" name="history_data" id="history_data"
+										maxlength="50" title="내용" placeholder="내용" class="inp"
+										required>
 
 									<button type="submit" class="btn btn-primary">등록</button>
 								</form>
-
 							</div>
 							<div class="ht_table_area">
 								<div class="table-responsive">
-									<table class="table table-bordered" id="dataTable">
+									<table class="table table-bordered" id="dataTable2">
 										<thead>
 											<tr>
 												<th>연도</th>
@@ -59,7 +72,8 @@
 														<button type="submit" class="btn btn-primary">수정</button>
 													</td>
 													<td>
-														<button type="submit" class="btn btn-danger">삭제</button>
+														<button type="submit" class="btn btn-danger"
+															id="${item.getHistory_no() }">삭제</button>
 													</td>
 												</tr>
 											</c:forEach>
@@ -75,7 +89,6 @@
 			</div>
 		</div>
 	</div>
-	<%@ include file="/WEB-INF/include/admin/logout.jsp"%>
-	<%@ include file="/WEB-INF/include/admin/js.jsp"%>
+
 </body>
 </html>

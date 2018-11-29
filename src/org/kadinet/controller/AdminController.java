@@ -78,14 +78,17 @@ public class AdminController implements Controller {
 		} else if ("/admin/notice/edit.do".equals(path)) {
 			edit(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/notice/edit.jsp");
-			
-			//mem
+			// mem
 		} else if ("/admin/mbr/memberinfo.do".equals(path)) {
 			memberinfo(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/memberinfo.jsp");
 		} else if ("/admin/mbr/memberlogo.do".equals(path)) {
 			memberlogo(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/memberlogo.jsp");
+			// mbrManagement
+		} else if ("/admin/mbrManagement/mbrTable.do".equals(path)) {
+			mbrTable(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbrManagement/mbrTable.jsp");
 		} else if ("/admin/editor.do".equals(path)) {
 			editor(request, response);
 		}
@@ -276,6 +279,13 @@ public class AdminController implements Controller {
 		request.setAttribute("subNav", "4");
 	}
 
+	// mbrManagement
+	private void mbrTable(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setAttribute("page", "memberTable");
+	}
+
+	
 	private void editor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("utf-8");

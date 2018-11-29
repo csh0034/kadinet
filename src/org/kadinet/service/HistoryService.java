@@ -28,4 +28,8 @@ public class HistoryService {
 		
 		dao.addHistory(bean);
 	}
+	
+	public void deleteHistory(String no) {
+		dao.deleteHistory(no);
+	}
 }
