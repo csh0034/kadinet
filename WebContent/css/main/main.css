@@ -45,11 +45,12 @@ body {
 	text-align: right;
 }
 
-#kadinet_header .header_top a {
+#kadinet_header .header_top a, #kadinet_header .header_top span, #kadinet_header .header_top span strong {
 	display: inline-block;
 	font-size: 14px;
 	line-height: 1.1;
 	margin-left: 20px;
+	font-weight: normal;
 }
 
 #kadinet_header .header_top a:hover {
@@ -861,20 +862,6 @@ body {
 .member_box dl dt {
 	font-weight: bold;
     font-size: 18px;
-    display: inline;
-    float: left;
-    margin-left: 46px;
-}
-
-.member_box dl .best {
-    display: block;
-    float: none;
-    margin-left: 0;
-}
-
-.member_box .position {
-	display: inline-block;
-    margin-left: -42px;
 }
 
 .member_box dl dd {

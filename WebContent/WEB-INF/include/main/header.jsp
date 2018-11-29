@@ -11,8 +11,7 @@
 		<c:set var="joinFlag" value="<a href='/join.do'>회원가입</a>" />
 	</c:when>
 	<c:otherwise>
-		<c:set value="<span class="login_name"><strong>박재범</strong>님</span>" />
-		<c:set var="loginFlag" value="<a href='/logout.do'>로그아웃</a>" />
+		<c:set var="loginFlag" value="<span><strong>김재환</strong> 님</span><a href='/logout.do'>로그아웃</a>" />
 		<c:set var="joinFlag" value="<a href='#'>정보수정</a>" />
 	</c:otherwise>
 </c:choose>
