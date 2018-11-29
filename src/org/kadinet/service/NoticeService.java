@@ -106,10 +106,12 @@ public class NoticeService {
 	}
 	
 	public String insertNotice(HttpServletRequest request) {
+		String ENCTYPE = "utf-8";
+		int MAXSIZE = 10 * 1024 * 1024;
 		
-		String url = request.getParameter("url");
+		
 
-		return url;
+		return "";
 	}
 	
 }

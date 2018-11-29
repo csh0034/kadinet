@@ -21,6 +21,7 @@ public class FileUpload extends HttpServlet {
 			response.sendRedirect("/index.do");
 		} else {
 			NoticeService service  = NoticeService.getInstance();
+			service.insertNotice(request);
 		}
 	}
 }
