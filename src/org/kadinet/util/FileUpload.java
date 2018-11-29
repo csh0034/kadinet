@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.kadinet.service.MenuService;
+import org.kadinet.service.NoticeService;
 
 @WebServlet("/fileUp")
 public class FileUpload extends HttpServlet {
@@ -16,15 +16,11 @@ public class FileUpload extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		String menu = request.getParameter("menu");
+		System.out.println(menu);
 		if (menu == null) {
 			response.sendRedirect("/index.do");
 		} else {
-			MenuService service = MenuService.getInstance();
-			String content = request.getParameter("ir1");
-			String url = request.getParameter("url");
-			service.updateMenuData(menu, content);
-			response.sendRedirect("/admin/"+url+".do");
+			NoticeService service  = NoticeService.getInstance();
 		}
-
 	}
 }

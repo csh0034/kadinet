@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,8 @@
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
 <link rel="stylesheet" type="text/css" href="/css/main/main.css">
+<script src="/boot/vendor/jquery/jquery.min.js"></script>
+<script src="/js/admin/detail.js"></script>
 </head>
 <body id="page-top">
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
@@ -45,8 +48,8 @@
 											<th>첨부</th>
 											<td><c:forEach var="item" items="${files}" varStatus="i">
 													<p>
-														<img src="/img/main/notice/icon_file.gif">
-														<a href="#">${i.index+1}. ${item.getFile_oriname()}</a>
+														<img src="/img/main/notice/icon_file.gif"> <a
+															href="#">${i.index+1}. ${item.getFile_oriname()}</a>
 													</p>
 												</c:forEach></td>
 										</tr>
@@ -96,11 +99,15 @@
 							</table>
 						</div>
 					</div>
-					<div class="card-footer small text-muted" style="text-align: center;">
-						<input type="button" id="update" class="btn btn-primary" value="수정" /> <input type="button"
-							id="update" class="btn btn-primary" value="삭제" /> <input type="button" id="update"
-							class="btn btn-primary" value="목록" /> <input type="button" id="update"
-							class="btn btn-primary" value="이동" />
+					<div class="card-footer small text-muted"
+						style="text-align: center;">
+						<input type="button" id="update" class="btn btn-primary"
+							value="수정" /> <input type="button"
+							onclick="deleteNotice('${no}','${menu}')"
+							class="btn btn-primary delete" value="삭제" /> <input
+							type="button" id="list" class="btn btn-primary" value="목록"
+							onclick="location.href='/admin/notice/${menu}/list.do'" /> <input
+							type="button" id="move" class="btn btn-primary" value="이동" />
 					</div>
 				</div>
 			</div>

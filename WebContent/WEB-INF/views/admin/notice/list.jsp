@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +60,8 @@
 													${item.getNotice_no()}
 												</c:otherwise>
 													</c:choose></td>
-												<td class="tit"><a href="/admin/notice/${menu}/detail.do?no=${item.getNotice_no()}">
+												<td class="tit"><a
+													href="/admin/notice/${menu}/detail.do?no=${item.getNotice_no()}">
 														${item.getNotice_title()}</a></td>
 												<td class="max82">${item.getUser_name()}</td>
 												<td>${item.getNotice_regdate()}</td>
@@ -74,8 +76,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="card-footer small text-muted" style="text-align: center;">
-						<input type="button" id="update" class="btn btn-primary" value="글쓰기" />
+					<div class="card-footer small text-muted"
+						style="text-align: center;">
+						<input type="button" id="update" class="btn btn-primary"
+							value="글쓰기" onclick="location.href='/admin/notice/edit.do?menu=${menu}'" />
 					</div>
 				</div>
 			</div>

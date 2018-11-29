@@ -84,6 +84,7 @@ public class NoticeService {
 		String[] prePost ={pre[0],pre[1],post[0],post[1]};
 
 		request.setAttribute("bean", bean);
+		request.setAttribute("no", no);
 		request.setAttribute("prePost", prePost);
 		request.setAttribute("files", files);
 	}
@@ -104,5 +105,11 @@ public class NoticeService {
 
 	}
 	
+	public String insertNotice(HttpServletRequest request) {
+		
+		String url = request.getParameter("url");
+
+		return url;
+	}
 	
 }

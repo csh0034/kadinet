@@ -1,0 +1,104 @@
+.filebox{
+	margin: 10px 30px 10px 0px;
+	float: left;
+}
+
+.ve {
+	vertical-align: middle;
+}
+
+label{
+	margin-bottom: 0px;
+}
+
+#boolO , #boolX {
+	margin-right: 5px;
+	vertical-align: -2px;
+} 
+
+.in{
+	width: 100%;
+	height: 80%;
+	border: 0;
+	text-indent: 10px;
+}
+
+#detailTable th{
+	width: 90px;
+}
+
+#detailTable td{
+	padding: 10px;
+}
+
+.filebox label {
+	display: inline-block;
+	padding: .5em .75em;
+	color: #999; /* #fff */
+	font-size: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid #ebebeb; /* #337ab7 */
+	border-bottom-color: #e2e2e2; /* #2e6da4 */
+	border-radius: .25em;
+	margin-bottom: 0px !important; 
+}
+
+.filebox input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+.filebox .upload-name {
+	display: inline-block;
+	padding: .5em .75em; /* label�� �е����� ��ġ */
+	font-size: inherit;
+	font-family: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #f5f5f5;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .25em;
+	-webkit-appearance: none; /* ����Ƽ�� ���� ���߱� */
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.filebox .upload-display { /* �̹����� ǥ�õ� ���� */
+	margin-bottom: 5px;
+}
+
+@media ( min-width : 768px) {
+	.filebox .upload-display {
+		display: inline-block;
+		margin-right: 5px;
+		margin-bottom: 0;
+	}
+}
+
+.filebox .upload-thumb-wrap { /* �߰��� �̹����� ���δ� ��� */
+	display: inline-block;
+	width: 54px;
+	padding: 2px;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	background-color: #fff;
+}
+
+.filebox .upload-display img { /* �߰��� �̹��� */
+	display: block;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+
