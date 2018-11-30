@@ -11,34 +11,6 @@
 <script src="/boot/vendor/jquery/jquery.min.js"></script>
 <script src="/js/admin/fileUpload.js"></script>
 <script src="/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
-<script>
-	$(function() {
-		var oEditors = [];
-
-		nhn.husky.EZCreator.createInIFrame({
-			oAppRef : oEditors,
-			elPlaceHolder : "ir1",
-			sSkinURI : "/editor/SmartEditor2Skin.html",
-			htParams : {
-				bUseToolbar : true, // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
-				bUseVerticalResizer : true, // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
-				bUseModeChanger : false, // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
-				fOnBeforeUnload : function() {
-				}
-			}, //boolean
-			fOnAppLoad : function() {
-				oEditors.getById["ir1"].exec("PASTE_HTML",
-						[ '${bean.getMenu_content()}' ]);
-			},
-			fCreator : "createSEditor2"
-		});
-	});
-
-	function goSave() {
-		oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
-		$('#form1').submit();
-	}
-</script>
 </head>
 <body id="page-top">
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
@@ -52,7 +24,8 @@
 
 				<div class="card mb-3" style="width: 900px; margin: 0 auto;">
 					<form method=post action="/fileUp?menu=${menu}" id="form1"
-						enctype="multipart/form-data" onsubmit="goSave()">
+						enctype="multipart/form-data"
+						onsubmit="submitContents(this);">
 						<div class="card-header"></div>
 						<div class="card-body">
 							<div class="notice_bx" style="width: 825px; margin: 0 auto;">
@@ -63,49 +36,49 @@
 									</colgroup>
 									<tr class="lineTop">
 										<th>제목</th>
-										<td><input type="text" class="form-control" required></td>
+										<td><input type="text" class="form-control"
+											name="notice_title" required></td>
 									</tr>
 									<c:if test="${menu=='notice'}">
 										<tr>
 											<th>공지여부</th>
 											<td class="ve"><input type="radio" name="notice_bool"
-												value="O" class="inp_radio" checked id="boolO" /><label
+												value="t" class="inp_radio" checked id="boolO" /><label
 												for="boolO" style="margin-right: 20px">공지함</label> <input
-												type="radio" name="notice_bool" value="X" class="inp_radio"
+												type="radio" name="notice_bool" value="f" class="inp_radio"
 												id="boolX" /><label for="boolX">공지안함</label></td>
 										</tr>
+										<tr>
+											<th>메인사진</th>
+											<td><div class="filebox">
+													<input class="upload-name" value="파일선택" disabled="disabled">
+													<label for="input-file0">업로드</label> <input type="file" required
+														id="input-file0" class="upload-hidden" name="notice_img">
+												</div></td>
+										</tr>
 									</c:if>
-									<tr>
-										<th>메인사진</th>
-										<td><div class="filebox">
-												<input class="upload-name" value="파일선택" disabled="disabled">
-												<label for="input-file0">업로드</label> <input type="file"
-													required id="input-file0" class="upload-hidden"
-													name="notice_img">
-											</div></td>
-									</tr>
 									<tr class="lineBottom">
 										<th>첨부파일</th>
 										<td>
 											<div class="filebox">
 												<input class="upload-name" value="파일선택" disabled="disabled">
 												<label for="input-file">업로드</label> <input type="file"
-													id="input-file" class="upload-hidden" name="notice_file">
+													id="input-file" class="upload-hidden" name="notice_file1">
 											</div>
 											<div class="filebox">
 												<input class="upload-name" value="파일선택" disabled="disabled">
 												<label for="input-file2">업로드</label> <input type="file"
-													id="input-file2" class="upload-hidden" name="notice_file">
+													id="input-file2" class="upload-hidden" name="notice_file2">
 											</div>
 											<div class="filebox">
 												<input class="upload-name" value="파일선택" disabled="disabled">
 												<label for="input-file3">업로드</label> <input type="file"
-													id="input-file3" class="upload-hidden" name="notice_file">
+													id="input-file3" class="upload-hidden" name="notice_file3">
 											</div>
 											<div class="filebox">
 												<input class="upload-name" value="파일선택" disabled="disabled">
 												<label for="input-file4">업로드</label> <input type="file"
-													id="input-file4" class="upload-hidden" name="notice_file">
+													id="input-file4" class="upload-hidden" name="notice_file4">
 											</div>
 										</td>
 									</tr>
@@ -140,6 +113,31 @@
 			<%@ include file="/WEB-INF/include/admin/footer.jsp"%>
 		</div>
 	</div>
+	<script>
+		var oEditors = [];
+
+		nhn.husky.EZCreator.createInIFrame({
+			oAppRef : oEditors,
+			elPlaceHolder : "ir1",
+			sSkinURI : "/editor/SmartEditor2Skin.html",
+			htParams : {
+				bUseToolbar : true,
+				bUseVerticalResizer : true,
+				bUseModeChanger : false,
+				fOnBeforeUnload : function() {
+				}
+			}, //boolean
+			fOnAppLoad : function() {
+				oEditors.getById["ir1"].exec("PASTE_HTML",
+						[ '${bean.getMenu_content()}' ]);
+			},
+			fCreator : "createSEditor2"
+		});
+
+		function submitContents(elClickedObj) {
+			oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);
+		}
+	</script>
 	<%@ include file="/WEB-INF/include/admin/logout.jsp"%>
 	<%@ include file="/WEB-INF/include/admin/js.jsp"%>
 </body>

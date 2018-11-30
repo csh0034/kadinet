@@ -66,19 +66,18 @@ public class NoticeDao extends DBCon {
 		}
 		return list;
 	}
-	
+
 	public Vector<NoticeBean> getNoticeList(String category) {
 		Vector<NoticeBean> list = new Vector<NoticeBean>();
 		try {
 			conStart();
 
-				sql = "select *,DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice left outer join notice_file\r\n"
-						+ "on notice.notice_no = notice_file.notice_no join user on notice.user_id = user.user_id where notice_category = ? and \r\n"
-						+ "(notice_file.file_order = (select min(file_order) from notice_file) \r\n"
-						+ "or notice_file.file_order is null) "
-						+ "order by notice.notice_bool desc,notice.notice_no desc";
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, category);
+			sql = "select *,DATE_FORMAT(notice_regdate, '%Y-%m-%d') as reg from notice left outer join notice_file\r\n"
+					+ "on notice.notice_no = notice_file.notice_no join user on notice.user_id = user.user_id where notice_category = ? and \r\n"
+					+ "(notice_file.file_order = (select min(file_order) from notice_file) \r\n"
+					+ "or notice_file.file_order is null) " + "order by notice.notice_bool desc,notice.notice_no desc";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, category);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -137,7 +136,7 @@ public class NoticeDao extends DBCon {
 			pstmt.setString(1, no);
 
 			pstmt.executeUpdate();
-		
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -173,7 +172,7 @@ public class NoticeDao extends DBCon {
 	}
 
 	public String[] getPre(String no, String category) {
-		String tmp[] = { "", ""};
+		String tmp[] = { "", "" };
 
 		try {
 			conStart();
@@ -195,9 +194,9 @@ public class NoticeDao extends DBCon {
 		}
 		return tmp;
 	}
-	
+
 	public String[] getPost(String no, String category) {
-		String tmp[] = { "", ""};
+		String tmp[] = { "", "" };
 
 		try {
 			conStart();
@@ -272,8 +271,68 @@ public class NoticeDao extends DBCon {
 		} finally {
 			conClose();
 		}
-
 		return list;
+	}
+
+	public int getNoticeMaxNo() {
+		int max = 0;
+		try {
+			conStart();
+			sql = "select max(notice_no) from notice";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				max = rs.getInt(1);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return max;
+	}
+
+	public void insertNotice(NoticeBean bean) {
+		try {
+			conStart();
+			sql = "insert into notice values(?,?,?,?,?,?,sysdate(),0,?)";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, bean.getNotice_no());
+			pstmt.setString(2, bean.getNotice_category());
+			pstmt.setString(3, bean.getNotice_bool());
+			pstmt.setString(4, bean.getNotice_title());
+			pstmt.setString(5, bean.getNotice_content());
+			pstmt.setString(6, bean.getUser_id());
+			pstmt.setString(7, bean.getNotice_img());
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+
+	public void insertNoticeFile(int no, int order, String oriname, String rename, long size) {
+		try {
+			conStart();
+			sql = "insert into notice_file values(0,?,?,?,?,?)";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.setInt(2, order);
+			pstmt.setString(3, oriname);
+			pstmt.setString(4, rename);
+			pstmt.setLong(5, size);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
 	}
 
 }

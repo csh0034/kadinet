@@ -47,7 +47,7 @@
 						//파일 기본경로
 						String dftFilePath = session.getServletContext().getRealPath("/");
 						//파일 기본경로 _ 상세경로
-						String filePath = dftFilePath + "img" + File.separator 
+						String filePath = dftFilePath + "file" + File.separator 
 						+"admin" + File.separator;
 
 						File file = null;
@@ -81,7 +81,7 @@
 						return3 += "&bNewLine=true";
 						// img 태그의 title 옵션에 들어갈 원본파일명
 						return3 += "&sFileName=" + name;
-						return3 += "&sFileURL=/img/admin/" + realFileNm;
+						return3 += "&sFileURL=/file/admin/" + realFileNm;
 					}
 				} else {
 					return3 += "&errstr=error";

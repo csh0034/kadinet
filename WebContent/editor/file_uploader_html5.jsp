@@ -33,7 +33,7 @@
 		//파일 기본경로
 		String dftFilePath = request.getSession().getServletContext().getRealPath("/");
 		//파일 기본경로 _ 상세경로
-		String filePath = dftFilePath + "img" + File.separator 
+		String filePath = dftFilePath + "file" + File.separator 
 						+"admin"+ File.separator;
 		File file = new File(filePath);
 		if (!file.exists()) {
@@ -62,7 +62,7 @@
 		// 정보 출력
 		sFileInfo += "&bNewLine=true";	
 		sFileInfo += "&sFileName=" + filename;	
-		sFileInfo += "&sFileURL=/img/admin/"+realFileNm;
+		sFileInfo += "&sFileURL=/file/admin/"+realFileNm;
 		out.println(sFileInfo);
 	}
 %>

@@ -16,12 +16,12 @@ public class FileUpload extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 
 		String menu = request.getParameter("menu");
-		System.out.println(menu);
 		if (menu == null) {
 			response.sendRedirect("/index.do");
 		} else {
 			NoticeService service  = NoticeService.getInstance();
-			service.insertNotice(request);
+			String url = service.insertNotice(request);
+			response.sendRedirect(url);
 		}
 	}
 }

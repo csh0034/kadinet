@@ -11,6 +11,7 @@ public class NoticeBean {
    private String user_id;
    private Date notice_regdate;
    private int notice_hit;
+   private String notice_img;
    
    private int file_no;
    private int file_order;
@@ -103,5 +104,11 @@ public String getUser_name() {
 }
 public void setUser_name(String user_name) {
 	this.user_name = user_name;
+}
+public String getNotice_img() {
+	return notice_img;
+}
+public void setNotice_img(String notice_img) {
+	this.notice_img = notice_img;
 }
 }

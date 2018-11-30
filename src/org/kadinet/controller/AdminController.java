@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.kadinet.model.HistoryBean;
 import org.kadinet.service.HistoryService;
 import org.kadinet.service.MenuService;
 import org.kadinet.service.NoticeService;
