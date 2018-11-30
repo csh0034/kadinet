@@ -178,7 +178,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 @media ( min-width : 768px) {
 	.sidebar {
-		width: 225px !important;
+		width: 253px !important;
 	}
 	.sidebar .nav-item .nav-link {
 		display: block;
