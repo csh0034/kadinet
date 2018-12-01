@@ -124,10 +124,14 @@ public class NoticeService {
 
 		NoticeBean bean = new NoticeBean();
 		MultipartRequest multi = null;
+		
+		File file = new File(filePath);
+		if (!file.exists())
+			file.mkdirs();
 
 		try {
 			multi = new MultipartRequest(request, filePath, MAXSIZE, ENCTYPE, new TimestampFileRenamePolicy("admin"));
-
+			
 			String notice_bool = multi.getParameter("notice_bool");
 			if (notice_bool == null) {
 				notice_bool = "f";

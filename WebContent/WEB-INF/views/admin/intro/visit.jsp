@@ -66,7 +66,7 @@
 										maxlength="30" title="팩스번호" placeholder="팩스번호"
 										class="inp meminp" value="${direcList.getVisit_fax() }" required>
 
-									<button type="submit" class="btn btn-primary" id="updateVSubmit">수정</button>
+									<button type="button" class="btn btn-primary" id="updateVSubmit">수정</button>
 								</form>
 							</div>
 						</div>
@@ -76,15 +76,15 @@
 						<div class="visit_table">
 							<table>
 								<tr>
-									<th>주소</th>
+									<th style="text-align: center;">주소</th>
 									<td>${direcList.getVisit_address() }</td>
 								</tr>
 								<tr>
-									<th>전화번호</th>
+									<th style="text-align: center;">전화번호</th>
 									<td>${direcList.getVisit_phone() }</td>
 								</tr>
 								<tr>
-									<th>팩스</th>
+									<th style="text-align: center;">팩스</th>
 									<td>${direcList.getVisit_fax() }</td>
 								</tr>
 							</table>

@@ -47,13 +47,13 @@ public class Ajax extends HttpServlet {
 			String month = request.getParameter("month");
 			String day = request.getParameter("day");
 			String data = request.getParameter("data");
-			
-			service.addHistory(year,month,day,data);
+
+			service.addHistory(year, month, day, data);
 		} else if ("deleteHistory".equals(method)) {
 			HistoryService service = HistoryService.getInstance();
 			int no = Integer.parseInt(request.getParameter("id"));
 			service.deleteHistory(no);
-			
+
 		} else if ("updateVisit".equals(method)) {
 			VisitService service = VisitService.getInstance();
 			String visit_x = request.getParameter("visit_x");
@@ -61,8 +61,8 @@ public class Ajax extends HttpServlet {
 			String address = request.getParameter("address");
 			String phone = request.getParameter("phone");
 			String fax = request.getParameter("fax");
-			service.updateVisit(visit_x,visit_y,address,phone,fax);
-			
+			service.updateVisit(visit_x, visit_y, address, phone, fax);
+
 		} else if ("deleteMbrList".equals(method)) {
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
