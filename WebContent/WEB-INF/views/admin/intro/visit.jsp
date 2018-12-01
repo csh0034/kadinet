@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
+<script src="/boot/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="/js/admin/visit.js"></script>
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d64ae3dc1ef35b24364c94f0fb547d1b"></script>
 <script>
@@ -42,28 +44,29 @@
 					<div class="card-body">
 						<div class="admin_visit_bx">
 							<div class="visit_wrap">
-								<form action="addvisit.do" method="post" id="visitForm">
-									<input type="text" name="visit_x" id="visit_name"
+								<form method="post" id="updateForm">
+									<input type="text" name="visit_x" id="visit_x"
 										maxlength="20" title="위도" placeholder="위도" class="inp meminp"
+										value="${direcList.getVisit_lat() }"
 										required>
 										
-										<input type="text" name="visit_y"
+									<input type="text" name="visit_y"
 										id="visit_y" maxlength="20" title="경도" placeholder="경도"
-										class="inp meminp" required>
+										class="inp meminp"value="${direcList.getVisit_lng() }" required>
 										
-										<input type="text"
-										name="visit_add" id="visit_add" maxlength="30" title="주소"
-										placeholder="주소" class="inp meminp" required>
+									<input type="text"
+										name="visit_add" id="visit_add" maxlength="100" title="주소"
+										placeholder="주소" class="inp meminp" value="${direcList.getVisit_address() }"required>
 										
-										<input
-										type="text" name="visit_tel" id="visit_tel" maxlength="30"
-										title="전화번호" placeholder="전화번호" class="inp meminp" required>
+									<input
+										type="text" name="visit_phone" id="visit_phone" maxlength="30"
+										title="전화번호" placeholder="전화번호" class="inp meminp" value="${direcList.getVisit_phone() }"required>
 
 									<input type="text" name="visit_fax" id="visit_fax"
 										maxlength="30" title="팩스번호" placeholder="팩스번호"
-										class="inp meminp" required>
+										class="inp meminp" value="${direcList.getVisit_fax() }" required>
 
-									<button type="submit" class="btn btn-primary">수정</button>
+									<button type="submit" class="btn btn-primary" id="updateVSubmit">수정</button>
 								</form>
 							</div>
 						</div>

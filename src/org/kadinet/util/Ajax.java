@@ -51,7 +51,7 @@ public class Ajax extends HttpServlet {
 			service.addHistory(year,month,day,data);
 		} else if ("deleteHistory".equals(method)) {
 			HistoryService service = HistoryService.getInstance();
-			String no = request.getParameter("id");
+			int no = Integer.parseInt(request.getParameter("id"));
 			service.deleteHistory(no);
 			
 		} else if ("updateVisit".equals(method)) {

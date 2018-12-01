@@ -29,7 +29,7 @@ public class HistoryService {
 		dao.addHistory(year, month, day, data);
 	}
 	
-	public void deleteHistory(String no) {
+	public void deleteHistory(int no) {
 		dao.deleteHistory(no);
 	}
 }

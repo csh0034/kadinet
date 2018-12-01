@@ -1,33 +1,29 @@
 package org.kadinet.model;
 
 public class VisitBean {
-	
-	private int visit_no;
-	private double visit_lat;
-	private double visit_lng;
+	private String visit_no;
+	private String visit_lat;
+	private String visit_lng;
 	private String visit_address;
 	private String visit_phone;
 	private String visit_fax;
 	
-	public int getVisit_no() {
+	public String getVisit_no() {
 		return visit_no;
 	}
-	public void setVisit_no(int visit_no) {
+	public void setVisit_no(String visit_no) {
 		this.visit_no = visit_no;
 	}
-	public double getVisit_lat() {
+	public String getVisit_lat() {
 		return visit_lat;
 	}
-	public void setVisit_lat(double visit_lat) {
+	public void setVisit_lat(String visit_lat) {
 		this.visit_lat = visit_lat;
 	}
-	public double getVisit_lng() {
+	public String getVisit_lng() {
 		return visit_lng;
 	}
-	public void setVisit_lng(double visit_lng) {
-		this.visit_lng = visit_lng;
-	}
-	public void setVisit_lng(int visit_lng) {
+	public void setVisit_lng(String visit_lng) {
 		this.visit_lng = visit_lng;
 	}
 	public String getVisit_address() {

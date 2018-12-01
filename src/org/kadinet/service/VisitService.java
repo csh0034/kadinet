@@ -23,4 +23,8 @@ public class VisitService {
 		request.setAttribute("direcList", bean);
 	}
 	
+	public void updateVisit(String visit_x,String visit_y,String address,String phone,String fax) {
+		dao.updateVisit(visit_x,visit_y,address,phone,fax);
+	}
+	
 }
