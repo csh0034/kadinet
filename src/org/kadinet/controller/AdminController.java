@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.kadinet.service.HistoryService;
 import org.kadinet.service.MenuService;
 import org.kadinet.service.NoticeService;
+import org.kadinet.service.UserService;
 import org.kadinet.service.VisitService;
 import org.kadinet.util.HttpUtil;
 
@@ -259,7 +260,9 @@ public class AdminController implements Controller {
 	// mbrManagement
 	private void mbrTable(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		UserService service = UserService.getInstance();
 		request.setAttribute("page", "memberTable");
+		service.getUserList(request);
 	}
 
 	

@@ -62,7 +62,15 @@ public class Ajax extends HttpServlet {
 			String phone = request.getParameter("phone");
 			String fax = request.getParameter("fax");
 			service.updateVisit(visit_x,visit_y,address,phone,fax);
+			
+		} else if ("deleteMbrList".equals(method)) {
+			UserService service = UserService.getInstance();
+			String id = request.getParameter("id");
+			service.deleteUser(id);
+		} else if ("recognizeMbrList".equals(method)) {
+			UserService service = UserService.getInstance();
+			String id = request.getParameter("id");
+			service.recognizeUser(id);
 		}
-
 	}
 }

@@ -1,6 +1,9 @@
 package org.kadinet.dao;
 
 import org.kadinet.util.DBCon;
+
+import java.util.Vector;
+
 import org.kadinet.model.UserBean;
 
 public class UserDao extends DBCon {
@@ -76,7 +79,7 @@ public class UserDao extends DBCon {
 		} finally {
 			conClose();
 		}
-	} 
+	}
 
 	public void insertUser(UserBean user) {
 		try {
@@ -105,37 +108,82 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 	}
-	public String findId(String name, String phone) {
-		String user_id = null;
+
+	public Vector<UserBean> getUserList(int authority) {
+		Vector<UserBean> UserList = new Vector<UserBean>();
 		try {
 			conStart();
-			sql = "select * from user where user_name = ? and user_phone = ?";
-
+			sql = "select * from user where user_authority = ? order by user_authority desc, user_regdate desc";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, name);
-			pstmt.setString(2, phone);
+			pstmt.setInt(1, authority);
+			rs = pstmt.executeQuery();
 
-			pstmt.executeQuery();
-			
-			while(rs.next()){
-			    user_id = rs.getString("user_id");
-			   }
+			while (rs.next()) {
+				UserBean bean = new UserBean();
+				bean.setUser_id(rs.getString("user_id"));
+				bean.setUser_name(rs.getString("user_name"));
+				bean.setUser_gender(rs.getString("user_gender"));
+				bean.setUser_age(rs.getString("user_age"));
+				bean.setUser_phone(rs.getString("user_phone"));
+				bean.setUser_email(rs.getString("user_email"));
+				bean.setUser_addr1(rs.getString("user_addr1"));
+				bean.setUser_regdate(rs.getDate("user_regdate"));
+
+				UserList.add(bean);
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			conClose();
 		}
-		return user_id;
-	}
-	
-}		
 
-	/*
-	 * public void deleteUser(String id) { try { conStart(); sql =
-	 * "delete from user where id=?";
-	 * 
-	 * pstmt = con.prepareStatement(sql); pstmt.setString(1, id);
-	 * pstmt.executeUpdate();
-	 * 
-	 * } catch (Exception e) { e.printStackTrace(); } finally { conClose(); } }
-	 */
+		return UserList;
+	}
+
+	public void deleteUser(String id) {
+		try {
+			conStart();
+			sql = "delete from user where user_id=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+	public void recognizeUser(String id) {
+		try {
+			conStart();
+			sql = "update user set user_authority = user_authority + 1 where user_id = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+}
+/*
+ * public String findId(String name, String phone) { String user_id = null; try
+ * { conStart(); sql =
+ * "select * from user where user_name = ? and user_phone = ?";
+ * 
+ * pstmt = con.prepareStatement(sql); pstmt.setString(1, name);
+ * pstmt.setString(2, phone);
+ * 
+ * pstmt.executeQuery();
+ * 
+ * while(rs.next()){ user_id = rs.getString("user_id"); } } catch (Exception e)
+ * { e.printStackTrace(); } finally { conClose(); } return user_id; }
+ * 
+ * }
+ */

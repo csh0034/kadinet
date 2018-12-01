@@ -1,4 +1,8 @@
 package org.kadinet.service;
+import java.util.Vector;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.kadinet.dao.UserDao;
 import org.kadinet.model.UserBean;
 
@@ -32,12 +36,27 @@ public class UserService {
 		
 		dao.insertUser(user);
 	}
-	public String findId(String name, String phone) {
+	public void getUserList(HttpServletRequest request) {
+		Vector<UserBean>junUList = dao.getUserList(1);
+		Vector<UserBean>jeongUList = dao.getUserList(2);
+		Vector<UserBean>leaveUList = dao.getUserList(3);
+		
+		request.setAttribute("junUList", junUList);
+		request.setAttribute("jeongUList", jeongUList);
+		request.setAttribute("leaveUList", leaveUList);
+		
+	}
+	public void deleteUser(String id) {
+		dao.deleteUser(id);
+	}
+	public void recognizeUser(String id) {
+		dao.recognizeUser(id);
+	}
+	
+	/*	public String findId(String name, String phone) {
 		return dao.findId(name, phone);
 	}
 	
+	*/
 
-/*	public void deleteUser(String id) {
-		dao.deleteUser(id);
-	}*/
 }

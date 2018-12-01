@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
-<%@ include file="/WEB-INF/include/admin/logout.jsp"%>
-<%@ include file="/WEB-INF/include/admin/js.jsp"%>
+	<script src="/boot/vendor/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="/js/admin/history.js"></script>
 <script>
 	$(document).ready(function() {
@@ -86,5 +85,7 @@
 			</div>
 		</div>
 	</div>
+	<%@ include file="/WEB-INF/include/admin/logout.jsp"%>
+	<%@ include file="/WEB-INF/include/admin/js.jsp"%>
 </body>
 </html>
