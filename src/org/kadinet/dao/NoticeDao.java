@@ -56,6 +56,7 @@ public class NoticeDao extends DBCon {
 				bean.setUser_name(rs.getString("user_name"));
 				bean.setNotice_regdate(rs.getDate("reg"));
 				bean.setNotice_hit(rs.getInt("notice_hit"));
+				bean.setFile_oriname(rs.getString("file_oriname"));
 				bean.setFile_no(rs.getInt("file_no"));
 				list.add(bean);
 			}
@@ -90,6 +91,7 @@ public class NoticeDao extends DBCon {
 				bean.setUser_name(rs.getString("user_name"));
 				bean.setNotice_regdate(rs.getDate("reg"));
 				bean.setNotice_hit(rs.getInt("notice_hit"));
+				bean.setFile_oriname(rs.getString("file_oriname"));
 				bean.setFile_no(rs.getInt("file_no"));
 				list.add(bean);
 			}
@@ -160,7 +162,9 @@ public class NoticeDao extends DBCon {
 				bean.setNotice_title(rs.getString("notice_title"));
 				bean.setNotice_category(rs.getString("notice_category"));
 				bean.setNotice_content(rs.getString("notice_content"));
+				bean.setNotice_bool(rs.getString("notice_bool"));
 				bean.setUser_name(rs.getString("user_name"));
+				bean.setNotice_img(rs.getString("notice_img"));
 				bean.setNotice_regdate(rs.getDate("reg"));
 			}
 		} catch (Exception e) {
@@ -326,6 +330,83 @@ public class NoticeDao extends DBCon {
 			pstmt.setString(3, oriname);
 			pstmt.setString(4, rename);
 			pstmt.setLong(5, size);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+
+	public void deleteNotice(int no) {
+		try {
+			conStart();
+			sql = "delete from notice where notice_no = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+
+	public void updateNotice(int no, NoticeBean bean) {
+		try {
+			conStart();
+			sql = "update notice set notice_bool = ? , notice_title = ? , notice_content = ? ,"
+					+ "user_id=? , notice_img = ? where notice_no = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, bean.getNotice_bool());
+			pstmt.setString(2, bean.getNotice_title());
+			pstmt.setString(3, bean.getNotice_content());
+			pstmt.setString(4, bean.getUser_id());
+			pstmt.setString(5, bean.getNotice_img());
+			pstmt.setInt(6, no);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+	
+	public String[] getFileName(int no , int order) {
+		String[] tmp = {"",""};
+		try {
+			conStart();
+			sql = "select * from notice_file where notice_no =? and file_order = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.setInt(2, order);
+			
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				tmp[0] = rs.getString("file_no");
+				tmp[1] = rs.getString("file_rename");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return tmp;
+	}
+	
+	public void deleteFile(int no) {
+		try {
+			conStart();
+			sql = "delete from notice_file where file_no = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, no);
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {

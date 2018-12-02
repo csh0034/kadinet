@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +36,12 @@
 									<th>작성자</th>
 									<td>${bean.getUser_name()}</td>
 								</tr>
+								<c:if test="${menu== 'notice'}">
+									<tr>
+										<th>메인사진</th>
+										<td><a href="/fileDown?re=${bean.getNotice_img()}"> ${bean.getNotice_img()} </a></td>
+									</tr>
+								</c:if>
 
 								<c:choose>
 									<c:when test="${!empty files}">
@@ -48,8 +53,9 @@
 											<th>첨부</th>
 											<td><c:forEach var="item" items="${files}" varStatus="i">
 													<p>
-														<img src="/img/main/notice/icon_file.gif"> <a
-															href="#">${i.index+1}. ${item.getFile_oriname()}</a>
+														<img src="/img/main/notice/icon_file.gif">
+														<a href="/fileDown?re=${item.getFile_rename()}">${i.index+1}.
+															${item.getFile_oriname()}</a>
 													</p>
 												</c:forEach></td>
 										</tr>
@@ -99,15 +105,13 @@
 							</table>
 						</div>
 					</div>
-					<div class="card-footer small text-muted"
-						style="text-align: center;">
-						<input type="button" id="update" class="btn btn-primary"
-							value="수정" /> <input type="button"
-							onclick="deleteNotice('${no}','${menu}')"
-							class="btn btn-primary delete" value="삭제" /> <input
-							type="button" id="list" class="btn btn-primary" value="목록"
-							onclick="location.href='/admin/notice/${menu}/list.do'" /> <input
-							type="button" id="move" class="btn btn-primary" value="이동" />
+					<div class="card-footer small text-muted" style="text-align: center;">
+						<input type="button" id="update" class="btn btn-primary" value="수정"
+							onclick="updateNotice('${no}','${menu}')" /> <input type="button"
+							onclick="deleteNotice('${no}','${menu}','${bean.getNotice_img()}')"
+							class="btn btn-primary delete" value="삭제" /> <input type="button" id="list"
+							class="btn btn-primary" value="목록" onclick="location.href='/admin/notice/${menu}/list.do'" />
+						<input type="button" id="move" class="btn btn-primary" value="이동" />
 					</div>
 				</div>
 			</div>

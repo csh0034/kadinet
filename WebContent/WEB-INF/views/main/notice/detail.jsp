@@ -53,7 +53,7 @@
 											<td><c:forEach var="item" items="${files}" varStatus="i">
 													<p>
 														<img src="/img/main/notice/icon_file.gif">
-														<a href="#">${i.index+1}. ${item.getFile_oriname()}</a>
+														<a href="/fileDown?re=${item.getFile_rename()}">${i.index+1}. ${item.getFile_oriname()}</a>
 													</p>
 												</c:forEach></td>
 										</tr>

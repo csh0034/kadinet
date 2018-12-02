@@ -1,4 +1,4 @@
-package org.kadinet.util;
+package org.kadinet.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -15,12 +15,18 @@ public class FileUpload extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
-		String menu = request.getParameter("menu");
-		if (menu == null) {
+		String mode = request.getParameter("mode");
+		if (mode == null) {
 			response.sendRedirect("/index.do");
-		} else {
-			NoticeService service  = NoticeService.getInstance();
+		} else if ("new".equals(mode)) {
+			NoticeService service = NoticeService.getInstance();
 			String url = service.insertNotice(request);
+			response.sendRedirect(url);
+		} else if ("update".equals(mode)) {
+			NoticeService service = NoticeService.getInstance();
+			String no = request.getParameter("no");
+			
+			String url = service.updateNotice(request,no);
 			response.sendRedirect(url);
 		}
 	}

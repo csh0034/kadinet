@@ -284,7 +284,13 @@ public class AdminController implements Controller {
 	private void edit(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String menu = request.getParameter("menu");
+		if(menu == null) {
+			menu = "notice";
+		}
 		String mode = request.getParameter("mode");
+		if(mode == null) {
+			mode = "";
+		}
 		request.setAttribute("subNav", "3");
 		request.setAttribute("menu", menu);
 		
@@ -300,7 +306,8 @@ public class AdminController implements Controller {
 		}
 		
 		if("update".equals(mode)) {
-			
+			request.setAttribute("mode", mode);
+			service.getNoticeInfo(request);
 		}
 	}
 

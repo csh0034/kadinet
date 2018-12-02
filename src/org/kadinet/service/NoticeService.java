@@ -117,21 +117,20 @@ public class NoticeService {
 		HttpSession session = request.getSession();
 		String dftFilePath = session.getServletContext().getRealPath("/");
 		String filePath = dftFilePath + "file" + File.separator + "notice" + File.separator;
-		// String id = (String) session.getAttribute("id");
 		int MAXSIZE = 10 * 1024 * 1024;
 
 		Vector<String> fileName = new Vector<String>();
 
 		NoticeBean bean = new NoticeBean();
 		MultipartRequest multi = null;
-		
+
 		File file = new File(filePath);
 		if (!file.exists())
 			file.mkdirs();
 
 		try {
-			multi = new MultipartRequest(request, filePath, MAXSIZE, ENCTYPE, new TimestampFileRenamePolicy("admin"));
-			
+			multi = new MultipartRequest(request, filePath, MAXSIZE, ENCTYPE, new TimestampFileRenamePolicy("file"));
+
 			String notice_bool = multi.getParameter("notice_bool");
 			if (notice_bool == null) {
 				notice_bool = "f";
@@ -167,7 +166,7 @@ public class NoticeService {
 			if (multi.getOriginalFileName("notice_file4") != null) {
 				fileName.add("notice_file4");
 			}
-			
+
 			for (int i = 0; i < fileName.size(); i++) {
 				String oriname = multi.getOriginalFileName(fileName.get(i));
 				String rename = multi.getFilesystemName(fileName.get(i));
@@ -180,6 +179,117 @@ public class NoticeService {
 		}
 		return multi.getParameter("url");
 	}
-	
-	
+
+	public String updateNotice(HttpServletRequest request, String no) {
+		String ENCTYPE = "utf-8";
+		HttpSession session = request.getSession();
+		String dftFilePath = session.getServletContext().getRealPath("/");
+		String filePath = dftFilePath + "file" + File.separator + "notice" + File.separator;
+		int MAXSIZE = 10 * 1024 * 1024;
+		Vector<String> fileName = new Vector<String>();
+		Vector<Integer> fileOrder = new Vector<Integer>();
+
+		NoticeBean bean = dao.getNotice(no);
+		MultipartRequest multi = null;
+
+		File file = new File(filePath);
+		if (!file.exists())
+			file.mkdirs();
+
+		try {
+			multi = new MultipartRequest(request, filePath, MAXSIZE, ENCTYPE, new TimestampFileRenamePolicy("file"));
+
+			if (multi.getFilesystemName("notice_img") != null) {
+				File fileImg = new File(filePath + bean.getNotice_img());
+				if (fileImg.exists()) {
+					if (fileImg.isFile()) {
+						fileImg.delete();
+					}
+				}
+				bean.setNotice_img(multi.getFilesystemName("notice_img"));
+			}
+
+			if (multi.getParameter("notice_bool") != null) {
+				bean.setNotice_bool(multi.getParameter("notice_bool"));
+			}
+
+			bean.setNotice_content(multi.getParameter("ir1"));
+			bean.setNotice_title(multi.getParameter("notice_title"));
+			bean.setUser_id("admin");
+
+			dao.updateNotice(Integer.parseInt(no), bean);
+
+			for (int i = 1; i < 5; i++) {
+				if (multi.getOriginalFileName("notice_file" + i) != null) {
+					String fileInfo[] = dao.getFileName(Integer.parseInt(no), i);
+					String file_no = fileInfo[0];
+					String filename = fileInfo[1];
+					File notice_file = new File(filePath + filename);
+
+					if (notice_file.exists()) {
+						if (notice_file.isFile()) {
+							notice_file.delete();
+						}
+					}
+					fileName.add("notice_file" + i);
+					fileOrder.add(i);
+					
+					if(file_no.length() != 0) {
+						dao.deleteFile(Integer.parseInt(file_no));
+					}
+				}
+			}
+
+			for (int i = 0; i < fileName.size(); i++) {
+				String oriname = multi.getOriginalFileName(fileName.get(i));
+				String rename = multi.getFilesystemName(fileName.get(i));
+				File f = multi.getFile(fileName.get(i));
+				dao.insertNoticeFile(Integer.parseInt(no), fileOrder.get(i), oriname, rename, f.length());
+			}
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return multi.getParameter("url");
+	}
+
+	public void deleteNotice(HttpServletRequest request) {
+		String no = request.getParameter("no");
+		String img = request.getParameter("img");
+
+		Vector<NoticeBean> files = dao.getFileList(no);
+		HttpSession session = request.getSession();
+		String dftFilePath = session.getServletContext().getRealPath("/");
+		String filePath = dftFilePath + "file" + File.separator + "notice" + File.separator;
+
+		for (int i = 0; i < files.size(); i++) {
+			NoticeBean bean = files.get(i);
+			File file = new File(filePath + bean.getFile_rename());
+			if (file.exists()) {
+				if (file.isFile()) {
+					file.delete();
+				}
+			}
+		}
+
+		File file = new File(filePath + img);
+		if (file.exists()) {
+			if (file.isFile()) {
+				file.delete();
+			}
+		}
+		dao.deleteNotice(Integer.parseInt(no));
+	}
+
+	public void getNoticeInfo(HttpServletRequest request) {
+		String no = request.getParameter("no");
+
+		NoticeBean bean = dao.getNotice(no);
+		Vector<NoticeBean> files = dao.getFileList(no);
+
+		request.setAttribute("bean", bean);
+		request.setAttribute("no", no);
+		request.setAttribute("files", files);
+	}
 }

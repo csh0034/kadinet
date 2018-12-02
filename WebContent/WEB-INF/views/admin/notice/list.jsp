@@ -21,6 +21,7 @@
 	height: 100%;
 }
 </style>
+
 </head>
 <body id="page-top">
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
@@ -66,7 +67,7 @@
 												<td class="max82">${item.getUser_name()}</td>
 												<td>${item.getNotice_regdate()}</td>
 												<td class="max74">${item.getNotice_hit()}</td>
-												<td><c:if test="${item.getFile_no() != 0}">
+												<td><c:if test="${!empty item.getFile_oriname()}">
 														<img src="/img/main/notice/icon_file.gif">
 													</c:if></td>
 											</tr>

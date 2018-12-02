@@ -57,7 +57,7 @@ DROP TABLE IF EXISTS `notice_file`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `notice_file` (
-  `file_no` int(15) NOT NULL,
+  `file_no` int(15) NOT NULL auto_increment,
   `notice_no` int(15) NOT NULL,
   `file_order` int(15) NOT NULL,
   `file_oriname` varchar(100) NOT NULL,
