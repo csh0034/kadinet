@@ -32,6 +32,10 @@ th {
 	line-height:1.5;
 }
 
+.editorWrap p , .editorWrap sapn{
+	margin-bottom: 0;
+}
+
 .page-link:focus, .form-control:focus {
 	box-shadow: none !important;
 }
