@@ -90,8 +90,8 @@
 							</table>
 						</div>
 					</div>
+					<div class="card-footer small text-muted" style="margin-top: 20px;"></div>
 				</div>
-				<div class="card-footer small text-muted"></div>
 			</div>
 			<%@ include file="/WEB-INF/include/admin/footer.jsp"%>
 		</div>

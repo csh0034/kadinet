@@ -1124,7 +1124,7 @@ body {
 	white-space: nowrap;
 }
 
-.notice_bx .detailTable p {
+.notice_bx .detailTable th>p , .notice_bx .detailTable td>p {
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;
