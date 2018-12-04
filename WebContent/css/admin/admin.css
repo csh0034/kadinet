@@ -111,3 +111,22 @@ ul li, ol li {
 #input_form, #memberForm, #updateForm {
 	text-align: center;
 }
+
+/* member */
+.member_box {
+	width: 825px !important;
+	margin: 0 auto;
+	line-height: 23px !important;
+}
+
+.member_box dl {
+	margin-bottom: 0;
+}
+
+.member_box dd {
+	margin-bottom: 0;
+}
+
+.member_box dd>a {
+	text-decoration: none;
+}

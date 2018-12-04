@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
+<link rel="stylesheet" type="text/css" href="/css/global/global.css">
+<link rel="stylesheet" type="text/css" href="/css/main/main.css">
 </head>
 <body id="page-top">
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
@@ -16,118 +18,156 @@
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">ADMIN &gt; ${location}</li>
 				</ol>
-
 				<div class="card mb-3">
 					<div class="card-header"></div>
 					<div class="card-body">
-						<div class="admin_member_bx">
-							<div class="history_wrap">
-								<form action="addmember.do" method="post" id="memberForm">
-									<input type="text" name="member_name" id="member_name" maxlength="20" title="이름"
-										placeholder="이름" class="inp meminp" required><input type="text"
-										name="member_position" id="member_position" maxlength="20" title="직책" placeholder="직책"
-										class="inp meminp" required><input type="text" name="member_contact"
-										id="member_contact" maxlength="30" title="연락처" placeholder="연락처" class="inp meminp" required><input type="text" name="member_dep" id="member_dep" maxlength="30" title="소속"
-										placeholder="소속" class="inp meminp" required><input type="text" name="member_url" id="member_url" maxlength="30" title="소속 홈페이지 url"
-										placeholder="소속 홈페이지 url" class="inp meminp" required>
-
-									<button type="submit" class="btn btn-primary">등록</button>
-								</form>
+						<div class="member_box">
+							<div class="mem_area_01">
+								<div class="mem_top_box">
+									<div class="mem_title">회장</div>
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>010-1234-1234</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
 							</div>
-							
-							<div class="ht_table_area">
-								<div class="table-responsive">
-									<table class="table table-bordered" id="dataTable">
-										<thead>
-											<tr>
-												<th>no</th>
-												<th>이름</th>
-												<th>직책</th>
-												<th>연락처</th>
-												<th>소속</th>
-												<th>소속 홈페이지 url</th>
-												<th>수정</th>
-												<th>삭제</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>김재환</td>
-												<td>회장</td>
-												<td>010-1234-1234</td>
-												<td>디지털융합산업협회</td>
-												<td>http://kadinet.org</td>
-												<td>
-													<button type="submit" class="btn btn-primary">수정</button>
-												</td>
-												<td>
-													<button type="submit" class="btn btn-danger">삭제</button>
-												</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>김재환</td>
-												<td>회장</td>
-												<td>010-1234-1234</td>
-												<td>디지털융합산업협회</td>
-												<td>http://kadinet.org</td>
-												<td>
-													<button type="submit" class="btn btn-primary">수정</button>
-												</td>
-												<td>
-													<button type="submit" class="btn btn-danger">삭제</button>
-												</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>김재환</td>
-												<td>회장</td>
-												<td>010-1234-1234</td>
-												<td>디지털융합산업협회</td>
-												<td>http://kadinet.org</td>
-												<td>
-													<button type="submit" class="btn btn-primary">수정</button>
-												</td>
-												<td>
-													<button type="submit" class="btn btn-danger">삭제</button>
-												</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>김재환</td>
-												<td>회장</td>
-												<td>010-1234-1234</td>
-												<td>디지털융합산업협회</td>
-												<td>http://kadinet.org</td>
-												<td>
-													<button type="submit" class="btn btn-primary">수정</button>
-												</td>
-												<td>
-													<button type="submit" class="btn btn-danger">삭제</button>
-												</td>
-											</tr>
-											<tr>
-												<td>1</td>
-												<td>김재환</td>
-												<td>회장</td>
-												<td>010-1234-1234</td>
-												<td>디지털융합산업협회</td>
-												<td>http://kadinet.org</td>
-												<td>
-													<button type="submit" class="btn btn-primary">수정</button>
-												</td>
-												<td>
-													<button type="submit" class="btn btn-danger">삭제</button>
-												</td>
-											</tr>
-										</tbody>
-									</table>
+							<div class="mem_area_04">
+								<div class="mem_title">임원</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt>
+										<dd>부회장</dd>
+										<dd>abc&#64;naver.com</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>부회장</dd>
+										<dd>010-1234-1234</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>부회장</dd>
+										<dd>abc&#64;naver.com</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>부회장</dd>
+										<dd>010-1234-1234</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>부회장</dd>
+										<dd>abc&#64;naver.com</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>부회장</dd>
+										<dd>abc&#64;naver.com</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>이사</dd>
+										<dd>abc&#64;naver.com</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>이사</dd>
+										<dd>010-1234-1234</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>이사</dd>
+										<dd>abc&#64;naver.com</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
+								</div>
+								<div class="mem_top_box">
+									<div class="mem_img">
+										<img alt="김재환 사진" src="/img/main/intro/member/member1.jpg">
+									</div>
+									<dl>
+										<dt>김재환</dt><dd>이사</dd>
+										<dd>abc&#64;naver.com</dd>
+										<dd>
+											<a href="http://kadinet.org/" target="_blank" title="[새창] 디지털산업협회 홈페이지로 이동합니다.">디지털산업협회</a>
+										</dd>
+									</dl>
 								</div>
 							</div>
 						</div>
+							</div>
+						</div>
 					</div>
-					<div class="card-footer small text-muted"></div>
+					<div class="card-footer small text-muted">
+						<button type="submit" class="btn btn-primary" onclick="location.href='/edit.jsp'">등록</button>
+					</div>
 				</div>
 				<%@ include file="/WEB-INF/include/admin/footer.jsp"%>
 			</div>
