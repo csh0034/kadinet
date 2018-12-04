@@ -60,7 +60,6 @@
 												<th>월</th>
 												<th>일</th>
 												<th>내용</th>
-												<th>수정</th>
 												<th>삭제</th>
 											</tr>
 										</thead>
@@ -71,9 +70,6 @@
 													<td>${item.getHistory_month() }</td>
 													<td>${item.getHistory_day() }</td>
 													<td>${item.getHistory_data() }</td>
-													<td>
-														<button type="submit" class="btn btn-primary">수정</button>
-													</td>
 													<td>
 														<button type="submit" class="btn btn-danger"
 															id="${item.getHistory_no() }">삭제</button>
