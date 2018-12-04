@@ -32,7 +32,7 @@
 					<div class="card-body">
 						<div class="admin_history_bx">
 							<div class="history_wrap">
-								<form id="input_form" align="center">
+								<form id="input_form">
 									<input type="number" name="history_year" id="history_year"
 										maxlength="4" title="년" placeholder="년" class="inp dateinp"
 										required>

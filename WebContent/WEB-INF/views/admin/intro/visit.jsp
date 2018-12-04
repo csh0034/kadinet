@@ -44,7 +44,7 @@
 					<div class="card-body">
 						<div class="admin_visit_bx">
 							<div class="visit_wrap">
-								<form method="post" id="updateForm" align="center">
+								<form method="post" id="updateForm">
 									<input type="text" name="visit_x" id="visit_x"
 										maxlength="20" title="위도" placeholder="위도" class="inp dateinp"
 										value="${direcList.getVisit_lat() }"

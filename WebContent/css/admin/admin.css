@@ -16,7 +16,7 @@ th {
 }
 
 .dateinp {
-	width: 10%;
+	width: 9%;
 }
 
 .meminp {
@@ -106,4 +106,8 @@ ul li, ol li {
 }
 .card-footer {
 	text-align:center;
+}
+
+#input_form, #memberForm, #updateForm {
+	text-align: center;
 }
