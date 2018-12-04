@@ -25,54 +25,18 @@
 					<div class="card-body">
 						<div class="mbrinfo_box">
 							<ol>
-								<li><span class="img"> <img
-										src="/img/main/mbr/m_cnc.jpg" alt="SK C&amp;C">
-								</span> <b>SK C&amp;C</b>
-									<ul class="mem_data">
-										<li><span>대표이사 : 안승은</span></li>
-										<li><span>설립일 : 2016-08-01</span></li>
-										<li><span>전화번호 : 051-556-1645</span></li>
-									</ul></li>
-								<li><span class="img"> <img
-										src="/img/main/mbr/m_dae.jpg" alt="대우직업능력개발원">
-								</span> <b><em></em>대우직업능력개발원</b>
-									<ul class="mem_data">
-										<li><span>대표이사 : 안승은</span></li>
-										<li><span>설립일 : 2016-08-01</span></li>
-										<li><span>전화번호 : 051-556-1645</span></li>
-									</ul></li>
-								<li><span class="img"> <img
-										src="/img/main/mbr/m_han.jpg" alt="한성대학교">
-								</span> <b><em></em>한성대학교</b>
-									<ul class="mem_data">
-										<li><span>대표이사 : 안승은</span></li>
-										<li><span>설립일 : 2016-08-01</span></li>
-										<li><span>전화번호 : 051-556-1645</span></li>
-									</ul></li>
-								<li><span class="img"> <img
-										src="/img/main/mbr/m_hye.jpg" alt="혜령씨엔티">
-								</span> <b><em></em>혜령씨엔티</b>
-									<ul class="mem_data">
-										<li><span>대표이사 : 안승은</span></li>
-										<li><span>설립일 : 2016-08-01</span></li>
-										<li><span>전화번호 : 051-556-1645</span></li>
-									</ul></li>
-								<li><span class="img"> <img
-										src="/img/main/mbr/m_job.jpg" alt="잡멘토스">
-								</span> <b><em></em>잡멘토스</b>
-									<ul class="mem_data">
-										<li><span>대표이사 : 안승은</span></li>
-										<li><span>설립일 : 2016-08-01</span></li>
-										<li><span>전화번호 : 051-556-1645</span></li>
-									</ul></li>
-								<li><span class="img"> <img
-										src="/img/main/mbr/m_may.jpg" alt="메이젠">
-								</span> <b><em></em>메이젠</b>
-									<ul class="mem_data">
-										<li><span>대표이사 : 안승은</span></li>
-										<li><span>설립일 : 2016-08-01</span></li>
-										<li><span>전화번호 : 051-556-1645</span></li>
-									</ul></li>
+								<c:forEach var="i" begin="1" end="6">
+									<li><span class="img"> <img
+											src="/img/main/mbr/m_cnc.jpg" alt="SK C&amp;C">
+									</span> <b>SK C&amp;C</b>
+										<ul class="mem_data">
+											<li><span>대표이사 : 안승은</span></li>
+											<li><span>설립일 : 2016-08-01</span></li>
+											<li><span>전화번호 : 051-556-1645</span></li>
+											<li><span>가입일 : 2016-08-01</span></li>
+										</ul></li>
+
+								</c:forEach>
 							</ol>
 						</div>
 						<div class="paginDiv">
