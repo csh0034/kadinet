@@ -79,9 +79,10 @@ public class AdminController implements Controller {
 		} else if ("/admin/mbr/memberinfo.do".equals(path)) {
 			memberinfo(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/memberinfo.jsp");
-		} else if ("/admin/mbr/memberlogo.do".equals(path)) {
-			memberlogo(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/memberlogo.jsp");
+		} else if ("/admin/mbr/edit.do".equals(path)) {
+			memberinfoEdit(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/edit.jsp");
+			
 			// mbrManagement
 		} else if ("/admin/mbrManagement/mbrTable.do".equals(path)) {
 			mbrTable(request, response);
@@ -247,13 +248,13 @@ public class AdminController implements Controller {
 	private void memberinfo(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setAttribute("page", "memberinfo");
+		request.setAttribute("location", "회원사 > 회원사소개");
 		request.setAttribute("subNav", "4");
 	}
 
-	private void memberlogo(HttpServletRequest request, HttpServletResponse response)
+	private void memberinfoEdit(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("page", "update");
+		request.setAttribute("location", "회원사 > 회원사소개");
 		request.setAttribute("subNav", "4");
 	}
 
@@ -261,11 +262,10 @@ public class AdminController implements Controller {
 	private void mbrTable(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		UserService service = UserService.getInstance();
-		request.setAttribute("page", "memberTable");
+		request.setAttribute("location", "회원관리");
 		service.getUserList(request);
 	}
 
-	
 	private void editor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("utf-8");
@@ -280,21 +280,20 @@ public class AdminController implements Controller {
 			response.sendRedirect("/admin/" + url + ".do");
 		}
 	}
-	
-	private void edit(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+
+	private void edit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String menu = request.getParameter("menu");
-		if(menu == null) {
+		if (menu == null) {
 			menu = "notice";
 		}
 		String mode = request.getParameter("mode");
-		if(mode == null) {
+		if (mode == null) {
 			mode = "";
 		}
 		request.setAttribute("subNav", "3");
 		request.setAttribute("menu", menu);
-		
-		if("notice".equals(menu)) {
+
+		if ("notice".equals(menu)) {
 			request.setAttribute("location", "알림마당 > 공지사항");
 			request.setAttribute("url", "/admin/notice/notice/list.do");
 		} else if ("press".equals(menu)) {
@@ -304,8 +303,8 @@ public class AdminController implements Controller {
 			request.setAttribute("location", "알림마당 > 정보자료실");
 			request.setAttribute("url", "/admin/notice/data/list.do");
 		}
-		
-		if("update".equals(mode)) {
+
+		if ("update".equals(mode)) {
 			request.setAttribute("mode", mode);
 			service.getNoticeInfo(request);
 		}

@@ -74,7 +74,7 @@ public class FrontController extends HttpServlet {
 		list.put("/admin/business/education.do", new AdminController());
 		
 		list.put("/admin/mbr/memberinfo.do", new AdminController());
-		list.put("/admin/mbr/memberlogo.do", new AdminController());
+		list.put("/admin/mbr/edit.do", new AdminController());
 		
 		list.put("/admin/mbrManagement/mbrTable.do", new AdminController());
 		

@@ -17,7 +17,7 @@
 		<div id="content-wrapper">
 			<div class="container-fluid">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item">ADMIN &gt; ${page}</li>
+					<li class="breadcrumb-item">ADMIN &gt; ${location}</li>
 				</ol>
 
 				<div class="card mb-3">
@@ -89,7 +89,8 @@
 						</div>
 					</div>
 					<div class="card-footer small text-muted">
-						<button type="submit" class="btn btn-primary membtn">등록</button>
+						<button type="button" class="btn btn-primary membtn"
+							onclick="location.href='/admin/mbr/edit.do'">등록</button>
 					</div>
 				</div>
 				<%@ include file="/WEB-INF/include/admin/footer.jsp"%>
