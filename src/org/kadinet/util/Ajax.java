@@ -71,7 +71,8 @@ public class Ajax extends HttpServlet {
 		} else if ("recognizeMbrList".equals(method)) {
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
-			service.recognizeUser(id);
+			int authority = Integer.parseInt(request.getParameter("authority"));
+			service.recognizeUser(authority ,id);
 		} else if ("deleteNotice".equals(method)) {
 			NoticeService service = NoticeService.getInstance();
 			service.deleteNotice(request);

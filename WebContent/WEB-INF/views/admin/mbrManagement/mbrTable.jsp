@@ -9,8 +9,7 @@
 <script src="/boot/vendor/jquery/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-		$('#dataTable1,#dataTable2,#dataTable3').DataTable({
-			"order" : [ [ 0, "desc" ] ]
+		$('#dataTable1,#dataTable2,#dataTable3,#dataTable4').DataTable({
 		});
 	});
 </script>
@@ -58,8 +57,8 @@
 											<td>${item.getUser_addr1() }</td>
 											<td>${item.getUser_regdate() }</td>
 											<td>
-												<button type="submit" class="btn btn-primary"
-													id="${item.getUser_id() }">승인</button>
+												<button type="button" class="btn btn-primary recognize"
+													onClick="setAuthority('${item.getUser_id()}','2')">승인</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -87,7 +86,9 @@
 										<th>전화번호</th>
 										<th>이메일</th>
 										<th>주소</th>
+										<th>최근 접속일</th>
 										<th>가입일</th>
+										<th>권한</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -100,7 +101,12 @@
 											<td>${item.getUser_phone() }</td>
 											<td>${item.getUser_email() }</td>
 											<td>${item.getUser_addr1() }</td>
+											<td>${item.getUser_last_login() }</td>
 											<td>${item.getUser_regdate() }</td>
+											<td>
+												<button type="button" class="btn btn-primary recognize"
+													onClick="setAuthority('${item.getUser_id()}','0')">변경</button>
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -109,14 +115,60 @@
 					</div>
 					<div class="card-footer small text-muted"></div>
 				</div>
-
+				
+				
+				<div class="card mb-3">
+					<div class="card-header">
+						<i class="fas fa-chart-area"></i> 관리자
+					</div>
+					<div class="card-body">
+						<div class="table-responsive">
+							<table class="table table-bordered" id="dataTable3">
+								<thead>
+									<tr>
+										<th>아이디</th>
+										<th>이름</th>
+										<th>성별</th>
+										<th>생년월일</th>
+										<th>전화번호</th>
+										<th>이메일</th>
+										<th>주소</th>
+										<th>최근 접속일</th>
+										<th>가입일</th>
+										<th>권한</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="item" items="${adminUList}" varStatus="i">
+										<tr>
+											<td>${item.getUser_id() }</td>
+											<td>${item.getUser_name() }</td>
+											<td>${item.getUser_gender() }</td>
+											<td>${item.getUser_age() }</td>
+											<td>${item.getUser_phone() }</td>
+											<td>${item.getUser_email() }</td>
+											<td>${item.getUser_addr1() }</td>
+											<td>${item.getUser_last_login() }</td>
+											<td>${item.getUser_regdate() }</td>
+											<td>
+												<button type="button" class="btn btn-primary recognize"
+													onClick="setAuthority('${item.getUser_id()}','2')">변경</button>
+											</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="card-footer small text-muted"></div>
+				</div>
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-chart-area"></i> 탈퇴회원
 					</div>
 					<div class="card-body">
 						<div class="table-responsive">
-							<table class="table table-bordered" id="dataTable3">
+							<table class="table table-bordered" id="dataTable4">
 								<thead>
 									<tr>
 										<th>아이디</th>

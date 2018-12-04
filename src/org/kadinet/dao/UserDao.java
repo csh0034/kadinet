@@ -113,7 +113,7 @@ public class UserDao extends DBCon {
 		Vector<UserBean> UserList = new Vector<UserBean>();
 		try {
 			conStart();
-			sql = "select * from user where user_authority = ? order by user_authority desc, user_regdate desc";
+			sql = "select *, DATE_FORMAT(user_last_login, '%Y-%m-%d') as last_login from user where user_authority = ? order by user_authority desc, user_regdate desc";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, authority);
 			rs = pstmt.executeQuery();
@@ -128,6 +128,7 @@ public class UserDao extends DBCon {
 				bean.setUser_email(rs.getString("user_email"));
 				bean.setUser_addr1(rs.getString("user_addr1"));
 				bean.setUser_regdate(rs.getDate("user_regdate"));
+				bean.setUser_last_login(rs.getDate("last_login"));
 
 				UserList.add(bean);
 			}
@@ -156,13 +157,14 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 	}
-	public void recognizeUser(String id) {
+	public void recognizeUser(int authority, String id) {
 		try {
 			conStart();
-			sql = "update user set user_authority = user_authority + 1 where user_id = ?";
+			sql = "update user set user_authority = ? where user_id = ?";
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setInt(1, authority);
+			pstmt.setString(2, id);
 			pstmt.executeUpdate();
 
 		} catch (Exception e) {

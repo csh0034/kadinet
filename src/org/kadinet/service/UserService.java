@@ -37,10 +37,12 @@ public class UserService {
 		dao.insertUser(user);
 	}
 	public void getUserList(HttpServletRequest request) {
+		Vector<UserBean>adminUList = dao.getUserList(0);
 		Vector<UserBean>junUList = dao.getUserList(1);
 		Vector<UserBean>jeongUList = dao.getUserList(2);
 		Vector<UserBean>leaveUList = dao.getUserList(3);
 		
+		request.setAttribute("adminUList", adminUList);
 		request.setAttribute("junUList", junUList);
 		request.setAttribute("jeongUList", jeongUList);
 		request.setAttribute("leaveUList", leaveUList);
@@ -49,8 +51,8 @@ public class UserService {
 	public void deleteUser(String id) {
 		dao.deleteUser(id);
 	}
-	public void recognizeUser(String id) {
-		dao.recognizeUser(id);
+	public void recognizeUser(int authority, String id) {
+		dao.recognizeUser(authority, id);
 	}
 	
 	/*	public String findId(String name, String phone) {
