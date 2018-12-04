@@ -1,3 +1,4 @@
+
 th {
 	font-weight: normal !important;
 }
@@ -8,7 +9,7 @@ th {
 }
 
 .inp {
-	width: 59%;
+	width: 30%;
 	margin-right: 20px;
 	font-size: 17px;
 	padding: 7px;
@@ -87,4 +88,22 @@ th {
 .visit_table table th, .visit_table table td {
    color: #313338;
    font-size: 15px;
+}
+
+/* memberInfo */
+.mbrinfo_box {
+	width: 825px !important;
+	margin: 0 auto;
+}
+
+.mbrinfo_box ol, .mbrinfo_box ul {
+	padding-left: 0;
+	font-size: 13px;
+}
+
+ul li, ol li {
+	list-style: none;
+}
+.card-footer {
+	text-align:center;
 }

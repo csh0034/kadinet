@@ -22,7 +22,7 @@
 					<div class="card-body">
 						<div class="admin_member_bx">
 							<div class="history_wrap">
-								<form action="addmember.do" method="post" id="memberForm">
+								<form action="addmember.do" method="post" id="memberForm" align="center">
 									<input type="text" name="member_name" id="member_name" maxlength="20" title="이름"
 										placeholder="이름" class="inp meminp" required><input type="text"
 										name="member_position" id="member_position" maxlength="20" title="직책" placeholder="직책"

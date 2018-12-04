@@ -1046,11 +1046,6 @@ body {
 	color: #8a8a8a;
 }
 
-.notice_bx .paginDiv {
-	margin-top: 40px;
-	text-align: center;
-}
-
 .notice_bx .searchDiv {
 	float: right;
 	margin-bottom: 40px;
@@ -1223,11 +1218,14 @@ body {
 
 .mbrinfo_box ol > li .img {
     display: inline-block;
-    width: 170px;
-    height: 60px;
     text-align: center;
     overflow: hidden;
     margin: 47px 0px 26px 45px;
+}
+
+.mbrinfo_box ol > li .img img {
+	width: 150px;
+    height: 52.93px;
 }
 
 .mbrinfo_box ol > li b {
@@ -1249,7 +1247,6 @@ body {
 
 .mbrinfo_box ol > li li {
     height: 31px;
-    line-height: 31px;
     list-style: disc;
     color: #4f98e3;
     margin-left: 45px;

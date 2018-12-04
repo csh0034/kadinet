@@ -44,27 +44,27 @@
 					<div class="card-body">
 						<div class="admin_visit_bx">
 							<div class="visit_wrap">
-								<form method="post" id="updateForm">
+								<form method="post" id="updateForm" align="center">
 									<input type="text" name="visit_x" id="visit_x"
-										maxlength="20" title="위도" placeholder="위도" class="inp meminp"
+										maxlength="20" title="위도" placeholder="위도" class="inp dateinp"
 										value="${direcList.getVisit_lat() }"
 										required>
 										
 									<input type="text" name="visit_y"
 										id="visit_y" maxlength="20" title="경도" placeholder="경도"
-										class="inp meminp"value="${direcList.getVisit_lng() }" required>
+										class="inp dateinp"value="${direcList.getVisit_lng() }" required>
 										
 									<input type="text"
 										name="visit_add" id="visit_add" maxlength="100" title="주소"
-										placeholder="주소" class="inp meminp" value="${direcList.getVisit_address() }"required>
+										placeholder="주소" class="inp" value="${direcList.getVisit_address() }"required>
 										
 									<input
 										type="text" name="visit_phone" id="visit_phone" maxlength="30"
-										title="전화번호" placeholder="전화번호" class="inp meminp" value="${direcList.getVisit_phone() }"required>
+										title="전화번호" placeholder="전화번호" class="inp dateinp" value="${direcList.getVisit_phone() }"required>
 
 									<input type="text" name="visit_fax" id="visit_fax"
 										maxlength="30" title="팩스번호" placeholder="팩스번호"
-										class="inp meminp" value="${direcList.getVisit_fax() }" required>
+										class="inp dateinp" value="${direcList.getVisit_fax() }" required>
 
 									<button type="button" class="btn btn-primary" id="updateVSubmit">수정</button>
 								</form>

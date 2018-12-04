@@ -129,58 +129,30 @@
 										</li>
 									</ul>		
 								</li>
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_mo.jpg" alt="모든인터넷" >
-									</span>
-										<b><em></em>(주)모든인터넷</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>	
-									</ul>		
-								</li>
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_sds.jpg" alt="삼성 SDS" >
-									</span>
-										<b><em></em>삼성 SDS</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>	
-									</ul>		
-								</li>
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_seo.jpg" alt="서일대학교" >
-									</span>
-										<b>서일대학교</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>	
-									</ul>		
-								</li>
 							</ol>
+						</div>
+						<div class="paginDiv">
+							<a href="javascript:block('${nowblock - 1 }')">
+								<span class="paging">&lt;</span>
+							</a>
+							<a href="javascript:pageing('${i}')">
+								<span class="paging">1</span>
+							</a>
+							<a href="javascript:pageing('${i}')">
+								<span class="paging">2</span>
+							</a>
+							<a href="javascript:pageing('${i}')">
+								<span class="paging">3</span>
+							</a>
+							<a href="javascript:pageing('${i}')">
+								<span class="paging">4</span>
+							</a>
+							<a href="javascript:pageing('${i}')">
+								<span class="paging">5</span>
+							</a>
+							<a href="javascript:block('${nowblock + 1 }')">
+								<span class="paging">&gt;</span>
+							</a>
 						</div>
 					</div>
 				</div>

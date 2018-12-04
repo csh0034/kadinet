@@ -24,6 +24,11 @@ input::-moz-placeholder {
 	color: #8a8a8a;
 }
 
+.paginDiv{
+	margin-top: 40px;
+	text-align: center;
+}
+
 .paging {
 	display: inline-block;
 	vertical-align: middle;

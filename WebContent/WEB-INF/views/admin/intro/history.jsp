@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>디지털산업협회</title>
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
-	<script src="/boot/vendor/jquery/jquery.min.js"></script>
+<script src="/boot/vendor/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="/js/admin/history.js"></script>
 <script>
 	$(document).ready(function() {
@@ -32,17 +32,22 @@
 					<div class="card-body">
 						<div class="admin_history_bx">
 							<div class="history_wrap">
-								<form id="input_form">
+								<form id="input_form" align="center">
 									<input type="number" name="history_year" id="history_year"
 										maxlength="4" title="년" placeholder="년" class="inp dateinp"
-										required> <input type="number" name="history_month"
+										required>
+										
+									<input type="number" name="history_month"
 										id="history_month" maxlength="4" title="월" placeholder="월"
-										class="inp dateinp" required> <input type="number"
-										name="history_day" id="history_day" maxlength="4" title="일"
-										placeholder="일" class="inp dateinp" required> <input
-										type="text" name="history_data" id="history_data"
-										maxlength="50" title="내용" placeholder="내용" class="inp" required>
-	
+										class="inp dateinp" required>
+										
+									<input type="number" name="history_day" id="history_day" maxlength="4" title="일"
+										placeholder="일" class="inp dateinp" required>
+									
+									<input type="text" name="history_data" id="history_data"
+										maxlength="50" title="내용" placeholder="내용" class="inp"
+										required>
+
 									<button type="submit" class="btn btn-primary" id="addHSubmit">등록</button>
 								</form>
 							</div>

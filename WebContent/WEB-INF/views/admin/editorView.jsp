@@ -79,7 +79,7 @@
 							</c:when>
 						</c:choose>
 					</div>
-					<div class="card-footer small text-muted" style="text-align: right;">
+					<div class="card-footer small text-muted" style="text-align: center;">
 						<c:choose>
 							<c:when test="${empty mode}">
 								<input type="button" id="update" class="btn btn-primary" value="수정" />
