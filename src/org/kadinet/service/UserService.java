@@ -54,6 +54,9 @@ public class UserService {
 	public void recognizeUser(int authority, String id) {
 		dao.recognizeUser(authority, id);
 	}
+	public void insertUpload(HttpServletRequest request) {
+		
+	}
 	
 	/*	public String findId(String name, String phone) {
 		return dao.findId(name, phone);

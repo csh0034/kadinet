@@ -23,77 +23,85 @@
 
 				<div class="card mb-3" style="width: 900px; margin: 0 auto;">
 					<c:choose>
-						<c:when test="${empty mode}">
-							<form method=post action="/fileUp?mode=new" id="form1"
-								enctype="multipart/form-data" onsubmit="submitContents(this);">
-								<div class="card-header"></div>
-								<div class="card-body">
-									<div class="notice_bx" style="width: 825px; margin: 0 auto;">
-										<table class="detailTable" id="detailTable">
-											<colgroup>
-												<col width="20%">
-												<col width="*">
-											</colgroup>
-											<tr class="lineTop">
-												<th>회사명</th>
-												<td><input type="text" class="form-control"
-													name="notice_title" required></td>
-											</tr>
-											<tr>
-												<th>로고</th>
-												<td><div class="filebox">
-														<input class="upload-name" value="파일선택"
-															disabled="disabled"> <label for="input-file0">업로드</label>
-														<input type="file" required id="input-file0"
-															class="upload-hidden" name="notice_img">
-													</div></td>
-											</tr>
-											<tr>
-												<th>링크</th>
-												<td><input type="text" class="form-control"
-													name="notice_title" value="http://" required></td>
-											</tr>
-											<tr>
-												<th>대표이사</th>
-												<td><input type="text" class="form-control"
-													name="notice_title" required></td>
-											</tr>
-											<tr>
-												<th>설립일</th>
-												<td><input type="text" class="form-control"
-													name="notice_title" placeholder="ex) yyyy-mm-dd" required></td>
-											</tr>
-											<tr>
-												<th>가입일</th>
-												<td><input type="text" class="form-control"
-													name="notice_title" placeholder="ex) yyyy-mm-dd" required></td>
-											</tr>
-											<tr>
-												<th>전화번호</th>
-												<td><input type="number" class="form-control"
-													name="notice_title" placeholder="숫자만 입력" required></td>
-											</tr>
-											<tr class="lineBottom">
-												<th>정렬</th>
-												<td><input type="number" class="form-control"
-													name="notice_title" placeholder="숫자만 입력" required></td>
-											</tr>
-										</table>
-									</div>
-								</div>
-								<div class="card-footer small text-muted"
-									style="text-align: center;">
-									<input type="submit" id="go" class="btn btn-primary" value="저장" />
-									<input type="button" id="list" class="btn btn-primary"
-										value="목록" onclick="location.href='/admin/mbr/memberinfo.do'" />
-								</div>
-							</form>
+						<c:when test="${empty no}">
+							<c:set var="tmp" value="?mode=new" />
 						</c:when>
-
-						<c:when test="${mode == 'update'}">
-
+						<c:when test="${!empty no}">
+							<c:set var="tmp" value="?mode=update&no=${no}" />
 						</c:when>
 					</c:choose>
+					<form method=post action="/admin/mbr/upload.do${tmp}" id="form1"
+						enctype="multipart/form-data">
+						<div class="card-header"></div>
+						<div class="card-body">
+							<div class="notice_bx" style="width: 825px; margin: 0 auto;">
+								<table class="detailTable" id="detailTable">
+									<colgroup>
+										<col width="20%">
+										<col width="*">
+									</colgroup>
+									<tr class="lineTop">
+										<th>회사명</th>
+										<td><input type="text" class="form-control"
+											name="mbr_title" required ></td>
+									</tr>
+									<tr>
+										<th>로고</th>
+										<td><div class="filebox">
+												<input class="upload-name" value="파일선택" disabled="disabled">
+												<label for="input-file0">업로드</label> <input type="file"
+													 id="input-file0" class="upload-hidden"
+													name="mbr_img" required>
+											</div></td>
+									</tr>
+									<tr>
+										<th>링크</th>
+										<td><input type="text" class="form-control"
+											name="mbr_title" value="http://" required></td>
+									</tr>
+									<tr>
+										<th>대표이사</th>
+										<td><input type="text" class="form-control"
+											name="mbr_title" required></td>
+									</tr>
+									<tr>
+										<th>설립일</th>
+										<td><input type="text" class="form-control"
+											name="mbr_title" placeholder="ex) yyyy-mm-dd"  required></td>
+									</tr>
+									<tr>
+										<th>가입일</th>
+										<td><input type="text" class="form-control"
+											name="mbr_title" placeholder="ex) yyyy-mm-dd" required></td>
+									</tr>
+									<tr>
+										<th>전화번호</th>
+										<td><input type="number" class="form-control"
+											name="mbr_title" placeholder="숫자만 입력" required></td>
+									</tr>
+									<tr class="lineBottom">
+										<th>정렬</th>
+										<td><input type="number" class="form-control"
+											name="mbr_title" placeholder="숫자만 입력" required></td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div class="card-footer small text-muted">
+							<c:choose>
+								<c:when test="${empty no}">
+									<input type="submit" id="go" class="btn btn-primary" value="저장" />
+								</c:when>
+								<c:when test="${!empty no}">
+									<input type="submit" id="go" class="btn btn-primary" value="수정" />
+								</c:when>
+							</c:choose>
+							<input type="button" id="list" class="btn btn-primary" value="목록"
+								onclick="location.href='/admin/mbr/memberinfo.do'" />
+						</div>
+					</form>
+
+
 				</div>
 			</div>
 			<%@ include file="/WEB-INF/include/admin/footer.jsp"%>

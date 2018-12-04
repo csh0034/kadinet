@@ -82,6 +82,9 @@ public class AdminController implements Controller {
 		} else if ("/admin/mbr/edit.do".equals(path)) {
 			memberinfoEdit(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/edit.jsp");
+		} else if ("/admin/mbr/upload.do".equals(path)) {
+			upload(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/upload.jsp");
 			
 			// mbrManagement
 		} else if ("/admin/mbrManagement/mbrTable.do".equals(path)) {
@@ -256,6 +259,26 @@ public class AdminController implements Controller {
 			throws ServletException, IOException {
 		request.setAttribute("location", "회원사 > 회원사소개");
 		request.setAttribute("subNav", "4");
+		
+		String no = request.getParameter("no");
+		request.setAttribute("no", no);
+		
+	}
+	
+	private void upload(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String mode = request.getParameter("mode");
+		
+		if (mode == null) {
+			response.sendRedirect("/index.do");
+		} else if ("new".equals(mode)) {
+			UserService service = UserService.getInstance();
+			service.insertUpload(request);
+		} else if ("update".equals(mode)) {
+			
+		}
+		
 	}
 
 	// mbrManagement
