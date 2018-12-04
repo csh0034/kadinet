@@ -14,7 +14,7 @@
 		<div id="content-wrapper">
 			<div class="container-fluid">
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item">ADMIN &gt; ${page}</li>
+					<li class="breadcrumb-item">ADMIN &gt; ${location}</li>
 				</ol>
 
 				<div class="card mb-3">

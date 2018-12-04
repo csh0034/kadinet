@@ -107,7 +107,7 @@ public class AdminController implements Controller {
 	private void history(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "1");
-		request.setAttribute("page", "협회소개 > 연혁");
+		request.setAttribute("location", "협회소개 > 연혁");
 		HistoryService service = HistoryService.getInstance();
 		service.getHistoryList(request);
 
@@ -115,7 +115,7 @@ public class AdminController implements Controller {
 
 	private void member(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "1");
-		request.setAttribute("page", "협회소개 > 임원소개");
+		request.setAttribute("location", "협회소개 > 임원소개");
 
 	}
 
@@ -133,7 +133,7 @@ public class AdminController implements Controller {
 
 	private void visit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "1");
-		request.setAttribute("page", "협회소개 > 오시는길");
+		request.setAttribute("location", "협회소개 > 오시는길");
 		VisitService service = VisitService.getInstance();
 		service.getDirectionInfo(request);
 	}

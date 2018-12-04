@@ -206,3 +206,25 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2018-12-03 15:23:03
+
+
+--
+-- Table structure for table `mbr`
+--
+
+DROP TABLE IF EXISTS `mbr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mbr` (
+  `mbr_no` int(15) NOT NULL AUTO_INCREMENT,
+  `mbr_img` varchar(100) NOT NULL,
+  `mbr_name` varchar(100) NOT NULL,
+  `mbr_ceo` varchar(100) NOT NULL,
+  `mbr_estdate` varchar(100) DEFAULT NULL,
+  `mbr_regdate` varchar(100) DEFAULT NULL,
+  `mbr_phone` varchar(100) NOT NULL,
+  `mbr_link` varchar(100) NOT NULL,
+  `mbr_order` varchar(100) NOT NULL,
+  PRIMARY KEY (`mbr_no`)
+) ENGINE=InnoDB AUTO_INCREMENT=279 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
