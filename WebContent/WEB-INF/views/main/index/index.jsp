@@ -75,6 +75,7 @@
 				</div>
 				<div class="index_box mbr_list">
 					<div class="als-container clearfix" id="lista1">
+						<span class="als-prev"><img src="/img/main/index/slide/left.png" alt="prev" title="previous" /></span>
 						<div class="als-viewport">
 							<ul class="als-wrapper">
 								<li class="als-item"><a href="https://cc.sk.co.kr/"
@@ -97,6 +98,7 @@
 									target="_blank"><img src="/img/main/index/slide/s9.jpg"></a></li>
 							</ul>
 						</div>
+						<span class="als-next"><img src="/img/main/index/slide/right.png" alt="next" title="next" /></span>
 					</div>
 				</div>
 			</article>
