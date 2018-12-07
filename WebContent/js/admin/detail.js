@@ -1,3 +1,15 @@
+$(function() {
+	$("#move").click(function(){
+		$(".popUp").fadeIn();
+		$(".pop_bk").fadeIn();
+	});
+		
+	$(".pop_close").click(function(){
+		$(".popUp").fadeOut();
+		$(".pop_bk").fadeOut();
+	});
+});
+
 function deleteNotice(no, menu, img) {
 	if (confirm('삭제 하시겠습니까?')) {
 		$.ajax({

@@ -171,8 +171,6 @@
 				</div>
 				<%@ include file="/WEB-INF/include/admin/footer.jsp"%>
 			</div>
-		</div>
-	</div>
 	<%@ include file="/WEB-INF/include/admin/logout.jsp"%>
 	<%@ include file="/WEB-INF/include/admin/js.jsp"%>
 </body>

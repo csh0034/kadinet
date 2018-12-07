@@ -2,7 +2,7 @@
 <footer class="sticky-footer">
 	<div class="container my-auto">
 		<div class="copyright text-center my-auto">
-			<span>Copyright &copy; 2018 ASk. All Rights reserved.</span>
+			<span class="ftcopy">Copyright &copy; 2018 ASk. All Rights reserved.</span>
 		</div>
 	</div>
 </footer>

@@ -10,6 +10,7 @@
 <script src="/js/admin/detail.js"></script>
 </head>
 <body id="page-top">
+<div class="pop_bk"></div>
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
 	<div id="wrapper">
 		<%@ include file="/WEB-INF/include/admin/subNav.jsp"%>
@@ -112,6 +113,18 @@
 							class="btn btn-primary delete" value="삭제" /> <input type="button" id="list"
 							class="btn btn-primary" value="목록" onclick="location.href='/admin/notice/${menu}/list.do'" />
 						<input type="button" id="move" class="btn btn-primary" value="이동" />
+					</div>
+					
+					<div class="popUp">
+						<div class="pop_tit">
+							<span>게시글 이동</span>
+							<span class="pop_close">x</span>
+						</div>
+						<input checked type="radio" name="move1" value="m1" class="inp_radio" id="move1" />
+						<label for="move1" style="margin-right: 20px">보도자료</label>
+						<input type="radio" name="move1" value="m2" class="inp_radio" id="move2" />
+						<label for="move2">정보자료실</label><br />
+						<input type="button" id="move_ok" class="btn btn-primary" value="이동" />
 					</div>
 				</div>
 			</div>

@@ -58,17 +58,18 @@
 				</div>
 				<div class="index_box quick">
 					<ul class="quick_btn">
-						<li><a href="#"> <img class="quick_img1"
+						<li><a href="http://localhost/intro/visit.do"> <img class="quick_img1"
 								src="/img/main/index/icon_map.png" alt="오시는길"> <span class="quick_txt1">오시는길</span>
 						</a></li>
-						<li><a href="#"> <img class="quick_img1"
-								src="/img/main/index/icon_pencil.png" alt="경력인증"> <span class="quick_txt1">경력인증</span>
+						<li><a href="http://localhost/business/career.do"> <img class="quick_img1"
+								src="/img/main/index/icon_career.png" alt="경력인증"> <span class="quick_txt1">경력인증</span>
 						</a></li>
-						<li><a href="#"> <img class="quick_img1 quick_img2"
+						<li><a href="http://localhost/business/corporation.do"> <img class="quick_img1 quick_img2"
+								src="/img/main/index/icon_office.png" alt="사이트맵"> <span class="quick_txt1 quick_txt2">기업체인증</span>
+						</a></li>
+						<li><a href="http://localhost/mbr/memberinfo.do"> 
+								<img class="quick_img1 quick_img2"
 								src="/img/main/index/icon_people.png" alt="회원사소개"> <span class="quick_txt1 quick_txt2">회원사 소개</span>
-						</a></li>
-						<li><a href="#"> <img class="quick_img1"
-								src="/img/main/index/icon_map.png" alt="사이트맵"> <span class="quick_txt1">사이트맵</span>
 						</a></li>
 					</ul>
 				</div>
@@ -77,23 +78,23 @@
 						<div class="als-viewport">
 							<ul class="als-wrapper">
 								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
-									target="_blank"><img src="/img/main/index/slide/s0.png"></a></li>
-								<li class="als-item"><a
-									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
-								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
-									target="_blank"><img src="/img/main/index/slide/s0.png"></a></li>
-								<li class="als-item"><a
-									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
-								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
-									target="_blank"><img src="/img/main/index/slide/s0.png"></a></li>
-								<li class="als-item"><a
-									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
-								<li class="als-item"><a
-									href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/main/index/slide/s2.png" /></a></li>
+									target="_blank"><img src="/img/main/index/slide/s1.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s2.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s3.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s4.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s5.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s6.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s7.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s8.jpg"></a></li>
+									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									target="_blank"><img src="/img/main/index/slide/s9.jpg"></a></li>
 							</ul>
 						</div>
 					</div>
