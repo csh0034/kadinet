@@ -77,23 +77,23 @@
 					<div class="als-container clearfix" id="lista1">
 						<div class="als-viewport">
 							<ul class="als-wrapper">
-								<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+								<li class="als-item"><a href="https://cc.sk.co.kr/"
 									target="_blank"><img src="/img/main/index/slide/s1.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
 									target="_blank"><img src="/img/main/index/slide/s2.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
 									target="_blank"><img src="/img/main/index/slide/s3.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									<li class="als-item"><a href="http://www.hrcnt.com/"
 									target="_blank"><img src="/img/main/index/slide/s4.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									<li class="als-item"><a href="http://www.mayzen.com/index.html"
 									target="_blank"><img src="/img/main/index/slide/s5.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									<li class="als-item"><a href="http://www.hrcnt.com/"
 									target="_blank"><img src="/img/main/index/slide/s6.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									<li class="als-item"><a href="http://www.dwit.or.kr/"
 									target="_blank"><img src="/img/main/index/slide/s7.jpg"></a></li>
 									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
 									target="_blank"><img src="/img/main/index/slide/s8.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
+									<li class="als-item"><a href="http://www.hansung.ac.kr/web/www/home"
 									target="_blank"><img src="/img/main/index/slide/s9.jpg"></a></li>
 							</ul>
 						</div>
