@@ -107,7 +107,7 @@ public class MemberService {
 				bean.setMember_position(multi.getParameter("member_position"));
 			}
 
-			dao.updateNotice(Integer.parseInt(no), bean);
+			dao.updateMember(Integer.parseInt(no), bean);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -130,6 +130,6 @@ public class MemberService {
 			}
 		}
 
-		dao.deleteNotice(Integer.parseInt(no));
+		dao.deleteMember(Integer.parseInt(no));
 	}
 }

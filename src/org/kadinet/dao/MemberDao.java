@@ -96,7 +96,7 @@ public class MemberDao extends DBCon {
 		}
 	}
 
-	public void updateNotice(int no, MemberBean bean) {
+	public void updateMember(int no, MemberBean bean) {
 		try {
 			conStart();
 			sql = "update member set member_img = ? , member_name = ? , member_position = ? ,"
@@ -120,7 +120,7 @@ public class MemberDao extends DBCon {
 		}
 	}
 	
-	public void deleteNotice(int no) {
+	public void deleteMember(int no) {
 		try {
 			conStart();
 			sql = "delete from member where member_no = ?";
