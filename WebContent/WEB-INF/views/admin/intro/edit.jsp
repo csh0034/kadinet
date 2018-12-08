@@ -11,29 +11,38 @@
 <script src="/boot/vendor/jquery/jquery.min.js"></script>
 <script src="/js/admin/fileUpload.js"></script>
 <script src="/js/admin/member.js"></script>
+<c:if test="${!empty no && no != '1'}">
+	<c:set var='menu' value="update" />
+</c:if>
 <c:if test="${no !='1'}">
 	<script>
 		function checkForm() {
 			var reg = /^[0-9]{1,9}$/g;
 			var order = $('#order').val();
-			
+			var mode = '${menu}';
+
 			if (!reg.test(order)) {
 				alert('정렬은 숫자만 입력가능하며 최대 9자리입니다');
 				$('#order').focus();
 				return false;
 			} else {
-				if(!confirm('수정 하시겠습니까?')){
-					return false;
+				if (mode == 'update') {
+					if (!confirm('수정 하시겠습니까?')) {
+						return false;
+					}
+				} else {
+					if (!confirm('저장 하시겠습니까?')) {
+						return false;
+					}
 				}
 			}
-
 		}
 	</script>
 </c:if>
 <c:if test="${no =='1'}">
 	<script>
 		function checkForm() {
-			if(!confirm('수정 하시겠습니까?')){
+			if (!confirm('수정 하시겠습니까?')) {
 				return false;
 			}
 		}
