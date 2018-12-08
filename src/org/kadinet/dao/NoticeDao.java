@@ -415,5 +415,21 @@ public class NoticeDao extends DBCon {
 			conClose();
 		}
 	}
+	
+	public void moveNotice(int no, String menu) {
+		try {
+			conStart();
+			sql = "update notice set notice_category = ? , notice_bool = 'f' where notice_no = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, menu);
+			pstmt.setInt(2, no);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
 
 }

@@ -10,7 +10,7 @@
 <script src="/js/admin/detail.js"></script>
 </head>
 <body id="page-top">
-<div class="pop_bk"></div>
+	<div class="pop_bk"></div>
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
 	<div id="wrapper">
 		<%@ include file="/WEB-INF/include/admin/subNav.jsp"%>
@@ -114,17 +114,38 @@
 							class="btn btn-primary" value="목록" onclick="location.href='/admin/notice/${menu}/list.do'" />
 						<input type="button" id="move" class="btn btn-primary" value="이동" />
 					</div>
-					
+
 					<div class="popUp">
 						<div class="pop_tit">
-							<span>게시글 이동</span>
-							<span class="pop_close">x</span>
+							<span>게시글 이동</span> <span class="pop_close">x</span>
 						</div>
-						<input checked type="radio" name="move1" value="m1" class="inp_radio" id="move1" />
-						<label for="move1" style="margin-right: 20px">보도자료</label>
-						<input type="radio" name="move1" value="m2" class="inp_radio" id="move2" />
-						<label for="move2">정보자료실</label><br />
-						<input type="button" id="move_ok" class="btn btn-primary" value="이동" />
+						<c:choose>
+							<c:when test="${menu=='notice'}">
+								<input checked type="radio" name="move1" value="press" class="inp_radio" id="move1" />
+								<label for="move1" style="margin-right: 20px">보도자료</label>
+								<input type="radio" name="move1" value="data" class="inp_radio" id="move2" />
+								<label for="move2">정보자료실</label>
+								<br />
+							</c:when>
+							<c:when test="${menu=='press'}">
+								<input checked type="radio" name="move1" value="notice" class="inp_radio" id="move1" />
+								<label for="move1" style="margin-right: 20px">공지사항</label>
+								<input type="radio" name="move1" value="data" class="inp_radio" id="move2" />
+								<label for="move2">정보자료실</label>
+								<br />
+							</c:when>
+							<c:when test="${menu=='data'}">
+								<input checked type="radio" name="move1" value="notice" class="inp_radio" id="move1" />
+								<label for="move1" style="margin-right: 20px">공지사항</label>
+								<input type="radio" name="move1" value="press" class="inp_radio" id="move2" />
+								<label for="move2">보도자료</label>
+								<br />
+							</c:when>
+						</c:choose>
+						<span id="noTmp" style="display:none;">${no}</span>
+						<span id="menuTmp" style="display:none;">${menu}</span>
+						<input type="button" id="move_ok" class="btn btn-primary" value="이동" /> <input type="button"
+							class="btn btn-primary pop_close" value="취소" />
 					</div>
 				</div>
 			</div>

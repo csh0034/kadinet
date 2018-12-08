@@ -117,7 +117,7 @@ public class NoticeService {
 		HttpSession session = request.getSession();
 		String dftFilePath = session.getServletContext().getRealPath("/");
 		String filePath = dftFilePath + "file" + File.separator + "notice" + File.separator;
-		int MAXSIZE = 10 * 1024 * 1024;
+		int MAXSIZE = 20 * 1024 * 1024;
 
 		Vector<String> fileName = new Vector<String>();
 
@@ -185,7 +185,7 @@ public class NoticeService {
 		HttpSession session = request.getSession();
 		String dftFilePath = session.getServletContext().getRealPath("/");
 		String filePath = dftFilePath + "file" + File.separator + "notice" + File.separator;
-		int MAXSIZE = 10 * 1024 * 1024;
+		int MAXSIZE = 20 * 1024 * 1024;
 		Vector<String> fileName = new Vector<String>();
 		Vector<Integer> fileOrder = new Vector<Integer>();
 
@@ -291,5 +291,12 @@ public class NoticeService {
 		request.setAttribute("bean", bean);
 		request.setAttribute("no", no);
 		request.setAttribute("files", files);
+	}
+	
+	public void moveNotice(HttpServletRequest request) {
+		String no = request.getParameter("no");
+		String menu = request.getParameter("menu");
+		
+		dao.moveNotice(Integer.parseInt(no),menu);
 	}
 }

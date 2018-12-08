@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.kadinet.service.HistoryService;
+import org.kadinet.service.MemberService;
 import org.kadinet.service.NoticeService;
 import org.kadinet.service.UserService;
 import org.kadinet.service.VisitService;
@@ -79,6 +80,12 @@ public class Ajax extends HttpServlet {
 		} else if ("deleteNotice".equals(method)) {
 			NoticeService service = NoticeService.getInstance();
 			service.deleteNotice(request);
+		} else if ("deleteMember".equals(method)) {
+			MemberService service = MemberService.getInstance();
+			service.deleteMember(request);
+		} else if ("moveNotice".equals(method)) {
+			NoticeService service = NoticeService.getInstance();
+			service.moveNotice(request);
 		}
 	}
 }

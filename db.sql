@@ -228,3 +228,15 @@ CREATE TABLE `mbr` (
   PRIMARY KEY (`mbr_no`)
 ) ENGINE=InnoDB AUTO_INCREMENT=279 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+CREATE TABLE `member` (
+  `member_no` int(15) NOT NULL AUTO_INCREMENT,
+  `member_img` varchar(100) NOT NULL,
+  `member_name` varchar(100) NOT NULL,
+  `member_position` varchar(100) NOT NULL,
+  `member_etc` varchar(100) NOT NULL,
+  `member_company` varchar(100) not null,
+  `member_link` varchar(100) NOT NULL,
+  `member_order` int(100) NOT NULL,
+  PRIMARY KEY (`member_no`)
+) 

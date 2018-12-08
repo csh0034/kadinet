@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.kadinet.service.HistoryService;
+import org.kadinet.service.MemberService;
 import org.kadinet.service.MenuService;
 import org.kadinet.service.NoticeService;
 import org.kadinet.service.UserService;
@@ -14,8 +15,6 @@ import org.kadinet.service.VisitService;
 import org.kadinet.util.HttpUtil;
 
 public class AdminController implements Controller {
-	NoticeService service = NoticeService.getInstance();
-
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
@@ -31,6 +30,11 @@ public class AdminController implements Controller {
 		} else if ("/admin/intro/member.do".equals(path)) {
 			member(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/member.jsp");
+		} else if ("/admin/intro/edit.do".equals(path)) {
+			memberEdit(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/admin/intro/edit.jsp");
+		} else if ("/admin/intro/upload.do".equals(path)) {
+			memberUpload(request, response);
 		} else if ("/admin/intro/organization.do".equals(path)) {
 			organization(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/editorView.jsp");
@@ -85,7 +89,7 @@ public class AdminController implements Controller {
 		} else if ("/admin/mbr/upload.do".equals(path)) {
 			upload(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/upload.jsp");
-			
+
 			// mbrManagement
 		} else if ("/admin/mbrManagement/mbrTable.do".equals(path)) {
 			mbrTable(request, response);
@@ -120,6 +124,35 @@ public class AdminController implements Controller {
 		request.setAttribute("subNav", "1");
 		request.setAttribute("location", "협회소개 > 임원소개");
 
+		MemberService service = MemberService.getInstance();
+
+		service.getMemberData(request);
+	}
+
+	private void memberEdit(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		request.setAttribute("subNav", "1");
+		request.setAttribute("location", "협회소개 > 임원소개");
+
+		MemberService service = MemberService.getInstance();
+		String no = request.getParameter("no");
+		if (no != null) {
+			service.getMemberInfo(request);
+		}
+
+	}
+
+	private void memberUpload(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		MemberService service = MemberService.getInstance();
+		String no = request.getParameter("no");
+		if (no == null) {
+			service.insertMember(request);
+		} else {
+			service.updateMember(request , no);
+		}
+		
+		response.sendRedirect("/admin/intro/member.do");
 	}
 
 	private void organization(HttpServletRequest request, HttpServletResponse response)
@@ -202,6 +235,7 @@ public class AdminController implements Controller {
 		request.setAttribute("menu", "notice");
 		request.setAttribute("location", "알림마당 > 공지사항");
 		request.setAttribute("subNav", "3");
+		NoticeService service = NoticeService.getInstance();
 		service.getAdminNoticeList("notice", request);
 	}
 
@@ -210,6 +244,7 @@ public class AdminController implements Controller {
 		request.setAttribute("menu", "press");
 		request.setAttribute("location", "알림마당 > 보도자료");
 		request.setAttribute("subNav", "3");
+		NoticeService service = NoticeService.getInstance();
 		service.getAdminNoticeList("press", request);
 
 	}
@@ -219,6 +254,7 @@ public class AdminController implements Controller {
 		request.setAttribute("menu", "data");
 		request.setAttribute("location", "알림마당 > 정보자료실");
 		request.setAttribute("subNav", "3");
+		NoticeService service = NoticeService.getInstance();
 		service.getAdminNoticeList("data", request);
 
 	}
@@ -228,6 +264,7 @@ public class AdminController implements Controller {
 		request.setAttribute("menu", "notice");
 		request.setAttribute("location", "알림마당 > 공지사항");
 		request.setAttribute("subNav", "3");
+		NoticeService service = NoticeService.getInstance();
 		service.getNotice(request, false);
 	}
 
@@ -236,6 +273,7 @@ public class AdminController implements Controller {
 		request.setAttribute("menu", "press");
 		request.setAttribute("location", "알림마당 > 보도자료");
 		request.setAttribute("subNav", "3");
+		NoticeService service = NoticeService.getInstance();
 		service.getNotice(request, false);
 	}
 
@@ -244,6 +282,7 @@ public class AdminController implements Controller {
 		request.setAttribute("menu", "data");
 		request.setAttribute("location", "알림마당 > 정보자료실");
 		request.setAttribute("subNav", "3");
+		NoticeService service = NoticeService.getInstance();
 		service.getNotice(request, false);
 	}
 
@@ -259,26 +298,25 @@ public class AdminController implements Controller {
 			throws ServletException, IOException {
 		request.setAttribute("location", "회원사 > 회원사소개");
 		request.setAttribute("subNav", "4");
-		
+
 		String no = request.getParameter("no");
 		request.setAttribute("no", no);
-		
+
 	}
-	
-	private void upload(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
+
+	private void upload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String mode = request.getParameter("mode");
-		
+
 		if (mode == null) {
 			response.sendRedirect("/index.do");
 		} else if ("new".equals(mode)) {
 			UserService service = UserService.getInstance();
 			service.insertUpload(request);
 		} else if ("update".equals(mode)) {
-			
+
 		}
-		
+
 	}
 
 	// mbrManagement
@@ -315,7 +353,7 @@ public class AdminController implements Controller {
 		}
 		request.setAttribute("subNav", "3");
 		request.setAttribute("menu", menu);
-
+		NoticeService service = NoticeService.getInstance();
 		if ("notice".equals(menu)) {
 			request.setAttribute("location", "알림마당 > 공지사항");
 			request.setAttribute("url", "/admin/notice/notice/list.do");
