@@ -31,10 +31,13 @@ public class Ajax extends HttpServlet {
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
 
-			boolean flag = service.checkLogin(id, pw);
-			if (flag) {
-				request.getSession().setAttribute("id", id);
+			String[] userData = service.checkLogin(id, pw);
+			boolean flag = false;
+
+			if (!"".equals(userData[0])) {
+				request.getSession().setAttribute("userData", userData);
 				service.updateLastLogin(id);
+				flag = true;
 			}
 			out.print(flag);
 		} else if ("checkId".equals(method)) {
@@ -72,7 +75,7 @@ public class Ajax extends HttpServlet {
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
 			int authority = Integer.parseInt(request.getParameter("authority"));
-			service.recognizeUser(authority ,id);
+			service.recognizeUser(authority, id);
 		} else if ("deleteNotice".equals(method)) {
 			NoticeService service = NoticeService.getInstance();
 			service.deleteNotice(request);

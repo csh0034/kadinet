@@ -16,28 +16,28 @@ public class UserDao extends DBCon {
 		return dao;
 	}
 
-	public boolean checkLogin(String id, String pw) {
-		boolean success = false;
+	public String[] checkLogin(String id, String pw) {
+		String userData[] = { "", "", "" };
 		try {
 			conStart();
-			sql = "select count(*) from user where user_id=? and user_pw=?";
+			sql = "select * from user where user_id=? and user_pw=?";
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pw);
 			rs = pstmt.executeQuery();
 
-			rs.next();
-			if (rs.getInt(1) > 0) {
-				success = true;
-
+			if (rs.next()) {
+				userData[0] = rs.getString("user_id");
+				userData[1] = rs.getString("user_name");
+				userData[2] = rs.getString("user_authority");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			conClose();
 		}
-		return success;
+		return userData;
 	}
 
 	public boolean checkId(String id) {
@@ -157,6 +157,7 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 	}
+
 	public void recognizeUser(int authority, String id) {
 		try {
 			conStart();
