@@ -94,7 +94,7 @@
 					접속하신 사이트의 메인페이지로 이동하시겠습니까?<br />
 				</p>
 				<div class="btn_main_area">
-					<a href="http://localhost/index.do" class="btn_main">메인페이지로 이동</a>
+					<a href="/index.do" class="btn_main">메인페이지로 이동</a>
 				</div>
 			</div>
 			<div class="er_footer">
