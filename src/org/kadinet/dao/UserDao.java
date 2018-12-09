@@ -174,6 +174,40 @@ public class UserDao extends DBCon {
 			conClose();
 		}
 	}
+
+	public Vector<UserBean> getUser3MonthList() {
+		Vector<UserBean> list = new Vector<UserBean>();
+		try {
+			conStart();
+			sql = "select *  from user where user_authority != 3 and user_authority !=0 "
+					+ "and date(user_regdate) >= date(subdate(now(), interval 3 month)) "
+					+ "order by user_regdate desc";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				UserBean bean = new UserBean();
+				bean.setUser_id(rs.getString("user_id"));
+				bean.setUser_name(rs.getString("user_name"));
+				bean.setUser_gender(rs.getString("user_gender"));
+				bean.setUser_age(rs.getString("user_age"));
+				bean.setUser_phone(rs.getString("user_phone"));
+				bean.setUser_email(rs.getString("user_email"));
+				bean.setUser_addr1(rs.getString("user_addr1"));
+				bean.setUser_regdate(rs.getDate("user_regdate"));
+				bean.setUser_last_login(rs.getDate("user_last_login"));
+				bean.setUser_authority(rs.getInt("user_authority"));
+				list.add(bean);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+
+		return list;
+	}
 }
 /*
  * public String findId(String name, String phone) { String user_id = null; try

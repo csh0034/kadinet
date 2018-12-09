@@ -20,6 +20,7 @@ public class AdminController implements Controller {
 			throws ServletException, IOException {
 
 		if ("/admin/index.do".equals(path)) {
+			index(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/index/index.jsp");
 		} else if ("/admin/intro/greeting.do".equals(path)) {
 			greeting(request, response);
@@ -97,6 +98,12 @@ public class AdminController implements Controller {
 		} else if ("/admin/editor.do".equals(path)) {
 			editor(request, response);
 		}
+	}
+	
+	private void index(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		UserService service = UserService.getInstance();
+		service.getUser3MonthList(request);
 	}
 
 	// intro
