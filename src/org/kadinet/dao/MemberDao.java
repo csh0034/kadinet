@@ -9,7 +9,7 @@ public class MemberDao extends DBCon {
 	private static MemberDao dao = new MemberDao();
 
 	private MemberDao() {
-
+ 
 	}
 
 	public static MemberDao getInstance() {
