@@ -89,7 +89,7 @@
 			var myLineChart = new Chart(ctx, {
 				type : 'line',
 				data : {
-					labels : [ "01월", "02월", "03월", "04월", "05월", "06월", "07월",
+					labels : [ "18-01", "18-02", "18-03", "18-04", "18.01", "06월", "07월",
 							"08월", "09월", "10월", "11월", "12월" ],
 					datasets : [ {
 						label : "접속자수",
@@ -138,10 +138,6 @@
 			});
 
 			$(function() {
-				var now = new Date();
-				var tmp = 'Updated ' + now.getHours() + ':' + now.getMinutes();
-				$('.time').html(tmp);
-
 				$('#dataTable1').dataTable({
 					"language" : {
 						"emptyTable" : "최근 3개월 이내 가입한 회원이 없습니다"
