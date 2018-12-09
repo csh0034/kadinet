@@ -7,8 +7,6 @@
 				<li><a href="#">개인정보처리방침 </a>
 					<p>|</p></li>
 				<li><a href="#">이메일무단수집거부</a>
-					<p>|</p></li>
-				<li><a href="#">사이트맵</a></li>
 			</ul>
 			<div class="sub">
 				<p id="tit">사단법인 한국디지털융합산업진흥협회</p>

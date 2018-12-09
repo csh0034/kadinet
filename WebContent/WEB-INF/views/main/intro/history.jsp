@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
-		<div class="login_menu_img">
+		<div class="menu_img intro_menu_img">
 			<b>협회소개</b>
 		</div>
 		<div class="main">
@@ -26,108 +27,28 @@
 					</div>
 					<div class="contents_box_bottom">
 						<div class="history_bx">
-							<dl class="dl_bx">
-								<dt>2012</dt>
-								<dd>
-									<ul>
-									   <li>
-									    <strong class="date">11</strong>
-									    <p class="txt"> 컨퍼런스 예정(코엑스) </p>
-									  </li>	
-									  <li>
-									    <strong class="date">10</strong>
-									    <p class="txt"> www.jobmentors.co.kr 개통, 사업준비 </p>
-									  </li>	
-									  
-									    <li>
-									    <strong class="date">05</strong>
-									    <p class="txt"> 사무실 이전 및 임원 변경 </p>
-									  </li>	
-									  
-									  <li>
-									    <strong class="date">04</strong>
-									    <p class="txt"> 사업목적, 명칭 등 정관 개정</p>
-									  </li>	
-									  <li>
-									    <strong class="date">00</strong>
-									    <p class="txt"> 도약  </p>
-									  </li>
-									</ul>
-								</dd>
-							</dl>
-							
-							<dl class="dl_bx">
-								<dt>2011</dt>
-								<dd>
-									<ul>
-									   <li>
-									    <strong class="date">10</strong>
-									    <p class="txt"> workshop 개최 </p>
-									  </li>	
-									</ul>
-								</dd>
-							</dl>
-							
-							<dl class="dl_bx">
-								<dt>2010</dt>
-								<dd>
-									<ul>
-									   <li>
-									    <strong class="date">01</strong>
-									    <p class="txt"> 안정화 </p>
-									  </li>	
-									</ul>
-								</dd>
-							</dl>
-							
-							<dl class="dl_bx">
-								<dt>2009</dt>
-								<dd>
-									<ul>
-									  <li>
-									    <strong class="date">12</strong>
-									    <p class="txt"> IT융합진흥원 설립 </p>
-									  </li>
-									  <li>
-									    <strong class="date">11</strong>
-									    <p class="txt"> 디지털정보학회 합동 학술발표회 </p>
-									  </li>
-									  <li>
-									    <strong class="date">08</strong>
-									    <p class="txt"> 협회 web site open (www.kadi.re.kr) </p>
-									  </li>
-									  <li>
-									    <strong class="date">07</strong>
-									    <p class="txt"> 디지털정보학회 합동 세미나 (교육회관) </p>
-									  </li>
-									  <li>
-									    <strong class="date">05</strong>
-									    <p class="txt"> 사업자등록 (서울동대문세무서) </p>
-									  </li>
-									  <li>
-									    <strong class="date">03</strong>
-									    <p class="txt"> 법인설립 </p>
-									  </li>
-									  <li>
-									    <strong class="date">01</strong>
-									    <p class="txt"> 발기인 총회, 사무소 개소 </p>
-									  </li>
-									</ul>
-								</dd>
-							</dl>
-							
-							<dl class="dl_bx">
-								<dt>2008</dt>
-								<dd>
-									<ul>
-									   <li>
-									    <strong class="date">11</strong>
-									    <p class="txt"> 단체구성 준비모임 </p>
-									  </li>	
-									</ul>
-								</dd>
-							</dl>
-							
+							<c:set var="year" value="" />
+							<c:forEach var="item" items="${historyList}" varStatus="i">
+								<c:if test="${item.getHistory_year() != year && year != ''}">
+									${'</ul></dd></dl>'}
+								</c:if>
+								<c:if test="${item.getHistory_year() != year}">
+									<c:set var="year" value="${item.getHistory_year() }" />
+									${"<dl class='dl_bx'>"} 
+									<dt>${item.getHistory_year() }</dt>
+									<dd>${'<ul>'}
+								</c:if>
+								<li><c:choose>
+										<c:when test='${ item.getHistory_month() < 10}'>
+											<strong class="date">0${item.getHistory_month() }</strong>
+										</c:when>
+										<c:otherwise>
+											<strong class="date">${item.getHistory_month() }</strong>
+										</c:otherwise>
+									</c:choose>
+									<p class="txt">${item.getHistory_data() }</p></li>
+							</c:forEach>
+
 						</div>
 					</div>
 				</div>

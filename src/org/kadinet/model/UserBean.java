@@ -1,18 +1,23 @@
 package org.kadinet.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class UserBean {
 	private String user_id;
 	private String user_pw;
 	private String user_name;
 	private String user_email;
+	private String user_age;
+	private String user_gender;
 	private String user_phone;
 	private Date user_regdate;
 	private	Date user_last_login;
-	private String user_authority;
+	private int user_authority;
 	private String user_email_receive;
 	private String user_sms_receive;
+	private String user_zipCode;
+	private String user_addr1;
+	private String user_addr2;
 	
 	public String getUser_id() {
 		return user_id;
@@ -38,6 +43,18 @@ public class UserBean {
 	public void setUser_email(String user_email) {
 		this.user_email = user_email;
 	}
+	public String getUser_age() {
+		return user_age;
+	}
+	public void setUser_age(String user_age) {
+		this.user_age = user_age;
+	}
+	public String getUser_gender() {
+		return user_gender;
+	}
+	public void setUser_gender(String user_gender) {
+		this.user_gender = user_gender;
+	}
 	public String getUser_phone() {
 		return user_phone;
 	}
@@ -56,10 +73,10 @@ public class UserBean {
 	public void setUser_last_login(Date user_last_login) {
 		this.user_last_login = user_last_login;
 	}
-	public String getUser_authority() {
+	public int getUser_authority() {
 		return user_authority;
 	}
-	public void setUser_authority(String user_authority) {
+	public void setUser_authority(int user_authority) {
 		this.user_authority = user_authority;
 	}
 	public String getUser_email_receive() {
@@ -74,6 +91,23 @@ public class UserBean {
 	public void setUser_sms_receive(String user_sms_receive) {
 		this.user_sms_receive = user_sms_receive;
 	}
-	
+	public String getUser_zipCode() {
+		return user_zipCode;
+	}
+	public void setUser_zipCode(String user_zipCode) {
+		this.user_zipCode = user_zipCode;
+	}
+	public String getUser_addr1() {
+		return user_addr1;
+	}
+	public void setUser_addr1(String user_addr1) {
+		this.user_addr1 = user_addr1;
+	}
+	public String getUser_addr2() {
+		return user_addr2;
+	}
+	public void setUser_addr2(String user_addr2) {
+		this.user_addr2 = user_addr2;
+	}
 	
 }

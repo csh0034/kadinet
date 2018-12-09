@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +12,30 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d64ae3dc1ef35b24364c94f0fb547d1b"></script>
+<script>
+	window.onload = function() {
+ 		var lat = ${direcList.getVisit_lat() };
+		var lng = ${direcList.getVisit_lng()};
+		var container = document.getElementById('map');
+		var options = {
+			center : new daum.maps.LatLng(lat, lng),
+			level : 3 
+		};
+		var marker = new daum.maps.Marker({
+			position : new daum.maps.LatLng(lat, lng)
+		});
+
+		var map = new daum.maps.Map(container, options);
+		marker.setMap(map);
+	} 
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
-		<div class="login_menu_img">
+		<div class="menu_img intro_menu_img">
 			<b>협회소개</b>
 		</div>
 		<div class="main">
@@ -25,19 +46,20 @@
 						<h3 class="location">오시는길</h3>
 					</div>
 					<div class="contents_box_bottom">
+						<div id="map"></div>
 						<div class="visit_table">
 							<table>
-								<tr>
+								<tr> 
 									<th>주소</th>
-									<td>서울시 중랑구 면목동 502-1(면목역 2번출구, 사가정역 1번출구)</td>
+									<td>${direcList.getVisit_address() }</td>
 								</tr>
 								<tr>
 									<th>전화번호</th>
-									<td>02-491-9768</td>
+									<td>${direcList.getVisit_phone() }</td>
 								</tr>
 								<tr>
 									<th>팩스</th>
-									<td>02-491-5864</td>
+									<td>${direcList.getVisit_fax() }</td>
 								</tr>
 							</table>
 						</div>

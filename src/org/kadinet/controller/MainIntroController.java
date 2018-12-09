@@ -5,6 +5,10 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.kadinet.service.HistoryService;
+import org.kadinet.service.MemberService;
+import org.kadinet.service.MenuService;
+import org.kadinet.service.VisitService;
 import org.kadinet.util.HttpUtil;
 
 public class MainIntroController implements Controller {
@@ -18,6 +22,9 @@ public class MainIntroController implements Controller {
 		} else if ("/intro/history.do".equals(path)) {
 			history(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/intro/history.jsp");
+		} else if ("/intro/member.do".equals(path)) {
+			member(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/main/intro/member.jsp");
 		} else if ("/intro/organization.do".equals(path)) {
 			organization(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/intro/organization.jsp");
@@ -30,24 +37,40 @@ public class MainIntroController implements Controller {
 
 	private void greeting(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("greeting", request);
 
 		request.setAttribute("page", "greeting");
-
 	}
 
 	private void history(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HistoryService service = HistoryService.getInstance();
 		request.setAttribute("page", "history");
+		service.getHistoryList(request);
 
+	}
+
+	private void member(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("page", "member");
+
+		MemberService service = MemberService.getInstance();
+
+		service.getMemberData(request);
 	}
 
 	private void organization(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setAttribute("page", "organization");
 
+		MenuService service = MenuService.getInstance();
+		service.getMenuData("organization", request);
+
 	}
 
 	private void visit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		VisitService service = VisitService.getInstance();
 		request.setAttribute("page", "visit");
+		service.getDirectionInfo(request);
 	}
 }

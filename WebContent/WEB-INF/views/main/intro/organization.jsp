@@ -14,7 +14,7 @@
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
-		<div class="login_menu_img">
+		<div class="menu_img intro_menu_img">
 			<b>협회소개</b>
 		</div>
 		<div class="main">
@@ -25,7 +25,10 @@
 						<h3 class="location">조직도</h3>
 					</div>
 					<div class="contents_box_bottom">
-						<div style="width:100%; height: 400px">임시 div</div>
+						<div class="organization_box">
+							${bean.getMenu_content() }
+							<!-- <img src="/img/main/intro/group.png" alt="조직도"> -->
+						</div>
 					</div>
 				</div>
 			</article>

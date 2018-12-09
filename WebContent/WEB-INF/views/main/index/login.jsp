@@ -15,7 +15,7 @@
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
 	<section class="wrap">
-		<div class="login_menu_img">
+		<div class="menu_img index_menu_img">
 			<b>회원</b>
 		</div>
 		<div class="main">
@@ -37,9 +37,9 @@
 										<button type="submit" class="login_btn">로그인</button>
 									</div>
 									<div class="signup_area">
-										<span class="signup_text">계정이 없으신가요?</span> <a href="#"
+										<span class="signup_text">계정이 없으신가요?</span> <a href="/join.do"
 											class="signup_btn">회원가입</a><br> <span
-											class="signup_text">계정을 잊으셨나요?</span> <a href="#"
+											class="signup_text">계정을 잊으셨나요?</span> <a href="/find.do"
 											class="signup_btn">ID/PW 찾기</a><br>
 									</div>
 								</form>
