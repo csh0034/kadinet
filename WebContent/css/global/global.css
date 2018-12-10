@@ -55,3 +55,72 @@ input::-moz-placeholder {
 	cursor: pointer;
 	transition: all .1s ease-out;
 }
+
+
+/* popUp */
+
+.popUp {
+	display: none;
+	position: absolute;
+	width: 560px;
+	text-align: left;
+	background-color: #fff;
+	top: 50%;
+	left: 50%;
+	margin-left: -250px;
+	margin-top: -300px;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+.popUp .pop_tit {
+	background-color: #007bff;
+	overflow: hidden;
+	padding: 20px;
+}
+
+.popUp .pop_tit span {
+	color: #fff;
+	float: left;
+	font-size: 16px;
+}
+
+.popUp .pop_tit .pop_close {
+	color: #fff;
+	float: right;
+	cursor: pointer;
+}
+
+.popUp .pop_tit .pop_close:hover {
+	color: #0069d9;
+}
+
+#pop1 .pop_text {
+	width: 100%;
+	height: 564px;
+	overflow: auto;
+	padding: 20px;
+	font-size: 14px;
+}
+
+#pop2 .pop_text {
+	width: 102%;
+	height: 100px;
+	padding: 20px;
+	font-size: 14px;
+}
+
+#pop2 {
+	margin-top: -70px;
+}
+
+.pop_bk {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 900;
+	background-color: rgba(0,0,0,0.5);
+}
