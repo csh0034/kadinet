@@ -239,4 +239,6 @@ CREATE TABLE `member` (
   `member_link` varchar(100) NOT NULL,
   `member_order` int(100) NOT NULL,
   PRIMARY KEY (`member_no`)
-) 
+)
+
+INSERT INTO `member` VALUES (1,'d.img','김재환','회장','01028123384','디지털융합협회','kadinet.org',-1);
