@@ -28,7 +28,6 @@ public class Ajax extends HttpServlet {
 		if (method == null) {
 			response.sendRedirect("/index.do");
 		} else if ("checkLogin".equals(method)) {
-			request.getSession().invalidate();
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");

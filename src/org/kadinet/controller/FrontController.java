@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.kadinet.util.HttpUtil;
 
@@ -51,7 +52,7 @@ public class FrontController extends HttpServlet {
 		list.put("/mbr/leave.do", new MainMbrController());
 
 		list.put("/admin/index.do", new AdminController());
-		
+
 		list.put("/admin/intro/greeting.do", new AdminController());
 		list.put("/admin/intro/history.do", new AdminController());
 		list.put("/admin/intro/member.do", new AdminController());
@@ -59,30 +60,30 @@ public class FrontController extends HttpServlet {
 		list.put("/admin/intro/upload.do", new AdminController());
 		list.put("/admin/intro/organization.do", new AdminController());
 		list.put("/admin/intro/visit.do", new AdminController());
-		
+
 		list.put("/admin/notice/notice/list.do", new AdminController());
 		list.put("/admin/notice/press/list.do", new AdminController());
 		list.put("/admin/notice/data/list.do", new AdminController());
 		list.put("/admin/notice/notice/detail.do", new AdminController());
 		list.put("/admin/notice/press/detail.do", new AdminController());
 		list.put("/admin/notice/data/detail.do", new AdminController());
-		
+
 		list.put("/admin/notice/edit.do", new AdminController());
-		
+
 		list.put("/admin/business/career.do", new AdminController());
 		list.put("/admin/business/corporation.do", new AdminController());
 		list.put("/admin/business/mentoring.do", new AdminController());
 		list.put("/admin/business/support.do", new AdminController());
 		list.put("/admin/business/education.do", new AdminController());
-		
+
 		list.put("/admin/mbr/memberinfo.do", new AdminController());
 		list.put("/admin/mbr/edit.do", new AdminController());
 		list.put("/admin/mbr/upload.do", new AdminController());
-		
+
 		list.put("/admin/mbrManagement/mbrTable.do", new AdminController());
-		
+
 		list.put("/admin/editor.do", new AdminController());
-		
+
 	}
 
 	@Override
@@ -91,10 +92,11 @@ public class FrontController extends HttpServlet {
 		String url = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String path = url.substring(contextPath.length());
-
+		HttpSession session = request.getSession();
 		Controller subController = list.get(path);
 
 		if (subController != null) {
+			HttpUtil.visit(session);
 			subController.execute(request, response, path);
 		} else {
 			HttpUtil.forward(request, response, "/errorPage/error404.jsp");

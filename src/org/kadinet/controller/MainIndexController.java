@@ -27,7 +27,7 @@ public class MainIndexController implements Controller {
 			login(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/login.jsp");
 		} else if ("/logout.do".equals(path)) {
-			request.getSession().invalidate();
+			request.getSession().removeAttribute("userData");
 			response.sendRedirect("/index.do");
 		} else if ("/find.do".equals(path)) {
 			find(request, response);
