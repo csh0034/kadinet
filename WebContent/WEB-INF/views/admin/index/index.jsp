@@ -23,7 +23,7 @@
 						<i class="fas fa-chart-area"></i> 월간 방문자 현황
 					</div>
 					<div class="card-body">
-						<canvas id="myAreaChart" width="100%" height="30"></canvas>
+						<canvas id="myAreaChart" class="mainchart" width="100%" height="30"></canvas>
 					</div>
 					<div class="card-footer small text-muted time"></div>
 				</div>
