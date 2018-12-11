@@ -145,5 +145,11 @@ public class MbrService {
 		}
 
 	}
+	
+	public void getMbrInfo(HttpServletRequest request) {
+		String no = request.getParameter("no");
+		request.setAttribute("no", no);
+		request.setAttribute("bean", dao.getMbr(no));
+	}
 
 }

@@ -67,10 +67,7 @@ public class MbrDao extends DBCon {
 		Vector<MbrBean> list = new Vector<MbrBean>();
 		try {
 			conStart();
-			sql = "select *,DATE_FORMAT(mbr_regdate, '%Y-%m-%d') as reg from mbr left outer join mbr_img\r\n"
-					+ "on mbr.mbr_no = mbr_img.mbr_no where "
-					+ "(mbr_img.img_order = (select min(img_order) from mbr_img) \r\n"
-					+ "or mbr_img.img_order is null)\r\n" + "order by mbr.mbr_no desc limit ?,?";
+			sql = "select * from mbr order by mbr_order desc limit ?,?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
@@ -97,66 +94,7 @@ public class MbrDao extends DBCon {
 		}
 		return list;
 	}
-
-	public Vector<MbrBean> getMbrList() {
-		Vector<MbrBean> mbrList = new Vector<MbrBean>();
-		try {
-			conStart();
-
-			sql = "select *,DATE_FORMAT(mbr_regdate, '%Y-%m-%d') as reg from mbr left outer join mbr_img\r\n"
-					+ "on mbr.mbr_no = mbr_img.mbr_no where \r\n"
-					+ "(mbr_img.img_order = (select min(img_order) from mbr_img) \r\n"
-					+ "or mbr_img.img_order is null) " + "order by mbr.mbr_no desc";
-			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-				MbrBean bean = new MbrBean();
-				bean.setMbr_no(rs.getInt("mbr_no"));
-				bean.setMbr_img(rs.getString("mbr_img"));
-				bean.setMbr_name(rs.getString("mbr_name"));
-				bean.setMbr_ceo(rs.getString("mbr_ceo"));
-				bean.setMbr_estdate(rs.getString("mbr_estdate"));
-				bean.setMbr_regdate(rs.getString("mbr_regdate"));
-				bean.setMbr_phone(rs.getString("mbr_phone"));
-				bean.setMbr_link(rs.getString("mbr_link"));
-				bean.setMbr_order(rs.getInt("mbr_order"));
-				mbrList.add(bean);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			conClose();
-		}
-		return mbrList;
-	}
 	
-	public Vector<MbrBean> getImgList(String no) {
-		Vector<MbrBean> list = new Vector<MbrBean>();
-		try {
-			conStart();
-			sql = "select * from mbr_img where mbr_no= ? order by img_order";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, no);
-
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-				MbrBean bean = new MbrBean();
-				bean.setImg_no(rs.getInt("img_no"));
-				bean.setImg_oriname(rs.getString("img_oriname"));
-				bean.setImg_rename(rs.getString("img_rename"));
-				bean.setImg_size(rs.getString("img_size"));
-				list.add(bean);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			conClose();
-		}
-		return list;
-	}
-
 	public void insertMbr(MbrBean bean) {
 		try {
 			conStart();

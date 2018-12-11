@@ -309,9 +309,13 @@ public class AdminController implements Controller {
 		request.setAttribute("location", "회원사 > 회원사소개");
 		request.setAttribute("subNav", "4");
 
+		MbrService service = MbrService.getInstance();
 		String no = request.getParameter("no");
-		request.setAttribute("no", no);
-
+		
+		if (no != null) {
+			service.getMbrInfo(request);
+		}
+		
 	}
 
 	private void mbrUpload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

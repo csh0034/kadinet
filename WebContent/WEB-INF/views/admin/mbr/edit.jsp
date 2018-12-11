@@ -43,15 +43,23 @@
 									<tr class="lineTop">
 										<th>회사명</th>
 										<td><input type="text" class="form-control"
-											name="mbr_name" value="${bean.getMbr_name() }" required ></td>
+											name="mbr_name" value="${bean.getMbr_name() }" required></td>
 									</tr>
 									<tr>
 										<th>로고</th>
 										<td><div class="filebox">
-												<input class="upload-name" value="${bean.getMbr_img()}" disabled="disabled">
-												<label for="input-file0">업로드</label> <input type="file"
-													 id="input-file0" class="upload-hidden"
-													name="mbr_img" required>
+												<input class="upload-name" value="${bean.getMbr_img()}"
+													disabled="disabled"> <label for="input-file0">업로드</label>
+												<c:choose>
+													<c:when test="${empty no}">
+														<input type="file" id="input-file0" class="upload-hidden"
+															name="mbr_img" required />
+													</c:when>
+													<c:when test="${!empty no}">
+														<input type="file" id="input-file0" class="upload-hidden"
+															name="mbr_img"/>
+													</c:when>
+												</c:choose>
 											</div></td>
 									</tr>
 									<tr>
@@ -67,22 +75,26 @@
 									<tr>
 										<th>설립일</th>
 										<td><input type="text" class="form-control"
-											name="mbr_estdate" value="${bean.getMbr_estdate() }" placeholder="ex) yyyy-mm-dd"  required></td>
+											name="mbr_estdate" value="${bean.getMbr_estdate() }"
+											placeholder="ex) yyyy-mm-dd" required></td>
 									</tr>
 									<tr>
 										<th>가입일</th>
 										<td><input type="text" class="form-control"
-											name="mbr_regdate" value="${bean.getMbr_regdate() }" placeholder="ex) yyyy-mm-dd" required></td>
+											name="mbr_regdate" value="${bean.getMbr_regdate() }"
+											placeholder="ex) yyyy-mm-dd" required></td>
 									</tr>
 									<tr>
 										<th>전화번호</th>
-										<td><input type="number" class="form-control"
-											name="mbr_phone" value="${bean.getMbr_phone() }" placeholder="숫자만 입력" required></td>
+										<td><input type="text" class="form-control"
+											name="mbr_phone" value="${bean.getMbr_phone() }"
+											placeholder="숫자만 입력" required></td>
 									</tr>
 									<tr class="lineBottom">
 										<th>정렬</th>
 										<td><input type="number" class="form-control"
-											name="mbr_order" value="${bean.getMbr_order() }" placeholder="숫자만 입력" required></td>
+											name="mbr_order" value="${bean.getMbr_order() }"
+											placeholder="숫자만 입력" required></td>
 									</tr>
 								</table>
 							</div>
