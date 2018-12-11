@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,43 @@
 <link href="/css/admin/input_file_design.css" rel="stylesheet">
 <script src="/boot/vendor/jquery/jquery.min.js"></script>
 <script src="/js/admin/fileUpload.js"></script>
+<c:if test="${!empty no && no != '1'}">
+	<c:set var='menu' value="update" />
+</c:if>
+<c:if test="${no !='1'}">
+	<script>
+		function checkForm() {
+			var reg = /^[0-9]{1,9}$/g;
+			var order = $('#order').val();
+			var mode = '${menu}';
+
+			if (!reg.test(order)) {
+				alert('정렬은 숫자만 입력가능하며 최대 9자리입니다');
+				$('#order').focus();
+				return false;
+			} else {
+				if (mode == 'update') {
+					if (!confirm('수정 하시겠습니까?')) {
+						return false;
+					}
+				} else {
+					if (!confirm('저장 하시겠습니까?')) {
+						return false;
+					}
+				}
+			}
+		}
+	</script>
+</c:if>
+<c:if test="${no =='1'}">
+	<script>
+		function checkForm() {
+			if (!confirm('수정 하시겠습니까?')) {
+				return false;
+			}
+		}
+	</script>
+</c:if>
 </head>
 <body id="page-top">
 	<%@ include file="/WEB-INF/include/admin/header.jsp"%>
@@ -31,7 +69,7 @@
 						</c:when>
 					</c:choose>
 					<form method=post action="/admin/mbr/upload.do${tmp}" id="form1"
-						enctype="multipart/form-data">
+						enctype="multipart/form-data" onsubmit="return checkForm();">
 						<div class="card-header"></div>
 						<div class="card-body">
 							<div class="notice_bx" style="width: 825px; margin: 0 auto;">
@@ -57,15 +95,10 @@
 													</c:when>
 													<c:when test="${!empty no}">
 														<input type="file" id="input-file0" class="upload-hidden"
-															name="mbr_img"/>
+															name="mbr_img" />
 													</c:when>
 												</c:choose>
 											</div></td>
-									</tr>
-									<tr>
-										<th>링크</th>
-										<td><input type="text" class="form-control"
-											name="mbr_link" value="${bean.getMbr_link() }" required></td>
 									</tr>
 									<tr>
 										<th>대표이사</th>
@@ -90,11 +123,17 @@
 											name="mbr_phone" value="${bean.getMbr_phone() }"
 											placeholder="숫자만 입력" required></td>
 									</tr>
+									<tr>
+										<th>링크</th>
+										<td><input type="text" class="form-control"
+											name="mbr_link" placeholder="URL입력 ( ex: kadinet.org )"
+											value="${bean.getMbr_link() }" required></td>
+									</tr>
 									<tr class="lineBottom">
 										<th>정렬</th>
-										<td><input type="number" class="form-control"
+										<td><input type="text" class="form-control" id="order"
 											name="mbr_order" value="${bean.getMbr_order() }"
-											placeholder="숫자만 입력" required></td>
+											placeholder="숫자만 입력 ,최대 9자리" required></td>
 									</tr>
 								</table>
 							</div>

@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.kadinet.service.MbrService;
 import org.kadinet.util.HttpUtil;
 
 public class MainMbrController implements Controller {
@@ -28,7 +29,10 @@ public class MainMbrController implements Controller {
 			throws ServletException, IOException {
 
 		request.setAttribute("page", "memberinfo");
+		
+		MbrService service = MbrService.getInstance();
 
+		service.getMbrList(request);
 	}
 
 	private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

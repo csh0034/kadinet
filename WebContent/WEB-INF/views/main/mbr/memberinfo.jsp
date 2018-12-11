@@ -10,6 +10,17 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script>
+	function pageing(page) {
+		document.readFrm.nowPage.value = page;
+		document.readFrm.submit();
+	}
+	
+	function block(value) {
+		document.readFrm.nowPage.value = 10 * (value - 1) + 1;
+		document.readFrm.submit();
+	}
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -26,151 +37,44 @@
 					</div>
 					<div class="contents_box_bottom">
 						<div class="mbrinfo_box">
-							<ol>							
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_cnc.jpg" alt="SK C&amp;C" >
-									</span>
-										<b>SK C&amp;C</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>
-										<li>
-											<span>가입일 : 2016-08-01</span>
-										</li>
-									</ul>		
-								</li>	
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_dae.jpg" alt="대우직업능력개발원" >
-									</span>
-										<b><em></em>대우직업능력개발원</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>
-										<li>
-											<span>가입일 : 2016-08-01</span>
-										</li>
-									</ul>		
-								</li>
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_han.jpg" alt="한성대학교" >
-									</span>
-										<b><em></em>한성대학교</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>
-										<li>
-											<span>가입일 : 2016-08-01</span>
-										</li>
-									</ul>		
-								</li>
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_hye.jpg" alt="혜령씨엔티" >
-									</span>
-										<b><em></em>혜령씨엔티</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>
-										<li>
-											<span>가입일 : 2016-08-01</span>
-										</li>
-									</ul>		
-								</li>
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_job.jpg" alt="잡멘토스" >
-									</span>
-										<b><em></em>잡멘토스</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>
-										<li>
-											<span>가입일 : 2016-08-01</span>
-										</li>
-									</ul>		
-								</li>
-								<li>
-									<span class="img">
-										<img src="/img/main/mbr/m_may.jpg" alt="메이젠" >
-									</span>
-										<b><em></em>메이젠</b>
-									<ul class="mem_data">
-										<li>
-											<span>대표이사 : 안승은</span>
-										</li>
-										<li>
-											<span>설립일 : 2016-08-01</span>
-										</li>
-										<li>
-											<span>전화번호 : 051-556-1645</span>
-										</li>
-										<li>
-											<span>가입일 : 2016-08-01</span>
-										</li>
-									</ul>		
-								</li>
+							<ol>
+								<c:forEach var="item" items="${mbrList}" varStatus="i">
+									<li><a><span class="img"> <img
+											style="cursor: pointer;"
+											onclick="location.href='http://${item.getMbr_link()}'"
+											src="/file/mbr/${item.getMbr_img() }">
+									</span></a> <b>SK C&amp;C</b>
+										<ul class="mem_data">
+											<li><span>대표이사 : ${item.getMbr_name() }</span></li>
+											<li><span>설립일 : ${item.getMbr_estdate() }</span></li>
+											<li><span>전화번호 : ${item.getMbr_phone() }</span></li>
+											<li><span>가입일 : ${item.getMbr_regdate() }</span></li>
+										</ul></li>
+								</c:forEach>
 							</ol>
 						</div>
 						<div class="paginDiv">
-							<a href="javascript:block('${nowblock - 1 }')">
-								<span class="paging">&lt;</span>
-							</a>
-							<a href="javascript:pageing('${i}')">
-								<span class="paging">1</span>
-							</a>
-							<a href="javascript:pageing('${i}')">
-								<span class="paging">2</span>
-							</a>
-							<a href="javascript:pageing('${i}')">
-								<span class="paging">3</span>
-							</a>
-							<a href="javascript:pageing('${i}')">
-								<span class="paging">4</span>
-							</a>
-							<a href="javascript:pageing('${i}')">
-								<span class="paging">5</span>
-							</a>
-							<a href="javascript:block('${nowblock + 1 }')">
-								<span class="paging">&gt;</span>
-							</a>
+							<c:if test="${totalPage !=0 }">
+								<c:if test="${nowBlock > 1 }">
+									<a href="javascript:block('${nowBlock - 1 }')"> <span
+										class="paging">&lt;</span>
+									</a>
+								</c:if>
+								<c:forEach var="i" begin="${pageStart}" end="${pageEnd}">
+									<a href="javascript:pageing('${i}')"> <span class="paging">${i}</span>
+									</a>
+								</c:forEach>
+								<c:if test="${totalBlock > nowBlock }">
+									<a href="javascript:block('${nowBlock + 1 }')"> <span
+										class="paging">&gt;</span>
+									</a>
+								</c:if>
+							</c:if>
+						</div>
+						<div>
+							<form name="readFrm" method="get">
+								<input type="hidden" name="nowPage" value="${nowPage}">
+							</form>
 						</div>
 					</div>
 				</div>
