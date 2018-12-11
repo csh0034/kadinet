@@ -43,9 +43,9 @@
 											style="cursor: pointer;"
 											onclick="location.href='http://${item.getMbr_link()}'"
 											src="/file/mbr/${item.getMbr_img() }">
-									</span></a> <b>SK C&amp;C</b>
+									</span></a> <b>${item.getMbr_name() }</b>
 										<ul class="mem_data">
-											<li><span>대표이사 : ${item.getMbr_name() }</span></li>
+											<li><span>대표이사 : ${item.getMbr_ceo() }</span></li>
 											<li><span>설립일 : ${item.getMbr_estdate() }</span></li>
 											<li><span>전화번호 : ${item.getMbr_phone() }</span></li>
 											<li><span>가입일 : ${item.getMbr_regdate() }</span></li>
