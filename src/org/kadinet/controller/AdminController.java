@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.kadinet.service.HistoryService;
+import org.kadinet.service.MbrService;
 import org.kadinet.service.MemberService;
 import org.kadinet.service.MenuService;
 import org.kadinet.service.NoticeService;
@@ -88,9 +89,8 @@ public class AdminController implements Controller {
 			memberinfoEdit(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/edit.jsp");
 		} else if ("/admin/mbr/upload.do".equals(path)) {
-			upload(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/admin/mbr/upload.jsp");
-
+			mbrUpload(request, response);
+			response.sendRedirect("/admin/mbr/memberinfo.do");
 			// mbrManagement
 		} else if ("/admin/mbrManagement/mbrTable.do".equals(path)) {
 			mbrTable(request, response);
@@ -99,9 +99,8 @@ public class AdminController implements Controller {
 			editor(request, response);
 		}
 	}
-	
-	private void index(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+
+	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserService service = UserService.getInstance();
 		service.getUser3MonthList(request);
 	}
@@ -156,9 +155,9 @@ public class AdminController implements Controller {
 		if (no == null) {
 			service.insertMember(request);
 		} else {
-			service.updateMember(request , no);
+			service.updateMember(request, no);
 		}
-		
+
 		response.sendRedirect("/admin/intro/member.do");
 	}
 
@@ -299,6 +298,10 @@ public class AdminController implements Controller {
 
 		request.setAttribute("location", "회원사 > 회원사소개");
 		request.setAttribute("subNav", "4");
+		
+		MbrService service = MbrService.getInstance();
+
+		service.getMbrList(request);
 	}
 
 	private void memberinfoEdit(HttpServletRequest request, HttpServletResponse response)
@@ -311,19 +314,14 @@ public class AdminController implements Controller {
 
 	}
 
-	private void upload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		String mode = request.getParameter("mode");
-
-		if (mode == null) {
-			response.sendRedirect("/index.do");
-		} else if ("new".equals(mode)) {
-			UserService service = UserService.getInstance();
-			service.insertUpload(request);
-		} else if ("update".equals(mode)) {
-
+	private void mbrUpload(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		MbrService service = MbrService.getInstance();
+		String no = request.getParameter("no");
+		if (no == null) {
+			service.insertMbr(request);
+		} else {
+			service.updateMbr(request, no);
 		}
-
 	}
 
 	// mbrManagement
