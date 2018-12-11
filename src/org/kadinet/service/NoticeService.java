@@ -51,7 +51,6 @@ public class NoticeService {
 		totalRecord = dao.getCount(category, keyField, keyWord);
 		totalPage = (int) Math.ceil((double) totalRecord / numPerPage);
 		nowBlock = (int) Math.ceil((double) nowPage / pagePerBlock);
-
 		totalBlock = (int) Math.ceil((double) totalPage / pagePerBlock);
 
 		int pageStart = (nowBlock - 1) * pagePerBlock + 1;
