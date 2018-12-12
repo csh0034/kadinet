@@ -1,5 +1,7 @@
-.mainchart {
-	padding-right: 30px;
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.mainchart {
+		padding-right: 30px;
+	}
 }
 
 th {

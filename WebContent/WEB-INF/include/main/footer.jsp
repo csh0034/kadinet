@@ -4,7 +4,7 @@
 	<div class="pop_bk"></div>
 	<div id="pop1" class="popUp pop_ft1">
 		<div class="pop_tit">
-			<span>개인정보처리방침</span> <span class="pop_close">x</span>
+			<span>개인정보처리방침</span> <span class="pop_close"></span>
 		</div>
 		<div class="pop_text">
 				이오기획 주식회사(이하 "회사"라 합니다)는 『개인정보 보호법』,<br>
@@ -153,7 +153,7 @@
 	</div>
 	<div id="pop2" class="popUp">
 		<div class="pop_tit">
-			<span>이메일무단수집거부</span> <span class="pop_close">x</span>
+			<span>이메일무단수집거부</span> <span class="pop_close"></span>
 		</div>
 		<div class="pop_text">
 			본 웹사이트는 게시된 이메일 주소가 전자우편 수집 프로그램이나<br>

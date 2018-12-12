@@ -77,22 +77,26 @@ input::-moz-placeholder {
 	background-color: #007bff;
 	overflow: hidden;
 	padding: 20px;
+	line-height: 18px;
 }
 
 .popUp .pop_tit span {
 	color: #fff;
 	float: left;
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .popUp .pop_tit .pop_close {
-	color: #fff;
+	width: 18px;
+	height: 18px;
 	float: right;
 	cursor: pointer;
+	background: url("/img/main/index/c1.png") no-repeat;
+	background-size: 100% 100%;
 }
 
 .popUp .pop_tit .pop_close:hover {
-	color: #0069d9;
+	background: url("/img/main/index/c2.png") no-repeat;
 }
 
 #pop1 .pop_text {

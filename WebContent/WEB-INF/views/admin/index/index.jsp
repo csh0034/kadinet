@@ -6,6 +6,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>디지털산업협회</title>
+<!-- IE 10 이하  -->
+<!--[if IE]>
+<style>
+	.mainchart {
+		padding-right: 30px;
+	}
+</style>
+<![endif]-->
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
 </head>
 <body id="page-top">

@@ -13,4 +13,9 @@ $(document).ready(function(){
 		$(".popUp").fadeOut();
 		$(".pop_bk").fadeOut();
 	});
+	
+	$(".pop_bk").click(function() {
+		$(".popUp").fadeOut();
+		$(".pop_bk").fadeOut();
+	});
 });
