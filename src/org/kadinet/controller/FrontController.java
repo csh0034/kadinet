@@ -92,9 +92,9 @@ public class FrontController extends HttpServlet {
 		String url = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String path = url.substring(contextPath.length());
-		HttpSession session = request.getSession();
 		Controller subController = list.get(path);
-
+		HttpSession session = request.getSession();
+		
 		if (subController != null) {
 			HttpUtil.visit(session);
 			subController.execute(request, response, path);

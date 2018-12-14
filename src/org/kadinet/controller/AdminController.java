@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.kadinet.service.ConnectionService;
 import org.kadinet.service.HistoryService;
 import org.kadinet.service.MbrService;
 import org.kadinet.service.MemberService;
@@ -103,6 +104,9 @@ public class AdminController implements Controller {
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		UserService service = UserService.getInstance();
 		service.getUser3MonthList(request);
+		
+		ConnectionService service2 = ConnectionService.getInstance();
+		service2.getConnectionList(request);
 	}
 
 	// intro
