@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,12 @@
 <%@ include file="/WEB-INF/include/main/css.jsp"%>
 <%@ include file="/WEB-INF/include/global/js.jsp"%>
 <%@ include file="/WEB-INF/include/main/js.jsp"%>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script type="text/javascript" src="/js/main/join.js"></script>
+<script type="text/javascript" src="/js/main/parsley.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/main/parsley.css">
+<script type="text/javascript" src="/js/main/ko.js"></script>
+
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -27,7 +34,8 @@
 					<div class="contents_box_bottom">
 						<div class="join_bx">
 							<div class="joinform_wrap">
-								<form action="joinProc.do" method="post" id="frm" data-parsley-validate>
+								<form action="updateProc.do" method="post" id="frm"
+									data-parsley-validate>
 									<div class="join_tit">
 										<p>&gt; 정보수정</p>
 									</div>
@@ -37,8 +45,8 @@
 												<label for="u_id">아이디</label>
 											</dt>
 											<dd>
-												user01
-											</dd>
+												<input type="text" name="u_id" id="u_id"
+													 value="${userData[0]}" placeholder="5~20자리 영문, 숫자 조합" /></dd>
 										</dl>
 										<span id="idError" class="errorArea"></span>
 									</div>
@@ -48,7 +56,7 @@
 												<label for="u_pw">비밀번호</label>
 											</dt>
 											<dd>
-												<input type="password" name="u_pw" id="u_pw" value=""
+												<input type="password" name="u_pw" id="u_pw"
 													pattern="(?=.*\d)(?=.*[a-z])(?=.*[~`!@#$%\\^&*()\-]).{5,20}"
 													required data-parsley-required="true"
 													data-parsley-trigger="change" required
@@ -78,7 +86,12 @@
 												<label for="u_name">이름</label>
 											</dt>
 											<dd>
-												홍길동
+												<input type="text" name="u_name" id="u_name"
+													value="${userData[1] }" placeholder="영문 , 한글만 사용 가능"
+													pattern="^[가-힣a-zA-Z]{1,20}$"
+													data-parsley-errors-container="span[id='nameError']"
+													data-parsley-required="true" data-parsley-trigger="change"
+													required />
 											</dd>
 										</dl>
 										<span id="nameError" class="errorArea"></span>
@@ -89,10 +102,10 @@
 												<label for="u_phone">휴대폰</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_phone" id="u_phone" value=""
-													placeholder="숫자만 입력" data-parsley-type="digits"
-													data-parsley-required="true" data-parsley-trigger="change"
-													required
+												<input type="text" name="u_phone" id="u_phone"
+													value="${userData[3] }" placeholder="숫자만 입력"
+													data-parsley-type="digits" data-parsley-required="true"
+													data-parsley-trigger="change" required
 													data-parsley-errors-container="span[id='phoneError']" />
 											</dd>
 										</dl>
@@ -106,7 +119,7 @@
 											<dd>
 												<input type="text" name="u_addr1" id="u_addr1"
 													placeholder="우편번호 검색" readonly required
-													data-parsley-required="true" 
+													data-parsley-required="true"
 													data-parsley-errors-container="span[id='addr1Error']" />
 											</dd>
 										</dl>
@@ -119,8 +132,8 @@
 											</dt>
 											<dd>
 												<input type="text" name="u_addr2" id="u_addr2"
-													data-parsley-required="true" required
-													data-parsley-trigger="change"
+													value="${userData[4] }" data-parsley-required="true"
+													required data-parsley-trigger="change"
 													data-parsley-errors-container="span[id='addr2Error']" />
 											</dd>
 										</dl>
@@ -133,8 +146,9 @@
 											</dt>
 											<dd>
 												<input type="email" name="u_email" id="u_email"
-													placeholder="ex) abc123@naver.com" required
-													data-parsley-required="true" data-parsley-trigger="change"
+													value="${userData[5] }" placeholder="ex) abc123@naver.com"
+													required data-parsley-required="true"
+													data-parsley-trigger="change"
 													data-parsley-errors-container="span[id='emailError']" />
 											</dd>
 										</dl>

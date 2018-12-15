@@ -15,6 +15,11 @@
 <script type="text/javascript" src="/js/main/parsley.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/main/parsley.css">
 <script type="text/javascript" src="/js/main/ko.js"></script>
+<script type="text/javascript">
+function findPw() { window.open("/findPw.do","비밀번호찾기","width=500,height=300,left=100,top=50"); }
+
+function findId() { window.open("/findId.do","아이디찾기","width=500,height=300,left=100,top=50"); }
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/include/main/header.jsp"%>
@@ -69,7 +74,7 @@
 									</div>
 
 									<div class="item" style="text-align: center;">
-										<input type="submit" value="아이디 찾기" class="join_btn">
+										<input type="button" value="아이디 찾기" class="join_btn" onclick="findId();">
 									</div>
 								</form>
 
@@ -119,7 +124,7 @@
 								</div>
 
 								<div class="item" style="text-align: center;">
-									<input type="submit" value="비밀번호 찾기" class="join_btn">
+									<input type="button" value="비밀번호 찾기" class="join_btn" onclick="findPw();"/>
 								</div>
 							</div>
 						</div>

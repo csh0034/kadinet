@@ -118,8 +118,8 @@
 												<input type="radio" name="u_gender" value="남성"
 													class="inp_radio" checked id="genderM" /><label
 													for="genderM" style="margin-right: 15px">남</label> <input
-													type="radio" name="u_gender" value="여성"
-													class="inp_radio" id="genderF" /><label for="genderF">여</label>
+													type="radio" name="u_gender" value="여성" class="inp_radio"
+													id="genderF" /><label for="genderF">여</label>
 											</dd>
 										</dl>
 									</div>

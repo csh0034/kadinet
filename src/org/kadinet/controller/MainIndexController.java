@@ -32,6 +32,12 @@ public class MainIndexController implements Controller {
 		} else if ("/find.do".equals(path)) {
 			find(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/find.jsp");
+		} else if ("/findId.do".equals(path)) {
+			findId(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/findPw.jsp");
+		} else if ("/findPw.do".equals(path)) {
+			findPw(request, response);
+			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/findPw.jsp");
 		} 
 		/*
 		 * else if ("/deleteUser.do".equals(path)) { deleteUser(request, response);
@@ -95,6 +101,18 @@ public class MainIndexController implements Controller {
 	private void find(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("subNav", "5");
 		request.setAttribute("page", "find");
+
+	}
+	
+	private void findId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("subNav", "5");
+		request.setAttribute("page", "findId");
+
+	}
+	
+	private void findPw(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setAttribute("subNav", "5");
+		request.setAttribute("page", "findPw");
 
 	}
 	

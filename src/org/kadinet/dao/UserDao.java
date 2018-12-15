@@ -17,7 +17,7 @@ public class UserDao extends DBCon {
 	}
 
 	public String[] checkLogin(String id, String pw) {
-		String userData[] = { "", "", "" };
+		String userData[] = { "", "", "", "", "", "", "", ""};
 		try {
 			conStart();
 			sql = "select * from user where user_id=? and user_pw=?";
@@ -31,6 +31,11 @@ public class UserDao extends DBCon {
 				userData[0] = rs.getString("user_id");
 				userData[1] = rs.getString("user_name");
 				userData[2] = rs.getString("user_authority");
+				userData[3] = rs.getString("user_phone");
+				userData[4] = rs.getString("user_addr1");
+				userData[5] = rs.getString("user_email");
+				userData[6] = rs.getString("user_email_receive");
+				userData[7] = rs.getString("user_sms_receive");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -207,6 +212,30 @@ public class UserDao extends DBCon {
 		}
 
 		return list;
+	}
+	
+	public void updateUser(UserBean user) {
+		try {
+			conStart();
+			sql = "update user set user_pw=?, user_name=?, user_phone=?, user_addr1=?, user_addr2=?, user_email=?, user_email_receive=?, user_sms_receive=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getUser_pw());
+			pstmt.setString(2, user.getUser_name());
+			pstmt.setString(3, user.getUser_phone());
+			pstmt.setString(4, user.getUser_addr1());
+			pstmt.setString(5, user.getUser_addr2());
+			pstmt.setString(6, user.getUser_email());
+			pstmt.setString(7, user.getUser_email_receive());
+			pstmt.setString(8, user.getUser_sms_receive());
+			
+			pstmt.executeUpdate();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
 	}
 }
 /*

@@ -26,6 +26,8 @@ public class FrontController extends HttpServlet {
 		list.put("/login.do", new MainIndexController());
 		list.put("/logout.do", new MainIndexController());
 		list.put("/find.do", new MainIndexController());
+		list.put("/findId.do", new MainIndexController());
+		list.put("/findPw.do", new MainIndexController());
 		// list.put("/deleteUser.do", new MainIndexController());
 
 		list.put("/intro/greeting.do", new MainIntroController());
@@ -50,6 +52,7 @@ public class FrontController extends HttpServlet {
 		list.put("/mbr/memberinfo.do", new MainMbrController());
 		list.put("/mbr/update.do", new MainMbrController());
 		list.put("/mbr/leave.do", new MainMbrController());
+		list.put("/mbr/updateProc.do", new MainMbrController());
 
 		list.put("/admin/index.do", new AdminController());
 

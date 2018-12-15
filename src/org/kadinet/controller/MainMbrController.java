@@ -5,7 +5,9 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.kadinet.model.UserBean;
 import org.kadinet.service.MbrService;
+import org.kadinet.service.UserService;
 import org.kadinet.util.HttpUtil;
 
 public class MainMbrController implements Controller {
@@ -22,6 +24,9 @@ public class MainMbrController implements Controller {
 		} else if ("/mbr/leave.do".equals(path)) {
 			leave(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/mbr/leave.jsp");
+		} else if ("/updateProc.do".equals(path)) {
+			updateProc(request, response);
+			response.sendRedirect("/login.do");
 		}
 	}
 
@@ -29,7 +34,7 @@ public class MainMbrController implements Controller {
 			throws ServletException, IOException {
 
 		request.setAttribute("page", "memberinfo");
-		
+
 		MbrService service = MbrService.getInstance();
 
 		service.getMbrList(request);
@@ -37,6 +42,34 @@ public class MainMbrController implements Controller {
 
 	private void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("page", "update");
+
+	}
+
+	private void updateProc(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String pw = request.getParameter("u_pw");
+		String name = request.getParameter("u_name");
+		String phone = request.getParameter("u_phone");
+		String addr1 = request.getParameter("u_addr1");
+		String addr2 = request.getParameter("u_addr2");
+		String email = request.getParameter("u_email");
+		String email_receive = request.getParameter("u_email_receive");
+		String sms_receive = request.getParameter("u_sms_receive");
+
+		UserBean user = new UserBean();
+
+		user.setUser_pw(pw);
+		user.setUser_name(name);
+		user.setUser_phone(phone);
+		user.setUser_addr1(addr1);
+		user.setUser_addr2(addr2);
+		user.setUser_email(email);
+		user.setUser_email_receive(email_receive);
+		user.setUser_sms_receive(sms_receive);
+
+		UserService service = UserService.getInstance();
+		service.updateUser(user);
 
 	}
 

@@ -31,7 +31,6 @@ public class Ajax extends HttpServlet {
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
-
 			String[] userData = service.checkLogin(id, pw);
 
 			String authority = "-1";
