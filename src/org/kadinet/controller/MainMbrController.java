@@ -1,7 +1,6 @@
 package org.kadinet.controller;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -15,19 +14,34 @@ public class MainMbrController implements Controller {
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "4");
+		
+		String[] userData = HttpUtil.returnUserData(request);
+		
 		if ("/mbr/memberinfo.do".equals(path)) {
 			memberinfo(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/mbr/memberinfo.jsp");
 		} else if ("/mbr/update.do".equals(path)) {
-			update(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/main/mbr/update.jsp");
+			if(!("0".equals(userData[2]) || "2".equals(userData[2]))) {
+				HttpUtil.checkUser(userData, response);
+			} else {
+				update(request, response);
+				HttpUtil.forward(request, response, "/WEB-INF/views/main/mbr/update.jsp");
+			}
 		} else if ("/mbr/leave.do".equals(path)) {
-			leave(request, response);
-			HttpUtil.forward(request, response, "/WEB-INF/views/main/mbr/leave.jsp");
+			if(!("0".equals(userData[2]) || "2".equals(userData[2]))) {
+				HttpUtil.checkUser(userData, response);
+			} else {
+				leave(request, response);
+				HttpUtil.forward(request, response, "/WEB-INF/views/main/mbr/leave.jsp");
+			}
 		} else if ("/mbr/updateProc.do".equals(path)) {
-			updateProc(request, response);
-			request.getSession().removeAttribute("userData");
-			response.sendRedirect("/login.do");
+			if(!("0".equals(userData[2]) || "2".equals(userData[2]))) {
+				HttpUtil.checkUser(userData, response);
+			} else {
+				updateProc(request, response);
+				request.getSession().removeAttribute("userData");
+				response.sendRedirect("/login.do");
+			}
 		}
 	}
 

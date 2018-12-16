@@ -22,7 +22,7 @@ public class ConnectionService {
 	public void getConnectionList(HttpServletRequest request) {
 		Vector<String[]> cList = dao.getConnectionList();
 		
-		double max = 0;
+		int max = 0;
 		String title[] = new String[12];
 		String value[] = new String[12];
 		for(int i=0; i<cList.size(); i++) {
@@ -33,8 +33,6 @@ public class ConnectionService {
 				max = Integer.parseInt(cList.get(i)[1]);
 			}
 		}
-		
-		max = Math.ceil(max * 1.1);
 		
 		request.setAttribute("title",title);
 		request.setAttribute("value",value);

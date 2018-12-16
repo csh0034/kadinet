@@ -1,5 +1,8 @@
 package org.kadinet.util;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,12 +19,29 @@ public class HttpUtil {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void visit(HttpSession session) {
-		if(session.getAttribute("visit") == null) {
+		if (session.getAttribute("visit") == null) {
 			ConnectionService service = ConnectionService.getInstance();
 			service.upCount();
 			session.setAttribute("visit", true);
 		}
+	}
+
+	public static void checkUser(String[] userData, HttpServletResponse response) throws IOException {
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out = response.getWriter();
+		out.println("<script>");
+		out.println("alert('회원만 이용 가능합니다');");
+		out.println("location.href='/login.do';");
+		out.println("</script>");
+	}
+
+	public static String[] returnUserData(HttpServletRequest request) {
+		String[] userData = new String[7];
+		if (request.getSession().getAttribute("userData") != null) {
+			userData = (String[]) request.getSession().getAttribute("userData");
+		}
+		return userData;
 	}
 }

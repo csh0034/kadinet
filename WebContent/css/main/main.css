@@ -1198,6 +1198,9 @@ body {
     border-top: 2px solid #4f98e3;
 }
 
+.mbrinfo_box ol > li >a {
+	display: inline-block;
+}
 .mbrinfo_box ol > li .img {
     display: inline-block;
     text-align: center;

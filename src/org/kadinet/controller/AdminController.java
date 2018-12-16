@@ -1,6 +1,7 @@
 package org.kadinet.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +21,17 @@ public class AdminController implements Controller {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
-
-		if ("/admin/index.do".equals(path)) {
+		
+		String[] userData = HttpUtil.returnUserData(request);
+		
+		if(!"0".equals(userData[2])) {
+			response.setContentType("text/html;charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('권한이 없습니다');");
+			out.println("location.href='/index.do';");
+			out.println("</script>");
+		} else if ("/admin/index.do".equals(path)) {
 			index(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/admin/index/index.jsp");
 		} else if ("/admin/intro/greeting.do".equals(path)) {

@@ -40,7 +40,7 @@
 										<p>&gt; 정보수정</p>
 									</div>
 									<div class="item">
-										<dl class="line-full on">
+										<dl class="line-full">
 											<dt>
 												<label for="u_id">아이디</label>
 											</dt>

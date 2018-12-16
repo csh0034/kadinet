@@ -15,7 +15,7 @@
 		document.readFrm.nowPage.value = page;
 		document.readFrm.submit();
 	}
-	
+
 	function block(value) {
 		document.readFrm.nowPage.value = 10 * (value - 1) + 1;
 		document.readFrm.submit();
@@ -39,11 +39,10 @@
 						<div class="mbrinfo_box">
 							<ol>
 								<c:forEach var="item" items="${mbrList}" varStatus="i">
-									<li><a><span class="img"> <img
-											style="cursor: pointer;"
-											onclick="location.href='http://${item.getMbr_link()}'"
-											src="/file/mbr/${item.getMbr_img() }">
-									</span></a> <b>${item.getMbr_name() }</b>
+									<li><a target="_blank" href="http://${item.getMbr_link()}">
+											<span class="img"> <img src="/file/mbr/${item.getMbr_img() }">
+											</span>
+										</a> <b>${item.getMbr_name() }</b>
 										<ul class="mem_data">
 											<li><span>대표이사 : ${item.getMbr_ceo() }</span></li>
 											<li><span>설립일 : ${item.getMbr_estdate() }</span></li>
@@ -56,17 +55,18 @@
 						<div class="paginDiv">
 							<c:if test="${totalPage !=0 }">
 								<c:if test="${nowBlock > 1 }">
-									<a href="javascript:block('${nowBlock - 1 }')"> <span
-										class="paging">&lt;</span>
+									<a href="javascript:block('${nowBlock - 1 }')">
+										<span class="paging">&lt;</span>
 									</a>
 								</c:if>
 								<c:forEach var="i" begin="${pageStart}" end="${pageEnd}">
-									<a href="javascript:pageing('${i}')"> <span class="paging">${i}</span>
+									<a href="javascript:pageing('${i}')">
+										<span class="paging">${i}</span>
 									</a>
 								</c:forEach>
 								<c:if test="${totalBlock > nowBlock }">
-									<a href="javascript:block('${nowBlock + 1 }')"> <span
-										class="paging">&gt;</span>
+									<a href="javascript:block('${nowBlock + 1 }')">
+										<span class="paging">&gt;</span>
 									</a>
 								</c:if>
 							</c:if>

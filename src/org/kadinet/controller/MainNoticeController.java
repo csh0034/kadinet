@@ -15,7 +15,12 @@ public class MainNoticeController implements Controller {
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "3");
-		if ("/notice/notice/list.do".equals(path)) {
+		
+		String[] userData = HttpUtil.returnUserData(request);
+		
+		if(!("0".equals(userData[2]) || "2".equals(userData[2]))) {
+			HttpUtil.checkUser(userData, response);
+		} else if ("/notice/notice/list.do".equals(path)) {
 			noticeList(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/notice/list.jsp");
 		} else if ("/notice/press/list.do".equals(path)) {
