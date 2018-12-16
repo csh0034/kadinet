@@ -45,10 +45,9 @@
 												<label for="u_id">아이디</label>
 											</dt>
 											<dd>
-												<input type="text" name="u_id" id="u_id"
-													 value="${userData[0]}" placeholder="5~20자리 영문, 숫자 조합" /></dd>
+												<input type="text" name="user_id" value="${userData[0]}"
+													placeholder="5~20자리 영문, 숫자 조합" readOnly />${userData[0]}</dd>
 										</dl>
-										<span id="idError" class="errorArea"></span>
 									</div>
 									<div class="item mb2">
 										<dl class="line-half1">
@@ -159,25 +158,53 @@
 											<dt>
 												<label for="u_email_receive">이메일 수신여부</label>
 											</dt>
-											<dd>
-												<input type="radio" name="u_email_receive" value="O"
-													class="inp_radio" checked id="emailO" /><label
-													for="emailO" style="margin-right: 15px">수신</label> <input
-													type="radio" name="u_email_receive" value="X"
-													class="inp_radio" id="emailX" /><label for="emailX">수신안함</label>
-											</dd>
+
+											<c:choose>
+												<c:when test="${userData[6] == 'O'}">
+													<dd>
+														<input type="radio" name="u_email_receive" value="O"
+															class="inp_radio" checked id="emailO" /><label
+															for="emailO" style="margin-right: 15px">수신</label> <input
+															type="radio" name="u_email_receive" value="X"
+															class="inp_radio" id="emailX" /><label for="emailX">수신안함</label>
+													</dd>
+												</c:when>
+												<c:otherwise>
+													<dd>
+														<input type="radio" name="u_email_receive" value="O"
+															class="inp_radio" id="emailO" /><label for="emailO"
+															style="margin-right: 15px">수신</label> <input type="radio"
+															name="u_email_receive" value="X" class="inp_radio"
+															checked id="emailX" /><label for="emailX">수신안함</label>
+													</dd>
+												</c:otherwise>
+											</c:choose>
 										</dl>
 										<dl class="line-half2">
 											<dt>
 												<label for="u_sms_receive">SMS 수신여부</label>
 											</dt>
-											<dd>
-												<input type="radio" name="u_sms_receive" value="O"
-													class="inp_radio" checked id="smsO" /><label for="smsO"
-													style="margin-right: 15px">수신</label> <input type="radio"
-													name="u_sms_receive" value="X" class="inp_radio" id="smsX" /><label
-													for="smsX">수신안함</label>
-											</dd>
+
+											<c:choose>
+												<c:when test="${userData[7] == 'O'}">
+													<dd>
+														<input type="radio" name="u_sms_receive" value="O"
+															class="inp_radio" checked id="smsO" /><label for="smsO"
+															style="margin-right: 15px">수신</label> <input type="radio"
+															name="u_sms_receive" value="X" class="inp_radio"
+															id="smsX" /><label for="smsX">수신안함</label>
+													</dd>
+												</c:when>
+												<c:otherwise>
+													<dd>
+														<input type="radio" name="u_sms_receive" value="O"
+															class="inp_radio" id="smsO" /><label for="smsO"
+															style="margin-right: 15px">수신</label> <input type="radio"
+															name="u_sms_receive" value="X" class="inp_radio" checked
+															id="smsX" /><label for="smsX">수신안함</label>
+													</dd>
+												</c:otherwise>
+											</c:choose>
 										</dl>
 									</div>
 									<div class="item" style="text-align: center;">

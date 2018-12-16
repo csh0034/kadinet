@@ -24,8 +24,9 @@ public class MainMbrController implements Controller {
 		} else if ("/mbr/leave.do".equals(path)) {
 			leave(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/mbr/leave.jsp");
-		} else if ("/updateProc.do".equals(path)) {
+		} else if ("/mbr/updateProc.do".equals(path)) {
 			updateProc(request, response);
+			request.getSession().removeAttribute("userData");
 			response.sendRedirect("/login.do");
 		}
 	}
@@ -56,7 +57,8 @@ public class MainMbrController implements Controller {
 		String email = request.getParameter("u_email");
 		String email_receive = request.getParameter("u_email_receive");
 		String sms_receive = request.getParameter("u_sms_receive");
-
+		String id = request.getParameter("user_id");
+		
 		UserBean user = new UserBean();
 
 		user.setUser_pw(pw);
@@ -67,10 +69,10 @@ public class MainMbrController implements Controller {
 		user.setUser_email(email);
 		user.setUser_email_receive(email_receive);
 		user.setUser_sms_receive(sms_receive);
+		user.setUser_id(id);
 
 		UserService service = UserService.getInstance();
 		service.updateUser(user);
-
 	}
 
 	private void leave(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

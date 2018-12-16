@@ -217,9 +217,10 @@ public class UserDao extends DBCon {
 	public void updateUser(UserBean user) {
 		try {
 			conStart();
-			sql = "update user set user_pw=?, user_name=?, user_phone=?, user_addr1=?, user_addr2=?, user_email=?, user_email_receive=?, user_sms_receive=?";
-
+			sql = "update user set user_pw=?, user_name=?, user_phone=?, user_addr1=?, user_addr2=?, user_email=?, user_email_receive=?, user_sms_receive=? where user_id=?";
+			
 			pstmt = con.prepareStatement(sql);
+			
 			pstmt.setString(1, user.getUser_pw());
 			pstmt.setString(2, user.getUser_name());
 			pstmt.setString(3, user.getUser_phone());
@@ -228,15 +229,34 @@ public class UserDao extends DBCon {
 			pstmt.setString(6, user.getUser_email());
 			pstmt.setString(7, user.getUser_email_receive());
 			pstmt.setString(8, user.getUser_sms_receive());
+			pstmt.setString(9, user.getUser_id());
 			
 			pstmt.executeUpdate();
-		
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			conClose();
 		}
 	}
+	public void findId(UserBean user) {
+		try {
+			conStart();
+			sql = "select * from user where user_name=?, user_phone=?";
+			
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getUser_name());
+			pstmt.setString(2, user.getUser_phone());
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+	
 }
 /*
  * public String findId(String name, String phone) { String user_id = null; try

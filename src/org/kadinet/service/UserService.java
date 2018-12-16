@@ -72,8 +72,12 @@ public class UserService {
 		String addr1 = user.getUser_addr1().substring(8, user.getUser_addr1().length());
 		user.setUser_zipCode(zipCode);
 		user.setUser_addr1(addr1);
-
 		dao.updateUser(user);
+	}
+	public void findId(HttpServletRequest request) {
+		UserBean user = new UserBean();
+		dao.findId(user);
+		
 	}
 	
 

@@ -18,7 +18,7 @@
 <script type="text/javascript">
 function findPw() { window.open("/findPw.do","비밀번호찾기","width=500,height=300,left=100,top=50"); }
 
-function findId() { window.open("/findId.do","아이디찾기","width=500,height=300,left=100,top=50"); }
+function findId() { alert('입력하신 정보는 ㅁㅁㅁㅁㅁ입니다'); }
 </script>
 </head>
 <body>
@@ -74,7 +74,7 @@ function findId() { window.open("/findId.do","아이디찾기","width=500,height
 									</div>
 
 									<div class="item" style="text-align: center;">
-										<input type="button" value="아이디 찾기" class="join_btn" onclick="findId();">
+										<input type="button" id="findId" value="아이디 찾기" class="join_btn">
 									</div>
 								</form>
 

@@ -89,6 +89,9 @@ public class Ajax extends HttpServlet {
 		} else if ("moveNotice".equals(method)) {
 			NoticeService service = NoticeService.getInstance();
 			service.moveNotice(request);
+		} else if ("findId".equals(method)) {
+			UserService service = UserService.getInstance();
+			service.findId(request);
 		}
 	}
 }
