@@ -152,4 +152,8 @@ public class MbrService {
 		request.setAttribute("bean", dao.getMbr(no));
 	}
 
+
+	public void getIndexMbrList(HttpServletRequest request) {
+		request.setAttribute("mbrList", dao.getIndexMbrList(10));
+	}
 }

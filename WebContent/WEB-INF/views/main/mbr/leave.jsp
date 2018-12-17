@@ -41,7 +41,7 @@
 										for="check"> 위 약관에 동의합니다.</label>
 								</div>
 								<div class="form_wrap">
-									<input type="password" id="pw" maxlength="45" title="비밀번호" placeholder="비밀번호" class="inp"
+									<input type="password" id="pw" maxlength="45" title="비밀번호" placeholder="비밀번호" class="inp pw"
 										required>
 									<div class="btn_area">
 										<button type="submit" class="leave_btn">탈퇴하기</button>

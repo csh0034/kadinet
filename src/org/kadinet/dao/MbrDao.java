@@ -143,4 +143,35 @@ public class MbrDao extends DBCon {
 			conClose();
 		}
 	}
+	
+	public Vector<MbrBean> getIndexMbrList(int endRow) {
+		Vector<MbrBean> list = new Vector<MbrBean>();
+		try {
+			conStart();
+			sql = "select * from mbr order by mbr_order desc limit 0,?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, endRow);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				MbrBean bean = new MbrBean();
+				bean.setMbr_no(rs.getInt("mbr_no"));
+				bean.setMbr_img(rs.getString("mbr_img"));
+				bean.setMbr_name(rs.getString("mbr_name"));
+				bean.setMbr_ceo(rs.getString("mbr_ceo"));
+				bean.setMbr_estdate(rs.getString("mbr_estdate"));
+				bean.setMbr_regdate(rs.getString("mbr_regdate"));
+				bean.setMbr_phone(rs.getString("mbr_phone"));
+				bean.setMbr_link(rs.getString("mbr_link"));
+				bean.setMbr_order(rs.getInt("mbr_order"));
+				list.add(bean);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return list;
+	}
 }

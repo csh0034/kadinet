@@ -1,5 +1,3 @@
-var idFlag = 'false';
-
 $(document).ready(function() {
 	$('input').focus(function() {
 		$(this).parents('dl').addClass('on');
@@ -9,35 +7,65 @@ $(document).ready(function() {
 		$(this).parents('dl').removeClass('on');
 	});
 
-	$('#searchAddr').click(function() {
-		sample6_execDaumPostcode()
-	});
+	$('#frm').submit(function() {
+		var name = $('#id_find_name').val();
+		var phone = $('#id_find_phone').val();
 
-	$('#u_id').focus(function() {
-		idFlag = 'false';
-		$('#idError').css('display', 'none');
-	});
-	$('#findId').click(function() {
-		var u_name = $('#u_name').val();
-		var u_phone = $('#u_phone').val();
-
-		if (confirm("등록 하시겠습니까?")) {
+		if (confirm('찾기를 하시겠습니까')) {
 			$.ajax({
 				url : '/ajax',
 				type : 'post',
 				dataType : 'text',
 				data : {
 					method : 'findId',
-					u_name : u_name,
-					u_phone : u_phone
+					name : name,
+					phone : phone
 				},
 				success : function(data) {
-					alert('입력하신 정보와 일치하는 아이디는 ㅁㅁㅁ입니다');
+					if (data == 'x') {
+						alert('검색된 정보가 없습니다');
+					} else if (data == 'leave') {
+						alert('탈퇴회원 입니다');
+					} else {
+						alert("아이디는 ' " + data + " ' 입니다");
+					}
 				},
 				error : function(xhr, status) {
 					alert('잠시 후 다시 시도해주세요');
 				}
 			});
 		}
+		return false;
+	});
+
+	$('#frm2').submit(function() {
+		var id = $('#pw_find_id').val();
+		var name = $('#pw_find_name').val();
+		var phone = $('#pw_find_phone').val();
+
+		if (confirm('찾기를 하시겠습니까')) {
+			$.ajax({
+				url : '/ajax',
+				type : 'post',
+				dataType : 'text',
+				data : {
+					method : 'findPw',
+					id : id,
+					name : name,
+					phone : phone
+				},
+				success : function(data) {
+					if (data == '0') {
+						alert('검색된 정보가 없습니다');
+					} else {
+						alert('정보변경 레이어팝업');
+					}
+				},
+				error : function(xhr, status) {
+					alert('잠시 후 다시 시도해주세요');
+				}
+			});
+		}
+		return false;
 	});
 });

@@ -103,7 +103,7 @@
 											</dt>
 											<dd>
 												<input type="text" name="u_age" id="u_age" value=""
-													placeholder="ex)940801" data-parsley-type="digits"
+													placeholder="ex)940101" data-parsley-type="digits"
 													data-parsley-required="true" data-parsley-trigger="change"
 													required pattern="^[0-9]{6,6}$"
 													data-parsley-errors-container="span[id='ageError']" />

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.kadinet.model.UserBean;
 import org.kadinet.service.ConnectionService;
 
 public class HttpUtil {
@@ -28,7 +29,7 @@ public class HttpUtil {
 		}
 	}
 
-	public static void checkUser(String[] userData, HttpServletResponse response) throws IOException {
+	public static void checkUser(HttpServletResponse response) throws IOException {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.println("<script>");
@@ -37,11 +38,11 @@ public class HttpUtil {
 		out.println("</script>");
 	}
 
-	public static String[] returnUserData(HttpServletRequest request) {
-		String[] userData = new String[7];
-		if (request.getSession().getAttribute("userData") != null) {
-			userData = (String[]) request.getSession().getAttribute("userData");
+	public static UserBean returnUserData(HttpServletRequest request) {
+		UserBean userBean = new UserBean();
+		if (request.getSession().getAttribute("userBean") != null) {
+			userBean = (UserBean) request.getSession().getAttribute("userBean");
 		}
-		return userData;
+		return userBean;
 	}
 }

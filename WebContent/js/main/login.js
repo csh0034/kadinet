@@ -12,6 +12,7 @@ $(document).ready(function() {
 			success : function(data) {
 				if (data == '-1') {
 					alert('아이디 또는 비밀번호를 다시 확인하세요');
+					$('#pw').focus();
 				} else if (data == '1') {
 					alert('가입승인 대기 중입니다');
 				} else if (data == '0' || data == '2') {

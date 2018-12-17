@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.kadinet.dao.UserDao;
 import org.kadinet.model.UserBean;
+import org.kadinet.util.HttpUtil;
 
 public class UserService {
 
@@ -19,7 +20,7 @@ public class UserService {
 		return service;
 	}
 
-	public String[] checkLogin(String id, String pw) {
+	public UserBean checkLogin(String id, String pw) {
 		return dao.checkLogin(id, pw);
 	}
 
@@ -74,17 +75,24 @@ public class UserService {
 		user.setUser_addr1(addr1);
 		dao.updateUser(user);
 	}
-	public void findId(HttpServletRequest request) {
-		UserBean user = new UserBean();
-		dao.findId(user);
-		
+	public String[] findId(HttpServletRequest request) {
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		return dao.findId(name , phone);
 	}
 	
-
-	/*
-	 * public String findId(String name, String phone) { return dao.findId(name,
-	 * phone); }
-	 * 
-	 */
-
+	public int findPw(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		return dao.findPw(id,name , phone);
+	}
+	
+	public int leaveUser(HttpServletRequest request) {
+		UserBean userBean = HttpUtil.returnUserData(request);
+		String id = userBean.getUser_id();
+		String pw = request.getParameter("pw");
+		
+		return dao.leaveUser(id, pw);
+	}
 }

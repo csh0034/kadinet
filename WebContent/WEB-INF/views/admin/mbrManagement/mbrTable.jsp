@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +8,7 @@
 <script src="/boot/vendor/jquery/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-		$('#dataTable1,#dataTable2,#dataTable3,#dataTable4').DataTable({
-		});
+		$('#dataTable1,#dataTable2,#dataTable3,#dataTable4').DataTable({});
 	});
 </script>
 <script type="text/javascript" src="/js/admin/mbrManagement.js"></script>
@@ -105,7 +103,7 @@
 											<td>${item.getUser_regdate() }</td>
 											<td>
 												<button type="button" class="btn btn-primary recognize"
-													onClick="setAuthority('${item.getUser_id()}','0')">변경</button>
+													onClick="setAuthority('${item.getUser_id()}','0')">관리자</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -115,8 +113,8 @@
 					</div>
 					<div class="card-footer small text-muted"></div>
 				</div>
-				
-				
+
+
 				<div class="card mb-3">
 					<div class="card-header">
 						<i class="fas fa-chart-area"></i> 관리자
@@ -152,7 +150,7 @@
 											<td>${item.getUser_regdate() }</td>
 											<td>
 												<button type="button" class="btn btn-primary recognize"
-													onClick="setAuthority('${item.getUser_id()}','2')">변경</button>
+													onClick="setAuthority('${item.getUser_id()}','2')">정회원</button>
 											</td>
 										</tr>
 									</c:forEach>
@@ -179,6 +177,7 @@
 										<th>이메일</th>
 										<th>주소</th>
 										<th>가입일</th>
+										<th>권한</th>
 										<th>삭제</th>
 									</tr>
 								</thead>
@@ -194,8 +193,11 @@
 											<td>${item.getUser_addr1() }</td>
 											<td>${item.getUser_regdate() }</td>
 											<td>
-												<button type="submit" class="btn btn-danger"
-													id="${item.getUser_id() }">삭제</button>
+												<button type="button" class="btn btn-primary recognize"
+													onClick="setAuthority('${item.getUser_id()}','2')">정회원</button>
+											</td>
+											<td>
+												<button type="submit" class="btn btn-danger" id="${item.getUser_id() }">삭제</button>
 											</td>
 										</tr>
 									</c:forEach>

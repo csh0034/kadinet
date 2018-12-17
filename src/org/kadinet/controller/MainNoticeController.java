@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
+import org.kadinet.model.UserBean;
 import org.kadinet.service.NoticeService;
 import org.kadinet.util.HttpUtil;
 
@@ -16,10 +17,9 @@ public class MainNoticeController implements Controller {
 			throws ServletException, IOException {
 		request.setAttribute("subNav", "3");
 		
-		String[] userData = HttpUtil.returnUserData(request);
-		
-		if(!("0".equals(userData[2]) || "2".equals(userData[2]))) {
-			HttpUtil.checkUser(userData, response);
+		UserBean userBean = HttpUtil.returnUserData(request);
+		if(!("0".equals(userBean.getUser_authority()) || "2".equals(userBean.getUser_authority()))) {
+			HttpUtil.checkUser(response);
 		} else if ("/notice/notice/list.do".equals(path)) {
 			noticeList(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/notice/list.jsp");

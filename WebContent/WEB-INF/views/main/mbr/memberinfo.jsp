@@ -40,7 +40,7 @@
 							<ol>
 								<c:forEach var="item" items="${mbrList}" varStatus="i">
 									<li><a target="_blank" href="http://${item.getMbr_link()}">
-											<span class="img"> <img src="/file/mbr/${item.getMbr_img() }">
+											<span class="img"> <img src="/file/mbr/${item.getMbr_img()}">
 											</span>
 										</a> <b>${item.getMbr_name() }</b>
 										<ul class="mem_data">

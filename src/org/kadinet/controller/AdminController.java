@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.kadinet.model.UserBean;
 import org.kadinet.service.ConnectionService;
 import org.kadinet.service.HistoryService;
 import org.kadinet.service.MbrService;
@@ -22,9 +23,9 @@ public class AdminController implements Controller {
 	public void execute(HttpServletRequest request, HttpServletResponse response, String path)
 			throws ServletException, IOException {
 		
-		String[] userData = HttpUtil.returnUserData(request);
+		UserBean userBean = HttpUtil.returnUserData(request);
 		
-		if(!"0".equals(userData[2])) {
+		if(!"0".equals(userBean.getUser_authority())) {
 			response.setContentType("text/html;charset=UTF-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
