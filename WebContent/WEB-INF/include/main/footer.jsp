@@ -1,8 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <footer id="kadinet_footer">
-	<div class="pop_bk"></div>
-	<div id="pop1" class="popUp pop_ft1">
+	<div class="footer_inner clearfix">
+		<div class="info"> 
+			<ul class="footer_menu">
+				<li><a href="#none" class="private">개인정보처리방침 </a>
+					<p>|</p></li>
+				<li><a href="#none" class="noemail">이메일무단수집거부</a>
+			</ul>
+			<div class="sub">
+				<p id="tit">사단법인 한국디지털융합산업진흥협회</p>
+				<p id="addr">서울시 중랑구 면목동 502-1</p>
+				<p class="tel">Tel 02-491-9768</p>
+				<p class="tel">Fax 02-491-5864</p>
+			</div>
+			<p>Copyright &copy; 2018 ASk. All Rights reserved.</p>
+		</div>
+	</div>
+</footer>
+
+<div class="__pop-basic">
+	<div id="pop1" class="popUp">
 		<div class="pop_tit">
 			<span>개인정보처리방침</span> <span class="pop_close"></span>
 		</div>
@@ -161,20 +179,5 @@
 			이를 위반시 [정보통신망이용촉진및정보보호등에관한법률] 등에 의해 처벌 받을 수 있습니다.
 		</div>
 	</div>
-	<div class="footer_inner clearfix">
-		<div class="info"> 
-			<ul class="footer_menu">
-				<li><a href="#" class="private">개인정보처리방침 </a>
-					<p>|</p></li>
-				<li><a href="#" class="noemail">이메일무단수집거부</a>
-			</ul>
-			<div class="sub">
-				<p id="tit">사단법인 한국디지털융합산업진흥협회</p>
-				<p id="addr">서울시 중랑구 면목동 502-1</p>
-				<p class="tel">Tel 02-491-9768</p>
-				<p class="tel">Fax 02-491-5864</p>
-			</div>
-			<p>Copyright &copy; 2018 ASk. All Rights reserved.</p>
-		</div>
-	</div>
-</footer>
+	<div class="pop_bk"></div>
+</div>

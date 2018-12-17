@@ -25,6 +25,33 @@
 					<div class="contents_box_top">
 						<h3 class="location">ID/PW 찾기</h3>
 					</div>
+					<div class="__pop-basic2">
+						<div id="findid_pop" class="popUp">
+							<div class="pop_tit">
+								<span>아이디 찾기</span> <span class="pop_close"></span>
+							</div>
+							<div class="pop_text">
+								고객님의 아이디는 <strong>test12</strong> 입니다.
+							</div>
+							<div class="fbtn_area">
+								<input type="button" class="fbtn pop_close" value="확인" />
+							</div>
+						</div>
+						<div id="findpw_pop" class="popUp">
+							<div class="pop_tit">
+								<span>비밀번호 찾기</span> <span class="pop_close"></span>
+							</div>
+							<div class="pop_text">
+								고객님의 비밀번호는
+								<strong>test123!</strong> 로
+								초기화 되었습니다.
+							</div>
+							<div class="fbtn_area">
+								<input type="button" class="fbtn pop_close" value="확인" />
+							</div>
+						</div>
+						<div class="pop_bk2"></div>
+					</div>
 					<div class="contents_box_bottom">
 						<div class="join_bx">
 							<div class="joinform_wrap">
@@ -58,7 +85,7 @@
 										<input type="submit" value="아이디 찾기" class="join_btn">
 									</div>
 								</form>
-
+								
 								<form id="frm2">
 									<div class="find_tit">
 										<p>&gt; 비밀번호 찾기</p>

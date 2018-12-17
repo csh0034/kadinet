@@ -27,7 +27,9 @@ $(document).ready(function() {
 					} else if (data == 'leave') {
 						alert('탈퇴회원 입니다');
 					} else {
-						alert("아이디는 ' " + data + " ' 입니다");
+						$(".__pop-basic2").fadeIn();
+						$("#findid_pop").fadeIn();
+						wrapWindowByMask2();
 					}
 				},
 				error : function(xhr, status) {
@@ -58,7 +60,9 @@ $(document).ready(function() {
 					if (data == '0') {
 						alert('검색된 정보가 없습니다');
 					} else {
-						alert('정보변경 레이어팝업');
+						$(".__pop-basic2").fadeIn();
+						$("#findpw_pop").fadeIn();
+						wrapWindowByMask2();
 					}
 				},
 				error : function(xhr, status) {
