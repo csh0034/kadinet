@@ -107,7 +107,13 @@ public class Ajax extends HttpServlet {
 			UserService service = UserService.getInstance();
 			int cnt = service.findPw(request);
 
-			out.print(cnt);
+			String data = "";
+			if(cnt == 0) {
+				data = "0";
+			} else {
+				data = service.changePw(request);
+			}
+			out.print(data);
 
 		} else if ("leaveUser".equals(method)) {
 			UserService service = UserService.getInstance();

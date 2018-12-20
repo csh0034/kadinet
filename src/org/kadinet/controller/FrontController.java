@@ -7,7 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.kadinet.util.HttpUtil;
 
@@ -96,10 +95,9 @@ public class FrontController extends HttpServlet {
 		String contextPath = request.getContextPath();
 		String path = url.substring(contextPath.length());
 		Controller subController = list.get(path);
-		HttpSession session = request.getSession();
 		
 		if (subController != null) {
-			HttpUtil.visit(session);
+			HttpUtil.visit(request);
 			subController.execute(request, response, path);
 		} else {
 			HttpUtil.forward(request, response, "/errorPage/error404.jsp");

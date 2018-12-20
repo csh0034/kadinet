@@ -31,7 +31,7 @@
 								<span>아이디 찾기</span> <span class="pop_close"></span>
 							</div>
 							<div class="pop_text">
-								고객님의 아이디는 <strong>test12</strong> 입니다.
+								고객님의 아이디는 <strong></strong> 입니다.
 							</div>
 							<div class="fbtn_area">
 								<input type="button" class="fbtn pop_close" value="확인" />
@@ -43,7 +43,7 @@
 							</div>
 							<div class="pop_text">
 								고객님의 비밀번호는
-								<strong>test123!</strong> 로
+								<strong></strong> 로
 								초기화 되었습니다.
 							</div>
 							<div class="fbtn_area">

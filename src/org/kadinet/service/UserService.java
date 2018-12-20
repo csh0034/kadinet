@@ -1,5 +1,7 @@
 package org.kadinet.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
@@ -94,5 +96,15 @@ public class UserService {
 		String pw = request.getParameter("pw");
 		
 		return dao.leaveUser(id, pw);
+	}
+	
+	public String changePw(HttpServletRequest request) {
+		SimpleDateFormat df = new SimpleDateFormat("HHmm");
+		String id = request.getParameter("id");
+		String pw = "kadinet"+df.format(new Date());
+		 
+		dao.changePw(id, pw);
+		
+		return pw;
 	}
 }

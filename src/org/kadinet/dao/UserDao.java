@@ -314,4 +314,22 @@ public class UserDao extends DBCon {
 
 		return cnt;
 	}
+	
+	public void changePw(String id, String pw) {
+		try {
+			conStart();
+			sql = "update user set user_pw = ? where user_id = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, pw);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+
+	}
 }

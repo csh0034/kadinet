@@ -27,6 +27,7 @@ $(document).ready(function() {
 					} else if (data == 'leave') {
 						alert('탈퇴회원 입니다');
 					} else {
+						$("#findid_pop strong").html(data);
 						$(".__pop-basic2").fadeIn();
 						$("#findid_pop").fadeIn();
 						wrapWindowByMask2();
@@ -60,6 +61,7 @@ $(document).ready(function() {
 					if (data == '0') {
 						alert('검색된 정보가 없습니다');
 					} else {
+						$("#findpw_pop strong").html(data);
 						$(".__pop-basic2").fadeIn();
 						$("#findpw_pop").fadeIn();
 						wrapWindowByMask2();

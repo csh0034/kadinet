@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.kadinet.model.UserBean;
 import org.kadinet.service.ConnectionService;
+import org.kadinet.service.VisitService;
 
 public class HttpUtil {
 	public static void forward(HttpServletRequest request, HttpServletResponse response, String path) {
@@ -21,10 +22,15 @@ public class HttpUtil {
 		}
 	}
 
-	public static void visit(HttpSession session) {
+	public static void visit(HttpServletRequest request) {
+		//footer 주소 , 번호 , 팩스 
+		HttpSession session = request.getSession();
+		VisitService service1 = VisitService.getInstance();
+		service1.getDirectionInfo(request);
+		
 		if (session.getAttribute("visit") == null) {
-			ConnectionService service = ConnectionService.getInstance();
-			service.upCount();
+			ConnectionService service2 = ConnectionService.getInstance();
+			service2.upCount();
 			session.setAttribute("visit", true);
 		}
 	}
