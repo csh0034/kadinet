@@ -52,7 +52,7 @@
 											<td>${item.getUser_age() }</td>
 											<td>${item.getUser_phone() }</td>
 											<td>${item.getUser_email() }</td>
-											<td>${item.getUser_addr1() }</td>
+											<td>${item.getUser_addr1() } ${item.getUser_addr2() }</td>
 											<td>${item.getUser_regdate() }</td>
 											<td>
 												<button type="button" class="btn btn-primary recognize"
@@ -98,7 +98,7 @@
 											<td>${item.getUser_age() }</td>
 											<td>${item.getUser_phone() }</td>
 											<td>${item.getUser_email() }</td>
-											<td>${item.getUser_addr1() }</td>
+											<td>${item.getUser_addr1() } ${item.getUser_addr2() }</td>
 											<td>${item.getUser_last_login() }</td>
 											<td>${item.getUser_regdate() }</td>
 											<td>
@@ -145,7 +145,7 @@
 											<td>${item.getUser_age() }</td>
 											<td>${item.getUser_phone() }</td>
 											<td>${item.getUser_email() }</td>
-											<td>${item.getUser_addr1() }</td>
+											<td>${item.getUser_addr1() } ${item.getUser_addr2() }</td>
 											<td>${item.getUser_last_login() }</td>
 											<td>${item.getUser_regdate() }</td>
 											<td>
@@ -190,7 +190,7 @@
 											<td>${item.getUser_age() }</td>
 											<td>${item.getUser_phone() }</td>
 											<td>${item.getUser_email() }</td>
-											<td>${item.getUser_addr1() }</td>
+											<td>${item.getUser_addr1() } ${item.getUser_addr2() }</td>
 											<td>${item.getUser_regdate() }</td>
 											<td>
 												<button type="button" class="btn btn-primary recognize"

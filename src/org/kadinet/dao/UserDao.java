@@ -136,6 +136,7 @@ public class UserDao extends DBCon {
 				bean.setUser_phone(rs.getString("user_phone"));
 				bean.setUser_email(rs.getString("user_email"));
 				bean.setUser_addr1(rs.getString("user_addr1"));
+				bean.setUser_addr2(rs.getString("user_addr2"));
 				bean.setUser_regdate(rs.getDate("user_regdate"));
 				bean.setUser_last_login(rs.getDate("last_login"));
 
