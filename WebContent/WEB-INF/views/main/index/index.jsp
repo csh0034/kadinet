@@ -61,19 +61,19 @@
 				</div>
 				<div class="index_box quick">
 					<ul class="quick_btn">
-						<li><a href="http://localhost/intro/visit.do">
+						<li><a href="/intro/visit.do">
 								<img class="quick_img1" src="/img/main/index/icon_map.png" alt="오시는길"> <span
 									class="quick_txt1">오시는길</span>
 							</a></li>
-						<li><a href="http://localhost/business/career.do">
+						<li><a href="/business/career.do">
 								<img class="quick_img1" src="/img/main/index/icon_career.png" alt="경력인증"> <span
 									class="quick_txt1">경력인증</span>
 							</a></li>
-						<li><a href="http://localhost/business/corporation.do">
+						<li><a href="/business/corporation.do">
 								<img class="quick_img1 quick_img2" src="/img/main/index/icon_office.png" alt="사이트맵"> <span
 									class="quick_txt1 quick_txt2">기업체인증</span>
 							</a></li>
-						<li><a href="http://localhost/mbr/memberinfo.do">
+						<li><a href="/mbr/memberinfo.do">
 								<img class="quick_img1 quick_img2" src="/img/main/index/icon_people.png" alt="회원사소개">
 								<span class="quick_txt1 quick_txt2">회원사 소개</span>
 							</a></li>
