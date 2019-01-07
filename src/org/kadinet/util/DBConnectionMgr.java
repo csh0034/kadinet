@@ -6,9 +6,9 @@ import java.util.Vector;
 public class DBConnectionMgr {
     private Vector<ConnectionObject> connections = new Vector<ConnectionObject>();
     private String _driver = "org.gjt.mm.mysql.Driver",
-    _url = "jdbc:mysql://localhost:3306/kadinet?useUnicode=true&characterEncoding=utf-8&useSSL=false", 
-    _user = "root", 
-    _password = "seoil";
+    _url = "jdbc:mysql://localhost:3306/kadinetorg?useUnicode=true&characterEncoding=utf-8&useSSL=false", 
+    _user = "kadinetorg", 
+    _password = "kadi2008";
     
     private boolean _traceOn = false;
     private boolean initialized = false;

@@ -27,7 +27,6 @@
 					<div class="contents_box_bottom">
 						<div class="organization_box">
 							${bean.getMenu_content() }
-							<!-- <img src="/img/main/intro/group.png" alt="조직도"> -->
 						</div>
 					</div>
 				</div>
