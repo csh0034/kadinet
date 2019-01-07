@@ -18,7 +18,7 @@
 			<b>주요사업</b>
 		</div>
 		<div class="main">
-			<article class="contents">
+			<article class="contents"> 
 				<%@ include file="/WEB-INF/include/main/subNav.jsp"%>
 				<div class="contents_box">
 					<div class="contents_box_top">
