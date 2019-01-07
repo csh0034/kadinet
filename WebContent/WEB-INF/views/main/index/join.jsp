@@ -103,7 +103,7 @@
 											</dt>
 											<dd>
 												<input type="text" name="u_age" id="u_age" value=""
-													placeholder="ex)940801" data-parsley-type="digits"
+													placeholder="ex)940101" data-parsley-type="digits"
 													data-parsley-required="true" data-parsley-trigger="change"
 													required pattern="^[0-9]{6,6}$"
 													data-parsley-errors-container="span[id='ageError']" />
@@ -118,8 +118,8 @@
 												<input type="radio" name="u_gender" value="남성"
 													class="inp_radio" checked id="genderM" /><label
 													for="genderM" style="margin-right: 15px">남</label> <input
-													type="radio" name="u_gender" value="여성"
-													class="inp_radio" id="genderF" /><label for="genderF">여</label>
+													type="radio" name="u_gender" value="여성" class="inp_radio"
+													id="genderF" /><label for="genderF">여</label>
 											</dd>
 										</dl>
 									</div>

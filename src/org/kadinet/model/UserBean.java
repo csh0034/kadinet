@@ -12,7 +12,7 @@ public class UserBean {
 	private String user_phone;
 	private Date user_regdate;
 	private	Date user_last_login;
-	private int user_authority;
+	private String user_authority;
 	private String user_email_receive;
 	private String user_sms_receive;
 	private String user_zipCode;
@@ -73,10 +73,10 @@ public class UserBean {
 	public void setUser_last_login(Date user_last_login) {
 		this.user_last_login = user_last_login;
 	}
-	public int getUser_authority() {
+	public String getUser_authority() {
 		return user_authority;
 	}
-	public void setUser_authority(int user_authority) {
+	public void setUser_authority(String user_authority) {
 		this.user_authority = user_authority;
 	}
 	public String getUser_email_receive() {

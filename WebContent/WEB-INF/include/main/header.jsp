@@ -9,20 +9,20 @@
 	<div class="header_inner">
 		<div class="header_top">
 			<c:choose>
-				<c:when test="${empty userData[0]}">
+				<c:when test="${empty userBean}">
 					<a href='/login.do'>로그인</a>
 					<a href='/join.do'>회원가입</a>
 				</c:when>
 				<c:otherwise>
 					<c:choose>
-						<c:when test="${userData[2] == '0'}">
-							<span><strong>${userData[1]}</strong>님</span>
+						<c:when test="${userBean.getUser_authority() == '0'}">
+							<span><strong>${userBean.getUser_name()}</strong>님</span>
 							<a href='/admin/index.do'>관리자페이지</a>
 							<a href='/logout.do'>로그아웃</a>
 							<a href='/mbr/update.do'>정보수정</a>
 						</c:when>
 						<c:otherwise>
-							<span><strong>${userData[1]}</strong>님</span>
+							<span><strong>${userBean.getUser_name()}</strong>님</span>
 							<a href='/logout.do'>로그아웃</a>
 							<a href='/mbr/update.do'>정보수정</a>
 						</c:otherwise>

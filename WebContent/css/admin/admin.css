@@ -1,3 +1,8 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.mainchart {
+		padding-right: 30px;
+	}
+}
 
 th {
 	font-weight: normal !important;
@@ -133,8 +138,8 @@ ul li, ol li {
 	text-decoration: none;
 }
 
-
 /* popUp */
+
 .popUp {
 	display: none;
 	position: absolute;
@@ -148,6 +153,7 @@ ul li, ol li {
 	margin-top: -200px;
 	margin-left: -150px;
 	z-index: 1000;
+	overflow: hidden;
 }
 
 .popUp .pop_tit {
@@ -185,7 +191,6 @@ ul li, ol li {
 	z-index: 900;
 	background-color: rgba(0,0,0,0.5);
 }
-
 
 
 /* footer */

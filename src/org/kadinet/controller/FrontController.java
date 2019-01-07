@@ -25,6 +25,8 @@ public class FrontController extends HttpServlet {
 		list.put("/login.do", new MainIndexController());
 		list.put("/logout.do", new MainIndexController());
 		list.put("/find.do", new MainIndexController());
+		list.put("/findId.do", new MainIndexController());
+		list.put("/findPw.do", new MainIndexController());
 		// list.put("/deleteUser.do", new MainIndexController());
 
 		list.put("/intro/greeting.do", new MainIntroController());
@@ -49,9 +51,10 @@ public class FrontController extends HttpServlet {
 		list.put("/mbr/memberinfo.do", new MainMbrController());
 		list.put("/mbr/update.do", new MainMbrController());
 		list.put("/mbr/leave.do", new MainMbrController());
+		list.put("/mbr/updateProc.do", new MainMbrController());
 
 		list.put("/admin/index.do", new AdminController());
-		
+
 		list.put("/admin/intro/greeting.do", new AdminController());
 		list.put("/admin/intro/history.do", new AdminController());
 		list.put("/admin/intro/member.do", new AdminController());
@@ -59,30 +62,30 @@ public class FrontController extends HttpServlet {
 		list.put("/admin/intro/upload.do", new AdminController());
 		list.put("/admin/intro/organization.do", new AdminController());
 		list.put("/admin/intro/visit.do", new AdminController());
-		
+
 		list.put("/admin/notice/notice/list.do", new AdminController());
 		list.put("/admin/notice/press/list.do", new AdminController());
 		list.put("/admin/notice/data/list.do", new AdminController());
 		list.put("/admin/notice/notice/detail.do", new AdminController());
 		list.put("/admin/notice/press/detail.do", new AdminController());
 		list.put("/admin/notice/data/detail.do", new AdminController());
-		
+
 		list.put("/admin/notice/edit.do", new AdminController());
-		
+
 		list.put("/admin/business/career.do", new AdminController());
 		list.put("/admin/business/corporation.do", new AdminController());
 		list.put("/admin/business/mentoring.do", new AdminController());
 		list.put("/admin/business/support.do", new AdminController());
 		list.put("/admin/business/education.do", new AdminController());
-		
+
 		list.put("/admin/mbr/memberinfo.do", new AdminController());
 		list.put("/admin/mbr/edit.do", new AdminController());
 		list.put("/admin/mbr/upload.do", new AdminController());
-		
+
 		list.put("/admin/mbrManagement/mbrTable.do", new AdminController());
-		
+
 		list.put("/admin/editor.do", new AdminController());
-		
+
 	}
 
 	@Override
@@ -91,10 +94,10 @@ public class FrontController extends HttpServlet {
 		String url = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String path = url.substring(contextPath.length());
-
 		Controller subController = list.get(path);
-
+		
 		if (subController != null) {
+			HttpUtil.visit(request);
 			subController.execute(request, response, path);
 		} else {
 			HttpUtil.forward(request, response, "/errorPage/error404.jsp");

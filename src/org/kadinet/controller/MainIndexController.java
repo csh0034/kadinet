@@ -7,6 +7,7 @@ import javax.servlet.http.*;
 
 import org.kadinet.util.HttpUtil;
 import org.kadinet.model.UserBean;
+import org.kadinet.service.MbrService;
 import org.kadinet.service.NoticeService;
 import org.kadinet.service.UserService;
 
@@ -27,22 +28,21 @@ public class MainIndexController implements Controller {
 			login(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/login.jsp");
 		} else if ("/logout.do".equals(path)) {
-			request.getSession().invalidate();
+			request.getSession().removeAttribute("userBean");
 			response.sendRedirect("/index.do");
 		} else if ("/find.do".equals(path)) {
 			find(request, response);
 			HttpUtil.forward(request, response, "/WEB-INF/views/main/index/find.jsp");
-		} 
-		/*
-		 * else if ("/deleteUser.do".equals(path)) { deleteUser(request, response);
-		 * response.sendRedirect("/index.do"); }
-		 */
+		}
 	}
 
 	private void index(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		NoticeService service = NoticeService.getInstance();
 		request.setAttribute("index", "true");
 		service.getIndexNoticeList(request);
+		
+		MbrService service2 = MbrService.getInstance();
+		service2.getIndexMbrList(request);
 
 	}
 
@@ -97,13 +97,4 @@ public class MainIndexController implements Controller {
 		request.setAttribute("page", "find");
 
 	}
-	
 }
-	/*
-	 * private void deleteUser(HttpServletRequest request, HttpServletResponse
-	 * response) throws ServletException, IOException { String id =
-	 * request.getParameter("id"); UserService service = UserService.getInstance();
-	 * service.deleteUser(id);
-	 * 
-	 * }
-	 */

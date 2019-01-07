@@ -1,11 +1,14 @@
 package org.kadinet.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.kadinet.dao.UserDao;
 import org.kadinet.model.UserBean;
+import org.kadinet.util.HttpUtil;
 
 public class UserService {
 
@@ -19,7 +22,7 @@ public class UserService {
 		return service;
 	}
 
-	public String[] checkLogin(String id, String pw) {
+	public UserBean checkLogin(String id, String pw) {
 		return dao.checkLogin(id, pw);
 	}
 
@@ -67,14 +70,41 @@ public class UserService {
 		dao.recognizeUser(authority, id);
 	}
 
-	public void insertUpload(HttpServletRequest request) {
-
+	public void updateUser(UserBean user) {
+		String zipCode = user.getUser_addr1().substring(1, 6);
+		String addr1 = user.getUser_addr1().substring(8, user.getUser_addr1().length());
+		user.setUser_zipCode(zipCode);
+		user.setUser_addr1(addr1);
+		dao.updateUser(user);
 	}
-
-	/*
-	 * public String findId(String name, String phone) { return dao.findId(name,
-	 * phone); }
-	 * 
-	 */
-
+	public String[] findId(HttpServletRequest request) {
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		return dao.findId(name , phone);
+	}
+	
+	public int findPw(HttpServletRequest request) {
+		String id = request.getParameter("id");
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		return dao.findPw(id,name , phone);
+	}
+	
+	public int leaveUser(HttpServletRequest request) {
+		UserBean userBean = HttpUtil.returnUserData(request);
+		String id = userBean.getUser_id();
+		String pw = request.getParameter("pw");
+		
+		return dao.leaveUser(id, pw);
+	}
+	
+	public String changePw(HttpServletRequest request) {
+		SimpleDateFormat df = new SimpleDateFormat("HHmm");
+		String id = request.getParameter("id");
+		String pw = "kadinet"+df.format(new Date());
+		 
+		dao.changePw(id, pw);
+		
+		return pw;
+	}
 }

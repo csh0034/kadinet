@@ -267,6 +267,7 @@ public class NoticeDao extends DBCon {
 				bean.setNotice_regdate(rs.getDate("reg"));
 				bean.setNotice_hit(rs.getInt("notice_hit"));
 				bean.setNotice_bool(rs.getString("notice_bool"));
+				bean.setNotice_img(rs.getString("notice_img"));
 				list.add(bean);
 			}
 

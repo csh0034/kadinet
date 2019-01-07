@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,17 +19,20 @@
 		<div class="mainIndex">
 			<article class="contents">
 				<div id="notice_slide">
-					<a href="#">
-						<img class="s_img" src="/img/main/index/slide/notice_img1.png" alt="공지이미지1">
-					</a>
-					<a href="#">
-						<img class="s_img" src="/img/main/index/slide/notice_img2.png" alt="공지이미지2">
-					</a>
-					<a href="#">
-						<img class="s_img" src="/img/main/index/slide/notice_img3.png" alt="공지이미지3">
-					</a>
-					<span class="pre_box">&lt;</span>
-					<span class="next_box">&gt;</span>
+					<c:forEach var="item" items="${noticeList}" varStatus="i">
+						<a href="/notice/notice/detail.do?no=${item.getNotice_no()}">
+							<c:choose>
+								<c:when test="${empty item.getNotice_img()}">
+									<img class="s_img" src="/img/main/index/slide/notice_img1.png" alt="공지이미지2">
+								</c:when>
+								<c:otherwise>
+									<img class="s_img" src="/file/notice/${item.getNotice_img()}">
+								</c:otherwise>
+							</c:choose>
+
+						</a>
+					</c:forEach>
+					<span class="pre_box">&lt;</span> <span class="next_box">&gt;</span>
 				</div>
 				<div class="index_box press">
 					<h2 class="index_tit">보도자료</h2>
@@ -58,47 +60,64 @@
 				</div>
 				<div class="index_box quick">
 					<ul class="quick_btn">
-						<li><a href="http://localhost/intro/visit.do"> <img class="quick_img1"
-								src="/img/main/index/icon_map.png" alt="오시는길"> <span class="quick_txt1">오시는길</span>
-						</a></li>
-						<li><a href="http://localhost/business/career.do"> <img class="quick_img1"
-								src="/img/main/index/icon_career.png" alt="경력인증"> <span class="quick_txt1">경력인증</span>
-						</a></li>
-						<li><a href="http://localhost/business/corporation.do"> <img class="quick_img1 quick_img2"
-								src="/img/main/index/icon_office.png" alt="사이트맵"> <span class="quick_txt1 quick_txt2">기업체인증</span>
-						</a></li>
-						<li><a href="http://localhost/mbr/memberinfo.do"> 
-								<img class="quick_img1 quick_img2"
-								src="/img/main/index/icon_people.png" alt="회원사소개"> <span class="quick_txt1 quick_txt2">회원사 소개</span>
-						</a></li>
+						<li><a href="http://localhost/intro/visit.do">
+								<img class="quick_img1" src="/img/main/index/icon_map.png" alt="오시는길"> <span
+									class="quick_txt1">오시는길</span>
+							</a></li>
+						<li><a href="http://localhost/business/career.do">
+								<img class="quick_img1" src="/img/main/index/icon_career.png" alt="경력인증"> <span
+									class="quick_txt1">경력인증</span>
+							</a></li>
+						<li><a href="http://localhost/business/corporation.do">
+								<img class="quick_img1 quick_img2" src="/img/main/index/icon_office.png" alt="사이트맵"> <span
+									class="quick_txt1 quick_txt2">기업체인증</span>
+							</a></li>
+						<li><a href="http://localhost/mbr/memberinfo.do">
+								<img class="quick_img1 quick_img2" src="/img/main/index/icon_people.png" alt="회원사소개">
+								<span class="quick_txt1 quick_txt2">회원사 소개</span>
+							</a></li>
 					</ul>
 				</div>
 				<div class="index_box mbr_list">
 					<div class="als-container clearfix" id="lista1">
-						<span class="als-prev"><img src="/img/main/index/slide/left.png" alt="prev" title="previous" /></span>
+						<span class="als-prev"><img src="/img/main/index/slide/left.png" alt="prev"
+							title="previous" /></span>
 						<div class="als-viewport">
 							<ul class="als-wrapper">
-								<li class="als-item"><a href="https://cc.sk.co.kr/"
-									target="_blank"><img src="/img/main/index/slide/s1.jpg"></a></li>
-									<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
-									target="_blank"><img src="/img/main/index/slide/s2.jpg"></a></li>
-									<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
-									target="_blank"><img src="/img/main/index/slide/s3.jpg"></a></li>
-									<li class="als-item"><a href="http://www.hrcnt.com/"
-									target="_blank"><img src="/img/main/index/slide/s4.jpg"></a></li>
-									<li class="als-item"><a href="http://www.mayzen.com/index.html"
-									target="_blank"><img src="/img/main/index/slide/s5.jpg"></a></li>
-									<li class="als-item"><a href="http://www.hrcnt.com/"
-									target="_blank"><img src="/img/main/index/slide/s6.jpg"></a></li>
-									<li class="als-item"><a href="http://www.dwit.or.kr/"
-									target="_blank"><img src="/img/main/index/slide/s7.jpg"></a></li>
-									<li class="als-item"><a href="http://hm.seoil.ac.kr/"
-									target="_blank"><img src="/img/main/index/slide/s8.jpg"></a></li>
-									<li class="als-item"><a href="http://www.hansung.ac.kr/web/www/home"
-									target="_blank"><img src="/img/main/index/slide/s9.jpg"></a></li>
+								<c:forEach var="item" items="${mbrList}" varStatus="i">
+									<li class="als-item"><a href="http://${item.getMbr_link()}" target="_blank">
+											<img src="/file/mbr/${item.getMbr_img()}">
+										</a></li>
+								</c:forEach>
+								<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
+										target="_blank">
+										<img src="/img/main/index/slide/s2.jpg">
+									</a></li>
+								<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
+										target="_blank">
+										<img src="/img/main/index/slide/s3.jpg">
+									</a></li>
+								<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
+										target="_blank">
+										<img src="/img/main/index/slide/s2.jpg">
+									</a></li>
+								<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
+										target="_blank">
+										<img src="/img/main/index/slide/s3.jpg">
+									</a></li>
+								<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
+										target="_blank">
+										<img src="/img/main/index/slide/s2.jpg">
+									</a></li>
+								<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
+										target="_blank">
+										<img src="/img/main/index/slide/s3.jpg">
+									</a></li>
+
 							</ul>
 						</div>
-						<span class="als-next"><img src="/img/main/index/slide/right.png" alt="next" title="next" /></span>
+						<span class="als-next"><img src="/img/main/index/slide/right.png" alt="next"
+							title="next" /></span>
 					</div>
 				</div>
 			</article>

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -6,6 +7,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>디지털산업협회</title>
+<!-- IE 10 이하  -->
+<!--[if IE]>
+<style>
+	.mainchart {
+		padding-right: 30px;
+	}
+</style>
+<![endif]-->
 <%@ include file="/WEB-INF/include/admin/css.jsp"%>
 </head>
 <body id="page-top">
@@ -23,7 +32,8 @@
 						<i class="fas fa-chart-area"></i> 월간 방문자 현황
 					</div>
 					<div class="card-body">
-						<canvas id="myAreaChart" width="100%" height="30"></canvas>
+						<canvas id="myAreaChart" class="mainchart" width="100%"
+							height="30"></canvas>
 					</div>
 					<div class="card-footer small text-muted time"></div>
 				</div>
@@ -89,8 +99,8 @@
 			var myLineChart = new Chart(ctx, {
 				type : 'line',
 				data : {
-					labels : [ "18-01", "18-02", "18-03", "18-04", "18.01", "06월", "07월",
-							"08월", "09월", "10월", "11월", "12월" ],
+					labels : [ "${title[0]}", "${title[1]}", "${title[2]}", "${title[3]}", "${title[4]}",
+						"${title[5]}", "${title[6]}","${title[7]}", "${title[8]}", "${title[9]}", "${title[10]}", "${title[11]}" ],
 					datasets : [ {
 						label : "접속자수",
 						lineTension : 0.3,
@@ -103,8 +113,8 @@
 						pointHoverBackgroundColor : "rgba(2,117,216,1)",
 						pointHitRadius : 50,
 						pointBorderWidth : 2,
-						data : [ 100, 302, 263, 184, 1287, 282, 312, 339, 259,
-								259, 321, 384 ],
+						data : [ ${value[0]},${value[1]}, ${value[2]}, ${value[3]}, ${value[4]}, ${value[5]}, ${value[6]}
+								, ${value[7]}, ${value[8]}, ${value[9]},${value[10]}, ${value[11]}],
 					} ],
 				},
 				options : {
@@ -123,7 +133,7 @@
 						yAxes : [ {
 							ticks : {
 								min : 0,
-								max : 2000,
+								max : ${max},
 								maxTicksLimit : 5
 							},
 							gridLines : {

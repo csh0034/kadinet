@@ -16,8 +16,8 @@ public class UserDao extends DBCon {
 		return dao;
 	}
 
-	public String[] checkLogin(String id, String pw) {
-		String userData[] = { "", "", "" };
+	public UserBean checkLogin(String id, String pw) {
+		UserBean bean = new UserBean();
 		try {
 			conStart();
 			sql = "select * from user where user_id=? and user_pw=?";
@@ -28,16 +28,25 @@ public class UserDao extends DBCon {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				userData[0] = rs.getString("user_id");
-				userData[1] = rs.getString("user_name");
-				userData[2] = rs.getString("user_authority");
+				bean.setUser_id(rs.getString("user_id"));
+				bean.setUser_name(rs.getString("user_name"));
+				bean.setUser_gender(rs.getString("user_gender"));
+				bean.setUser_age(rs.getString("user_age"));
+				bean.setUser_phone(rs.getString("user_phone"));
+				bean.setUser_email(rs.getString("user_email"));
+				bean.setUser_addr1(rs.getString("user_addr1"));
+				bean.setUser_addr2(rs.getString("user_addr2"));
+				bean.setUser_authority(rs.getString("user_authority"));
+				bean.setUser_email_receive(rs.getString("user_email_receive"));
+				bean.setUser_sms_receive(rs.getString("user_sms_receive"));
+				bean.setUser_zipCode(rs.getString("user_zip_code"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			conClose();
 		}
-		return userData;
+		return bean;
 	}
 
 	public boolean checkId(String id) {
@@ -127,6 +136,7 @@ public class UserDao extends DBCon {
 				bean.setUser_phone(rs.getString("user_phone"));
 				bean.setUser_email(rs.getString("user_email"));
 				bean.setUser_addr1(rs.getString("user_addr1"));
+				bean.setUser_addr2(rs.getString("user_addr2"));
 				bean.setUser_regdate(rs.getDate("user_regdate"));
 				bean.setUser_last_login(rs.getDate("last_login"));
 
@@ -196,7 +206,7 @@ public class UserDao extends DBCon {
 				bean.setUser_addr1(rs.getString("user_addr1"));
 				bean.setUser_regdate(rs.getDate("user_regdate"));
 				bean.setUser_last_login(rs.getDate("user_last_login"));
-				bean.setUser_authority(rs.getInt("user_authority"));
+				bean.setUser_authority(rs.getString("user_authority"));
 				list.add(bean);
 			}
 
@@ -208,19 +218,119 @@ public class UserDao extends DBCon {
 
 		return list;
 	}
+
+	public void updateUser(UserBean user) {
+		try {
+			conStart();
+			sql = "update user set user_pw=?, user_name=?, user_phone=?, user_addr1=?, user_addr2=?, user_email=?, user_email_receive=?, user_sms_receive=? "
+					+ ", user_age = ? , user_gender = ? where user_id=?";
+
+			pstmt = con.prepareStatement(sql);
+
+			pstmt.setString(1, user.getUser_pw());
+			pstmt.setString(2, user.getUser_name());
+			pstmt.setString(3, user.getUser_phone());
+			pstmt.setString(4, user.getUser_addr1());
+			pstmt.setString(5, user.getUser_addr2());
+			pstmt.setString(6, user.getUser_email());
+			pstmt.setString(7, user.getUser_email_receive());
+			pstmt.setString(8, user.getUser_sms_receive());
+			pstmt.setString(9, user.getUser_age());
+			pstmt.setString(10, user.getUser_gender());
+			pstmt.setString(11, user.getUser_id());
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+	}
+
+	public String[] findId(String name, String phone) {
+		String data[] = { "x", "-1" };
+		try {
+			conStart();
+			sql = "select * from user where user_name=? and user_phone=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, phone);
+
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				data[0] = rs.getString("user_id");
+				data[1] = rs.getString("user_authority");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return data;
+	}
+
+	public int findPw(String id, String name, String phone) {
+		int cnt = 0;
+		try {
+			conStart();
+			sql = "select count(*) from user where user_id = ? and user_name=? and user_phone=?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, name);
+			pstmt.setString(3, phone);
+
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				cnt = rs.getInt(1);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+		return cnt;
+	}
+
+	public int leaveUser(String id, String pw) {
+		int cnt = 0;
+		try {
+			conStart();
+			sql = "update user set user_authority = 3 where user_id = ? and user_pw = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			cnt = pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+
+		return cnt;
+	}
+	
+	public void changePw(String id, String pw) {
+		try {
+			conStart();
+			sql = "update user set user_pw = ? where user_id = ?";
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, pw);
+			pstmt.setString(2, id);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			conClose();
+		}
+
+	}
 }
-/*
- * public String findId(String name, String phone) { String user_id = null; try
- * { conStart(); sql =
- * "select * from user where user_name = ? and user_phone = ?";
- * 
- * pstmt = con.prepareStatement(sql); pstmt.setString(1, name);
- * pstmt.setString(2, phone);
- * 
- * pstmt.executeQuery();
- * 
- * while(rs.next()){ user_id = rs.getString("user_id"); } } catch (Exception e)
- * { e.printStackTrace(); } finally { conClose(); } return user_id; }
- * 
- * }
- */

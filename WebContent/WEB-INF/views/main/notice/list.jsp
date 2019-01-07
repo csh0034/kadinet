@@ -106,8 +106,8 @@
 
 							<div class="paginDiv">
 								<c:if test="${totalPage !=0 }">
-									<c:if test="${nowblock > 1 }">
-										<a href="javascript:block('${nowblock - 1 }')">
+									<c:if test="${nowBlock > 1 }">
+										<a href="javascript:block('${nowBlock - 1 }')">
 											<span class="paging">&lt;</span>
 										</a>
 									</c:if>
@@ -117,7 +117,7 @@
 										</a>
 									</c:forEach>
 									<c:if test="${totalBlock > nowBlock }">
-										<a href="javascript:block('${nowblock + 1 }')">
+										<a href="javascript:block('${nowBlock + 1 }')">
 											<span class="paging">&gt;</span>
 										</a>
 									</c:if>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.kadinet.model.UserBean;
 import org.kadinet.service.HistoryService;
 import org.kadinet.service.MemberService;
 import org.kadinet.service.NoticeService;
@@ -28,21 +29,19 @@ public class Ajax extends HttpServlet {
 		if (method == null) {
 			response.sendRedirect("/index.do");
 		} else if ("checkLogin".equals(method)) {
-			request.getSession().invalidate();
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
 			String pw = request.getParameter("pw");
-
-			String[] userData = service.checkLogin(id, pw);
+			UserBean userBean = service.checkLogin(id, pw);
 
 			String authority = "-1";
-			if ("0".equals(userData[2]) || "2".equals(userData[2])) {
-				request.getSession().setAttribute("userData", userData);
+			if ("0".equals(userBean.getUser_authority()) || "2".equals(userBean.getUser_authority())) {
+				request.getSession().setAttribute("userBean", userBean);
 				service.updateLastLogin(id);
-				authority = userData[2];
-			} else if ("1".equals(userData[2])) {
+				authority = userBean.getUser_authority();
+			} else if ("1".equals(userBean.getUser_authority())) {
 				authority = "1";
-			} else if ("3".equals(userData[2])) {
+			} else if ("3".equals(userBean.getUser_authority())) {
 				authority = "3";
 			}
 			out.print(authority);
@@ -72,7 +71,6 @@ public class Ajax extends HttpServlet {
 			String phone = request.getParameter("phone");
 			String fax = request.getParameter("fax");
 			service.updateVisit(visit_x, visit_y, address, phone, fax);
-
 		} else if ("deleteMbrList".equals(method)) {
 			UserService service = UserService.getInstance();
 			String id = request.getParameter("id");
@@ -91,6 +89,40 @@ public class Ajax extends HttpServlet {
 		} else if ("moveNotice".equals(method)) {
 			NoticeService service = NoticeService.getInstance();
 			service.moveNotice(request);
+		} else if ("findId".equals(method)) {
+			UserService service = UserService.getInstance();
+			String data[] = service.findId(request);
+
+			if ("0".equals(data[1])) {
+				out.print("x");
+			} else if ("1".equals(data[1])) {
+				out.print("leave");
+			} else if ("x".equals(data[0])) {
+				out.print("x");
+			} else {
+				out.print(data[0]);
+			}
+
+		} else if ("findPw".equals(method)) {
+			UserService service = UserService.getInstance();
+			int cnt = service.findPw(request);
+
+			String data = "";
+			if(cnt == 0) {
+				data = "0";
+			} else {
+				data = service.changePw(request);
+			}
+			out.print(data);
+
+		} else if ("leaveUser".equals(method)) {
+			UserService service = UserService.getInstance();
+
+			int cnt = service.leaveUser(request);
+			if (cnt != 0) {
+				request.getSession().removeAttribute("userBean");
+			}
+			out.print(cnt);
 		}
 	}
 }
