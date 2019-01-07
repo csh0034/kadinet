@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>디지털산업협회</title>
+<%@ include file="/WEB-INF/include/global/meta.jsp"%>
 <script>
 	location.href='index.do';
 </script>
