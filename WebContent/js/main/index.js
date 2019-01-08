@@ -49,7 +49,7 @@ $(function() {
 	});
 	
 	var slide;
-	var time = 3000;//슬라이드시간
+	var time = 6000;//슬라이드시간
 	var num = 0;
 	
 	$("#notice_slide img").eq(num).css({"left":"0%"});

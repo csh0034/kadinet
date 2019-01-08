@@ -90,31 +90,6 @@
 											<img src="/file/mbr/${item.getMbr_img()}">
 										</a></li>
 								</c:forEach>
-								<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
-										target="_blank">
-										<img src="/img/main/index/slide/s2.jpg">
-									</a></li>
-								<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
-										target="_blank">
-										<img src="/img/main/index/slide/s3.jpg">
-									</a></li>
-								<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
-										target="_blank">
-										<img src="/img/main/index/slide/s2.jpg">
-									</a></li>
-								<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
-										target="_blank">
-										<img src="/img/main/index/slide/s3.jpg">
-									</a></li>
-								<li class="als-item"><a href="https://www.samsungsds.com/global/ko/index.html"
-										target="_blank">
-										<img src="/img/main/index/slide/s2.jpg">
-									</a></li>
-								<li class="als-item"><a href="http://www.jobmentors.co.kr/main/index.html"
-										target="_blank">
-										<img src="/img/main/index/slide/s3.jpg">
-									</a></li>
-
 							</ul>
 						</div>
 						<span class="als-next"><img src="/img/main/index/slide/right.png" alt="next"
