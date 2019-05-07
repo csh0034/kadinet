@@ -53,23 +53,30 @@
 									<tbody>
 										<c:forEach var="item" items="${list}" varStatus="i">
 											<tr>
-												<td class="max74"><c:choose>
-														<c:when test="${item.getNotice_bool() == 't'}">
+												<td class="max74">
+													<c:choose>
+														<c:when test="${item.notice_bool == 't'}">
 															공지
 														</c:when>
-														<c:otherwise>
-													${item.getNotice_no()}
-												</c:otherwise>
-													</c:choose></td>
-												<td class="tit"><a
-													href="/admin/notice/${menu}/detail.do?no=${item.getNotice_no()}">
-														${item.getNotice_title()}</a></td>
-												<td class="max82">${item.getUser_name()}</td>
-												<td>${item.getNotice_regdate()}</td>
-												<td class="max74">${item.getNotice_hit()}</td>
-												<td><c:if test="${!empty item.getFile_oriname()}">
+													<c:otherwise>
+														<c:out value="${item.notice_no}"/>
+													</c:otherwise>
+													</c:choose>
+												</td>
+												<td class="max82">
+													<c:out value="${item.user_name}"/>
+												</td>
+												<td>
+													<c:out value="${item.notice_regdate}"/>
+												</td>
+												<td class="max74">
+													<c:out value="${item.notice_hit}"/>
+												</td>
+												<td>
+													<c:if test="${not empty item.file_oriname}">
 														<img src="/img/main/notice/icon_file.gif">
-													</c:if></td>
+													</c:if>
+												</td>
 											</tr>
 										</c:forEach>
 									</tbody>
